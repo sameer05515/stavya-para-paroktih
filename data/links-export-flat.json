@@ -1,0 +1,508 @@
+[
+  {
+    "uniqueId": "db286703-79b1-4606-aebe-414081be59e4",
+    "name": "Root",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.naukri.com/mnjuser/profile?id=&altresid",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Root",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "5627bfa5-3fdf-4bc2-9d4b-946cf8d89f24",
+    "name": "L1",
+    "parentId": "db286703-79b1-4606-aebe-414081be59e4",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.naukri.com/mnjuser/profile?id=&altresid",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "L1",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "db286703-79b1-4606-aebe-414081be59e4",
+        "name": "Root"
+      }
+    ]
+  },
+  {
+    "uniqueId": "fb1ce14d-0278-4095-96d3-7e4d8e6c3a8b",
+    "name": "L2",
+    "parentId": "5627bfa5-3fdf-4bc2-9d4b-946cf8d89f24",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.naukri.com/mnjuser/profile?id=&altresid",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "L2",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "db286703-79b1-4606-aebe-414081be59e4",
+        "name": "Root"
+      },
+      {
+        "uniqueId": "5627bfa5-3fdf-4bc2-9d4b-946cf8d89f24",
+        "name": "L1"
+      }
+    ]
+  },
+  {
+    "uniqueId": "f6e7cb27-2acf-4761-843c-176cb15d896f",
+    "name": "L3",
+    "parentId": "db286703-79b1-4606-aebe-414081be59e4",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.naukri.com/mnjuser/profile?id=&altresid",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "lllllllllll",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "db286703-79b1-4606-aebe-414081be59e4",
+        "name": "Root"
+      }
+    ]
+  },
+  {
+    "uniqueId": "615eb823-c813-4ca4-a354-0ee3a730c7bf",
+    "name": "Guide to list UI design: principles and examples",
+    "parentId": "db286703-79b1-4606-aebe-414081be59e4",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.justinmind.com/ui-design/list",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Guide to list UI design: principles and examples",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "db286703-79b1-4606-aebe-414081be59e4",
+        "name": "Root"
+      }
+    ]
+  },
+  {
+    "uniqueId": "cd50525a-586f-42cc-bc29-dee1c9077143",
+    "name": "Build Your Own DNS Server - Beginner Friendly",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.youtube.com/watch?v=Ui66W7zeAbI",
+    "description": "",
+    "descriptions": [],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "d659ca42-b0fb-446b-a974-ff1a7b123bfb",
+    "name": "Figma tutorial for Beginners: Complete Website from Start to Finish",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.youtube.com/watch?v=HZuk6Wkx_Eg",
+    "description": "",
+    "descriptions": [],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "34e78c42-a069-47e7-909c-8046086674b7",
+    "name": "Implement Nested Routes in React.js – React Router DOM V6",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.geeksforgeeks.org/implement-nested-routes-in-react-js-react-router-dom-v6/",
+    "description": "",
+    "descriptions": [],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "45983049-db6f-47a9-981e-35727aada349",
+    "name": "Navigate to a URL with Query Strings (Search Params) in React Router",
+    "parentId": "34e78c42-a069-47e7-909c-8046086674b7",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://ultimatecourses.com/blog/navigate-to-url-query-strings-search-params-react-router",
+    "description": "",
+    "descriptions": [],
+    "ancestors": [
+      {
+        "uniqueId": "34e78c42-a069-47e7-909c-8046086674b7",
+        "name": "Implement Nested Routes in React.js – React Router DOM V6"
+      }
+    ]
+  },
+  {
+    "uniqueId": "261c9e0f-dd62-4824-8650-a3e2cbb0512f",
+    "name": "Scroll To An Element On Click In React",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://medium.com/@taraparakj75/scroll-to-an-element-on-click-in-react-2be0fdd21129",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Scrolling involves the elements in React that are done even in JavaScript. Normally, scrolling is a sliding effect or movement in the text, image, and graphics. It is quite different from that of the frameworks. It is efficient to enable scrolling while developing the WebPages. These can be either clicked, or they can be automatically enabled in React.",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "e7310d0d-cdb2-442a-a782-b4e26abe9157",
+    "name": "String replacement in java, similar to a velocity template",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://stackoverflow.com/questions/3655424/string-replacement-in-java-similar-to-a-velocity-template",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "String replacement in java, similar to a velocity template",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "7552f422-2806-4d33-9e3c-2767e8883f97",
+    "name": "CSS/Properties/color/keywords",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.w3.org/wiki/CSS/Properties/color/keywords",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "CSS/Properties/color/keywords",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "e8c76a3c-ba02-48fb-bea3-0f2b8d82d6b4",
+    "name": "Syntax Highlight Code in Markdown",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://amirardalan.com/blog/syntax-highlight-code-in-markdown",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Syntax Highlight Code in Markdown",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "bb4a4f2f-17a0-47a5-922e-875ae6208e95",
+    "name": "React Markdown — Code and Syntax Highlighting",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://medium.com/young-developer/react-markdown-code-and-syntax-highlighting-632d2f9b4ada",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "React Markdown — Code and Syntax Highlighting",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "39e2cbc8-168d-4d05-9b40-1a195fe4c02a",
+    "name": "be10x links",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "What is Microsoft Copilot Pro and How to USE : 13 Hidden Features of Copilot | Be10x",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "What is Microsoft Copilot Pro and How to USE : 13 Hidden Features of Copilot | Be10x",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "bbbf3056-1a54-4e60-84be-2ff48cb80848",
+    "name": "What is Microsoft Copilot Pro and How to USE : 13 Hidden Features of Copilot | Be10x",
+    "parentId": "39e2cbc8-168d-4d05-9b40-1a195fe4c02a",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.youtube.com/watch?v=mOZFqLlvleU",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "What is Microsoft Copilot Pro and How to USE : 13 Hidden Features of Copilot | Be10x",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "39e2cbc8-168d-4d05-9b40-1a195fe4c02a",
+        "name": "be10x links"
+      }
+    ]
+  },
+  {
+    "uniqueId": "088f887e-8e4e-4d23-8b16-7c62db313f6d",
+    "name": "Documentation Links",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "Documentation Links",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Documentation Links",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "093b13f8-9b1e-4c5f-bcd5-ce5ca19f6a17",
+    "name": "Backend Development",
+    "parentId": "088f887e-8e4e-4d23-8b16-7c62db313f6d",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "Backend Development",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Backend Development",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "088f887e-8e4e-4d23-8b16-7c62db313f6d",
+        "name": "Documentation Links"
+      }
+    ]
+  },
+  {
+    "uniqueId": "ebf59236-266c-4d95-8eef-fc01e2708bc1",
+    "name": "Java",
+    "parentId": "093b13f8-9b1e-4c5f-bcd5-ce5ca19f6a17",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "Java",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Java",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "088f887e-8e4e-4d23-8b16-7c62db313f6d",
+        "name": "Documentation Links"
+      },
+      {
+        "uniqueId": "093b13f8-9b1e-4c5f-bcd5-ce5ca19f6a17",
+        "name": "Backend Development"
+      }
+    ]
+  },
+  {
+    "uniqueId": "e44f1975-001d-4f22-a8b6-0a64849eddc6",
+    "name": "Oracle JDK 22 Documentation",
+    "parentId": "ebf59236-266c-4d95-8eef-fc01e2708bc1",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://docs.oracle.com/en/java/javase/22/",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Oracle JDK 22 Documentation",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "088f887e-8e4e-4d23-8b16-7c62db313f6d",
+        "name": "Documentation Links"
+      },
+      {
+        "uniqueId": "093b13f8-9b1e-4c5f-bcd5-ce5ca19f6a17",
+        "name": "Backend Development"
+      },
+      {
+        "uniqueId": "ebf59236-266c-4d95-8eef-fc01e2708bc1",
+        "name": "Java"
+      }
+    ]
+  },
+  {
+    "uniqueId": "d0ac1a82-60fc-418a-bf5a-737bb1de8814",
+    "name": "Frontend Development",
+    "parentId": "088f887e-8e4e-4d23-8b16-7c62db313f6d",
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "Frontend Development",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Frontend Development",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": [
+      {
+        "uniqueId": "088f887e-8e4e-4d23-8b16-7c62db313f6d",
+        "name": "Documentation Links"
+      }
+    ]
+  },
+  {
+    "uniqueId": "e72e7fe7-13dc-4c22-9c95-6bda522f23b3",
+    "name": "What is GST Number? – Example and Format of 15 Digits GSTIN",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://cleartax.in/s/know-your-gstin",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "What is GST Number? – Example and Format of 15 Digits GSTIN",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "6827ef67-bcad-47c6-b073-0e99bd96d5cd",
+    "name": "How to Connect HTML Elements With an Arrow Using SVG",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.beyondjava.net/how-to-connect-html-elements-with-an-arrow-using-svg",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "How to Connect HTML Elements With an Arrow Using SVG",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "af6367e3-e124-4f6f-b790-f8efd581c2fb",
+    "name": "Draw arrows between DOM elements with react-archer",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.reddit.com/r/reactjs/comments/8cfxe5/draw_arrows_between_dom_elements_with_reactarcher/",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Draw arrows between DOM elements with react-archer",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "fff9d38f-ec1b-4385-a762-a0abca491ef0",
+    "name": "Spring Security 6 with Spring Boot and JWT Tutorial- Telusko",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.youtube.com/watch?v=oeni_9g7too&t=5871s",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "One sample video for Spring security",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "b9e99337-98ea-4774-89b6-668cbfd7b2da",
+    "name": "JWT Authentication Tutorial - Node.js",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.youtube.com/watch?v=mbsmsi7l3r4",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "JWT Authentication Tutorial - Node.js - by Web Dev Simplified",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "b55bbd4a-9f85-4791-ab52-c1d717d4384a",
+    "name": "What is Spring   Spring Boot and Spring Security with JWT",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.youtube.com/watch?v=VFVI1svmy04",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Spring Boot and Spring Security with JWT by Telusko",
+        "textOutputType": "html",
+        "textInputType": "CKEditor"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "69162d20-f03e-4ce6-aaf3-bfd5397a3960",
+    "name": "Meta Learning Method to Learn Anything 10x Fast | Drishti Sharma",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.youtube.com/watch?v=F31nAJR-IiI",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "Here are some actionable bullet points based on the meta-learning video summary:\n\n* **Identify the 20% that yields 80% of the results:**  For any skill you want to learn, pinpoint the core elements that provide the most significant impact. Focus your initial efforts on mastering these key components before delving into the less impactful details.  This requires research and prioritization.\n\n* **Teach what you're learning (even before you feel ready):**  Find opportunities to explain the concepts you're learning to others. This could be through informal discussions, creating tutorials, or even just explaining it to yourself out loud.  Teaching forces you to organize your thoughts and identify gaps in your understanding.\n\n* **Actively seek feedback:** Don't wait for feedback to come to you.  Proactively ask for constructive criticism from people who are knowledgeable in the area you're learning.  Be specific in your requests for feedback (e.g., \"How could I improve my technique here?\" rather than \"How am I doing?\").\n\n* **Shift your identity to embody the learner:** Cultivate a mindset of continuous learning and growth.  See yourself as someone who is capable of acquiring new skills.  This can involve positive self-talk, surrounding yourself with other learners, and celebrating small victories.  Believe you *are* the type of person who can master this skill.\n\n* **Embrace discomfort:** Step outside your comfort zone regularly.  Challenge yourself with tasks that feel difficult or intimidating.  This could involve setting ambitious goals, taking on new responsibilities, or putting yourself in situations where you might make mistakes.  Growth happens outside of comfort.\n\n* **Break down complex skills:** Don't be overwhelmed by the entirety of a new skill.  Break it down into smaller, manageable chunks.  Focus on mastering each piece before moving on to the next.  This makes the learning process less daunting and allows you to track your progress.\n\n* **Set clear learning goals:** Define what you want to achieve with your learning.  Make your goals specific, measurable, achievable, relevant, and time-bound (SMART).  This will help you stay focused and motivated.\n\n* **Track your progress:** Keep a record of your learning journey.  This could be a journal, a spreadsheet, or any other method that works for you.  Tracking your progress helps you see how far you've come and keeps you motivated.\n\n* **Find a learning community:** Connect with other people who are learning the same skill.  This could be through online forums, study groups, or local meetups.  Learning with others can provide support, motivation, and different perspectives.\n\n* **Practice consistently:** Learning is not a one-time event.  It requires consistent effort and practice.  Schedule dedicated time for learning and stick to your schedule as much as possible.  Even short, regular practice sessions are more effective than infrequent, long ones.\n",
+        "textOutputType": "markdown",
+        "textInputType": "TextArea"
+      }
+    ],
+    "ancestors": []
+  },
+  {
+    "uniqueId": "fa43488c-c1e6-4bdb-8953-59326a2a4b77",
+    "name": "4 Simple Habits for Discipline without destroying yourself | Drishti Sharma",
+    "parentId": null,
+    "linkType": "EXTERNAL-WEB",
+    "linkUrl": "https://www.youtube.com/watch?v=V3MwXPwjGqM",
+    "description": "",
+    "descriptions": [
+      {
+        "content": "The video titled \"4 Simple Habits for Discipline without destroying yourself\" by Drishti Sharma discusses practical habits to build discipline effectively. It emphasizes that there are no shortcuts to discipline and suggests implementing simple, sustainable habits to improve self-discipline without causing burnout. \n\n---\n\nLet's elaborate on the concept of building discipline through simple, sustainable habits, as discussed in Drishti Sharma's video.  It's about making discipline a part of your lifestyle, not a temporary, forced effort.  Here's a breakdown of actionable steps:\n\n**1. Start Small and Specific:**\n\n*   **Identify One Key Area:** Don't try to overhaul your entire life at once. Choose *one* area where you want to improve discipline.  This could be anything: waking up earlier, exercising regularly, studying consistently, or managing your finances.\n*   **Define a Tiny, Achievable Goal:**  Instead of \"I'll exercise every day,\" start with \"I'll do 10 push-ups every morning.\"  The goal should be so small that it's almost impossible to fail.  This builds momentum and a sense of accomplishment.\n*   **Be Specific:**  Vague goals like \"I'll be more productive\" are hard to track.  Define precisely what you want to achieve.  For example, \"I will write 500 words of my book every day after lunch.\"\n\n**2. Build Consistency, Not Intensity:**\n\n*   **Focus on Showing Up:**  The key is consistency.  Even on days when you don't feel like it, do the small task you've committed to.  The act of showing up is more important than the intensity of your effort, especially in the beginning.\n*   **Establish a Routine:**  Integrate your new habit into your daily or weekly routine.  Tie it to an existing habit or a specific time of day.  For example, \"I'll do my 10 push-ups right after I brush my teeth.\"\n*   **Track Your Progress:** Use a journal, a habit tracker app, or even just a calendar to mark the days you successfully complete your task.  Visualizing your progress is a powerful motivator.\n\n**3. Embrace Imperfection and Iterate:**\n\n*   **Don't Aim for Perfection:**  You're going to miss days or slip up occasionally.  That's perfectly normal.  Don't beat yourself up about it.\n*   **Get Back on Track Immediately:** The most important thing is to get back on track as quickly as possible.  If you miss a day, make sure you do your task the next day.\n*   **Reflect and Adjust:** Regularly review your progress.  Are your habits still small and manageable?  Do you need to adjust them based on your experience?  Be willing to iterate and refine your approach.\n\n**4. Cultivate Self-Compassion:**\n\n*   **Be Kind to Yourself:**  Discipline is not about self-punishment.  It's about self-improvement.  Treat yourself with kindness and understanding, especially when you make mistakes.\n*   **Celebrate Small Wins:**  Acknowledge and celebrate your progress, no matter how small it seems.  This reinforces positive behavior and keeps you motivated.\n*   **Focus on the Process:**  Don't get too fixated on the end goal.  Focus on enjoying the process of building discipline and developing good habits.\n\n**5. Understand Your \"Why\":**\n\n*   **Connect to Your Values:**  Why is this particular habit important to you?  How does it align with your values and long-term goals?  Having a clear \"why\" will help you stay motivated when things get tough.\n*   **Visualize the Benefits:**  Imagine the positive outcomes of developing this discipline.  How will it improve your life?  Keeping the benefits in mind can help you stay committed.\n\nBy following these steps, you can build discipline in a sustainable and healthy way, without burning yourself out.  Remember, it's a marathon, not a sprint.  Focus on small, consistent actions, and be patient with yourself.  Over time, these small habits will compound into significant changes.\n",
+        "textOutputType": "markdown",
+        "textInputType": "TextArea"
+      }
+    ],
+    "ancestors": []
+  }
+]

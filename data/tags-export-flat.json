@@ -1,0 +1,1819 @@
+[
+  {
+    "uniqueId": "e85963e9-1ba8-44ef-bb91-be09891e2151",
+    "name": "My development ideas",
+    "parentId": null,
+    "description": "My development ideas",
+    "smartContent": {
+      "content": "My development ideas",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "ancestors": []
+  },
+  {
+    "uniqueId": "12633821-facf-400a-af62-f9024e7ade17",
+    "name": "Future Topics : To be studied post getting a Job",
+    "parentId": "e85963e9-1ba8-44ef-bb91-be09891e2151",
+    "description": "",
+    "smartContent": {
+      "content": "Future Topics : To be studied post getting a Job",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "e85963e9-1ba8-44ef-bb91-be09891e2151",
+        "name": "My development ideas"
+      }
+    ]
+  },
+  {
+    "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "name": "Concept",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "<p>Concept word used to refer generically, to a subject matter or topic.</p><p>Every concept should have the following sections:</p><ol><li>What is/are<ol><li>concept</li></ol></li><li>How to&nbsp;<ol><li>Install/use</li></ol></li><li>Buzzwords or terminology</li><li>Programs or Practicals or related configurations</li><li>Alternatives</li><li>Version History</li></ol>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": []
+  },
+  {
+    "uniqueId": "af08d032-da97-46ee-8c62-f035cf0d07c5",
+    "name": "terminologies and buzz words",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "terminologies and buzz words",
+    "smartContent": {
+      "content": "terminologies and buzz words",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "c2423357-5c11-4014-8000-0d9426ede054",
+    "name": "Interview Questions Metadata",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "Interview Questions Metadata",
+    "smartContent": {
+      "content": "Interview Questions Metadata",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "1abf1b60-a188-40ea-b4e1-a81ba23436e2",
+    "name": "Commands, Configuration, Coding Question, Programs and Practical",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "",
+    "smartContent": {
+      "content": "Commands, Configuration, Coding Question, Programs and Practical",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "ad716c20-99e4-4186-9030-425a8689e045",
+    "name": "Programming Language",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "",
+    "smartContent": {
+      "content": "<p>Programming Language</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "d6569013-8755-43d0-b878-ceca9068e9a6",
+    "name": "Further discussions or related sub queries",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "",
+    "smartContent": {
+      "content": "<p>Further discussions or related sub queries</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+    "name": "WH Question Type",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "",
+    "smartContent": {
+      "content": "# WH Question Type\nHere are the WH questions arranged in order:\n\n1. **What** is the topic about?  \n1.1. **Pre-requisites**  \n1.2. **Definition**  \n1.3. **Version History**  \n1.4. **Alternatives**  \n1.5. **Difference Between**  \n2. **Why** is it important to learn this topic?\n3. **When** should you start learning it?\n4. **Where** can you find resources to learn this topic?\n5. **Who** has expertise or is a good source to learn from?\n6. **How** should you approach learning this topic?\n\n\n\n## Example WH questions for topic **nodejs**\n\n### name: What  \nquestions:\n- What is the definition of this \"Nodejs\"? or What is \"Nodejs\"?\n- What are the key components or concepts within this \"Nodejs\"?\n- What are the primary uses or applications of this \"Nodejs\"?\n- What are the main challenges or issues associated with this \"Nodejs\"?\n- What are alternatives of \"Nodejs\"?\n- What is a workaround, if I choose not to use this \"Nodejs\"?\n### name: Why\nquestions:\n- Why is this \"Nodejs\" important or relevant?\n- Why are certain methods or approaches used within this \"Nodejs\"?\n- Why does this \"Nodejs\" matter in the broader context of the field?\n- Why did certain versions introduce specific changes or features?\n- Why are certain buzzwords popular in the context of this \"Nodejs\"?\n### name: Who\nquestions:\n- Who are the main contributors or experts in this field?\n- Who can benefit from understanding this \"Nodejs\"?\n- Who are the primary stakeholders involved in this \"Nodejs\"?\n- Who were the key developers or organizations behind each major version?\n- Who coined or popularized the buzzwords associated with this \"Nodejs\"?\n### name: When\nquestions:\n- When did this \"Nodejs\" emerge or become significant?\n- When are the critical moments or milestones in the development of this \"Nodejs\"?\n- When should certain approaches or methods be applied within this \"Nodejs\"?\n- When were the significant versions or updates released for \"Nodejs\"?\n- When did \"Nodejs\" become popular?\n### name: Where\nquestions:\n- Where is this \"Nodejs\" most relevant or commonly applied?\n- Where can you find resources or further information on this \"Nodejs\"?\n- Where are the key research institutions or companies working on this \"Nodejs\"?\n- Where can you find the changelogs or release notes for the different versions?\n- Where are the discussions or forums where these buzzwords are frequently used?\n### name: How\nquestions:\n- How does this \"Nodejs\" work in practice?\n- How can you apply the concepts of this \"Nodejs\" to real-world scenarios?\n- How has this \"Nodejs\" evolved over time?\n- How do the features or functionalities differ between versions?\n- How do the buzzwords relate to the underlying concepts or technologies in this \"Nodejs\"?\n### name: Which\nquestions:\n- Which version is most stable or recommended for use?\n- Which buzzwords should you be aware of to stay current in the field?\n### name: What if\nquestions:\n- What if you need to migrate from one version to another?\n- What if the buzzword is just a hype and lacks substantial backing?\n### name: What are\nquestions:\n- What are the backward compatibility considerations for each version?\n- What are the misconceptions or myths around the buzzwords in this \"Nodejs\"?\n### name: How has\nquestions:\n- How has the community or market response been to different versions?\n- How has the usage of buzzwords evolved over time in this \"Nodejs\"?\n### name: miscellaneous\nquestions:\n- TBD",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+    "name": "What",
+    "parentId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+    "description": "",
+    "smartContent": {
+      "content": "Used for :\n- Definition\n\nex: What is Java",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      }
+    ]
+  },
+  {
+    "uniqueId": "20cb5b8d-adb1-43c7-9b00-4ee77bcbd3f2",
+    "name": "Definition",
+    "parentId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+    "description": "",
+    "smartContent": {
+      "content": "Definition",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      },
+      {
+        "uniqueId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+        "name": "What"
+      }
+    ]
+  },
+  {
+    "uniqueId": "97f66e7c-9a1a-47f0-804a-10d06c4aa4c0",
+    "name": "Version History",
+    "parentId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+    "description": "",
+    "smartContent": {
+      "content": "Version History",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      },
+      {
+        "uniqueId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+        "name": "What"
+      }
+    ]
+  },
+  {
+    "uniqueId": "f97d8d98-a4d7-4702-a2a3-fa6b0f9dedfd",
+    "name": "Alternatives",
+    "parentId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+    "description": "",
+    "smartContent": {
+      "content": "Alternatives",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      },
+      {
+        "uniqueId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+        "name": "What"
+      }
+    ]
+  },
+  {
+    "uniqueId": "89a404ed-7bd7-41e4-9a16-fa96ffea1b70",
+    "name": "Difference Between",
+    "parentId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+    "description": "",
+    "smartContent": {
+      "content": "Difference Between",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      },
+      {
+        "uniqueId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+        "name": "What"
+      }
+    ]
+  },
+  {
+    "uniqueId": "032ee612-7315-4e97-82f3-690609d1dd0d",
+    "name": "Pre-requisites",
+    "parentId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+    "description": "",
+    "smartContent": {
+      "content": "Pre-requisites",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      },
+      {
+        "uniqueId": "84bcd83d-b556-4302-96ed-c4ea67d14e71",
+        "name": "What"
+      }
+    ]
+  },
+  {
+    "uniqueId": "ab47b520-e9ba-4fd2-83c4-c920ac194006",
+    "name": "Why",
+    "parentId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+    "description": "",
+    "smartContent": {
+      "content": "Why",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      }
+    ]
+  },
+  {
+    "uniqueId": "afed5392-2402-4102-b210-287ef6912aff",
+    "name": "When",
+    "parentId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+    "description": "",
+    "smartContent": {
+      "content": "When",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      }
+    ]
+  },
+  {
+    "uniqueId": "da7f3400-70b1-459b-8798-b37cffca3e0e",
+    "name": "Where",
+    "parentId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+    "description": "",
+    "smartContent": {
+      "content": "Where",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      }
+    ]
+  },
+  {
+    "uniqueId": "64c0b75f-30bf-46d8-91ca-e9e51b935d51",
+    "name": "Who",
+    "parentId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+    "description": "",
+    "smartContent": {
+      "content": "Who",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      }
+    ]
+  },
+  {
+    "uniqueId": "0563bcbb-e813-44e5-af4b-c94ee7d99183",
+    "name": "How",
+    "parentId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+    "description": "",
+    "smartContent": {
+      "content": "How",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "67b1192a-6f9b-4027-9ea5-bb8692af868c",
+        "name": "WH Question Type"
+      }
+    ]
+  },
+  {
+    "uniqueId": "bcf60339-260f-43d8-80cf-d20e36db33fb",
+    "name": "Question Categorization",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "",
+    "smartContent": {
+      "content": "**Question Categorization**\n- Based on Difficulty Level\n  - Easy\n  - Medium \n  - Hard \n  - Very Hard \n- Based on Experience\n  - Beginner \n  - Intermediate \n  - Advanced \n  - Expert ",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "9de9d318-8816-46d5-9692-6ecf36cd76f2",
+    "name": "[Difficulty Level]: Easy",
+    "parentId": "bcf60339-260f-43d8-80cf-d20e36db33fb",
+    "description": "",
+    "smartContent": {
+      "content": "[Difficulty Level]: Easy",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      },
+      {
+        "uniqueId": "bcf60339-260f-43d8-80cf-d20e36db33fb",
+        "name": "Question Categorization"
+      }
+    ]
+  },
+  {
+    "uniqueId": "223357cb-50a9-4ac0-9977-db83f67cab93",
+    "name": "Related Tools or APIs",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "",
+    "smartContent": {
+      "content": "Related Tools or APIs with the concept",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "5f626e26-701d-41ab-a1bc-b3be9c419f14",
+    "name": "Best Practices",
+    "parentId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+    "description": "",
+    "smartContent": {
+      "content": "Best Practices",
+      "textOutputType": "text",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "4fa40bfd-7a4f-4fb0-8746-94126ed0aeec",
+        "name": "Concept"
+      }
+    ]
+  },
+  {
+    "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+    "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "ancestors": []
+  },
+  {
+    "uniqueId": "0baa12aa-483c-4c66-8498-ae4f84e3c453",
+    "name": "Interview Preparation",
+    "parentId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+    "description": "Interview Preparation",
+    "smartContent": {
+      "content": "Interview Preparation",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      }
+    ]
+  },
+  {
+    "uniqueId": "ba274d1f-19d5-44cd-be6c-71ecf8ed514b",
+    "name": "Interview Process Tracker",
+    "parentId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+    "description": "This is my Interview process tracker tag. All tasks , which attaching this tag should possess information about contact no of HR, comapny name, status of interview process. company details",
+    "smartContent": {
+      "content": "This is my Interview process tracker tag. All tasks , which attaching this tag should possess information about contact no of HR, comapny name, status of interview process. company details",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      }
+    ]
+  },
+  {
+    "uniqueId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+    "name": "Skills mentioned in Resume",
+    "parentId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+    "description": "",
+    "smartContent": {
+      "content": "# Skills mentioned in Resume\n- Spring Boot\n- J2EE\n- Microservices\n- Maven\n- Java\n- ReactJS\n- Node.js\n- TypeScript\n- AWS\n- Team Leading\n- Team Collaboration\n- Git\n- Jenkins\n- Chef\n- Docker\n- Kubernetes\n- SQL\n- NoSQL\n- Angular\n- HTML\n- CSS\n- Bootstrap",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      }
+    ]
+  },
+  {
+    "uniqueId": "93459834-2802-4d71-84b3-5904d527b94a",
+    "name": "Node js",
+    "parentId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+    "description": "tags related to node js",
+    "smartContent": {
+      "content": "tags related to node js",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      },
+      {
+        "uniqueId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+        "name": "Skills mentioned in Resume"
+      }
+    ]
+  },
+  {
+    "uniqueId": "4dbd245e-b9f6-498e-9d78-ec656e9a239a",
+    "name": "NPM",
+    "parentId": "93459834-2802-4d71-84b3-5904d527b94a",
+    "description": "NPM",
+    "smartContent": {
+      "content": "NPM",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      },
+      {
+        "uniqueId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+        "name": "Skills mentioned in Resume"
+      },
+      {
+        "uniqueId": "93459834-2802-4d71-84b3-5904d527b94a",
+        "name": "Node js"
+      }
+    ]
+  },
+  {
+    "uniqueId": "9f07fea6-7eeb-4ec0-8adc-b8e4fc387a38",
+    "name": "Java",
+    "parentId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+    "description": "",
+    "smartContent": {
+      "content": "<p>All topics, tweets, sections, tasks should link this tag to them. this will help to collectively show them on one place.</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      },
+      {
+        "uniqueId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+        "name": "Skills mentioned in Resume"
+      }
+    ]
+  },
+  {
+    "uniqueId": "124bedcc-63b8-4577-a378-2d5228b99565",
+    "name": "Annotations",
+    "parentId": "9f07fea6-7eeb-4ec0-8adc-b8e4fc387a38",
+    "description": "",
+    "smartContent": {
+      "content": "<p>Annotations</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      },
+      {
+        "uniqueId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+        "name": "Skills mentioned in Resume"
+      },
+      {
+        "uniqueId": "9f07fea6-7eeb-4ec0-8adc-b8e4fc387a38",
+        "name": "Java"
+      }
+    ]
+  },
+  {
+    "uniqueId": "8b24e873-726e-42fa-9c00-24561bd1bcfe",
+    "name": "String",
+    "parentId": "9f07fea6-7eeb-4ec0-8adc-b8e4fc387a38",
+    "description": "",
+    "smartContent": {
+      "content": "<p>All topic , task, topic sections discussing about java string should linked with this tag</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      },
+      {
+        "uniqueId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+        "name": "Skills mentioned in Resume"
+      },
+      {
+        "uniqueId": "9f07fea6-7eeb-4ec0-8adc-b8e4fc387a38",
+        "name": "Java"
+      }
+    ]
+  },
+  {
+    "uniqueId": "76b1dce0-812c-4453-a518-f769212fcf5a",
+    "name": "ReactJS",
+    "parentId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+    "description": "",
+    "smartContent": {
+      "content": "<p>ReactJS</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      },
+      {
+        "uniqueId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+        "name": "Skills mentioned in Resume"
+      }
+    ]
+  },
+  {
+    "uniqueId": "23255fbe-9465-48b8-9ee4-10d10afbd316",
+    "name": "React component Library creation",
+    "parentId": "76b1dce0-812c-4453-a518-f769212fcf5a",
+    "description": "This tag contains information related to React component Library creation.",
+    "smartContent": {
+      "content": "This tag contains information related to React component Library creation.",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "b7c634d6-07f3-4cd3-8cc7-1c8c851a55f3",
+        "name": "Interview Prep Essentials: Top FAQs for Job Hunting - February 22, 2024"
+      },
+      {
+        "uniqueId": "57776f70-72ac-48b3-afea-ebdc2cec0a65",
+        "name": "Skills mentioned in Resume"
+      },
+      {
+        "uniqueId": "76b1dce0-812c-4453-a518-f769212fcf5a",
+        "name": "ReactJS"
+      }
+    ]
+  },
+  {
+    "uniqueId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+    "name": "Priority",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "> This tag is for categorizing tasks, topics, topic-sections on basis of priority\n\nThe Covey Time Management Matrix (also known as the Eisenhower Matrix) organizes tasks into four quadrants based on urgency and importance:\n\n1. **Quadrant I: Urgent and Important**\n   - Tasks that need immediate attention and are critical to your goals.\n\n2. **Quadrant II: Not Urgent but Important**\n   - Tasks that are important for long-term success but do not require immediate action.\n\n3. **Quadrant III: Urgent but Not Important**\n   - Tasks that require immediate attention but do not contribute significantly to your long-term goals.\n\n4. **Quadrant IV: Not Urgent and Not Important**\n   - Tasks that are neither important nor urgent, often time-wasters.\n\nHere's a visual representation:\n\n``` makdown\n|-------------------------|---------------------------|\n| **Quadrant I**              | **Quadrant II**               |\n| Urgent and Important    | Not Urgent but Important  |\n|-------------------------|---------------------------|\n| **Quadrant III**            | **Quadrant IV**               |\n| Urgent but Not Important| Not Urgent and Not Important|\n|-------------------------|---------------------------|\n```\n\nYou can categorize your tasks under these quadrants to better manage your priorities.",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": []
+  },
+  {
+    "uniqueId": "879aecaa-127b-4f1f-ad3a-de0c92bc5900",
+    "name": "Quadrant I: Urgent and Important",
+    "parentId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+    "description": "",
+    "smartContent": {
+      "content": "<p><strong>Quadrant I: Urgent and Important</strong></p><ul><li>Tasks that need immediate attention and are critical to your goals.</li></ul>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+        "name": "Priority"
+      }
+    ]
+  },
+  {
+    "uniqueId": "7ec8a7b7-25aa-41a9-9a1b-c151c8f89d6b",
+    "name": "Quadrant II: Not Urgent but Important",
+    "parentId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+    "description": "",
+    "smartContent": {
+      "content": "<p><strong>Quadrant II: Not Urgent but Important</strong></p><ul><li>Tasks that are important for long-term success but do not require immediate action.</li></ul>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+        "name": "Priority"
+      }
+    ]
+  },
+  {
+    "uniqueId": "9284b3c2-6a06-44c5-bb8a-31a0adfdf539",
+    "name": "Quadrant III: Urgent but Not Important",
+    "parentId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+    "description": "",
+    "smartContent": {
+      "content": "<p><strong>Quadrant III: Urgent but Not Important</strong></p><ul><li>Tasks that require immediate attention but do not contribute significantly to your long-term goals.</li></ul>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+        "name": "Priority"
+      }
+    ]
+  },
+  {
+    "uniqueId": "ac41d54c-3daa-42fe-ad92-5380b1afd1a0",
+    "name": "Quadrant IV: Not Urgent and Not Important",
+    "parentId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+    "description": "",
+    "smartContent": {
+      "content": "<p><strong>Quadrant IV: Not Urgent and Not Important</strong></p><ul><li>Tasks that are neither important nor urgent, often time-wasters.</li></ul>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "86ab1945-4f7e-4d72-984f-204f534f6e6c",
+        "name": "Priority"
+      }
+    ]
+  },
+  {
+    "uniqueId": "91556a06-e195-41ef-8933-fba3f027de44",
+    "name": "test tag",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "<p>test tag</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": []
+  },
+  {
+    "uniqueId": "47dabd16-ac91-47fd-b410-fc607dad9658",
+    "name": "test sub tag",
+    "parentId": "91556a06-e195-41ef-8933-fba3f027de44",
+    "description": "",
+    "smartContent": {
+      "content": "<p>test sub tag12345</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "91556a06-e195-41ef-8933-fba3f027de44",
+        "name": "test tag"
+      }
+    ]
+  },
+  {
+    "uniqueId": "7e68af16-78ae-4182-8f91-4937d6edaae4",
+    "name": "test sub tag2",
+    "parentId": "91556a06-e195-41ef-8933-fba3f027de44",
+    "description": "",
+    "smartContent": {
+      "content": "<p>test sub tag2221</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "91556a06-e195-41ef-8933-fba3f027de44",
+        "name": "test tag"
+      }
+    ]
+  },
+  {
+    "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "name": "Interview-Mgmt-Category-To-Tag-Transformation",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "Interview-Mgmt-Category-To-Tag-Transformation",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "ancestors": []
+  },
+  {
+    "uniqueId": "49221de8-9d2d-4a1b-b332-0886b99d5f96",
+    "name": "Java - Introspection and other technology comparison",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Java - Introspection and other technology comparison ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Java - Introspection and other technology comparison</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "f9e27924-08f7-4cd5-b1cb-8f9f4075cb9a",
+    "name": "Self Evaluation- First Thing First",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Self Evaluation- First Thing First ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Self Evaluation- First Thing First</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "7587345c-f789-44fd-adc0-1ee32945a04b",
+    "name": "Interview - General Introduction Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Interview - General Introduction Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Interview - General Introduction Questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "c54b22d7-8e4e-40b0-a070-dd5b643b0152",
+    "name": "Top 50 Leadership Discussion Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Top 50 Leadership Discussion Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Top 50 Leadership Discussion Questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "ef632169-6bea-4a0c-b892-f9b757e0429d",
+    "name": "DevOps Discussion Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for DevOps Discussion Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>DevOps Discussion Questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "c0daa840-cc90-4284-a888-50fedd7e97eb",
+    "name": "Top 12 JENKIN Discussion Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Top 12 JENKIN Discussion Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Top 12 JENKIN Discussion Questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "0be8fab3-286c-4451-bc18-3985d275cb0a",
+    "name": "Struts 2 Discussion questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Struts 2 Discussion questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Struts 2 Discussion questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "8e321f36-7bd4-41ba-a24c-9300b5ebd65d",
+    "name": "Top 10 Java Serialization Discussion Questions and Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Top 10 Java Serialization Discussion Questions and Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Top 10 Java Serialization Discussion Questions and Answers</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "ae20a5c0-f36e-435f-b411-2bb38617246c",
+    "name": "Servlet Discussion Questions and Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Servlet Discussion Questions and Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Servlet&nbsp;</strong><strong><em>Discussion&nbsp;</em></strong><strong>Questions and Answers</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "8c3a040f-187e-4184-a6f1-f81127e181ab",
+    "name": "Collections Discussion Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Collections Discussion Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Collections Discussion Questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "0d868021-2186-42b9-93ae-5c5c984fc81d",
+    "name": "Java Design Patterns",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Java Design Patterns ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Java Design Patterns</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "77a975ff-2b56-4637-a192-aedaaaf9ddb3",
+    "name": "Spring MVC Discussion Questions with Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Spring MVC Discussion Questions with Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Spring MVC Discussion Questions with Answers</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "1f5529df-8985-4732-9fe1-135adb6686d5",
+    "name": "Maven Discussion questions- WideSkills",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Maven Discussion questions- WideSkills ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Maven Discussion questions- WideSkills</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "14ecb0ad-ee27-45ba-9352-33d471849d46",
+    "name": "Spring Discussion Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Spring Discussion Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Spring Discussion Questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "17588a50-8081-4231-b02f-cb86e9290899",
+    "name": "Expectations and accomplishments",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Expectations and accomplishments ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Expectations and accomplishments</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "468e4013-c6af-49d6-8e1c-9c7a0152ada2",
+    "name": "Management Discussion Questions & Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Management Discussion Questions & Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Management Discussion Questions &amp; Answers</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "3abd2f8d-ac6f-402a-bc5b-cb54176b38ef",
+    "name": "Leadership Discussion Questions & Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Leadership Discussion Questions & Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Leadership Discussion Questions &amp; Answers</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "651a4c93-297c-467a-978a-fe02f326bd05",
+    "name": "Project Manager Discussion Questions & Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Project Manager Discussion Questions & Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Project Manager Discussion Questions &amp; Answers</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "6049d07f-448d-42f8-87a4-6671796959ec",
+    "name": "Java Exception Discussion Questions and Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Java Exception Discussion Questions and Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Java Exception&nbsp;</strong><strong><em>Discussion&nbsp;</em></strong><strong>Questions and Answers</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "566cd31b-4f57-4b5f-a477-52699a96368d",
+    "name": "Apache Ant Discussion Questions and Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Apache Ant Discussion Questions and Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Apache Ant&nbsp;</strong><strong><em>Discussion&nbsp;</em></strong><strong>Questions and Answers</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "c3b3961f-c2a5-42c4-aa24-8d43800218f8",
+    "name": "Hibernate Discussion Questions - XML Configurations",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Hibernate Discussion Questions - XML Configurations ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Hibernate Discussion Questions - XML Configurations</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "7c2088bd-1717-487e-89b6-31627b394e28",
+    "name": "Quartz Enterprise Job Scheduler - Discussion Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Quartz Enterprise Job Scheduler - Discussion Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Quartz Enterprise Job Scheduler - Discussion Questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "349e4df8-5c11-4708-98e9-754d0e480ba8",
+    "name": "My office works - Concentrix second innings",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for My office works - Concentrix second innings ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>My office works - Concentrix second innings</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "51e3c3ac-f757-413b-8d0f-dafef1ea2533",
+    "name": "Analysis of common Human nature - Target \"how to manage",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Analysis of common Human nature - Target \"how to manage ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Analysis of common Human nature - Target \"how to manage human resources\"</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "1f9c6d3b-681e-4393-92d9-c34611d48093",
+    "name": "Get Rid of bad habits and Enhancing good habits",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Get Rid of bad habits and Enhancing good habits ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Get Rid of bad habits and Enhancing good habits</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "42edbb72-b315-4ef6-91b9-8df3c21b5600",
+    "name": "My Divorce Case Hearings, my statements, doubts and questions and",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for My Divorce Case Hearings, my statements, doubts and questions and ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>My Divorce Case Hearings, my statements, doubts and questions and Success</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "9111fec2-460a-4395-8c37-a613bb03ab21",
+    "name": "Analysis of different situations and its postmortem - what happened",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Analysis of different situations and its postmortem - what happened ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Analysis of different situations and its postmortem - what happened there and what ought to be done there.&nbsp;</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "44265080-8ce5-421e-ae3c-75e24d448b6c",
+    "name": "My Task diary, its progress and completion Template {office/home/other}Description of",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for My Task diary, its progress and completion Template {office/home/other}Description of ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>My Task diary, its progress and completion<br><br></em></strong>Template</div><ul><li><!--block--><em>{office/home/other}Description of task</em></li><li><!--block--><em>Target Date</em><ul><li><!--block--><em>10-Feb-2018</em></li><li><!--block--><em><del>1-Feb-2018 -change due to xxx reason</del></em></li></ul></li><li><!--block--><em>Status</em><ul><li><!--block--><em>inprogress - 10-Feb-2018</em></li><li><!--block--><em><del>open - 1-Feb-2018</del></em></li></ul></li><li><!--block--><em>Recurrence</em></li><li><!--block-->Task History<ul><li><!--block-->15-Feb-2018 - yyyyy</li><li><!--block-->1-Feb-2018 - xxxxxxx</li></ul></li><li><!--block-->Dependency<ul><li><!--block-->Dependency 1</li><li><!--block-->Dependency 2</li></ul></li></ul>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "75a19a5a-183b-49e1-b8e6-25f5ae4727c1",
+    "name": "My different views of questions and groups - For easy",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for My different views of questions and groups - For easy ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>My different views of questions and groups - For easy handling<br><br></strong>Template</div><ul><li><!--block--><em>{Home/Office/Others} - Description of view- why this view?</em></li><li><!--block--><em>Aim to achieve from group.</em></li><li><!--block-->Description and link of questions/groups&nbsp;</li></ul>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "15b4c53d-0b96-4cd7-a5c8-183e782e0713",
+    "name": "Linux Common Practices",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Linux Common Practices ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Linux Common Practices</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "9077a89b-8169-4be0-acac-26381f0b9a28",
+    "name": "GIT - Overview and Discussions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for GIT - Overview and Discussions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>GIT - Overview and Discussions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "40bc3224-e8d5-493f-86c3-c024a51956d2",
+    "name": "mere khud se sawal",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for mere khud se sawal ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>mere khud se sawal</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "40158289-0a1f-45df-89f2-7cf726d73ffb",
+    "name": "Data Structure and Algorithm in Java",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Data Structure and Algorithm in Java ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Data Structure and Algorithm in Java</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "6bf28d0e-74e6-4b58-abc6-9a3b0b09347f",
+    "name": "Planning and Management - BCOM, MCOM , SET, NET",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Planning and Management - BCOM, MCOM , SET, NET ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Planning and Management - BCOM, MCOM , SET, NET</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "8b31d1aa-afc2-4491-b205-be8db0ff440e",
+    "name": "Spring Boot",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Spring Boot ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Spring Boot</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "87dd5336-8954-4bb4-8d59-f474c06639fc",
+    "name": "Artificial Intelligence (old set)",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Artificial Intelligence (old set) ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Artificial Intelligence (old set) \t</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "2141427e-5485-494c-ab5f-d51f3bffa0e2",
+    "name": "Artificial Intelligence - latest questions, mainly added in sequence of",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Artificial Intelligence - latest questions, mainly added in sequence of ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Artificial Intelligence -&nbsp;</strong>latest questions, mainly added in sequence of creation date.</div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "11856b38-d307-4e24-88d6-28ae06f320cf",
+    "name": "Ethical Hacking",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Ethical Hacking ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Ethical Hacking</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "25e50b4b-c64b-4eb0-8272-672850aefb96",
+    "name": "Robotic Process Automation Interview Questions And Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Robotic Process Automation Interview Questions And Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Robotic Process Automation Interview Questions And Answers</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "2669356f-e6a2-411a-85e1-51437e154396",
+    "name": "Power BI Interview Questions And Answers",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Power BI Interview Questions And Answers ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Power BI Interview Questions And Answers</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "a4710519-292c-4af0-ad94-c1e413316144",
+    "name": "Business Analyst Interview Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Business Analyst Interview Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Business Analyst Interview Questions</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "16b0d0b5-88bb-4d30-8c73-74b925d7d785",
+    "name": "Windows Commands",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Windows Commands ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>Windows Commands</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "114e8a2f-c866-4663-a3b9-46b2db59f763",
+    "name": "JSON / JSON Java API questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for JSON / JSON Java API questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>JSON / JSON Java API questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "885a93b0-d7c7-40ab-96cf-afb43f36722b",
+    "name": "Database Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Database Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong><em>Database Questions</em></strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "3bb9b728-53ff-4d1c-b51a-5534b150d69a",
+    "name": "CSS Questions",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for CSS Questions ",
+    "smartContent": {
+      "content": "<div><!--block--><strong>CSS Questions</strong></div>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "176405b4-5d9c-46b4-83ca-1dde8c1333d8",
+    "name": "Java 8",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Java 8 ",
+    "smartContent": {
+      "content": "Java 8\n  - Pre-requisites\n    - Java",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "faa2984b-7017-47e4-b57c-b840ef41c55b",
+    "name": "Java 8 features",
+    "parentId": "176405b4-5d9c-46b4-83ca-1dde8c1333d8",
+    "description": "Tag for Java 8 features ",
+    "smartContent": {
+      "content": "<p>Java 8 features</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      },
+      {
+        "uniqueId": "176405b4-5d9c-46b4-83ca-1dde8c1333d8",
+        "name": "Java 8"
+      }
+    ]
+  },
+  {
+    "uniqueId": "69ea0a95-662e-41dc-a1f4-07892c6041f9",
+    "name": "Lambda Expressions",
+    "parentId": "faa2984b-7017-47e4-b57c-b840ef41c55b",
+    "description": "Tag for Lambda Expressions ",
+    "smartContent": {
+      "content": "Lambda Expressions",
+      "textOutputType": "text",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      },
+      {
+        "uniqueId": "176405b4-5d9c-46b4-83ca-1dde8c1333d8",
+        "name": "Java 8"
+      },
+      {
+        "uniqueId": "faa2984b-7017-47e4-b57c-b840ef41c55b",
+        "name": "Java 8 features"
+      }
+    ]
+  },
+  {
+    "uniqueId": "01967e3e-bf97-4f7c-b223-09567d54f782",
+    "name": "Functional Interfaces",
+    "parentId": "faa2984b-7017-47e4-b57c-b840ef41c55b",
+    "description": "Tag for Functional Interfaces ",
+    "smartContent": {
+      "content": "Functional Interfaces",
+      "textOutputType": "text",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      },
+      {
+        "uniqueId": "176405b4-5d9c-46b4-83ca-1dde8c1333d8",
+        "name": "Java 8"
+      },
+      {
+        "uniqueId": "faa2984b-7017-47e4-b57c-b840ef41c55b",
+        "name": "Java 8 features"
+      }
+    ]
+  },
+  {
+    "uniqueId": "282cf814-907d-451c-aec4-04c4c096c946",
+    "name": "Streams API",
+    "parentId": "faa2984b-7017-47e4-b57c-b840ef41c55b",
+    "description": "Tag for Streams API ",
+    "smartContent": {
+      "content": "Streams API",
+      "textOutputType": "text",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      },
+      {
+        "uniqueId": "176405b4-5d9c-46b4-83ca-1dde8c1333d8",
+        "name": "Java 8"
+      },
+      {
+        "uniqueId": "faa2984b-7017-47e4-b57c-b840ef41c55b",
+        "name": "Java 8 features"
+      }
+    ]
+  },
+  {
+    "uniqueId": "e8f554c2-8790-4cd7-b234-a692865f567a",
+    "name": "Probable interview questions: JavaScript",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Probable interview questions: JavaScript ",
+    "smartContent": {
+      "content": "<p>Probable interview questions: JavaScript</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "08af6d0c-aa74-49d7-ac8f-a8be4b32a8d2",
+    "name": "Promises",
+    "parentId": "e8f554c2-8790-4cd7-b234-a692865f567a",
+    "description": "Tag for Promises ",
+    "smartContent": {
+      "content": "Promises",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      },
+      {
+        "uniqueId": "e8f554c2-8790-4cd7-b234-a692865f567a",
+        "name": "Probable interview questions: JavaScript"
+      }
+    ]
+  },
+  {
+    "uniqueId": "ea28ec0f-9953-4b1d-8585-ae5d397329ac",
+    "name": "Concept related questions",
+    "parentId": "08af6d0c-aa74-49d7-ac8f-a8be4b32a8d2",
+    "description": "Tag for Concept related questions ",
+    "smartContent": {
+      "content": "Concept related questions",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      },
+      {
+        "uniqueId": "e8f554c2-8790-4cd7-b234-a692865f567a",
+        "name": "Probable interview questions: JavaScript"
+      },
+      {
+        "uniqueId": "08af6d0c-aa74-49d7-ac8f-a8be4b32a8d2",
+        "name": "Promises"
+      }
+    ]
+  },
+  {
+    "uniqueId": "25ec83bc-b56e-4a02-a424-4501436de84d",
+    "name": "Old Topics",
+    "parentId": "c1452f3d-e309-40a2-bb55-009f13551952",
+    "description": "Tag for Old Topics ",
+    "smartContent": {
+      "content": "<p>Old Topics</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "c1452f3d-e309-40a2-bb55-009f13551952",
+        "name": "Interview-Mgmt-Category-To-Tag-Transformation"
+      }
+    ]
+  },
+  {
+    "uniqueId": "44be9e52-c716-42d1-bdb6-5a9e86b94fff",
+    "name": "Task",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "<p>Task</p>",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": []
+  },
+  {
+    "uniqueId": "a6061529-c300-4cc3-b127-6dfcacaee741",
+    "name": "Feature Requests",
+    "parentId": "44be9e52-c716-42d1-bdb6-5a9e86b94fff",
+    "description": "Feature Requests\n\nLater I will add workflow for Feature request from its creation till deployment followed by implementation, testing",
+    "smartContent": {
+      "content": "Feature Requests\n\nLater I will add workflow for Feature request from its creation till deployment followed by implementation, testing",
+      "textOutputType": "html",
+      "textInputType": "CKEditor"
+    },
+    "ancestors": [
+      {
+        "uniqueId": "44be9e52-c716-42d1-bdb6-5a9e86b94fff",
+        "name": "Task"
+      }
+    ]
+  }
+]
