@@ -31,27 +31,40 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <style>
     .tree-toggle[aria-current="true"] { background-color: #f5eed9; color: #8b6914; font-weight: 600; }
+    @media (max-width: 767px) {
+      .sidebar-open .sidebar-drawer { transform: translateX(0); }
+      .sidebar-open .sidebar-backdrop { opacity: 1; pointer-events: auto; }
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="min-h-screen flex flex-col bg-surface text-neutral-800 text-[15px] leading-relaxed font-sans">
-  <header class="shrink-0 py-3 px-5 bg-panel border-b border-border flex items-center gap-4">
-    <h1 class="font-serif text-xl font-normal m-0 text-neutral-800">Topics Browser</h1>
-    <div class="flex-1 max-w-[320px]">
-      <input type="text" id="search" placeholder="Search topics…" class="w-full py-2 px-3 border border-border rounded-lg bg-surface placeholder:text-muted focus:outline-none focus:border-accent focus:bg-panel font-sans" />
+  <header class="shrink-0 py-3 px-4 sm:px-5 bg-panel border-b border-border flex flex-wrap items-center gap-3 sm:gap-4">
+    <div class="flex items-center gap-2 min-w-0 flex-1 sm:flex-initial">
+      <button type="button" id="sidebarToggle" class="md:hidden p-2 -ml-2 rounded-lg hover:bg-hover border-0 bg-transparent cursor-pointer text-neutral-800" aria-label="Toggle topics menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <h1 class="font-serif text-lg sm:text-xl font-normal m-0 text-neutral-800 truncate">Topics Browser</h1>
     </div>
-    <label class="py-2 px-3 font-sans cursor-pointer bg-accent-bg text-accent border border-amber-800/30 rounded-lg hover:bg-amber-100">
-      <input type="file" id="fileInput" accept=".json" class="hidden" />
-      Load from file
-    </label>
-    <span class="text-sm text-muted" id="status">Loading…</span>
+    <div class="w-full sm:w-auto sm:flex-1 sm:min-w-0 sm:max-w-[320px] order-3 sm:order-none">
+      <input type="text" id="search" placeholder="Search topics…" class="w-full py-2 px-3 border border-border rounded-lg bg-surface placeholder:text-muted focus:outline-none focus:border-accent focus:bg-panel font-sans text-base" />
+    </div>
+    <div class="flex items-center gap-2 shrink-0">
+      <label class="py-2 px-3 font-sans cursor-pointer bg-accent-bg text-accent border border-amber-800/30 rounded-lg hover:bg-amber-100 text-sm whitespace-nowrap">
+        <input type="file" id="fileInput" accept=".json" class="hidden" />
+        Load from file
+      </label>
+      <span class="text-xs sm:text-sm text-muted shrink-0" id="status">Loading…</span>
+    </div>
   </header>
 
-  <main class="flex-1 flex min-h-0">
-    <aside class="w-[280px] shrink-0 bg-panel border-r border-border overflow-y-auto py-2">
-      <div id="treeContainer"></div>
+  <div class="fixed inset-0 z-30 bg-black/30 opacity-0 pointer-events-none transition-opacity md:hidden sidebar-backdrop" id="sidebarBackdrop" aria-hidden="true"></div>
+
+  <main class="flex-1 flex min-h-0 relative">
+    <aside id="sidebar" class="sidebar-drawer fixed md:relative inset-y-0 left-0 z-40 w-[280px] min-h-0 pt-14 md:pt-2 pb-2 -translate-x-full md:translate-x-0 transition-transform duration-200 ease-out shrink-0 bg-panel border-r border-border overflow-y-auto" aria-label="Topics">
+      <div id="treeContainer" class="py-2"></div>
     </aside>
-    <article class="flex-1 overflow-y-auto py-6 px-8 pb-8">
+    <article class="flex-1 min-w-0 overflow-y-auto py-4 px-4 sm:py-6 sm:px-6 md:px-8 pb-8">
       <div id="detail"></div>
     </article>
   </main>
@@ -63,6 +76,18 @@
       const detailEl = document.getElementById('detail');
       const searchInput = document.getElementById('search');
       const fileInput = document.getElementById('fileInput');
+      const sidebar = document.getElementById('sidebar');
+      const sidebarToggle = document.getElementById('sidebarToggle');
+      const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+
+      function isMobile() { return window.matchMedia('(max-width: 767px)').matches; }
+      function sidebarOpen() { return document.body.classList.contains('sidebar-open'); }
+      function openSidebar() { document.body.classList.add('sidebar-open'); }
+      function closeSidebar() { document.body.classList.remove('sidebar-open'); }
+      function toggleSidebar() { document.body.classList.toggle('sidebar-open'); }
+
+      if (sidebarToggle) sidebarToggle.addEventListener('click', toggleSidebar);
+      if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
 
       let topics = [];
       let topicById = new Map();
@@ -99,7 +124,7 @@
         return div.innerHTML;
       }
 
-      const contentBlockClasses = 'mb-6 empty:hidden [&_h1]:font-serif [&_h2]:font-serif [&_h3]:font-serif [&_h1]:font-normal [&_h2]:font-normal [&_h3]:font-normal [&_h1]:mt-4 [&_h2]:mt-4 [&_h3]:mt-4 [&_h1]:mb-2 [&_h2]:mb-2 [&_h3]:mb-2 [&_h1:first-child]:mt-0 [&_pre]:bg-neutral-800 [&_pre]:text-amber-50 [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:text-sm [&_code]:font-mono [&_code]:text-[0.9em] [&_p]:my-2 [&_ul]:my-2 [&_ol]:my-2 [&_ul]:pl-6 [&_ol]:pl-6 [&_a]:text-accent';
+      const contentBlockClasses = 'mb-6 empty:hidden break-words [&_h1]:font-serif [&_h2]:font-serif [&_h3]:font-serif [&_h1]:font-normal [&_h2]:font-normal [&_h3]:font-normal [&_h1]:mt-4 [&_h2]:mt-4 [&_h3]:mt-4 [&_h1]:mb-2 [&_h2]:mb-2 [&_h3]:mb-2 [&_h1:first-child]:mt-0 [&_pre]:bg-neutral-800 [&_pre]:text-amber-50 [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:text-sm [&_code]:font-mono [&_code]:text-[0.9em] [&_p]:my-2 [&_ul]:my-2 [&_ol]:my-2 [&_ul]:pl-6 [&_ol]:pl-6 [&_a]:text-accent';
 
       function renderTopicContent(smartContent) {
         if (!smartContent || !smartContent.content) return '';
@@ -120,7 +145,7 @@
           const secBody = renderTopicContent(sec.smartContent);
           const meta = [sec.createdDate, sec.updatedDate].filter(Boolean).map(d => new Date(d).toLocaleDateString()).join(' · ');
           sectionsHtml += `
-            <div class="border border-border rounded-lg p-4 mb-4 bg-panel shadow-sm">
+            <div class="border border-border rounded-lg p-3 sm:p-4 mb-4 bg-panel shadow-sm">
               <h3 class="font-serif text-lg m-0 mb-2">${escapeHtml(sec.name || 'Section')}</h3>
               ${meta ? `<div class="text-xs text-muted mb-2">${escapeHtml(meta)}</div>` : ''}
               <div class="${contentBlockClasses} section-body">${secBody}</div>
@@ -128,7 +153,7 @@
         });
         detailEl.innerHTML = `
           <div class="text-[0.8125rem] text-muted mb-2">${escapeHtml(breadcrumb)}</div>
-          <h2 class="font-serif text-2xl font-normal m-0 mb-3 text-neutral-800">${escapeHtml(topic.name || 'Untitled')}</h2>
+          <h2 class="font-serif text-xl sm:text-2xl font-normal m-0 mb-3 text-neutral-800">${escapeHtml(topic.name || 'Untitled')}</h2>
           ${topic.description ? `<p class="text-xs text-muted mb-5">${escapeHtml(topic.description)}</p>` : ''}
           <div class="${contentBlockClasses} topic-body">${bodyHtml}</div>
           ${sectionsHtml ? '<div class="sections">' + sectionsHtml + '</div>' : ''}
@@ -185,6 +210,7 @@
                 childList.hidden = open;
               }
               renderDetail(topic);
+              if (isMobile()) closeSidebar();
             }
           });
         });
