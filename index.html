@@ -223,7 +223,7 @@
         return `
           <li class="m-0" data-id="${escapeHtml(topic.uniqueId)}">
             <button type="button" class="tree-toggle flex items-center gap-1 py-1.5 px-3 cursor-pointer border-0 bg-transparent w-full text-left font-inherit text-neutral-800 dark:text-neutral-200 hover:bg-hover dark:hover:bg-neutral-700" id="${id}" aria-expanded="${isOpen}" data-id="${escapeHtml(topic.uniqueId)}">
-              <span class="chevron w-[18px] shrink-0 opacity-60 transition-transform ${hasVisibleChildren ? (isOpen ? 'rotate-90' : '') : 'opacity-20'}">▶</span>
+              ${hasVisibleChildren ? `<span class="chevron w-[18px] shrink-0 opacity-60 transition-transform ${isOpen ? 'rotate-90' : ''}">▶</span>` : '<span class="w-[18px] shrink-0" aria-hidden="true"></span>'}
               <span>${escapeHtml(topic.name || 'Untitled')}</span>
             </button>
             ${childLis}
