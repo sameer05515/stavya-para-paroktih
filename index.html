@@ -188,11 +188,27 @@
         `;
       }
 
+      function topicMatches(topic, filter) {
+        if (!filter) return true;
+        return (topic.name || '').toLowerCase().includes(filter.toLowerCase());
+      }
+
+      function hasMatchingDescendant(topicId, filter) {
+        if (!filter) return true;
+        const topic = topicById.get(topicId);
+        if (!topic) return false;
+        if (topicMatches(topic, filter)) return true;
+        const kids = childrenByParentId.get(topicId) || [];
+        return kids.some(function (k) { return hasMatchingDescendant(k.uniqueId, filter); });
+      }
+
       function treeItem(topic, depth, filter) {
         const kids = childrenByParentId.get(topic.uniqueId) || [];
         const name = (topic.name || '').toLowerCase();
-        const match = !filter || name.includes(filter.toLowerCase());
-        const childrenFiltered = filter ? kids.filter(t => (t.name || '').toLowerCase().includes(filter.toLowerCase())) : kids;
+        const match = topicMatches(topic, filter);
+        const childrenFiltered = filter
+          ? kids.filter(function (t) { return topicMatches(t, filter) || hasMatchingDescendant(t.uniqueId, filter); })
+          : kids;
         const hasVisibleChildren = childrenFiltered.length > 0;
         const id = 'topic-' + topic.uniqueId;
         const isOpen = depth === 0 || match || hasVisibleChildren;
@@ -200,7 +216,7 @@
         let childLis = '';
         if (hasVisibleChildren) {
           childLis = '<ul class="list-none m-0 pl-4 [&_.tree-toggle]:pl-2 [&_ul_.tree-toggle]:text-[0.9375rem]">' +
-            childrenFiltered.map(c => treeItem(c, depth + 1, filter)).join('') +
+            childrenFiltered.map(function (c) { return treeItem(c, depth + 1, filter); }).join('') +
             '</ul>';
         }
 
@@ -216,9 +232,11 @@
 
       function renderTree(filter) {
         const roots = (childrenByParentId.get('__root') || []);
-        const filtered = filter ? roots.filter(t => (t.name || '').toLowerCase().includes(filter.toLowerCase())) : roots;
+        const filtered = filter
+          ? roots.filter(function (t) { return topicMatches(t, filter) || hasMatchingDescendant(t.uniqueId, filter); })
+          : roots;
         treeContainer.innerHTML = '<ul class="list-none m-0 p-0">' +
-          filtered.map(t => treeItem(t, 0, filter)).join('') +
+          filtered.map(function (t) { return treeItem(t, 0, filter); }).join('') +
           '</ul>';
 
         treeContainer.querySelectorAll('.tree-toggle').forEach(btn => {
