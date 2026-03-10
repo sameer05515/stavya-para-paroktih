@@ -3411,6 +3411,117 @@
     "sections": []
   },
   {
+    "uniqueId": "54cbf45f-c0a0-4b6e-b650-77d746d73731",
+    "name": "AWS",
+    "parentId": "2d6ff3de-7146-47c2-9c1a-9003aad05d6d",
+    "description": "",
+    "smartContent": {
+      "content": "AWS",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [
+      "e85963e9-1ba8-44ef-bb91-be09891e2151"
+    ],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2d6ff3de-7146-47c2-9c1a-9003aad05d6d",
+        "name": "DevOps"
+      }
+    ],
+    "sections": [
+      {
+        "_id": "69b0258877e91662a23dfe7a",
+        "uniqueId": "4ef34572-0f20-4049-84d0-ccced4ec45d9",
+        "linkedTopicUniqueId": "54cbf45f-c0a0-4b6e-b650-77d746d73731",
+        "name": "List few frequently used AWS services",
+        "smartContent": {
+          "content": "Developer interviews me commonly used **AWS services** (short list). Mostly backend / microservices / DevOps roles me puchhe jaate hain.\n\n**Compute**\n\n```\nEC2        -> Virtual servers\nLambda     -> Serverless functions\nECS        -> Container orchestration\nEKS        -> Kubernetes managed service\nElastic Beanstalk -> PaaS deployment\n```\n\n**Storage**\n\n```\nS3         -> Object storage\nEBS        -> Block storage for EC2\nEFS        -> Shared file system\nGlacier    -> Archive storage\n```\n\n**Database**\n\n```\nRDS        -> Managed SQL (MySQL, Postgres, Oracle)\nDynamoDB   -> NoSQL key-value database\nAurora     -> High performance MySQL/Postgres compatible DB\nElastiCache -> Redis / Memcached caching\n```\n\n**Networking**\n\n```\nVPC            -> Virtual private network\nRoute53        -> DNS service\nElastic Load Balancer (ALB/NLB)\nCloudFront     -> CDN\nAPI Gateway    -> API management\n```\n\n**Security**\n\n```\nIAM        -> Users / roles / permissions\nCognito    -> Authentication / user pools\nKMS        -> Key management / encryption\nSecrets Manager -> Manage credentials\n```\n\n**Monitoring / Logging**\n\n```\nCloudWatch -> Metrics + logs\nCloudTrail -> API activity audit\nX-Ray      -> Distributed tracing\n```\n\n**Messaging / Integration**\n\n```\nSQS        -> Message queue\nSNS        -> Pub/Sub notifications\nEventBridge -> Event bus\nStep Functions -> Workflow orchestration\n```\n\n**DevOps**\n\n```\nCodeCommit -> Git repo\nCodeBuild  -> Build service\nCodeDeploy -> Deployment automation\nCodePipeline -> CI/CD pipeline\n```\n\n---\n\n**Java Microservices Interview me sabse important AWS services:**\n\n```\nEC2\nS3\nRDS / Aurora\nDynamoDB\nLambda\nAPI Gateway\nSQS\nSNS\nCloudWatch\nIAM\nVPC\n```\n\n---\n\nAgar chaho to main ye bhi de sakta hoon:\n\n* **Top 30 AWS interview questions (Java backend developers ke liye)**\n* **AWS architecture for Spring Boot microservices (real production setup)**\n* **AWS services mapping for Java projects (code + architecture)**\n\nBatana, main direct **interview-focused list** bana dunga.\n",
+          "textOutputType": "markdown",
+          "textInputType": "TextArea"
+        },
+        "order": 9999,
+        "softDelete": false,
+        "tags": [],
+        "createdDate": "2026-03-10T14:07:04.940Z",
+        "updatedDate": "2026-03-10T14:07:04.940Z"
+      }
+    ]
+  },
+  {
+    "uniqueId": "0d032af5-0c25-413b-aec4-01d24cbe5753",
+    "name": "Top 30 AWS interview questions (Java backend developers ke liye)",
+    "parentId": "54cbf45f-c0a0-4b6e-b650-77d746d73731",
+    "description": "",
+    "smartContent": {
+      "content": "Java backend / microservices roles me AWS se related ye **frequently asked interview questions** hote hain. Short aur practical list — mostly **Spring Boot + microservices + cloud deployment** context me.\n\n---\n\n**1**\n\n```\nWhat is AWS EC2?\nHow is EC2 different from traditional servers?\n```\n\n**2**\n\n```\nDifference between EC2, ECS, and EKS.\nWhen would you choose each?\n```\n\n**3**\n\n```\nWhat is AWS Lambda?\nWhen should you prefer Lambda over EC2?\n```\n\n**4**\n\n```\nExplain S3 storage classes.\nStandard vs IA vs Glacier vs Deep Archive.\n```\n\n**5**\n\n```\nWhat is AWS VPC?\nKey components of VPC architecture.\n```\n\n**6**\n\n```\nDifference between Public subnet and Private subnet.\n```\n\n**7**\n\n```\nWhat is an Internet Gateway vs NAT Gateway?\n```\n\n**8**\n\n```\nDifference between Security Group and Network ACL.\n```\n\n**9**\n\n```\nWhat is Elastic Load Balancer?\nDifference between:\nALB\nNLB\nCLB\n```\n\n**10**\n\n```\nHow does Auto Scaling work in AWS?\n```\n\n---\n\n**11**\n\n```\nWhat is Amazon RDS?\nSupported database engines?\n```\n\n**12**\n\n```\nDifference between RDS and DynamoDB.\n```\n\n**13**\n\n```\nWhat is DynamoDB partition key and sort key?\n```\n\n**14**\n\n```\nWhat are DynamoDB secondary indexes?\nGSI vs LSI\n```\n\n**15**\n\n```\nHow does AWS ElastiCache improve application performance?\nRedis vs Memcached?\n```\n\n---\n\n**16**\n\n```\nWhat is IAM?\nUsers vs Roles vs Policies.\n```\n\n**17**\n\n```\nWhat is IAM Role for EC2?\nWhy is it better than storing credentials?\n```\n\n**18**\n\n```\nWhat is AWS KMS?\nHow is encryption handled in AWS?\n```\n\n**19**\n\n```\nWhat is AWS Secrets Manager?\nDifference from Parameter Store.\n```\n\n---\n\n**20**\n\n```\nWhat is CloudWatch?\nMetrics vs Logs vs Alarms.\n```\n\n**21**\n\n```\nDifference between CloudWatch and CloudTrail.\n```\n\n**22**\n\n```\nHow do you monitor a production microservice running on AWS?\n```\n\n---\n\n**23**\n\n```\nWhat is AWS SQS?\nStandard queue vs FIFO queue.\n```\n\n**24**\n\n```\nWhat is AWS SNS?\nHow is it different from SQS?\n```\n\n**25**\n\n```\nHow do SQS and SNS work together in event-driven architecture?\n```\n\n---\n\n**26**\n\n```\nWhat is AWS API Gateway?\nHow does it integrate with Lambda or microservices?\n```\n\n**27**\n\n```\nExplain serverless architecture in AWS.\n```\n\n---\n\n**28**\n\n```\nWhat is AWS CloudFront?\nHow does CDN improve performance?\n```\n\n**29**\n\n```\nWhat is Infrastructure as Code?\nCloudFormation vs Terraform.\n```\n\n**30**\n\n```\nExplain a real production architecture for a Java microservices application on AWS.\n```\n\nExample expected architecture:\n\n```\nClient\n  ↓\nCloudFront\n  ↓\nALB\n  ↓\nECS / EC2 (Spring Boot microservices)\n  ↓\nRDS / DynamoDB\n  ↓\nSQS (async processing)\n  ↓\nElastiCache (Redis caching)\n  ↓\nCloudWatch (monitoring)\n```\n\n---\n\nAgar aap **10–15 years Java experience** interviews target kar rahe ho, to ye bhi prepare karo:\n\n* **20 AWS scenario-based interview questions**\n* **Real AWS microservices architecture questions**\n* **AWS + Spring Boot deployment questions**\n* **Tricky AWS debugging questions (production issues)**\n\nChahe to main next message me **“20 brutal AWS scenario-based interview questions (Tech Lead level)”** bhi de sakta hoon. Ye FAANG-level hote hain.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2d6ff3de-7146-47c2-9c1a-9003aad05d6d",
+        "name": "DevOps"
+      },
+      {
+        "uniqueId": "54cbf45f-c0a0-4b6e-b650-77d746d73731",
+        "name": "AWS"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "513c8ef1-507f-4753-af6f-e15114a640e8",
+    "name": "S3 interview questions",
+    "parentId": "54cbf45f-c0a0-4b6e-b650-77d746d73731",
+    "description": "",
+    "smartContent": {
+      "content": "Prem, Java backend/AWS interviews me **Amazon S3** bahut frequently pucha jata hai. Neeche **S3 interview questions (basic → advanced)** diye hain. Short answers + quick examples so that revision fast ho.\n\n---\n\n**1. What is Amazon S3?**\nObject storage service for storing files as **objects inside buckets**.\n\n```\nS3 Structure\n\nBucket\n ├── file1.jpg\n ├── file2.pdf\n └── logs/\n      └── app.log\n```\n\n---\n\n**2. What are main components of S3?**\n\n* Bucket\n* Object\n* Key\n* Version ID\n* Metadata\n\n---\n\n**3. What is an S3 bucket?**\n\nContainer for storing objects.\n\n```\naws s3 mb s3://my-backend-logs\n```\n\n---\n\n**4. What is an S3 object?**\n\nData + metadata stored inside bucket.\n\n```\n{\n  \"Key\": \"invoice.pdf\",\n  \"Size\": \"2MB\",\n  \"Metadata\": {\n      \"uploadedBy\": \"system\"\n  }\n}\n```\n\n---\n\n**5. What is the maximum object size in S3?**\n\n```\nMax object size = 5 TB\nSingle PUT upload = 5 GB\nMultipart upload required > 5 GB\n```\n\n---\n\n**6. What is S3 multipart upload?**\n\nLarge file ko **multiple parts me upload** karna.\n\n```\naws s3api create-multipart-upload \\\n--bucket my-bucket \\\n--key bigfile.zip\n```\n\n---\n\n**7. What are S3 storage classes?**\n\n| Storage Class        | Use Case          |\n| -------------------- | ----------------- |\n| Standard             | frequent access   |\n| Standard-IA          | infrequent access |\n| One Zone-IA          | cheaper           |\n| Glacier              | archival          |\n| Glacier Deep Archive | long-term backup  |\n\n---\n\n**8. What is S3 versioning?**\n\nOld versions of objects store karta hai.\n\n```\naws s3api put-bucket-versioning \\\n--bucket my-bucket \\\n--versioning-configuration Status=Enabled\n```\n\n---\n\n**9. What is S3 lifecycle policy?**\n\nAutomatically move/delete objects.\n\nExample:\n\n```\n{\n \"Rules\": [\n   {\n     \"Status\": \"Enabled\",\n     \"Transition\": {\n       \"Days\": 30,\n       \"StorageClass\": \"GLACIER\"\n     }\n   }\n ]\n}\n```\n\n---\n\n**10. What is S3 pre-signed URL?**\n\nTemporary secure access to object.\n\nJava example:\n\n```java\nS3Presigner presigner = S3Presigner.create();\n\nGetObjectRequest request = GetObjectRequest.builder()\n        .bucket(\"my-bucket\")\n        .key(\"report.pdf\")\n        .build();\n\nGetObjectPresignRequest presignRequest =\n        GetObjectPresignRequest.builder()\n        .signatureDuration(Duration.ofMinutes(10))\n        .getObjectRequest(request)\n        .build();\n\nPresignedGetObjectRequest presignedRequest =\n        presigner.presignGetObject(presignRequest);\n\nSystem.out.println(presignedRequest.url());\n```\n\n---\n\n**11. What is S3 consistency model?**\n\nS3 provides:\n\n```\nStrong Read After Write Consistency\n```\n\nfor PUT/DELETE operations.\n\n---\n\n**12. Difference between S3 and EBS**\n\n| Feature | S3             | EBS             |\n| ------- | -------------- | --------------- |\n| Type    | Object storage | Block storage   |\n| Use     | Files          | EC2 disk        |\n| Access  | HTTP           | attached to EC2 |\n\n---\n\n**13. What is S3 Transfer Acceleration?**\n\nFaster uploads using **CloudFront edge network**.\n\n---\n\n**14. What is S3 Event Notification?**\n\nTrigger events when file uploaded.\n\nExample:\n\n```\nS3 → Lambda\nS3 → SNS\nS3 → SQS\n```\n\n---\n\n**15. Example: S3 upload using Java**\n\n```java\nS3Client s3 = S3Client.builder().build();\n\nPutObjectRequest request = PutObjectRequest.builder()\n        .bucket(\"my-bucket\")\n        .key(\"test.txt\")\n        .build();\n\ns3.putObject(request, Paths.get(\"test.txt\"));\n```\n\n---\n\n**16. How to secure S3 bucket?**\n\n```\nIAM policies\nBucket policies\nBlock public access\nEncryption\nVPC endpoint\n```\n\n---\n\n**17. What encryption options exist in S3?**\n\n```\nSSE-S3\nSSE-KMS\nSSE-C\nClient-side encryption\n```\n\n---\n\n**18. What is S3 replication?**\n\nCopy objects automatically to another region.\n\n```\nCRR  → Cross Region Replication\nSRR  → Same Region Replication\n```\n\n---\n\n**19. What is S3 static website hosting?**\n\nHost static site.\n\n```\nindex.html\nerror.html\n```\n\nEnable:\n\n```\nProperties → Static website hosting\n```\n\n---\n\n**20. How S3 scales automatically?**\n\nNo limit on number of objects.\n\n```\nvirtually unlimited storage\n```\n\n---\n\nIf you want, I can also give:\n\n* **30 tricky S3 scenario-based interview questions (Amazon / FAANG style)**\n* **S3 architecture interview questions for 10+ year developers**\n* **Real system design: File upload service using S3 + CloudFront + Lambda**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2d6ff3de-7146-47c2-9c1a-9003aad05d6d",
+        "name": "DevOps"
+      },
+      {
+        "uniqueId": "54cbf45f-c0a0-4b6e-b650-77d746d73731",
+        "name": "AWS"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "748cbd1e-e994-4969-a2e6-294438cc1eb7",
+    "name": "EC2 interview questions",
+    "parentId": "54cbf45f-c0a0-4b6e-b650-77d746d73731",
+    "description": "",
+    "smartContent": {
+      "content": "EC2 AWS ka **most asked service** hai interviews me, especially **Java backend + microservices developers** ke liye. Neeche **EC2 interview questions (basic → advanced)** diye hain.\n\n---\n\n## 1. Basic EC2 Interview Questions\n\n1. What is EC2 in AWS?\n2. Difference between **EC2 and Lambda**?\n3. What are different **EC2 instance types**?\n4. What is **AMI (Amazon Machine Image)**?\n5. What is **EBS volume**?\n6. Difference between **EBS and Instance Store**?\n7. What is **Security Group in EC2**?\n8. Difference between **Security Group vs NACL**?\n9. What is **Elastic IP**?\n10. What happens when an EC2 instance stops?\n\n---\n\n## 2. Intermediate EC2 Questions\n\n11. Difference between **Stop vs Terminate EC2 instance**?\n12. How does **Auto Scaling Group** work?\n13. What is **Load Balancer with EC2**?\n14. Difference between **Application LB vs Network LB**?\n15. What is **Key Pair in EC2**?\n16. How to connect EC2 instance using SSH?\n17. What is **Placement Group**?\n18. Difference between **Reserved / Spot / On-demand instances**?\n19. What is **User Data script** in EC2?\n20. How does **EC2 pricing model** work?\n\n---\n\n## 3. Advanced EC2 Interview Questions\n\n21. How do you deploy a **Java Spring Boot application on EC2**?\n22. How do you scale EC2 automatically during traffic spikes?\n23. How to achieve **high availability using EC2**?\n24. How does **Auto Scaling health check** work?\n25. What is **EC2 lifecycle state**?\n26. What is **EC2 metadata service**?\n27. What is **IAM role attached to EC2**?\n28. Difference between **vertical scaling vs horizontal scaling** in EC2?\n29. How to reduce **EC2 cost in production**?\n30. How does **Elastic Load Balancer distribute traffic to EC2 instances**?\n\n---\n\n## 4. Scenario Based Questions (Very Common)\n\n31. Your EC2 instance is **running but website not accessible** — how will you debug?\n\n32. Your **CPU usage is 95% continuously**, what steps will you take?\n\n33. You want **zero downtime deployment** for EC2 instances — how?\n\n34. Your **EC2 instance lost SSH access**, what will you do?\n\n35. Your **application logs filled disk (EBS full)** — how to fix?\n\n---\n\n## 5. Java Developer Specific EC2 Questions\n\n36. How do you deploy **Dockerized Spring Boot microservices on EC2**?\n\nExample Docker run:\n\n```bash\ndocker run -d \\\n-p 8080:8080 \\\n--name springboot-app \\\nmycompany/springboot-app:latest\n```\n\n---\n\n37. **CI/CD deploy to EC2 using GitHub Actions**\n\n```yaml\nname: Deploy to EC2\n\non:\n  push:\n    branches:\n      - main\n\njobs:\n  deploy:\n    runs-on: ubuntu-latest\n\n    steps:\n      - name: Deploy\n        uses: appleboy/ssh-action@v1\n        with:\n          host: ${{ secrets.EC2_HOST }}\n          username: ec2-user\n          key: ${{ secrets.EC2_KEY }}\n          script: |\n            cd /app\n            git pull origin main\n            docker-compose up -d --build\n```\n\n---\n\n38. **Spring Boot run on EC2**\n\n```bash\njava -jar app.jar \\\n--server.port=8080 \\\n--spring.profiles.active=prod\n```\n\n---\n\n39. **User Data script for EC2 auto setup**\n\n```bash\n#!/bin/bash\n\nyum update -y\nyum install docker -y\nservice docker start\n\ndocker run -d -p 80:8080 mycompany/springboot-app\n```\n\n---\n\n40. **Check EC2 instance metadata**\n\n```bash\ncurl http://169.254.169.254/latest/meta-data/\n```\n\n---\n\nIf you want, I can also give:\n\n* **🔥 50 brutal AWS interview questions (senior developers)**\n* **🔥 30 EC2 scenario-based interview problems**\n* **🔥 AWS architecture interview questions (FAANG level)**\n\nThese are **very powerful for 10–15 year Java backend developers interviews**.\n",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2d6ff3de-7146-47c2-9c1a-9003aad05d6d",
+        "name": "DevOps"
+      },
+      {
+        "uniqueId": "54cbf45f-c0a0-4b6e-b650-77d746d73731",
+        "name": "AWS"
+      }
+    ],
+    "sections": []
+  },
+  {
     "uniqueId": "de1f0632-12a4-4b50-8d51-cb08bbca704b",
     "name": "AI and Machine learning",
     "parentId": null,
