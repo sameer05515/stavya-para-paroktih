@@ -200,9 +200,11 @@
           if (navBar) navBar.classList.add('hidden');
           currentQuestionId = null;
           detailEl.innerHTML = '<div class="text-muted dark:text-neutral-400 italic py-8">Select a question from the sidebar.</div>';
+          try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
           return;
         }
         currentQuestionId = question.uniqueId;
+        try { history.replaceState(null, '', window.location.pathname + window.location.search + '#' + question.uniqueId); } catch (e) {}
         const idx = orderedQuestionIds.indexOf(question.uniqueId);
         if (navBar) {
           navBar.classList.remove('hidden');
@@ -368,6 +370,10 @@
         buildIndex();
         statusEl.textContent = questions.length + ' questions loaded.';
         renderTree(searchInput.value.trim());
+        var hashId = (location.hash || '').replace(/^#/, '').trim();
+        if (hashId && questionById.get(hashId)) {
+          renderDetail(questionById.get(hashId));
+        }
       }
 
       function loadFromUrl() {
@@ -402,6 +408,13 @@
 
       document.getElementById('prevBtn').addEventListener('click', goToPrev);
       document.getElementById('nextBtn').addEventListener('click', goToNext);
+
+      window.addEventListener('hashchange', function () {
+        var hashId = (location.hash || '').replace(/^#/, '').trim();
+        if (!hashId || !questionById.get(hashId)) return;
+        if (hashId === currentQuestionId) return;
+        renderDetail(questionById.get(hashId));
+      });
 
       loadFromUrl();
     })();
