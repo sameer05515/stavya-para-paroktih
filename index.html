@@ -79,6 +79,17 @@
       <div id="treeContainer" class="py-2"></div>
     </aside>
     <article class="flex-1 min-w-0 overflow-y-auto py-4 px-4 sm:py-6 sm:px-6 md:px-8 pb-8 bg-surface dark:bg-neutral-900">
+      <div id="navBar" class="hidden flex items-center justify-between gap-4 mb-4 pb-3 border-b border-border dark:border-neutral-700">
+        <button type="button" id="prevBtn" class="flex items-center gap-1.5 py-2 px-3 rounded-lg hover:bg-hover dark:hover:bg-neutral-700 border border-border dark:border-neutral-600 text-neutral-800 dark:text-neutral-200 font-medium text-sm cursor-pointer" aria-label="Previous topic">
+          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Prev
+        </button>
+        <span id="navPosition" class="text-sm text-muted dark:text-neutral-400 tabular-nums"></span>
+        <button type="button" id="nextBtn" class="flex items-center gap-1.5 py-2 px-3 rounded-lg hover:bg-hover dark:hover:bg-neutral-700 border border-border dark:border-neutral-600 text-neutral-800 dark:text-neutral-200 font-medium text-sm cursor-pointer" aria-label="Next topic">
+          Next
+          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
       <div id="detail"></div>
     </article>
   </main>
@@ -120,6 +131,17 @@
       let topics = [];
       let topicById = new Map();
       let childrenByParentId = new Map();
+      let orderedTopicIds = [];
+      let currentTopicId = null;
+
+      function buildOrderedList() {
+        orderedTopicIds = [];
+        function visit(t) {
+          orderedTopicIds.push(t.uniqueId);
+          (childrenByParentId.get(t.uniqueId) || []).forEach(visit);
+        }
+        (childrenByParentId.get('__root') || []).forEach(visit);
+      }
 
       function buildIndex() {
         topicById.clear();
@@ -131,6 +153,7 @@
           childrenByParentId.get(pid).push(t);
         });
         childrenByParentId.forEach(list => list.sort((a, b) => (a.name || '').localeCompare(b.name || '')));
+        buildOrderedList();
       }
 
       function renderContent(html) {
@@ -161,10 +184,24 @@
       }
 
       function renderDetail(topic) {
+        const navBar = document.getElementById('navBar');
+        const navPosition = document.getElementById('navPosition');
         if (!topic) {
+          if (navBar) navBar.classList.add('hidden');
+          currentTopicId = null;
           detailEl.innerHTML = '<div class="text-muted dark:text-neutral-400 italic py-8">Select a topic from the sidebar.</div>';
+          try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
           return;
         }
+        currentTopicId = topic.uniqueId;
+        try { history.replaceState(null, '', window.location.pathname + window.location.search + '#' + topic.uniqueId); } catch (e) {}
+        const idx = orderedTopicIds.indexOf(topic.uniqueId);
+        if (navBar) {
+          navBar.classList.remove('hidden');
+          navBar.classList.add('flex');
+        }
+        if (navPosition) navPosition.textContent = (idx >= 0 ? idx + 1 : 0) + ' / ' + orderedTopicIds.length;
+
         const ancestorNames = (topic.ancestors || []).map(a => a.name).filter(Boolean);
         const breadcrumb = ancestorNames.length ? ancestorNames.join(' › ') + ' › ' + (topic.name || '') : (topic.name || '');
         const bodyHtml = renderTopicContent(topic.smartContent);
@@ -186,6 +223,55 @@
           <div class="${contentBlockClasses} topic-body">${bodyHtml}</div>
           ${sectionsHtml ? '<div class="sections">' + sectionsHtml + '</div>' : ''}
         `;
+        syncSidebarToCurrent();
+      }
+
+      function syncSidebarToCurrent() {
+        if (!currentTopicId) return;
+        treeContainer.querySelectorAll('.tree-toggle').forEach(b => { b.removeAttribute('aria-current'); });
+        const li = treeContainer.querySelector('li[data-id="' + currentTopicId + '"]');
+        if (!li) return;
+        const btn = li.querySelector('.tree-toggle');
+        if (btn) btn.setAttribute('aria-current', 'true');
+        let el = li.parentElement;
+        while (el && el !== treeContainer) {
+          if (el.tagName === 'UL') {
+            el.hidden = false;
+            const prev = el.previousElementSibling;
+            if (prev && prev.classList.contains('tree-toggle')) {
+              prev.setAttribute('aria-expanded', 'true');
+              const ch = prev.querySelector('.chevron');
+              if (ch) ch.classList.add('rotate-90');
+            }
+          }
+          el = el.parentElement;
+        }
+      }
+
+      function goToByIndex(index) {
+        if (orderedTopicIds.length === 0) return;
+        const id = orderedTopicIds[index];
+        const topic = topicById.get(id);
+        if (topic) {
+          renderDetail(topic);
+          if (isMobile()) closeSidebar();
+        }
+      }
+
+      function goToPrev() {
+        if (orderedTopicIds.length === 0) return;
+        const idx = orderedTopicIds.indexOf(currentTopicId);
+        const current = idx >= 0 ? idx : 0;
+        const next = (current - 1 + orderedTopicIds.length) % orderedTopicIds.length;
+        goToByIndex(next);
+      }
+
+      function goToNext() {
+        if (orderedTopicIds.length === 0) return;
+        const idx = orderedTopicIds.indexOf(currentTopicId);
+        const current = idx >= 0 ? idx : 0;
+        const next = (current + 1) % orderedTopicIds.length;
+        goToByIndex(next);
       }
 
       function topicMatches(topic, filter) {
@@ -266,6 +352,7 @@
           const open = btn && btn.getAttribute('aria-expanded') === 'true';
           ul.hidden = !open;
         });
+        syncSidebarToCurrent();
       }
 
       function run(data) {
@@ -278,6 +365,10 @@
         buildIndex();
         statusEl.textContent = topics.length + ' topics loaded.';
         renderTree(searchInput.value.trim());
+        var hashId = (location.hash || '').replace(/^#/, '').trim();
+        if (hashId && topicById.get(hashId)) {
+          renderDetail(topicById.get(hashId));
+        }
       }
 
       function loadFromUrl() {
@@ -309,6 +400,16 @@
 
       searchInput.addEventListener('input', () => {
         if (topics.length) renderTree(searchInput.value.trim());
+      });
+
+      document.getElementById('prevBtn').addEventListener('click', goToPrev);
+      document.getElementById('nextBtn').addEventListener('click', goToNext);
+
+      window.addEventListener('hashchange', function () {
+        var hashId = (location.hash || '').replace(/^#/, '').trim();
+        if (!hashId || !topicById.get(hashId)) return;
+        if (hashId === currentTopicId) return;
+        renderDetail(topicById.get(hashId));
       });
 
       loadFromUrl();
