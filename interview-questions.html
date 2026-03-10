@@ -79,6 +79,17 @@
       <div id="treeContainer" class="py-2"></div>
     </aside>
     <article class="flex-1 min-w-0 overflow-y-auto py-4 px-4 sm:py-6 sm:px-6 md:px-8 pb-8 bg-surface dark:bg-neutral-900">
+      <div id="navBar" class="hidden flex items-center justify-between gap-4 mb-4 pb-3 border-b border-border dark:border-neutral-700">
+        <button type="button" id="prevBtn" class="flex items-center gap-1.5 py-2 px-3 rounded-lg hover:bg-hover dark:hover:bg-neutral-700 border border-border dark:border-neutral-600 text-neutral-800 dark:text-neutral-200 font-medium text-sm cursor-pointer" aria-label="Previous question">
+          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Prev
+        </button>
+        <span id="navPosition" class="text-sm text-muted dark:text-neutral-400 tabular-nums"></span>
+        <button type="button" id="nextBtn" class="flex items-center gap-1.5 py-2 px-3 rounded-lg hover:bg-hover dark:hover:bg-neutral-700 border border-border dark:border-neutral-600 text-neutral-800 dark:text-neutral-200 font-medium text-sm cursor-pointer" aria-label="Next question">
+          Next
+          <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
       <div id="detail"></div>
     </article>
   </main>
@@ -117,6 +128,17 @@
       let questions = [];
       let questionById = new Map();
       let childrenByParentId = new Map();
+      let orderedQuestionIds = [];
+      let currentQuestionId = null;
+
+      function buildOrderedList() {
+        orderedQuestionIds = [];
+        function visit(q) {
+          orderedQuestionIds.push(q.uniqueId);
+          (childrenByParentId.get(q.uniqueId) || []).forEach(visit);
+        }
+        (childrenByParentId.get('__root') || []).forEach(visit);
+      }
 
       function buildIndex() {
         questionById.clear();
@@ -135,6 +157,7 @@
             return (a.name || '').localeCompare(b.name || '');
           });
         });
+        buildOrderedList();
       }
 
       function escapeHtml(s) {
@@ -171,10 +194,22 @@
       const contentBlockClasses = 'mb-6 empty:hidden break-words [&_h1]:font-serif [&_h2]:font-serif [&_h3]:font-serif [&_h1]:font-normal [&_h2]:font-normal [&_h3]:font-normal [&_h1]:mt-4 [&_h2]:mt-4 [&_h3]:mt-4 [&_h1]:mb-2 [&_h2]:mb-2 [&_h3]:mb-2 [&_h1:first-child]:mt-0 [&_pre]:bg-neutral-800 [&_pre]:dark:bg-neutral-700 [&_pre]:text-amber-50 [&_pre]:dark:text-neutral-200 [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:text-sm [&_code]:font-mono [&_code]:text-[0.9em] [&_p]:my-2 [&_ul]:my-2 [&_ol]:my-2 [&_ul]:pl-6 [&_ol]:pl-6 [&_a]:text-accent [&_a]:dark:text-amber-400';
 
       function renderDetail(question) {
+        const navBar = document.getElementById('navBar');
+        const navPosition = document.getElementById('navPosition');
         if (!question) {
+          if (navBar) navBar.classList.add('hidden');
+          currentQuestionId = null;
           detailEl.innerHTML = '<div class="text-muted dark:text-neutral-400 italic py-8">Select a question from the sidebar.</div>';
           return;
         }
+        currentQuestionId = question.uniqueId;
+        const idx = orderedQuestionIds.indexOf(question.uniqueId);
+        if (navBar) {
+          navBar.classList.remove('hidden');
+          navBar.classList.add('flex');
+        }
+        if (navPosition) navPosition.textContent = (idx >= 0 ? idx + 1 : 0) + ' / ' + orderedQuestionIds.length;
+
         const ancestorNames = (question.ancestors || []).map(function (a) { return a.name; }).filter(Boolean);
         const breadcrumb = ancestorNames.length ? ancestorNames.join(' › ') + ' › ' + (question.name || '') : (question.name || '');
         const questionBody = renderSmartContent(question.smartContent);
@@ -195,6 +230,55 @@
           qRating +
           '<div class="' + contentBlockClasses + ' question-body">' + questionBody + '</div>' +
           (answersHtml ? '<div class="answers mt-6">' + answersHtml + '</div>' : '');
+        syncSidebarToCurrent();
+      }
+
+      function syncSidebarToCurrent() {
+        if (!currentQuestionId) return;
+        treeContainer.querySelectorAll('.tree-toggle').forEach(function (b) { b.removeAttribute('aria-current'); });
+        const li = treeContainer.querySelector('li[data-id="' + currentQuestionId + '"]');
+        if (!li) return;
+        const btn = li.querySelector('.tree-toggle');
+        if (btn) btn.setAttribute('aria-current', 'true');
+        let el = li.parentElement;
+        while (el && el !== treeContainer) {
+          if (el.tagName === 'UL') {
+            el.hidden = false;
+            const prev = el.previousElementSibling;
+            if (prev && prev.classList.contains('tree-toggle')) {
+              prev.setAttribute('aria-expanded', 'true');
+              const ch = prev.querySelector('.chevron');
+              if (ch) ch.classList.add('rotate-90');
+            }
+          }
+          el = el.parentElement;
+        }
+      }
+
+      function goToByIndex(index) {
+        if (orderedQuestionIds.length === 0) return;
+        const id = orderedQuestionIds[index];
+        const question = questionById.get(id);
+        if (question) {
+          renderDetail(question);
+          if (isMobile()) closeSidebar();
+        }
+      }
+
+      function goToPrev() {
+        if (orderedQuestionIds.length === 0) return;
+        const idx = orderedQuestionIds.indexOf(currentQuestionId);
+        const current = idx >= 0 ? idx : 0;
+        const next = (current - 1 + orderedQuestionIds.length) % orderedQuestionIds.length;
+        goToByIndex(next);
+      }
+
+      function goToNext() {
+        if (orderedQuestionIds.length === 0) return;
+        const idx = orderedQuestionIds.indexOf(currentQuestionId);
+        const current = idx >= 0 ? idx : 0;
+        const next = (current + 1) % orderedQuestionIds.length;
+        goToByIndex(next);
       }
 
       function questionMatches(q, filter) {
@@ -271,6 +355,7 @@
           const open = btn && btn.getAttribute('aria-expanded') === 'true';
           ul.hidden = !open;
         });
+        syncSidebarToCurrent();
       }
 
       function run(data) {
@@ -314,6 +399,9 @@
       searchInput.addEventListener('input', function () {
         if (questions.length) renderTree(searchInput.value.trim());
       });
+
+      document.getElementById('prevBtn').addEventListener('click', goToPrev);
+      document.getElementById('nextBtn').addEventListener('click', goToNext);
 
       loadFromUrl();
     })();
