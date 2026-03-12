@@ -20799,7 +20799,11 @@
     "name": "11 What is the JavaScript execution context?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The **JavaScript execution context** is the environment in which **JavaScript code is evaluated and executed**.\nIt contains information about **variables, functions, scope, and the value of `this`**.\n\nWhenever JavaScript runs code, it creates an **execution context**.\n\n---\n\n**Example**\n\n```javascript\nvar a = 10;\n\nfunction test(){\n  var b = 20;\n  console.log(b);\n}\n\ntest();\n```\n\nWhen this code runs, JavaScript creates:\n\n```text\nGlobal Execution Context\nFunction Execution Context (test)\n```\n\n---\n\n**Components of Execution Context**\n\n1. **Variable Environment**\n\nStores variables and function declarations.\n\n```javascript\nvar a = 10;\n\nfunction greet(){\n  console.log(\"hello\");\n}\n```\n\n---\n\n2. **Scope Chain**\n\nDetermines how variables are accessed.\n\n```javascript\nvar a = 10;\n\nfunction test(){\n  console.log(a);\n}\n```\n\nThe function looks up variables in its **scope chain**.\n\n---\n\n3. **`this` Binding**\n\nDetermines what `this` refers to.\n\n```javascript\nconst user = {\n  name:\"Prem\",\n  greet(){\n    console.log(this.name);\n  }\n}\n```\n\n---\n\n**Types of Execution Context**\n\n1. **Global Execution Context**\n\nCreated when the script starts.\n\n```javascript\nconsole.log(\"Hello\");\n```\n\n---\n\n2. **Function Execution Context**\n\nCreated whenever a function is invoked.\n\n```javascript\nfunction sum(a,b){\n  return a+b;\n}\n\nsum(2,3);\n```\n\n---\n\n**Execution Context Phases**\n\n```text\n1. Creation Phase\n   - memory allocated\n   - variables initialized\n   - functions stored\n\n2. Execution Phase\n   - code executed line by line\n```\n\n---\n\n**Execution Flow**\n\n```text\nCall Stack\n------------\nGlobal Context\ntest()\nconsole.log()\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20819,7 +20823,11 @@
     "name": "12 What are the phases of execution context?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The **JavaScript execution context** is created in **two main phases**:\n\n1. **Creation Phase (Memory Creation Phase)**\n2. **Execution Phase (Code Execution Phase)**\n\n---\n\n**1. Creation Phase**\n\nIn this phase, JavaScript prepares memory before running the code.\n\nSteps performed:\n\n* Memory is allocated for variables and functions\n* Variables declared with `var` are initialized with `undefined`\n* Function declarations are stored completely in memory\n* `this` value is determined\n\nExample:\n\n```javascript\nconsole.log(a);\n\nvar a = 10;\n\nfunction greet(){\n  console.log(\"Hello\");\n}\n```\n\nDuring creation phase:\n\n```text\nMemory Allocation\n------------------\na       → undefined\ngreet() → function stored\n```\n\n---\n\n**2. Execution Phase**\n\nIn this phase, JavaScript executes the code **line by line** and assigns actual values to variables.\n\nExample:\n\n```javascript\nvar a = 10;\n\nfunction greet(){\n  console.log(\"Hello\");\n}\n\ngreet();\n```\n\nExecution flow:\n\n```text\nLine 1 → a = 10\nLine 5 → greet() called\nLine 6 → console.log(\"Hello\")\n```\n\n---\n\n**Execution Context Flow**\n\n```text\nCall Stack\n-------------\nGlobal Execution Context\nFunction Execution Context\nconsole.log()\n```\n\n---\n\n**Summary**\n\n```text\nCreation Phase\n- Memory allocation\n- Variables initialized (undefined)\n- Functions stored\n\nExecution Phase\n- Code runs line by line\n- Variables get actual values\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20839,7 +20847,11 @@
     "name": "13 What is the call stack?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The **Call Stack** is a data structure used by the JavaScript engine to **keep track of function execution**. It works on the **LIFO (Last In, First Out)** principle.\n\nWhenever a function is called, a **new execution context is pushed onto the call stack**, and when the function finishes, it is **popped off the stack**.\n\n---\n\n**Example**\n\n```javascript\nfunction one(){\n  two();\n}\n\nfunction two(){\n  three();\n}\n\nfunction three(){\n  console.log(\"Running\");\n}\n\none();\n```\n\n---\n\n**Call Stack Execution**\n\n```text\nStep 1\nCall Stack\n-----------\none()\n\nStep 2\n-----------\none()\ntwo()\n\nStep 3\n-----------\none()\ntwo()\nthree()\n\nStep 4\n-----------\nconsole.log()\n```\n\nAfter execution finishes:\n\n```text\nconsole.log() → removed\nthree() → removed\ntwo() → removed\none() → removed\n```\n\n---\n\n**Stack Overflow Example**\n\nIf functions call each other infinitely, the stack exceeds its limit.\n\n```javascript\nfunction test(){\n  test();\n}\n\ntest();\n```\n\nResult:\n\n```\nRangeError: Maximum call stack size exceeded\n```\n\n---\n\n**Key Points**\n\n* JavaScript is **single-threaded**\n* Call stack manages **function execution order**\n* Uses **push and pop operations**\n* Stack overflow occurs when recursion is uncontrolled.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20859,7 +20871,11 @@
     "name": "14 What is the event loop?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The **Event Loop** is a mechanism in JavaScript that allows the **single-threaded JavaScript engine to handle asynchronous operations** such as timers, API calls, and promises.\n\nIt continuously checks whether the **Call Stack is empty** and then moves tasks from the **queues** into the Call Stack for execution.\n\n---\n\n**Example**\n\n```javascript\nconsole.log(\"start\");\n\nsetTimeout(()=>{\n  console.log(\"timeout\");\n},0);\n\nPromise.resolve().then(()=>{\n  console.log(\"promise\");\n});\n\nconsole.log(\"end\");\n```\n\n**Output**\n\n```\nstart\nend\npromise\ntimeout\n```\n\n---\n\n**How the Event Loop Works**\n\n1. **Call Stack**\n   Executes synchronous code.\n\n2. **Web APIs**\n   Browser handles async tasks like:\n\n   * `setTimeout`\n   * `fetch`\n   * DOM events\n\n3. **Queues**\n\n```\nMicrotask Queue\n- Promise callbacks\n- MutationObserver\n\nCallback Queue (Macrotask Queue)\n- setTimeout\n- setInterval\n- DOM events\n```\n\n4. **Event Loop**\n\nThe event loop checks:\n\n```\nif(Call Stack is empty)\n   execute Microtask Queue\n   execute Callback Queue\n```\n\n---\n\n**Execution Flow**\n\n```\nJavaScript Engine\n   ├─ Call Stack\n   ├─ Web APIs\n   ├─ Microtask Queue\n   └─ Callback Queue\n\nEvent Loop\n   → moves tasks to Call Stack\n```\n\n---\n\n**Key Points**\n\n* JavaScript is **single-threaded**\n* Event loop enables **non-blocking asynchronous execution**\n* **Microtasks (Promises)** run before **Macrotasks (setTimeout)**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20879,7 +20895,11 @@
     "name": "15 What are microtasks and macrotasks?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "In JavaScript’s event loop, asynchronous callbacks are placed into two main queues: **microtasks** and **macrotasks (tasks)**. The key difference is **priority and when they are executed**.\n\n---\n\n**Microtasks**\n\nMicrotasks run **immediately after the current synchronous code finishes and before the event loop processes macrotasks**.\n\nCommon microtasks:\n\n* `Promise.then()`\n* `Promise.catch()`\n* `Promise.finally()`\n* `queueMicrotask()`\n* `MutationObserver`\n\n```javascript\nconsole.log(\"start\");\n\nPromise.resolve().then(()=>{\n  console.log(\"microtask\");\n});\n\nconsole.log(\"end\");\n```\n\nOutput\n\n```\nstart\nend\nmicrotask\n```\n\n---\n\n**Macrotasks (Tasks)**\n\nMacrotasks are executed **after the microtask queue is completely empty**.\n\nCommon macrotasks:\n\n* `setTimeout`\n* `setInterval`\n* `setImmediate` (Node.js)\n* DOM events\n* I/O operations\n\n```javascript\nconsole.log(\"start\");\n\nsetTimeout(()=>{\n  console.log(\"macrotask\");\n},0);\n\nconsole.log(\"end\");\n```\n\nOutput\n\n```\nstart\nend\nmacrotask\n```\n\n---\n\n**Combined Example**\n\n```javascript\nconsole.log(\"start\");\n\nsetTimeout(()=>console.log(\"timeout\"),0);\n\nPromise.resolve().then(()=>console.log(\"promise\"));\n\nconsole.log(\"end\");\n```\n\nOutput\n\n```\nstart\nend\npromise\ntimeout\n```\n\n---\n\n**Execution Order**\n\n```\nSynchronous Code\n      ↓\nMicrotask Queue\n      ↓\nMacrotask Queue\n```\n\nMicrotasks always execute **before macrotasks** once the call stack becomes empty.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20899,7 +20919,11 @@
     "name": "16 What is the difference between setTimeout and setImmediate?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`setTimeout()` and `setImmediate()` are both used to **schedule asynchronous execution**, but they run in **different phases of the event loop**.\n\n---\n\n**1. setTimeout**\n\n`setTimeout()` schedules a function to run **after a minimum delay**.\n\n```javascript\nsetTimeout(()=>{\n  console.log(\"timeout executed\");\n},0);\n```\n\nEven with `0` delay, it runs **after the timer phase of the event loop**.\n\n---\n\n**2. setImmediate**\n\n`setImmediate()` schedules a function to run **immediately after the current event loop cycle**, during the **check phase** (mainly in Node.js).\n\n```javascript\nsetImmediate(()=>{\n  console.log(\"immediate executed\");\n});\n```\n\n---\n\n**Execution Example (Node.js)**\n\n```javascript\nsetTimeout(()=>{\n  console.log(\"timeout\");\n},0);\n\nsetImmediate(()=>{\n  console.log(\"immediate\");\n});\n```\n\nPossible output:\n\n```\nimmediate\ntimeout\n```\n\nor\n\n```\ntimeout\nimmediate\n```\n\nOrder is **not guaranteed** when used in the main script.\n\n---\n\n**Example inside I/O**\n\n```javascript\nconst fs = require(\"fs\");\n\nfs.readFile(__filename, ()=>{\n  setTimeout(()=>console.log(\"timeout\"),0);\n  setImmediate(()=>console.log(\"immediate\"));\n});\n```\n\nOutput:\n\n```\nimmediate\ntimeout\n```\n\nHere `setImmediate()` executes first.\n\n---\n\n**Key Differences**\n\n```\nFeature        setTimeout            setImmediate\n------------------------------------------------------\nDelay          configurable delay    runs immediately\nEvent loop     Timer phase           Check phase\nEnvironment    Browser + Node.js     Mostly Node.js\nExecution      after delay           after I/O cycle\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20919,7 +20943,11 @@
     "name": "17 What is the difference between synchronous and asynchronous JavaScript?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The difference between **synchronous** and **asynchronous** JavaScript is how tasks are executed.\n\n---\n\n**1. Synchronous JavaScript**\n\nIn synchronous execution, code runs **line by line**. Each task must **finish before the next one starts**.\n\n```javascript\nconsole.log(\"Start\");\n\nfunction task(){\n  console.log(\"Task running\");\n}\n\ntask();\n\nconsole.log(\"End\");\n```\n\nOutput\n\n```\nStart\nTask running\nEnd\n```\n\nHere each statement **waits for the previous one to complete**.\n\n---\n\n**2. Asynchronous JavaScript**\n\nIn asynchronous execution, some operations run **in the background**, allowing the program to continue executing other code.\n\n```javascript\nconsole.log(\"Start\");\n\nsetTimeout(()=>{\n  console.log(\"Async Task\");\n},2000);\n\nconsole.log(\"End\");\n```\n\nOutput\n\n```\nStart\nEnd\nAsync Task\n```\n\nThe `setTimeout` runs **after 2 seconds without blocking the main thread**.\n\n---\n\n**3. Common Asynchronous APIs**\n\n* `setTimeout`\n* `setInterval`\n* `fetch`\n* `Promise`\n* `async/await`\n\n```javascript\nasync function load(){\n  const res = await fetch(\"/api/users\");\n}\n```\n\n---\n\n**4. Quick Comparison**\n\n```\nFeature          Synchronous        Asynchronous\n---------------------------------------------------\nExecution        Sequential         Non-blocking\nWaiting          Yes                No\nPerformance      Slower for I/O     Faster for I/O\nExamples         calculations       API calls, timers\n```\n\nJavaScript is **single-threaded**, but asynchronous behavior is achieved using **Web APIs and the event loop**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20939,7 +20967,11 @@
     "name": "18 How does the browser handle asynchronous operations?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Browsers handle asynchronous operations using the **JavaScript runtime architecture**, which includes the **Call Stack, Web APIs, Task Queues, and the Event Loop**. This allows JavaScript (which is **single-threaded**) to perform non-blocking operations.\n\n---\n\n**1. Call Stack**\n\nJavaScript executes synchronous code inside the **Call Stack**.\n\n```javascript\nconsole.log(\"Start\");\nconsole.log(\"End\");\n```\n\nExecution order:\n\n```\nStart\nEnd\n```\n\n---\n\n**2. Web APIs**\n\nWhen JavaScript encounters async operations, the browser moves them to **Web APIs**.\n\nExamples of Web APIs:\n\n* `setTimeout`\n* `fetch`\n* DOM events\n* `XMLHttpRequest`\n\n```javascript\nsetTimeout(()=>{\n  console.log(\"Timer done\");\n},2000);\n```\n\nThe timer is handled by the **browser**, not the JS engine.\n\n---\n\n**3. Task Queues**\n\nAfter completion, callbacks are placed into queues.\n\n```\nMicrotask Queue\n- Promise.then\n- queueMicrotask\n\nMacrotask Queue\n- setTimeout\n- setInterval\n- DOM events\n```\n\nExample:\n\n```javascript\nPromise.resolve().then(()=>{\n console.log(\"promise done\");\n});\n```\n\n---\n\n**4. Event Loop**\n\nThe **Event Loop** continuously checks:\n\n```\nIf Call Stack is empty\n      ↓\nTake task from Microtask Queue\n      ↓\nThen from Macrotask Queue\n      ↓\nPush it into Call Stack\n```\n\nExample:\n\n```javascript\nconsole.log(\"Start\");\n\nsetTimeout(()=>console.log(\"Timeout\"),0);\n\nPromise.resolve().then(()=>console.log(\"Promise\"));\n\nconsole.log(\"End\");\n```\n\nOutput\n\n```\nStart\nEnd\nPromise\nTimeout\n```\n\n---\n\n**Summary**\n\nBrowser async execution flow:\n\n```\nJavaScript Engine\n   ├─ Call Stack\n   ├─ Web APIs\n   ├─ Microtask Queue\n   └─ Macrotask Queue\n\nEvent Loop\n   → moves callbacks to Call Stack\n```\n\nThis architecture enables **non-blocking, asynchronous execution in browsers**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20959,7 +20991,11 @@
     "name": "19 What are Web APIs?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Web APIs** are **browser-provided interfaces** that allow JavaScript to interact with browser features and perform tasks that the JavaScript engine alone cannot handle.\n\nThese APIs are **not part of the JavaScript language itself**; they are provided by the **browser environment**.\n\n---\n\n**Common Web APIs**\n\n* DOM API\n* `setTimeout` / `setInterval`\n* Fetch API\n* Local Storage API\n* Geolocation API\n* Canvas API\n\n---\n\n**Example: setTimeout (Web API)**\n\n```javascript\nconsole.log(\"Start\");\n\nsetTimeout(()=>{\n  console.log(\"Timer finished\");\n},2000);\n\nconsole.log(\"End\");\n```\n\nExecution flow:\n\n```text\nStart\nEnd\nTimer finished\n```\n\nThe timer is handled by the **browser Web API**, not the JavaScript engine.\n\n---\n\n**Example: Fetch API**\n\n```javascript\nfetch(\"https://api.example.com/users\")\n  .then(res => res.json())\n  .then(data => console.log(data));\n```\n\nHere the **browser handles the network request asynchronously**.\n\n---\n\n**Example: DOM API**\n\n```javascript\ndocument.getElementById(\"title\").innerText = \"Hello\";\n```\n\nThis API allows JavaScript to **manipulate HTML elements in the browser**.\n\n---\n\n**How Web APIs Work with JavaScript**\n\n```text\nJavaScript Engine\n   └─ Call Stack\n\nBrowser\n   ├─ Web APIs\n   ├─ Callback Queue\n   └─ Event Loop\n```\n\nWhen async code runs:\n\n1. JavaScript sends the task to **Web APIs**\n2. Browser processes it\n3. Callback goes to **queue**\n4. **Event loop** pushes it to the **call stack** when ready.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -20979,7 +21015,11 @@
     "name": "20 How does JavaScript handle concurrency?",
     "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "JavaScript handles **concurrency** using the **event loop architecture**, even though JavaScript itself is **single-threaded**. It achieves this with the help of **Web APIs, callback queues, and the event loop** to run asynchronous tasks without blocking the main thread.\n\n---\n\n**1. Single Thread (Call Stack)**\n\nJavaScript executes synchronous code using a **single call stack**.\n\n```javascript\nconsole.log(\"Start\");\n\nfunction task(){\n  console.log(\"Running task\");\n}\n\ntask();\n\nconsole.log(\"End\");\n```\n\nExecution order\n\n```\nStart\nRunning task\nEnd\n```\n\nOnly **one function runs at a time**.\n\n---\n\n**2. Web APIs for Async Work**\n\nAsynchronous operations are delegated to **browser Web APIs**.\n\nExamples:\n\n* `setTimeout`\n* `fetch`\n* DOM events\n\n```javascript\nsetTimeout(()=>{\n  console.log(\"Timer finished\");\n},2000);\n```\n\nThe timer runs **outside the JS engine**.\n\n---\n\n**3. Task Queues**\n\nCompleted async tasks are placed in queues.\n\n```\nMicrotask Queue\n- Promise callbacks\n- queueMicrotask\n\nMacrotask Queue\n- setTimeout\n- setInterval\n- DOM events\n```\n\nExample:\n\n```javascript\nPromise.resolve().then(()=>{\n  console.log(\"Promise done\");\n});\n```\n\n---\n\n**4. Event Loop**\n\nThe **event loop** continuously checks if the call stack is empty and moves tasks from queues to the stack.\n\n```javascript\nconsole.log(\"Start\");\n\nsetTimeout(()=>console.log(\"Timeout\"),0);\n\nPromise.resolve().then(()=>console.log(\"Promise\"));\n\nconsole.log(\"End\");\n```\n\nOutput\n\n```\nStart\nEnd\nPromise\nTimeout\n```\n\n---\n\n**Concurrency Model**\n\n```\nJavaScript Engine\n   ├─ Call Stack\n   ├─ Web APIs\n   ├─ Microtask Queue\n   └─ Macrotask Queue\n\nEvent Loop\n   → moves tasks to Call Stack\n```\n\n---\n\n**Key Idea**\n\nJavaScript achieves concurrency through **non-blocking asynchronous execution using the event loop**, rather than running multiple threads.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
