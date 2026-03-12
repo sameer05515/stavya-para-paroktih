@@ -22761,5 +22761,2180 @@
       }
     ],
     "sections": []
+  },
+  {
+    "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "name": "100 Industry-Level Java Interview Questions",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "100 Industry-Level Java Interview Questions",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [],
+    "sections": []
+  },
+  {
+    "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "name": "01 Core Java Fundamentals",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c73cd0db-c445-4443-932d-9ab0bcb34326",
+    "name": "001 What is the difference between JDK, JRE, and JVM?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6292bd9c-7d15-49f1-9b6d-1f5adb1d7d4d",
+    "name": "002 How does the JVM memory model work?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "68f8d966-776a-429c-9977-9a04480b90cd",
+    "name": "003 What are the different memory areas in JVM?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5a6c9291-4b35-42ac-9082-735e315ddec4",
+    "name": "004 Difference between stack memory and heap memory?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d99e8172-4806-4cde-8a88-114663f91149",
+    "name": "005 What is pass-by-value in Java?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "235517d4-5d41-4d3f-97e2-409c42641945",
+    "name": "006 Difference between == and equals()?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6057376a-0508-4e47-bc2d-c1964e990ebb",
+    "name": "007 Difference between equals() and hashCode()?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6de63b6f-362a-43f3-9f14-0eb50b398086",
+    "name": "008 What happens if hashCode() is not overridden?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f81f1bda-3073-4a36-8196-53d6720ab929",
+    "name": "009 What is immutability? Why is String immutable?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4adf9da6-cf92-4829-aff4-95985dcc3bfb",
+    "name": "010 How does Garbage Collection work?",
+    "parentId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "3058f9a5-8e04-47f8-902e-577f10cbfcc5",
+        "name": "01 Core Java Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "name": "02 OOP Concepts",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "121797b9-bd2c-4efa-8fd9-29b62cd57c73",
+    "name": "011 Explain encapsulation with example.",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c7662194-09a0-4e86-b62b-a6abd06c9b2e",
+    "name": "012 Difference between abstraction and encapsulation?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2f6b30f7-3a1b-400e-89be-a182e777c47f",
+    "name": "013 What is inheritance in Java?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dfe33bc7-d29d-4b1d-b546-ab98e13180d0",
+    "name": "014 Difference between method overloading and overriding?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "903ab8cc-4c4f-46a4-b763-40f805756ebb",
+    "name": "015 What is dynamic polymorphism?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "40fe8f87-ea7b-4a02-9fea-c30318f87d01",
+    "name": "016 What is multiple inheritance problem in Java?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "14793b96-c442-4f45-93d7-4dc72209a079",
+    "name": "017 How do interfaces solve diamond problem?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7564ff91-fe9b-4365-98ba-42a78f739015",
+    "name": "018 Difference between abstract class and interface?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4f6c6c48-6912-4bed-94bd-741a26feb0ae",
+    "name": "019 When should you prefer composition over inheritance?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "09605519-e784-4a91-95bd-13f4d76c91eb",
+    "name": "020 What are SOLID principles?",
+    "parentId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
+        "name": "02 OOP Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "name": "03 Collections Framework",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f9393a74-4300-4082-91a5-ed8fee12d203",
+    "name": "021 Difference between ArrayList and LinkedList?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3360cc36-23e1-4144-99f6-1a71ab1b934f",
+    "name": "022 Difference between HashMap and HashTable?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "39fcff4b-838a-4951-9ee1-4edbe3f1b61c",
+    "name": "023 Difference between HashMap and ConcurrentHashMap?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cb026e6b-019f-4530-9960-38ca8bbfcebb",
+    "name": "024 How does HashMap work internally?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fcdf443c-2b7f-415e-82ed-49551b5e7100",
+    "name": "025 What is load factor in HashMap?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "427138c3-de83-4024-95f2-a5f9c0805fb3",
+    "name": "026 What happens when HashMap collisions occur?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b6c2e3bf-cfbe-4692-a254-585a364f6ed1",
+    "name": "027 Difference between TreeMap and HashMap?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "981134dd-3dbd-4905-a2d7-61acda360394",
+    "name": "028 Difference between Set and List?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ef5bcfaa-5b2e-4db5-9035-b17970d15785",
+    "name": "029 How does LinkedHashMap maintain order?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "63cab0f4-c185-4446-9449-0c55895037f2",
+    "name": "030 What is fail-fast vs fail-safe iterator?",
+    "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "name": "04 Java 8+ Features",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ed88e021-677f-4638-9c5d-c7bbfbcd2ca8",
+    "name": "031 What are functional interfaces?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4a42c282-4164-4564-8a82-3e7d826d5169",
+    "name": "032 What is Lambda expression?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9de13eed-d25d-453c-b7db-4ee5b10ab951",
+    "name": "033 Difference between map() and flatMap()?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a8f6173f-1fdd-485d-a4e8-e1b6522c464f",
+    "name": "034 Difference between Stream and Collection?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8534016e-4c7f-44b0-a5aa-fe1e9cdf4d67",
+    "name": "035 What is parallel stream?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f956a6e7-741a-47e8-99d7-861900082131",
+    "name": "036 What is Optional class?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7a73a6eb-168a-4cc7-8cc4-bc2246be7019",
+    "name": "037 What are default methods in interfaces?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e6636b34-29f9-420b-adfb-c1226a6ff267",
+    "name": "038 Difference between forEach and forEachOrdered?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cde1c8d9-d00b-42f1-9f99-610a10330443",
+    "name": "039 What is method reference?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "586fe29d-5b02-4e1f-8ed2-4440aa5010ab",
+    "name": "040 What is Collectors API?",
+    "parentId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "ff198a0d-776d-4adc-860b-27d0f9f902dc",
+        "name": "04 Java 8+ Features"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "name": "05 Multithreading & Concurrency",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3e37a708-3309-40ec-8a03-5d2d4f5b8e72",
+    "name": "041 Difference between Thread and Runnable?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "47928e91-faba-4e34-b8b7-248830779e5e",
+    "name": "042 Difference between Callable and Runnable?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ded6efe9-4dfe-4e44-900e-8605c2ccf22c",
+    "name": "043 What is Thread Pool?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0cf00ae8-fb2a-4504-b2d0-e5dc51af9781",
+    "name": "044 What is ExecutorService?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "64af2988-2551-41e6-9c33-2d15b4ede7df",
+    "name": "045 Difference between synchronized and ReentrantLock?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d1169a2c-5e5b-4332-952e-488a6d68bf99",
+    "name": "046 What is volatile keyword?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ff61d597-4073-4491-986e-d0499a83b0e0",
+    "name": "047 What is deadlock?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7d04ac0a-1fa8-43de-9447-9f0f0249b5e0",
+    "name": "048 What is race condition?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "96fe7e15-e8ae-400a-95e7-68b84c900c26",
+    "name": "049 Difference between wait(), notify(), notifyAll()?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "65135300-d3e0-42a0-af84-5381c9bf0edb",
+    "name": "050 What is CompletableFuture?",
+    "parentId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "19a350b2-4b3b-4c6a-bc38-3f6b8bfa5beb",
+        "name": "05 Multithreading & Concurrency"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "name": "06 JVM Deep Concepts",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "84b69bf9-a58e-4f7c-865f-d5b5888f8afc",
+    "name": "051 What is class loading mechanism?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "576c0b89-e1fa-47b3-a883-34ca486f7b31",
+    "name": "052 What are class loaders?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0fea01df-67c1-41d5-85d1-dc14cea142bb",
+    "name": "053 What is Metaspace?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "274334a6-8ba1-4529-b5c4-8b8b4cfe7c12",
+    "name": "054 Difference between Serial GC, Parallel GC, G1 GC?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "614e4d2b-695c-49df-bb56-15fcbfd6ab4b",
+    "name": "055 What is JIT compiler?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5137919a-a1fe-4429-aeef-9dc7e8ef1d2e",
+    "name": "056 What is bytecode?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "44c7dab1-cd3a-48e8-bbf7-d86d3ed17cd5",
+    "name": "057 What is reflection?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6b0c70cc-5734-43a5-a81a-80932eeeaeb0",
+    "name": "058 What is dynamic proxy?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "df6f451d-0ae1-40b5-b45e-825e3938ce5d",
+    "name": "059 What is Java agent?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f4dc012b-ca1e-4ae4-944f-6aea523da2cd",
+    "name": "060 What is JVM tuning?",
+    "parentId": "6d045142-dc99-4053-a60c-9dd445741f51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d045142-dc99-4053-a60c-9dd445741f51",
+        "name": "06 JVM Deep Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "name": "07 Exception Handling",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5732be5b-f832-4b58-a0af-bd6d003f315e",
+    "name": "061 Difference between checked and unchecked exceptions?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "91b35972-e524-4427-b4a9-4997f1be771c",
+    "name": "062 What is try-with-resources?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "df813598-c4b8-46f3-97d0-2430e59e9756",
+    "name": "063 What happens if finally block throws exception?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d74a9ee7-f0f7-40c6-a74f-b769b877af0e",
+    "name": "064 Can we catch multiple exceptions?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c5dfd7e0-69d4-40cc-a595-9556ace978b7",
+    "name": "065 What is custom exception?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bae369de-c1b7-46fb-ab71-347b42760fc6",
+    "name": "066 What is throw vs throws?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f4f8cf7b-b513-4be2-8fba-88d1a959fc5c",
+    "name": "067 What happens if exception is not handled?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ce2d3e63-c368-4639-a1f0-25f0cf77688e",
+    "name": "068 What is suppressed exception?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ce41200e-37de-4404-854c-8781a89d7b73",
+    "name": "069 Can constructors throw exceptions?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b658af1b-618c-414d-a25e-ea03213901c7",
+    "name": "070 Can finally block be skipped?",
+    "parentId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "f614f747-c474-4d3c-809c-bbfcd0bb3e40",
+        "name": "07 Exception Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "name": "08 Design Patterns",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cdc2969f-c7ae-43da-9511-3e6778d41440",
+    "name": "071 What is Singleton pattern?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "59865d4f-e76b-4dbc-8518-191293b5f91f",
+    "name": "072 What is Factory pattern?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8deceb23-a2f8-4a44-8847-212f3926884f",
+    "name": "073 What is Builder pattern?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "300444c0-f9f6-436f-b4d5-68839b6aa1d6",
+    "name": "074 What is Strategy pattern?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5d19bdf5-f0f9-4a5c-9494-c57a3d077509",
+    "name": "075 What is Observer pattern?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "519e234e-df76-466a-ab7c-29c928824e2b",
+    "name": "076 What is Decorator pattern?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1a33d8e3-49b9-4454-bf60-1995d7ba0f0a",
+    "name": "077 What is Proxy pattern?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ea2ccdb4-88e1-4c68-b1ac-ebf9b29633ad",
+    "name": "078 What is Dependency Injection?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a100bb60-851d-493d-a73a-ab670d46365e",
+    "name": "079 What is Inversion of Control?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "791237bc-f694-4494-979a-33691b86ae41",
+    "name": "080 Difference between Factory and Abstract Factory?",
+    "parentId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "defc2a1b-cc16-44b3-970f-45ec29dff619",
+        "name": "08 Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "name": "09 Performance & Optimization",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f6f3da44-7f66-4bf6-a33b-e8f703f3aa80",
+    "name": "081 How to avoid memory leaks in Java?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9839cfcb-7913-448f-ac16-eac6101bcc93",
+    "name": "082 How to profile Java applications?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "430c4293-74c0-43f5-8588-3607a31f1832",
+    "name": "083 What tools are used for JVM monitoring?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8b8044f8-4287-496e-825a-93f6c421276a",
+    "name": "084 What is GC tuning?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ce8a6ce8-0bf3-4b52-ba77-cfa6c7b94604",
+    "name": "085 Difference between heap dump and thread dump?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "09a33fba-9ddb-4669-9942-534ebb9c9273",
+    "name": "086 What causes OutOfMemoryError?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "48cfb4fd-3e53-4af8-b50e-0faf59dbbcc3",
+    "name": "087 What is escape analysis?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cf32b08c-2778-4805-aeaf-0e7b91b62078",
+    "name": "088 What is object pooling?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "20c5dcd8-b162-416b-850c-d2b1add8d8b1",
+    "name": "089 What is lazy initialization?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0f889e74-3ddd-4ab3-9d86-46c5e4ac711b",
+    "name": "090 What is CPU vs memory bottleneck?",
+    "parentId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "50db87b3-d268-4c12-933a-68ec9412f78f",
+        "name": "09 Performance & Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "name": "10 Real Industry Questions",
+    "parentId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "81b2db07-d2be-4d78-84aa-3493c2681b66",
+    "name": "091 How do you design a scalable Java service?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bc935ab8-181c-4c55-8508-58fac81728fa",
+    "name": "092 How do you handle distributed transactions?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "89ec3543-d033-43ce-86fa-5fc0259aec52",
+    "name": "093 How do you implement idempotent APIs?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fadd7421-e751-4bcd-bad8-8d0dd10e04c7",
+    "name": "094 How do you handle concurrency in microservices?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "21edcf9e-7816-45da-849e-92b400449501",
+    "name": "095 How do you handle caching in Java applications?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "78ce5868-e167-480a-aec1-f45327b4f9e1",
+    "name": "096 How do you implement rate limiting?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c2abad43-6be3-449f-87d5-8c208eee47b1",
+    "name": "097 How do you handle retries and circuit breakers?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f2dadea7-a9c9-4ec2-84ae-e7f82c54e1db",
+    "name": "098 How do you trace requests in microservices?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "78cd870c-918e-4593-86ae-1c53dbd496b3",
+    "name": "099 How do you design a high-throughput messaging system?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c8acfa66-b3f6-4470-9254-f819c9d073a2",
+    "name": "100 How do you scale Java applications to millions of users?",
+    "parentId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "5809c2ef-2a9c-4624-a2c1-d4c3abad090f",
+        "name": "10 Real Industry Questions"
+      }
+    ],
+    "sections": []
   }
 ]
