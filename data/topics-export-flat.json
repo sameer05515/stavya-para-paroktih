@@ -19279,5 +19279,3447 @@
     "published": false,
     "ancestors": [],
     "sections": []
+  },
+  {
+    "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "Mastering ReactJs and JavaScript: Top 50 Interview Questions",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [],
+    "sections": []
+  },
+  {
+    "uniqueId": "ee0eb160-174a-4e08-bd4d-31c79bfec4e4",
+    "name": "Section 01 — Course Introduction",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 01 — Course Introduction",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "32fa5ab7-b8ef-4c0a-bc6f-a7c5113855ff",
+    "name": "Lecture 1 – Course Introduction",
+    "parentId": "ee0eb160-174a-4e08-bd4d-31c79bfec4e4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "ee0eb160-174a-4e08-bd4d-31c79bfec4e4",
+        "name": "Section 01 — Course Introduction"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b6e1713b-fac7-45bb-9691-1ca097bf8484",
+    "name": "Lecture 2 – How to Use This Course for Interview Preparation",
+    "parentId": "ee0eb160-174a-4e08-bd4d-31c79bfec4e4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "ee0eb160-174a-4e08-bd4d-31c79bfec4e4",
+        "name": "Section 01 — Course Introduction"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "835b2786-11ac-4e06-b233-cd391e66f6e7",
+    "name": "Lecture 3 – JavaScript + React Interview Strategy",
+    "parentId": "ee0eb160-174a-4e08-bd4d-31c79bfec4e4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "ee0eb160-174a-4e08-bd4d-31c79bfec4e4",
+        "name": "Section 01 — Course Introduction"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+    "name": "Section 02 — JavaScript Fundamentals (Interview Core)",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 02 — JavaScript Fundamentals (Interview Core)",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d95e2f05-4aea-47aa-bca4-8ae8c125be71",
+    "name": "Lecture 4 – var vs let vs const",
+    "parentId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+        "name": "Section 02 — JavaScript Fundamentals (Interview Core)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6598a1ca-7b89-4d68-ab0d-82c70a92e91d",
+    "name": "Lecture 5 – Hoisting Explained",
+    "parentId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+        "name": "Section 02 — JavaScript Fundamentals (Interview Core)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c167fb8e-19e8-4d78-851a-1acdb0934bed",
+    "name": "Lecture 6 – Closures",
+    "parentId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+        "name": "Section 02 — JavaScript Fundamentals (Interview Core)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8bd4bc88-f3f5-4b65-8c3f-6d25467b734e",
+    "name": "Lecture 7 – Scope (Global, Function, Block)",
+    "parentId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+        "name": "Section 02 — JavaScript Fundamentals (Interview Core)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8aaba386-90d8-4051-b00d-384f6e1fc949",
+    "name": "Lecture 8 – JavaScript Execution Context",
+    "parentId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+        "name": "Section 02 — JavaScript Fundamentals (Interview Core)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5fc1899a-2ee8-41cf-a0a9-b123cf56b7f6",
+    "name": "Lecture 9 – Call Stack",
+    "parentId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+        "name": "Section 02 — JavaScript Fundamentals (Interview Core)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2840f5b7-95f4-453f-ba4d-9c174933f467",
+    "name": "Lecture 10 – Event Loop Explained",
+    "parentId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "a9f2d97d-5f21-4d6b-933d-b55216a2f2be",
+        "name": "Section 02 — JavaScript Fundamentals (Interview Core)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "name": "Section 03 — Advanced JavaScript Questions",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 03 — Advanced JavaScript Questions",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c9ca4579-385d-4666-a41d-659a9400d334",
+    "name": "Lecture 11 – Prototypes",
+    "parentId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+        "name": "Section 03 — Advanced JavaScript Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f07f9f15-bb3e-4d1c-a8b8-96aaf3d859b9",
+    "name": "Lecture 12 – this keyword",
+    "parentId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+        "name": "Section 03 — Advanced JavaScript Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d616646d-a00d-418b-ac12-cd660aa94bdf",
+    "name": "Lecture 13 – Arrow Functions",
+    "parentId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+        "name": "Section 03 — Advanced JavaScript Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "988763fb-2a5e-4222-903d-1822361fc4a9",
+    "name": "Lecture 14 – Promises",
+    "parentId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+        "name": "Section 03 — Advanced JavaScript Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2b3cc2d2-0eb2-425e-9810-7c54045304ad",
+    "name": "Lecture 15 – Async / Await",
+    "parentId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+        "name": "Section 03 — Advanced JavaScript Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "340ceb7d-9cfb-40e3-bd8c-2a2fe2baef17",
+    "name": "Lecture 16 – Debouncing vs Throttling",
+    "parentId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+        "name": "Section 03 — Advanced JavaScript Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dea98ec8-6187-4a5c-b68a-6fba9cb24ab5",
+    "name": "Lecture 17 – Deep Copy vs Shallow Copy",
+    "parentId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+        "name": "Section 03 — Advanced JavaScript Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e29c2d15-7640-4ad7-ba5c-8dbc9d597472",
+    "name": "Lecture 18 – JavaScript Memory Management",
+    "parentId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "cc11ac61-2ec8-4d5e-9144-d1574a8b0b3f",
+        "name": "Section 03 — Advanced JavaScript Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+    "name": "Section 04 — ReactJS Fundamentals",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 04 — ReactJS Fundamentals",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "28f0f7f3-bf2d-4cd3-884f-c11da8bd665d",
+    "name": "Lecture 19 – What is React?",
+    "parentId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+        "name": "Section 04 — ReactJS Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b4e8560b-846f-44bb-87c0-8f148a075027",
+    "name": "Lecture 20 – React Component Types",
+    "parentId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+        "name": "Section 04 — ReactJS Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "590734f7-52c3-4795-aa97-37448239a32f",
+    "name": "Lecture 21 – Props vs State",
+    "parentId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+        "name": "Section 04 — ReactJS Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "af5fb027-6af3-4955-ab53-571ea3275013",
+    "name": "Lecture 22 – React Rendering Process",
+    "parentId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+        "name": "Section 04 — ReactJS Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ad7730de-89aa-4eae-b310-6861f9aa2e52",
+    "name": "Lecture 23 – Virtual DOM",
+    "parentId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "40bf7530-1799-48af-b22a-f37fc6fefdb5",
+        "name": "Section 04 — ReactJS Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+    "name": "Section 05 — React Hooks Interview Questions",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 05 — React Hooks Interview Questions",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d9d612bf-4e0d-4b0c-802d-2f2d0fcd1293",
+    "name": "Lecture 24 – useState",
+    "parentId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+        "name": "Section 05 — React Hooks Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "00f984a0-b83e-4a15-b06a-e15cc3b69ef9",
+    "name": "Lecture 25 – useEffect",
+    "parentId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+        "name": "Section 05 — React Hooks Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "92207839-24a3-4473-875c-d186a78e8b08",
+    "name": "Lecture 26 – useRef",
+    "parentId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+        "name": "Section 05 — React Hooks Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8d12f6f5-b706-4c3f-ab7f-6b3646467488",
+    "name": "Lecture 27 – useMemo",
+    "parentId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+        "name": "Section 05 — React Hooks Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "33c11475-def0-4c68-bfd1-1113f415be3c",
+    "name": "Lecture 28 – useCallback",
+    "parentId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "7ad023d2-3f7e-4424-b66a-12dae40b6bc0",
+        "name": "Section 05 — React Hooks Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "13c19ea0-81f7-4dc9-aff9-a9cdc13c5173",
+    "name": "Section 06 — React Performance Optimization",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 06 — React Performance Optimization",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3a37f379-0a7a-45d7-b545-512633083d54",
+    "name": "Lecture 29 – React.memo",
+    "parentId": "13c19ea0-81f7-4dc9-aff9-a9cdc13c5173",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "13c19ea0-81f7-4dc9-aff9-a9cdc13c5173",
+        "name": "Section 06 — React Performance Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "55242437-18bc-4ed5-aa2d-0a41e02c3306",
+    "name": "Lecture 30 – Code Splitting",
+    "parentId": "13c19ea0-81f7-4dc9-aff9-a9cdc13c5173",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "13c19ea0-81f7-4dc9-aff9-a9cdc13c5173",
+        "name": "Section 06 — React Performance Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3bfab89d-d014-4a0b-ab55-6a80bd47a21e",
+    "name": "Lecture 31 – Lazy Loading",
+    "parentId": "13c19ea0-81f7-4dc9-aff9-a9cdc13c5173",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "13c19ea0-81f7-4dc9-aff9-a9cdc13c5173",
+        "name": "Section 06 — React Performance Optimization"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+    "name": "Section 07 — React Architecture Questions",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 07 — React Architecture Questions",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a2e85a15-a5c0-487b-b730-516f5c54c914",
+    "name": "Lecture 32 – Controlled vs Uncontrolled Components",
+    "parentId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+        "name": "Section 07 — React Architecture Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2d2698ef-2e96-4996-815a-07fa9cad7f76",
+    "name": "Lecture 33 – Lifting State Up",
+    "parentId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+        "name": "Section 07 — React Architecture Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c1a45cff-1598-43c0-905e-bb263bbf8c20",
+    "name": "Lecture 34 – Context API",
+    "parentId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+        "name": "Section 07 — React Architecture Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2d368b2b-cf8f-4357-a174-736c3d15e672",
+    "name": "Lecture 35 – Custom Hooks",
+    "parentId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "e4044c7c-966b-4868-b9e8-2702cf8f1ee0",
+        "name": "Section 07 — React Architecture Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+    "name": "Section 08 — Real JavaScript Coding Questions",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 08 — Real JavaScript Coding Questions",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0db9195e-7b15-49ce-bd07-2a16a1fed704",
+    "name": "Lecture 36 – Reverse String",
+    "parentId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+        "name": "Section 08 — Real JavaScript Coding Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0180806f-ccd6-43d1-b195-125e0accf4ad",
+    "name": "Lecture 37 – Find Duplicate Numbers",
+    "parentId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+        "name": "Section 08 — Real JavaScript Coding Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a912ef7d-b99e-4344-b201-f17aa8afcfa9",
+    "name": "Lecture 38 – Flatten Array",
+    "parentId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+        "name": "Section 08 — Real JavaScript Coding Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d9a7f5b5-bbbc-4929-8f20-14b604eae5fa",
+    "name": "Lecture 39 – Remove Duplicates",
+    "parentId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+        "name": "Section 08 — Real JavaScript Coding Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "49b4194f-946b-43b3-9e11-1c7b820e9040",
+    "name": "Lecture 40 – Debounce Function Implementation",
+    "parentId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "b569d172-7bf7-4c9d-881e-99ca92d8340e",
+        "name": "Section 08 — Real JavaScript Coding Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b62494bb-d6bb-47df-a232-35af7150c5cf",
+    "name": "Section 09 — React Interview Coding",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": {
+      "content": "Section 09 — React Interview Coding",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3c9fc8ad-ccf6-4d29-a97c-ebe3c28091fe",
+    "name": "Lecture 41 – Counter App",
+    "parentId": "b62494bb-d6bb-47df-a232-35af7150c5cf",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "b62494bb-d6bb-47df-a232-35af7150c5cf",
+        "name": "Section 09 — React Interview Coding"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6fc16cee-c950-42b9-aa87-c48a496ceb14",
+    "name": "Lecture 42 – Todo App",
+    "parentId": "b62494bb-d6bb-47df-a232-35af7150c5cf",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "b62494bb-d6bb-47df-a232-35af7150c5cf",
+        "name": "Section 09 — React Interview Coding"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ab2cac2d-5d10-4c95-baae-58a74e918776",
+    "name": "Lecture 43 – API Fetching",
+    "parentId": "b62494bb-d6bb-47df-a232-35af7150c5cf",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "b62494bb-d6bb-47df-a232-35af7150c5cf",
+        "name": "Section 09 — React Interview Coding"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+    "name": "Section 10 — Advanced Interview Topics",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2b0623c9-d837-4fde-b7dc-00e2ef49a6a2",
+    "name": "Lecture 44 – React Fiber",
+    "parentId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+        "name": "Section 10 — Advanced Interview Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ec2782fd-d834-403f-a0a7-ffeae792cccc",
+    "name": "Lecture 45 – SSR vs CSR",
+    "parentId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+        "name": "Section 10 — Advanced Interview Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7dc407b7-828d-437d-8a5d-cefa89197940",
+    "name": "Lecture 46 – React Security",
+    "parentId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+        "name": "Section 10 — Advanced Interview Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5d9e74c6-ae3c-434b-8de5-bd404164fa0c",
+    "name": "Lecture 47 – React Testing Basics",
+    "parentId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "2edf2ea1-5b17-410a-915e-3b9e483e3a94",
+        "name": "Section 10 — Advanced Interview Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4abbb311-bfb4-479b-8c6f-c540ff4432a3",
+    "name": "Section 11 — Interview Preparation",
+    "parentId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "77cccd9a-0abe-4263-97fe-c56b1ff3c443",
+    "name": "Lecture 48 – React Interview Tips",
+    "parentId": "4abbb311-bfb4-479b-8c6f-c540ff4432a3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "4abbb311-bfb4-479b-8c6f-c540ff4432a3",
+        "name": "Section 11 — Interview Preparation"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2f8a165d-9054-42b8-b14f-d4cbd21c4918",
+    "name": "Lecture 49 – Common Mistakes in React Interviews",
+    "parentId": "4abbb311-bfb4-479b-8c6f-c540ff4432a3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "4abbb311-bfb4-479b-8c6f-c540ff4432a3",
+        "name": "Section 11 — Interview Preparation"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "445ddd84-0d5a-450e-ab3f-d109ac55d54f",
+    "name": "Lecture 50 – Final Mock Interview",
+    "parentId": "4abbb311-bfb4-479b-8c6f-c540ff4432a3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "ff3e5f16-95c1-42d8-91ff-ce2fd1149558",
+        "name": "Mastering ReactJs and JavaScript: Top 50 Interview Questions"
+      },
+      {
+        "uniqueId": "4abbb311-bfb4-479b-8c6f-c540ff4432a3",
+        "name": "Section 11 — Interview Preparation"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "name": "100 Industry-Level React + JavaScript Interview Questions",
+    "parentId": null,
+    "description": "",
+    "smartContent": {
+      "content": "100 Industry-Level React + JavaScript Interview Questions",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [],
+    "sections": []
+  },
+  {
+    "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "name": "01 JavaScript Core Concepts",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "47e72802-139b-4fc9-ab4b-992e4cf9f243",
+    "name": "01 What is JavaScript and how does it work internally in browsers?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "JavaScript is a **high-level, interpreted programming language** used to create **dynamic and interactive web applications** in the browser. It runs inside the **JavaScript engine** (like **V8 in Chrome**) which executes the code and interacts with browser APIs.\n\n**How JavaScript works internally in browsers:**\n\n1. **JavaScript Engine**\n   The browser contains a JavaScript engine that reads and executes code.\n\nMain components:\n\n* **Memory Heap** → stores objects and variables\n* **Call Stack** → tracks function execution\n\n```javascript\nfunction greet(){\n  console.log(\"Hello\");\n}\n\ngreet();\n```\n\nExecution flow\n\n```\nCall Stack\n-----------\ngreet()\nconsole.log()\n```\n\n---\n\n2. **Execution Context**\n\nWhen JavaScript runs, it creates an **execution context** containing:\n\n* Variable environment\n* Scope chain\n* `this` binding\n\n```javascript\nvar x = 10;\n\nfunction test(){\n  var y = 20;\n}\n\ntest();\n```\n\n---\n\n3. **Call Stack**\n\nJavaScript executes code **one function at a time using the call stack**.\n\n```javascript\nfunction one(){ two(); }\nfunction two(){ console.log(\"running\"); }\n\none();\n```\n\nStack flow\n\n```\none()\ntwo()\nconsole.log()\n```\n\n---\n\n4. **Web APIs**\n\nBrowsers provide APIs for async tasks:\n\n* `setTimeout`\n* `fetch`\n* `DOM`\n* `localStorage`\n\n```javascript\nsetTimeout(()=>{\n console.log(\"done\")\n},1000)\n```\n\n---\n\n5. **Event Loop**\n\nThe **event loop manages asynchronous operations** using:\n\n* Call Stack\n* Callback Queue\n* Microtask Queue\n\n```javascript\nconsole.log(\"start\");\n\nsetTimeout(()=>console.log(\"timeout\"),0);\n\nPromise.resolve().then(()=>console.log(\"promise\"));\n\nconsole.log(\"end\");\n```\n\nOutput\n\n```\nstart\nend\npromise\ntimeout\n```\n\n---\n\n**Summary**\n\nBrowser JavaScript runtime consists of:\n\n```\nJavaScript Engine\n   ├─ Call Stack\n   └─ Memory Heap\n\nBrowser APIs\n   ├─ DOM\n   ├─ setTimeout\n   └─ fetch\n\nEvent Loop\n   ├─ Callback Queue\n   └─ Microtask Queue\n```\n\nJavaScript is **single-threaded**, but asynchronous behavior is handled through **Web APIs + Event Loop**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6f5770a6-1bbe-45f1-8504-eee625ecba61",
+    "name": "02 What are the differences between var, let, and const?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "The keywords **`var`**, **`let`**, and **`const`** are used to declare variables in JavaScript, but they differ in **scope, hoisting behavior, and mutability**.\n\n---\n\n**1. var**\n\n* Function scoped\n* Can be **re-declared and updated**\n* **Hoisted** and initialized with `undefined`\n\n```javascript\nfunction test(){\n  var a = 10;\n}\n\nconsole.log(a); // ReferenceError (outside function)\n```\n\n```javascript\nvar x = 10;\nvar x = 20; // allowed\n```\n\n---\n\n**2. let**\n\n* **Block scoped**\n* Can be **updated but not re-declared in same scope**\n* Hoisted but in **Temporal Dead Zone**\n\n```javascript\n{\n  let a = 10;\n}\n\nconsole.log(a); // ReferenceError\n```\n\n```javascript\nlet x = 10;\nx = 20; // allowed\n```\n\n---\n\n**3. const**\n\n* **Block scoped**\n* **Cannot be reassigned**\n* Must be **initialized during declaration**\n\n```javascript\nconst x = 10;\nx = 20; // Error\n```\n\nFor objects/arrays, properties can still change:\n\n```javascript\nconst user = {\n  name: \"Prem\"\n}\n\nuser.name = \"Developer\"; // allowed\n```\n\n---\n\n**Quick Comparison**\n\n```text\nFeature        var        let        const\n--------------------------------------------\nScope          function   block      block\nRedeclare      yes        no         no\nReassign       yes        yes        no\nHoisting       yes        yes(TDZ)   yes(TDZ)\nInitialization optional   optional   required\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0ab48b53-c38b-47c7-87b3-c6d970258ba5",
+    "name": "03 What is hoisting in JavaScript?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "**Hoisting** is a JavaScript behavior where **variable and function declarations are moved to the top of their scope during the compilation phase before code execution**.\n\nThis means you can sometimes **use variables or functions before they are declared**.\n\n---\n\n**1. Hoisting with `var`**\n\n`var` variables are hoisted and initialized with `undefined`.\n\n```javascript\nconsole.log(a); // undefined\n\nvar a = 10;\n\nconsole.log(a); // 10\n```\n\nInternally JavaScript treats it like:\n\n```javascript\nvar a;\n\nconsole.log(a); // undefined\n\na = 10;\n```\n\n---\n\n**2. Hoisting with `let` and `const`**\n\n`let` and `const` are hoisted but placed in the **Temporal Dead Zone (TDZ)**, so accessing them before declaration throws an error.\n\n```javascript\nconsole.log(a); // ReferenceError\n\nlet a = 10;\n```\n\n---\n\n**3. Function Hoisting**\n\nFunction declarations are fully hoisted.\n\n```javascript\ngreet();\n\nfunction greet(){\n  console.log(\"Hello\");\n}\n```\n\n---\n\n**4. Function Expression (Not Fully Hoisted)**\n\n```javascript\ngreet(); // TypeError\n\nvar greet = function(){\n console.log(\"Hello\");\n}\n```\n\n---\n\n**Summary**\n\n```text\nvar      → hoisted and initialized with undefined\nlet      → hoisted but in Temporal Dead Zone\nconst    → hoisted but in Temporal Dead Zone\nfunction → fully hoisted\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3a3bbae4-084b-4feb-8e67-64c74bad82d6",
+    "name": "04 What is the Temporal Dead Zone?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "The **Temporal Dead Zone (TDZ)** is the time between **entering a block scope and the actual declaration of a `let` or `const` variable**, during which the variable **cannot be accessed**.\n\nEven though `let` and `const` are **hoisted**, they are **not initialized immediately**, so accessing them before declaration throws a **ReferenceError**.\n\n---\n\n**Example**\n\n```javascript\nconsole.log(a); // ReferenceError\n\nlet a = 10;\n```\n\nWhy?\nBecause `a` exists in memory but is **in the Temporal Dead Zone until the declaration line executes**.\n\n---\n\n**Block Scope Example**\n\n```javascript\n{\n  console.log(x); // ReferenceError\n\n  let x = 5;\n}\n```\n\n---\n\n**TDZ with const**\n\n```javascript\nconsole.log(y); // ReferenceError\n\nconst y = 20;\n```\n\n---\n\n**How JavaScript interprets it internally**\n\n```javascript\n// TDZ starts here\nlet a;\n\n// TDZ ends after initialization\na = 10;\n```\n\n---\n\n**Key Points**\n\n* TDZ applies to **`let` and `const`**\n* Accessing variables before declaration causes **ReferenceError**\n* Prevents bugs caused by accessing uninitialized variables.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "34f48c6e-0ee6-4e53-be3b-c41401d1988e",
+    "name": "05 What is a closure and how does it work?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "A **closure** is created when a function **remembers and accesses variables from its outer (lexical) scope even after the outer function has finished executing**.\n\nClosures allow functions to **retain access to variables that were present when the function was created**.\n\n---\n\n**Basic Example**\n\n```javascript\nfunction outer(){\n\n  let count = 0;\n\n  function inner(){\n    count++;\n    console.log(count);\n  }\n\n  return inner;\n}\n\nconst counter = outer();\n\ncounter(); // 1\ncounter(); // 2\ncounter(); // 3\n```\n\nExplanation\n`inner()` forms a **closure over the variable `count`**, so it remembers the value even after `outer()` has finished.\n\n---\n\n**How Closure Works Internally**\n\n```text\nouter()\n   └── count = 0\n        └── inner() remembers count\n```\n\nEven after `outer()` finishes, `inner()` still has access to `count`.\n\n---\n\n**Practical Example (Private Variable)**\n\n```javascript\nfunction createUser(){\n\n  let password = \"secret\";\n\n  return {\n    getPassword(){\n      return password;\n    }\n  }\n}\n\nconst user = createUser();\n\nconsole.log(user.getPassword());\n```\n\nHere `password` becomes **private**, accessible only through the closure.\n\n---\n\n**Common Use Cases**\n\n* Data privacy\n* Function factories\n* Event handlers\n* Callbacks and async code\n* Memoization and caching\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "31ba25a2-6866-4010-bfaa-251859babb24",
+    "name": "06 What is the difference between function declaration and function expression?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "The difference between **function declaration** and **function expression** lies mainly in **hoisting, syntax, and when the function becomes available**.\n\n---\n\n**1. Function Declaration**\n\nA function defined using the `function` keyword with a name.\n\n* Fully **hoisted**\n* Can be **called before its definition**\n\n```javascript\ngreet();\n\nfunction greet(){\n  console.log(\"Hello\");\n}\n```\n\nInternally JavaScript moves it to the top of the scope.\n\n---\n\n**2. Function Expression**\n\nA function assigned to a variable.\n\n* **Not fully hoisted**\n* Cannot be called before definition\n\n```javascript\nconst greet = function(){\n  console.log(\"Hello\");\n};\n\ngreet();\n```\n\nCalling before definition will cause an error.\n\n```javascript\ngreet(); // Error\n\nconst greet = function(){\n  console.log(\"Hello\");\n};\n```\n\n---\n\n**3. Example Comparison**\n\n```javascript\n// Function Declaration\nfunction add(a,b){\n  return a+b;\n}\n\n// Function Expression\nconst multiply = function(a,b){\n  return a*b;\n}\n```\n\n---\n\n**Quick Comparison**\n\n```text\nFeature                Function Declaration    Function Expression\n---------------------------------------------------------------\nHoisting               Fully hoisted           Not fully hoisted\nName                   Required                Optional\nCall before definition Yes                     No\nUsage                  General functions       Callbacks / dynamic logic\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c2888575-7591-4850-8da2-a1b897fd204d",
+    "name": "07 What are arrow functions and how are they different from regular functions?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "**Arrow functions** are a shorter syntax for writing functions in JavaScript, introduced in **ES6**. They are commonly used for **callbacks, array methods, and functional programming patterns**.\n\n---\n\n**1. Arrow Function Syntax**\n\n```javascript\nconst add = (a, b) => {\n  return a + b;\n};\n```\n\nShort form:\n\n```javascript\nconst add = (a, b) => a + b;\n```\n\n---\n\n**2. Regular Function**\n\n```javascript\nfunction add(a, b){\n  return a + b;\n}\n```\n\n---\n\n**3. Key Differences**\n\n**1. `this` Binding**\n\nArrow functions **do not have their own `this`**. They inherit `this` from the surrounding scope.\n\n```javascript\nconst user = {\n  name: \"Prem\",\n\n  regularFunction: function(){\n    console.log(this.name);\n  },\n\n  arrowFunction: () => {\n    console.log(this.name);\n  }\n};\n\nuser.regularFunction(); // Prem\nuser.arrowFunction();   // undefined\n```\n\n---\n\n**2. Constructor Usage**\n\nArrow functions **cannot be used as constructors**.\n\n```javascript\nconst Person = (name) => {\n  this.name = name;\n};\n\nconst p = new Person(\"John\"); // Error\n```\n\n---\n\n**3. Arguments Object**\n\nRegular functions have `arguments`, arrow functions do not.\n\n```javascript\nfunction test(){\n  console.log(arguments);\n}\n```\n\nArrow version:\n\n```javascript\nconst test = (...args) => {\n  console.log(args);\n};\n```\n\n---\n\n**4. Shorter Syntax**\n\nArrow functions allow concise code.\n\n```javascript\nconst nums = [1,2,3];\n\nconst doubled = nums.map(n => n * 2);\n```\n\n---\n\n**Summary**\n\n```text\nFeature            Regular Function     Arrow Function\n-----------------------------------------------------\nthis binding       Dynamic              Lexical\narguments object   Available            Not available\nconstructor        Allowed              Not allowed\nsyntax             Longer               Shorter\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a47250e8-bcf4-48f4-a823-cfd2ddae0d69",
+    "name": "08 What is the this keyword and how is it determined?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "The **`this` keyword** in JavaScript refers to the **object that is currently executing the function**.\nIts value is **determined by how the function is called**, not where it is defined.\n\n---\n\n**1. Global Context**\n\nIn a browser, `this` refers to the **global object (`window`)**.\n\n```javascript\nconsole.log(this); // window\n```\n\n---\n\n**2. Inside an Object Method**\n\n`this` refers to the **object that calls the method**.\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  greet(){\n    console.log(this.name);\n  }\n};\n\nuser.greet(); // Prem\n```\n\n---\n\n**3. Inside a Regular Function**\n\nIn non-strict mode, `this` refers to the **global object**.\n\n```javascript\nfunction test(){\n  console.log(this);\n}\n\ntest(); // window\n```\n\n---\n\n**4. Arrow Functions**\n\nArrow functions **do not have their own `this`**.\nThey inherit `this` from the **surrounding scope**.\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  greet: () => {\n    console.log(this.name);\n  }\n};\n\nuser.greet(); // undefined\n```\n\n---\n\n**5. Using call, apply, bind**\n\nYou can manually set `this`.\n\n```javascript\nfunction greet(){\n  console.log(this.name);\n}\n\nconst user = { name: \"Prem\" };\n\ngreet.call(user); // Prem\n```\n\n---\n\n**Summary**\n\n```text\nGlobal scope        → window / global object\nObject method       → object calling the method\nRegular function    → global object (or undefined in strict mode)\nArrow function      → lexical this (inherited)\ncall/apply/bind     → explicitly defined\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5a6493c0-224c-4b1b-a6b1-06c8007984a8",
+    "name": "09 What are JavaScript prototypes?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "In JavaScript, a **prototype** is an object that allows **other objects to inherit properties and methods**.\nEvery JavaScript object has an internal property called **`[[Prototype]]`**, which links it to another object.\n\nThis mechanism forms the **prototype chain**, enabling **inheritance in JavaScript**.\n\n---\n\n**1. Basic Example**\n\n```javascript\nfunction Person(name){\n  this.name = name;\n}\n\nPerson.prototype.greet = function(){\n  console.log(\"Hello \" + this.name);\n};\n\nconst p1 = new Person(\"Prem\");\n\np1.greet(); // Hello Prem\n```\n\nHere:\n\n```\np1 → Person.prototype → Object.prototype → null\n```\n\n`p1` inherits the `greet()` method from `Person.prototype`.\n\n---\n\n**2. Why Prototypes Are Used**\n\nIf methods are inside the constructor, each object gets its own copy.\n\n```javascript\nfunction User(name){\n  this.name = name;\n\n  this.sayHi = function(){\n    console.log(\"Hi\");\n  };\n}\n```\n\nBetter approach using prototype:\n\n```javascript\nfunction User(name){\n  this.name = name;\n}\n\nUser.prototype.sayHi = function(){\n  console.log(\"Hi\");\n};\n```\n\nNow **all objects share one method**, saving memory.\n\n---\n\n**3. Prototype Chain**\n\n```javascript\nconst arr = [1,2,3];\n\nconsole.log(arr.__proto__ === Array.prototype); // true\n```\n\nChain structure:\n\n```\narr\n ↓\nArray.prototype\n ↓\nObject.prototype\n ↓\nnull\n```\n\n---\n\n**Summary**\n\n* Every JavaScript object has a **prototype**\n* Prototypes enable **inheritance and method sharing**\n* Objects access properties through the **prototype chain**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c9248ee3-3e5e-4397-abaa-b988c85fe9b6",
+    "name": "10 What is prototype inheritance?",
+    "parentId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+    "description": "",
+    "smartContent": {
+      "content": "**Prototype inheritance** is a JavaScript mechanism where **one object can access properties and methods of another object through the prototype chain**.\n\nInstead of copying properties, JavaScript **links objects using prototypes**, allowing them to share functionality.\n\n---\n\n**Basic Example**\n\n```javascript\nconst animal = {\n  eats: true,\n  walk(){\n    console.log(\"Animal walks\");\n  }\n};\n\nconst dog = Object.create(animal);\n\ndog.barks = true;\n\nconsole.log(dog.eats); // true\ndog.walk();            // Animal walks\n```\n\nHere `dog` does not have `eats` or `walk`, but it inherits them from `animal`.\n\n---\n\n**Prototype Chain**\n\n```\ndog\n ↓\nanimal\n ↓\nObject.prototype\n ↓\nnull\n```\n\nIf JavaScript cannot find a property in the object, it **looks up the prototype chain**.\n\n---\n\n**Constructor Example**\n\n```javascript\nfunction Person(name){\n  this.name = name;\n}\n\nPerson.prototype.sayHello = function(){\n  console.log(\"Hello \" + this.name);\n};\n\nconst user = new Person(\"Prem\");\n\nuser.sayHello();\n```\n\nHere `user` inherits `sayHello()` from `Person.prototype`.\n\n---\n\n**Key Idea**\n\nPrototype inheritance allows:\n\n* **Code reuse**\n* **Shared methods**\n* **Efficient memory usage**\n\nIt is the **core inheritance mechanism in JavaScript**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "16399467-6e2d-422c-bdfe-f2c8166f9a74",
+        "name": "01 JavaScript Core Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "name": "02 JavaScript Execution Model",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5b016795-2aad-459d-b4d3-c076636eb88c",
+    "name": "11 What is the JavaScript execution context?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a597f557-a8a4-4038-bacf-f607c07d8608",
+    "name": "12 What are the phases of execution context?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "26314cf3-6c29-475b-9d69-fc0bb0e0e772",
+    "name": "13 What is the call stack?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8bc23deb-ca52-4835-a01f-a7a039a7f206",
+    "name": "14 What is the event loop?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "82dfa095-3690-491c-9786-3a2ed64f68d0",
+    "name": "15 What are microtasks and macrotasks?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "83db8acb-be81-4c92-a5b3-00ec62af14e3",
+    "name": "16 What is the difference between setTimeout and setImmediate?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1be165a3-b100-4c0e-8eab-1ce1227d5e6c",
+    "name": "17 What is the difference between synchronous and asynchronous JavaScript?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e7df135a-f9b7-4c44-978e-07dd8cc21747",
+    "name": "18 How does the browser handle asynchronous operations?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "11f4bcea-de3e-48fe-b4f9-b67bfe007053",
+    "name": "19 What are Web APIs?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f7ba7f63-5543-482f-b9cf-d8d5637e1176",
+    "name": "20 How does JavaScript handle concurrency?",
+    "parentId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "19618af4-b52c-440e-bc73-71cb3cdf664d",
+        "name": "02 JavaScript Execution Model"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "name": "03 Promises and Async Programming",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "026ec7f3-f133-4f19-81bc-da3af324d686",
+    "name": "21 What is a Promise in JavaScript?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "31bc5784-0044-46b1-853c-e93333e5ccbf",
+    "name": "22 What are the states of a Promise?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4c05e79b-7203-4539-83c2-690bcea9ecbc",
+    "name": "23 What is Promise.all()?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fd9fbfa3-3ba3-41e7-ba38-1ab790dc681e",
+    "name": "24 What is Promise.race()?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0e131547-b8a1-49f1-8f08-ed68ec387817",
+    "name": "25 What is Promise.allSettled()?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "86268bdc-6923-4ec5-8448-1c4aaa75c62d",
+    "name": "26 What is async/await?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d6f2f1e3-a467-4616-b672-6161e0a8ac89",
+    "name": "27 How does async/await work internally?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d9bb9e5c-2ad9-4f94-ba99-1b2462d7041b",
+    "name": "28 What happens when an async function throws an error?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7a45df79-4637-4f48-b39a-5847228bcbb2",
+    "name": "29 How can you handle multiple asynchronous calls efficiently?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9b335f56-eb6b-41ea-bd40-b3b752e33ab3",
+    "name": "30 What is callback hell?",
+    "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
+        "name": "03 Promises and Async Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "name": "04 JavaScript Objects & Data Handling",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f2aac714-276d-46b6-9599-60845ddcb452",
+    "name": "31 What are JavaScript objects?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6e6f1134-3874-4be9-9176-611f19690666",
+    "name": "32 What is object destructuring?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ba954330-7e73-443e-b27a-e091d709ec9d",
+    "name": "33 What is the spread operator?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "39c368e7-4a60-48a7-8357-1d3456aa1b5c",
+    "name": "34 What is the rest operator?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "11b7358e-48d6-4ed6-ab5f-5a1eb5bf8bd5",
+    "name": "35 What is shallow copy vs deep copy?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c81b4483-1de5-4677-ad15-c341098fd305",
+    "name": "36 What is JSON serialization?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "339a37e7-9307-49a9-922d-3889b90eba71",
+    "name": "37 What is the difference between Object.freeze() and Object.seal()?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0b7259f4-432a-44c2-83b9-1df7d9138a87",
+    "name": "38 What are getters and setters?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1059a267-31c0-4159-bdef-dfc5344c50d8",
+    "name": "39 What are property descriptors?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f7a365cb-1967-4a84-8d61-69c2ba7d8a10",
+    "name": "40 What are symbols in JavaScript?",
+    "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "f41283d8-9662-4eed-961a-f58c4f29e789",
+        "name": "04 JavaScript Objects & Data Handling"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "name": "05 Arrays & Functional Programming",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "452c8845-a411-49c9-bd8e-afb8f3a5e575",
+    "name": "41 What is the difference between map, filter, and reduce?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3d161e10-5124-40d7-8f48-b23655e8af93",
+    "name": "42 What is Array.prototype.reduce() used for?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b4610e56-e0b6-4e3a-be66-24622cb6343b",
+    "name": "43 What is immutability in JavaScript?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c0a4ffac-d07f-4605-b1d1-fd2104eee684",
+    "name": "44 What are pure functions?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0c537555-be8f-4565-910d-79d7aa0611fa",
+    "name": "45 What is functional programming in JavaScript?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e6659e8b-8dd1-4406-94c4-5d2203c8e6f9",
+    "name": "46 What is currying?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "20332f8c-3f28-4486-826a-a772eca075e4",
+    "name": "47 What is memoization?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2af56572-70b5-46ce-af26-6c5dd1898fbc",
+    "name": "48 What is debouncing?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "97a74c35-c8bd-4a60-a608-897c3ff121d9",
+    "name": "49 What is throttling?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3ca4a613-21cc-4db0-9f68-9863c77258f6",
+    "name": "50 What are iterators and generators?",
+    "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "a9d1f243-bf0c-42fd-b463-575168c86425",
+        "name": "05 Arrays & Functional Programming"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "name": "06 Advanced JavaScript Concepts",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "80091413-e8eb-461f-aa73-81e81dfcd16f",
+    "name": "51 What are ES6 modules?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "57132e92-16aa-4e48-a80c-8eb88cb78ebf",
+    "name": "52 What is tree shaking?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3460b240-ca46-458c-bd1b-f1edc5b4a84a",
+    "name": "53 What is dynamic import?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "927a3fb6-12a3-4239-8190-5b76a1196ef0",
+    "name": "54 What are WeakMap and WeakSet?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fc671879-dbda-4ff4-8f2b-6be388177e4c",
+    "name": "55 What is garbage collection in JavaScript?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "610a0f25-462b-4ec1-9bea-22af41a63761",
+    "name": "56 What is memory leak in JavaScript?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b097525b-96a0-403f-8b56-6800b8aef262",
+    "name": "57 What is event delegation?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5fcc1d58-f874-4702-a4d3-8f41bd76a040",
+    "name": "58 What is the difference between == and ===?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "52a3da0a-3e71-459a-be94-a41db01a2347",
+    "name": "59 What are JavaScript proxies?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "521954ab-d857-49ef-b849-9a07dac0eee5",
+    "name": "60 What is reflection in JavaScript?",
+    "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "064129b0-34c8-4e71-9760-725d400bfa51",
+        "name": "06 Advanced JavaScript Concepts"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "name": "07 React Fundamentals",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a7f25782-dff2-4268-99bc-ab58dd7341e2",
+    "name": "61 What is React and why is it used?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5557be39-d6ca-4de9-aefe-57d65f13cb38",
+    "name": "62 What is JSX?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dda5ec4c-3e5e-43dd-abb3-4a6d06c6e972",
+    "name": "63 How does JSX work internally?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7bb7f8cf-94ec-4540-914a-b6151817bd6f",
+    "name": "64 What is the Virtual DOM?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3f4caad5-ae88-446d-813d-a4df42b063d1",
+    "name": "65 How does React's reconciliation algorithm work?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "af33a6e1-a230-41d8-8b08-2b913e07d012",
+    "name": "66 What is the difference between React and Angular?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0ab56529-c6e0-4732-bf85-aaf7d75588c4",
+    "name": "67 What are functional components?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cd8796c7-dd0a-4893-97c9-41057ebe6ff8",
+    "name": "68 What are class components?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5cae3411-9ee6-4549-864f-5758c24128c0",
+    "name": "69 What are props in React?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7ef56511-83c7-4d6a-889c-a3c116171e29",
+    "name": "70 What is state in React?",
+    "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "0304aea7-084a-4e0a-9a29-d548902205c9",
+        "name": "07 React Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "name": "08 React Hooks",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f0e0bcd2-ae5c-4649-a84e-bdfb52874564",
+    "name": "71 What are React hooks?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3e7a3490-7915-4e7b-a4be-7e408d0e0279",
+    "name": "72 What is useState?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d6b9ddf9-5aaf-4630-b758-133e2fd85f77",
+    "name": "73 What is useEffect?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c1384303-df86-4ea0-bb2e-ce62ee431808",
+    "name": "74 What is useRef?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cbde426b-b96a-4f68-a67e-7672f6fea493",
+    "name": "75 What is useMemo?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9f80b536-bdb3-4f6d-8e04-46073228087a",
+    "name": "76 What is useCallback?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e70d04c5-c0b5-41f1-ae5c-8b4e491bacb9",
+    "name": "77 What is useReducer?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4a0f028e-26c6-4bbc-ada8-ca6234911bf2",
+    "name": "78 What is useContext?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d0b45e60-d382-4a12-a0a1-2e547ecd5c86",
+    "name": "79 What are custom hooks?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ba077340-06e1-4a81-ba14-c455e81b787a",
+    "name": "80 What are rules of hooks?",
+    "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
+        "name": "08 React Hooks"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "name": "09 React Performance & Architecture",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fd17c4df-fda2-4340-b6b9-6397a608b0cd",
+    "name": "81 What is React.memo?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "67dd36c4-4dc3-4022-bd08-f0dd88055e2f",
+    "name": "82 What is code splitting in React?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cfa3b295-03ff-48cc-81e0-2596980a851a",
+    "name": "83 What is lazy loading in React?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "459d6e33-ba36-4f8f-8e63-c781acca06aa",
+    "name": "84 What is server-side rendering (SSR)?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fc64d59e-e5d8-46d2-b497-52edc68be66e",
+    "name": "85 What is client-side rendering (CSR)?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "da9a078a-af71-4879-81d4-83a8fe44769a",
+    "name": "86 What is hydration in React?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d902345e-847b-4398-8d83-0f105a743ab5",
+    "name": "87 What is React Fiber architecture?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "67cc5d35-0daf-4cc6-986b-3f14699376b1",
+    "name": "88 What are controlled components?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1b97e27f-34ab-40c6-baf3-5404f510427c",
+    "name": "89 What are uncontrolled components?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7cca94c6-ea3b-4745-8248-785a68946320",
+    "name": "90 What is lifting state up?",
+    "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
+        "name": "09 React Performance & Architecture"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "name": "10 React Advanced Topics",
+    "parentId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2bada664-cbce-469a-8a8f-e8380a11ff20",
+    "name": "091 What is Context API?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5b2456d6-69d2-4c44-99c8-da13f306a0f4",
+    "name": "092 What are Higher Order Components (HOC)?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9a41dd2b-15de-4ac7-9a13-60dabf9eef97",
+    "name": "093 What are render props?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "29a87a3b-1106-4091-b031-454ac312f8ac",
+    "name": "094 What is React Suspense?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b03d5e6a-3844-44a9-b2e6-fc93e070cb69",
+    "name": "095 What are error boundaries?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "04b7039f-3879-4b2b-8c6d-9e0d95788df6",
+    "name": "096 What is React Strict Mode?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "683d0875-60b8-4955-bd9e-fc29918165a6",
+    "name": "097 What is reconciliation in React?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3b8075d6-999e-4011-9708-c2c993d33518",
+    "name": "098 What is the difference between useMemo and useCallback?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d5295085-9b2c-4716-a4de-27a3842c0125",
+    "name": "099 How does React handle re-rendering?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "707e84d8-e4f6-49c4-a794-f8d91416dbda",
+    "name": "100 What are best practices for large-scale React applications?",
+    "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "58d1188e-6f5f-432b-b5f6-1371fc514f72",
+        "name": "100 Industry-Level React + JavaScript Interview Questions"
+      },
+      {
+        "uniqueId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
+        "name": "10 React Advanced Topics"
+      }
+    ],
+    "sections": []
   }
 ]
