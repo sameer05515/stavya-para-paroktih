@@ -39,6 +39,9 @@
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" media="(prefers-color-scheme: dark)" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>
     (function() {
       var t = localStorage.getItem('theme');
@@ -96,6 +99,17 @@
 
   <script>
     (function () {
+      if (typeof marked !== 'undefined' && typeof hljs !== 'undefined') {
+        marked.setOptions({
+          highlight: function (code, lang) {
+            if (lang && hljs.getLanguage(lang)) {
+              try { return hljs.highlight(code, { language: lang }).value; } catch (e) {}
+            }
+            try { return hljs.highlightAuto(code).value; } catch (e) { return code; }
+          }
+        });
+      }
+
       const statusEl = document.getElementById('status');
       const treeContainer = document.getElementById('treeContainer');
       const detailEl = document.getElementById('detail');
@@ -223,6 +237,9 @@
           <div class="${contentBlockClasses} topic-body">${bodyHtml}</div>
           ${sectionsHtml ? '<div class="sections">' + sectionsHtml + '</div>' : ''}
         `;
+        if (typeof hljs !== 'undefined') {
+          detailEl.querySelectorAll('pre code').forEach(function (el) { hljs.highlightElement(el); });
+        }
         syncSidebarToCurrent();
       }
 
