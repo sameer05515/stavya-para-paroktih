@@ -21055,7 +21055,11 @@
     "name": "21 What is a Promise in JavaScript?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "A **Promise** in JavaScript is an object that represents the **result of an asynchronous operation**, which may complete **now, later, or fail**.\n\nA promise helps manage asynchronous code without deeply nested callbacks.\n\n---\n\n**Promise States**\n\n```text\nPending   → initial state\nFulfilled → operation completed successfully\nRejected  → operation failed\n```\n\n---\n\n**Creating a Promise**\n\n```javascript\nconst promise = new Promise((resolve, reject) => {\n\n  let success = true;\n\n  if(success){\n    resolve(\"Operation successful\");\n  } else {\n    reject(\"Operation failed\");\n  }\n\n});\n```\n\n---\n\n**Using a Promise**\n\n```javascript\npromise\n  .then(result => {\n    console.log(result);\n  })\n  .catch(error => {\n    console.log(error);\n  });\n```\n\n---\n\n**Example with setTimeout**\n\n```javascript\nfunction fetchData(){\n\n  return new Promise((resolve, reject) => {\n\n    setTimeout(()=>{\n      resolve(\"Data received\");\n    },2000);\n\n  });\n\n}\n\nfetchData().then(data => console.log(data));\n```\n\nOutput after 2 seconds:\n\n```text\nData received\n```\n\n---\n\n**Promise Chaining**\n\n```javascript\nPromise.resolve(5)\n  .then(num => num * 2)\n  .then(num => num + 10)\n  .then(result => console.log(result));\n```\n\nOutput\n\n```text\n20\n```\n\n---\n\n**Summary**\n\n```text\nPromise\n ├─ Pending\n ├─ Fulfilled (resolve)\n └─ Rejected (reject)\n\nMethods\n ├─ then()\n ├─ catch()\n └─ finally()\n```\n\nPromises make **asynchronous code cleaner, readable, and easier to manage**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21075,7 +21079,11 @@
     "name": "22 What are the states of a Promise?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "A **Promise** in JavaScript can be in **three states** during its lifecycle.\n\n---\n\n**1. Pending**\n\nThe initial state.\nThe asynchronous operation has **not completed yet**.\n\n```javascript\nconst promise = new Promise((resolve, reject) => {\n  // still pending\n});\n```\n\n---\n\n**2. Fulfilled**\n\nThe operation completed **successfully**, and the promise returns a value using `resolve()`.\n\n```javascript\nconst promise = new Promise((resolve, reject) => {\n  resolve(\"Success\");\n});\n\npromise.then(result => console.log(result));\n```\n\nOutput\n\n```\nSuccess\n```\n\n---\n\n**3. Rejected**\n\nThe operation **failed**, and the promise returns an error using `reject()`.\n\n```javascript\nconst promise = new Promise((resolve, reject) => {\n  reject(\"Error occurred\");\n});\n\npromise.catch(error => console.log(error));\n```\n\nOutput\n\n```\nError occurred\n```\n\n---\n\n**Promise State Flow**\n\n```\nPending\n  ↓\nFulfilled (resolve)\n   OR\nRejected (reject)\n```\n\nOnce a promise becomes **fulfilled or rejected**, its state **cannot change**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21095,7 +21103,11 @@
     "name": "23 What is Promise.all()?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`Promise.all()` is a JavaScript method that **runs multiple promises in parallel and returns a single promise**.\nIt **resolves when all promises succeed** and **rejects immediately if any promise fails**.\n\n---\n\n**Syntax**\n\n```javascript\nPromise.all(iterableOfPromises)\n```\n\n---\n\n**Basic Example**\n\n```javascript\nconst p1 = Promise.resolve(10);\nconst p2 = Promise.resolve(20);\nconst p3 = Promise.resolve(30);\n\nPromise.all([p1, p2, p3])\n  .then(results => {\n    console.log(results);\n  });\n```\n\nOutput\n\n```\n[10, 20, 30]\n```\n\n---\n\n**Example with API Calls**\n\n```javascript\nasync function loadData(){\n\n  const [users, posts] = await Promise.all([\n    fetch(\"/api/users\").then(r => r.json()),\n    fetch(\"/api/posts\").then(r => r.json())\n  ]);\n\n  console.log(users, posts);\n}\n```\n\nBoth API calls run **in parallel**, making the program faster.\n\n---\n\n**Rejection Example**\n\n```javascript\nconst p1 = Promise.resolve(\"Success\");\nconst p2 = Promise.reject(\"Failed\");\n\nPromise.all([p1, p2])\n  .then(result => console.log(result))\n  .catch(err => console.log(err));\n```\n\nOutput\n\n```\nFailed\n```\n\nIf **any promise fails**, `Promise.all()` **immediately rejects**.\n\n---\n\n**Summary**\n\n```\nPromise.all()\n  → runs promises in parallel\n  → resolves when ALL succeed\n  → rejects if ANY fails\n  → returns results as an array\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21115,7 +21127,11 @@
     "name": "24 What is Promise.race()?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`Promise.race()` is a JavaScript method that **runs multiple promises simultaneously and returns the result of the first promise that settles** (either **fulfilled or rejected**).\n\nThe remaining promises are ignored once the first one finishes.\n\n---\n\n**Syntax**\n\n```javascript\nPromise.race(iterableOfPromises)\n```\n\n---\n\n**Basic Example**\n\n```javascript\nconst p1 = new Promise(resolve => {\n  setTimeout(() => resolve(\"First\"), 1000);\n});\n\nconst p2 = new Promise(resolve => {\n  setTimeout(() => resolve(\"Second\"), 2000);\n});\n\nPromise.race([p1, p2])\n  .then(result => console.log(result));\n```\n\nOutput\n\n```\nFirst\n```\n\n`p1` resolves first, so `Promise.race()` returns its result.\n\n---\n\n**Example with Rejection**\n\n```javascript\nconst p1 = new Promise((resolve, reject) => {\n  setTimeout(() => reject(\"Error\"), 1000);\n});\n\nconst p2 = new Promise(resolve => {\n  setTimeout(() => resolve(\"Success\"), 2000);\n});\n\nPromise.race([p1, p2])\n  .then(result => console.log(result))\n  .catch(err => console.log(err));\n```\n\nOutput\n\n```\nError\n```\n\nThe first settled promise determines the result.\n\n---\n\n**Common Use Case (Timeout for API)**\n\n```javascript\nconst timeout = new Promise((_, reject) =>\n  setTimeout(() => reject(\"Request Timeout\"), 3000)\n);\n\nPromise.race([\n  fetch(\"/api/data\"),\n  timeout\n])\n.then(res => console.log(res))\n.catch(err => console.log(err));\n```\n\n---\n\n**Summary**\n\n```\nPromise.race()\n→ runs promises in parallel\n→ returns the first settled promise\n→ result may be resolve or reject\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21135,7 +21151,11 @@
     "name": "25 What is Promise.allSettled()?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`Promise.allSettled()` is a JavaScript method that **waits for all promises to finish**, regardless of whether they **resolve or reject**, and returns the result of each promise.\n\nUnlike `Promise.all()`, it **does not fail if one promise rejects**.\n\n---\n\n**Syntax**\n\n```javascript\nPromise.allSettled(iterableOfPromises)\n```\n\n---\n\n**Basic Example**\n\n```javascript\nconst p1 = Promise.resolve(\"Success\");\nconst p2 = Promise.reject(\"Error\");\nconst p3 = Promise.resolve(\"Done\");\n\nPromise.allSettled([p1, p2, p3])\n  .then(results => {\n    console.log(results);\n  });\n```\n\nOutput\n\n```javascript\n[\n { status: \"fulfilled\", value: \"Success\" },\n { status: \"rejected\", reason: \"Error\" },\n { status: \"fulfilled\", value: \"Done\" }\n]\n```\n\n---\n\n**Example with API calls**\n\n```javascript\nPromise.allSettled([\n  fetch(\"/api/users\"),\n  fetch(\"/api/posts\"),\n  fetch(\"/api/comments\")\n])\n.then(results => console.log(results));\n```\n\nAll requests complete **even if some fail**.\n\n---\n\n**Result Object Structure**\n\n```text\n{\n  status: \"fulfilled\",\n  value: result\n}\n\n{\n  status: \"rejected\",\n  reason: error\n}\n```\n\n---\n\n**Summary**\n\n```\nPromise.allSettled()\n→ waits for all promises\n→ returns success + failure results\n→ never rejects\n→ useful when all results are needed\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21155,7 +21175,11 @@
     "name": "26 What is async/await?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**`async/await`** is a modern JavaScript feature used to **handle asynchronous operations in a cleaner and more readable way**.\nIt is built on top of **Promises** and allows asynchronous code to look like synchronous code.\n\n---\n\n**1. async Function**\n\nThe `async` keyword makes a function **always return a Promise**.\n\n```javascript id=\"4dgv2u\"\nasync function greet(){\n  return \"Hello\";\n}\n\ngreet().then(res => console.log(res));\n```\n\nOutput\n\n```text id=\"38h6hd\"\nHello\n```\n\n---\n\n**2. await Keyword**\n\n`await` pauses the execution of the async function until the Promise resolves.\n\n```javascript id=\"qkec1r\"\nasync function loadData(){\n\n  const result = await Promise.resolve(\"Data loaded\");\n\n  console.log(result);\n}\n\nloadData();\n```\n\nOutput\n\n```text id=\"1g0ez6\"\nData loaded\n```\n\n---\n\n**3. Example with API Call**\n\n```javascript id=\"0evogp\"\nasync function getUsers(){\n\n  const response = await fetch(\"/api/users\");\n\n  const users = await response.json();\n\n  console.log(users);\n}\n\ngetUsers();\n```\n\n---\n\n**4. Error Handling**\n\n```javascript id=\"zh38mr\"\nasync function load(){\n\n  try{\n    const data = await fetch(\"/api/data\");\n    console.log(data);\n  }\n  catch(error){\n    console.log(\"Error:\", error);\n  }\n\n}\n```\n\n---\n\n**Summary**\n\n```text id=\"bvs7qp\"\nasync\n → function returns a Promise\n\nawait\n → waits for Promise to resolve\n\nBenefits\n → cleaner syntax\n → easier error handling\n → avoids callback chains\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21175,7 +21199,11 @@
     "name": "27 How does async/await work internally?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`async/await` is syntactic sugar built on top of **Promises**. Internally, an `async` function always returns a **Promise**, and `await` pauses execution of that function until the Promise resolves or rejects.\n\n---\n\n**1. async returns a Promise**\n\n```javascript\nasync function greet(){\n  return \"Hello\";\n}\n\ngreet().then(res => console.log(res));\n```\n\nInternally similar to:\n\n```javascript\nfunction greet(){\n  return Promise.resolve(\"Hello\");\n}\n```\n\n---\n\n**2. await waits for Promise resolution**\n\n```javascript\nasync function load(){\n  const data = await Promise.resolve(\"Data loaded\");\n  console.log(data);\n}\n\nload();\n```\n\nInternally similar to:\n\n```javascript\nfunction load(){\n  return Promise.resolve(\"Data loaded\")\n    .then(data => {\n      console.log(data);\n    });\n}\n```\n\n---\n\n**3. Execution Flow**\n\n```javascript\nasync function test(){\n  console.log(\"Start\");\n\n  const data = await fetch(\"/api\");\n\n  console.log(\"End\");\n}\n```\n\nFlow:\n\n```\nCall Stack\ntest()\n\nawait pauses function\n↓\nPromise runs in Web API\n↓\nResult goes to Microtask Queue\n↓\nEvent Loop resumes function\n```\n\n---\n\n**4. Error Handling**\n\n```javascript\nasync function load(){\n  try{\n    const data = await fetch(\"/api\");\n  } catch(e){\n    console.log(e);\n  }\n}\n```\n\nInternally similar to:\n\n```javascript\nfetch(\"/api\")\n  .then(res => res.json())\n  .catch(err => console.log(err));\n```\n\n---\n\n**Internal Model**\n\n```\nasync function\n   ↓\nreturns Promise\n   ↓\nawait pauses execution\n   ↓\nPromise resolves\n   ↓\nEvent loop resumes execution\n```\n\n`await` **does not block the thread**; it only pauses that async function while the event loop continues executing other tasks.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21195,7 +21223,11 @@
     "name": "28 What happens when an async function throws an error?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "When an **async function throws an error**, the returned **Promise is automatically rejected** with that error. The error can then be handled using **`try...catch` inside the async function** or **`.catch()` when calling the function**.\n\n---\n\n**1. Error inside async function**\n\n```javascript\nasync function test(){\n  throw new Error(\"Something went wrong\");\n}\n\ntest()\n  .catch(err => console.log(err.message));\n```\n\nOutput\n\n```\nSomething went wrong\n```\n\nInternally similar to:\n\n```javascript\nfunction test(){\n  return Promise.reject(new Error(\"Something went wrong\"));\n}\n```\n\n---\n\n**2. Handling error using try...catch**\n\n```javascript\nasync function loadData(){\n\n  try{\n    const data = await fetch(\"/invalid-url\");\n    console.log(data);\n  }\n  catch(error){\n    console.log(\"Error:\", error);\n  }\n\n}\n\nloadData();\n```\n\n---\n\n**3. Without error handling**\n\n```javascript\nasync function test(){\n  throw new Error(\"Failure\");\n}\n\ntest();\n```\n\nResult:\n\n```\nUnhandledPromiseRejection\n```\n\n---\n\n**Execution Flow**\n\n```\nasync function\n      ↓\nerror thrown\n      ↓\nPromise becomes rejected\n      ↓\n.catch() OR try...catch handles it\n```\n\n---\n\n**Key Points**\n\n* Errors in async functions **reject the returned Promise**\n* Use **`try...catch` with await** for clean error handling\n* Without handling → **Unhandled Promise Rejection error**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21215,7 +21247,11 @@
     "name": "29 How can you handle multiple asynchronous calls efficiently?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "You can handle multiple asynchronous calls efficiently in JavaScript using **Promises, async/await, and Promise utilities** so that tasks run **in parallel instead of sequentially**.\n\n---\n\n**1. Sequential Execution (Slow)**\n\nEach request waits for the previous one to finish.\n\n```javascript\nasync function loadData(){\n\n  const users = await fetch(\"/api/users\");\n  const posts = await fetch(\"/api/posts\");\n\n  console.log(users, posts);\n\n}\n```\n\nThis is slower because requests run **one after another**.\n\n---\n\n**2. Parallel Execution with Promise.all() (Recommended)**\n\nAll requests run **simultaneously**.\n\n```javascript\nasync function loadData(){\n\n  const [users, posts] = await Promise.all([\n    fetch(\"/api/users\"),\n    fetch(\"/api/posts\")\n  ]);\n\n  console.log(users, posts);\n\n}\n```\n\nThis is **much faster**.\n\n---\n\n**3. Handling Success + Failure with Promise.allSettled()**\n\nUseful when you want **all results even if some fail**.\n\n```javascript\nPromise.allSettled([\n  fetch(\"/api/users\"),\n  fetch(\"/api/posts\"),\n  fetch(\"/api/comments\")\n])\n.then(results => console.log(results));\n```\n\n---\n\n**4. Fastest Response with Promise.race()**\n\nReturns the **first completed promise**.\n\n```javascript\nPromise.race([\n  fetch(\"/api/server1\"),\n  fetch(\"/api/server2\")\n]).then(result => console.log(result));\n```\n\n---\n\n**5. Multiple Dynamic Requests**\n\n```javascript\nconst urls = [\"/u1\",\"/u2\",\"/u3\"];\n\nconst requests = urls.map(url => fetch(url));\n\nPromise.all(requests)\n  .then(results => console.log(results));\n```\n\n---\n\n**Summary**\n\n```text\nSequential        → await one by one (slow)\nPromise.all       → parallel execution (best)\nPromise.allSettled→ wait for all results\nPromise.race      → first result wins\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21235,7 +21271,11 @@
     "name": "30 What is callback hell?",
     "parentId": "10f5a90e-675a-455e-a968-d4ea4d2a9e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Callback hell** is a situation in JavaScript where **multiple nested callbacks make the code difficult to read, understand, and maintain**. It commonly occurs when handling several asynchronous operations using callbacks.\n\nThis structure is often called the **“pyramid of doom.”**\n\n---\n\n**Example of Callback Hell**\n\n```javascript\ngetUser(function(user){\n\n  getOrders(user.id, function(orders){\n\n    getOrderDetails(orders[0], function(details){\n\n      processPayment(details, function(payment){\n\n        console.log(\"Payment completed\");\n\n      });\n\n    });\n\n  });\n\n});\n```\n\nProblems with this structure:\n\n* Deep nesting\n* Hard to read and maintain\n* Difficult error handling\n* Poor scalability\n\n---\n\n**Solution Using Promises**\n\n```javascript\ngetUser()\n  .then(user => getOrders(user.id))\n  .then(orders => getOrderDetails(orders[0]))\n  .then(details => processPayment(details))\n  .then(() => console.log(\"Payment completed\"))\n  .catch(err => console.log(err));\n```\n\n---\n\n**Better Solution Using async/await**\n\n```javascript\nasync function process(){\n\n  try{\n\n    const user = await getUser();\n    const orders = await getOrders(user.id);\n    const details = await getOrderDetails(orders[0]);\n    await processPayment(details);\n\n    console.log(\"Payment completed\");\n\n  }\n  catch(error){\n    console.log(error);\n  }\n\n}\n```\n\n---\n\n**Summary**\n\n```text\nCallback Hell\n → deeply nested callbacks\n → hard to maintain\n → difficult error handling\n\nSolution\n → Promises\n → async/await\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21271,7 +21311,11 @@
     "name": "31 What are JavaScript objects?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "A **JavaScript object** is a data structure used to store **key–value pairs**, where keys are called **properties** and values can be **data or functions (methods)**.\n\nObjects allow you to **group related data and behavior together**.\n\n---\n\n**1. Creating an Object**\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  age: 30,\n  role: \"Developer\"\n};\n\nconsole.log(user.name);\n```\n\n---\n\n**2. Object with Methods**\n\nFunctions inside objects are called **methods**.\n\n```javascript\nconst user = {\n  name: \"Prem\",\n\n  greet(){\n    console.log(\"Hello \" + this.name);\n  }\n};\n\nuser.greet();\n```\n\n---\n\n**3. Accessing Object Properties**\n\n```javascript\nconst person = {\n  name: \"John\",\n  age: 25\n};\n\nconsole.log(person.name);      // dot notation\nconsole.log(person[\"age\"]);    // bracket notation\n```\n\n---\n\n**4. Adding and Updating Properties**\n\n```javascript\nconst user = {};\n\nuser.name = \"Prem\";\nuser.age = 30;\n\nuser.age = 31;\n```\n\n---\n\n**5. Object Example**\n\n```javascript\nconst product = {\n  id: 101,\n  name: \"Laptop\",\n  price: 50000,\n  show(){\n    console.log(this.name + \" \" + this.price);\n  }\n};\n\nproduct.show();\n```\n\n---\n\n**Summary**\n\n```\nObject\n ├─ properties (key:value)\n └─ methods (functions)\n\nExample\n{\n  name: \"Prem\",\n  age: 30,\n  greet: function(){}\n}\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21291,7 +21335,11 @@
     "name": "32 What is object destructuring?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Object destructuring** is an ES6 feature that allows you to **extract properties from an object and assign them to variables in a shorter and cleaner way**.\n\n---\n\n**Basic Example**\n\n```javascript id=\"deedv6\"\nconst user = {\n  name: \"Prem\",\n  age: 30,\n  role: \"Developer\"\n};\n\nconst { name, age } = user;\n\nconsole.log(name);\nconsole.log(age);\n```\n\n---\n\n**Without Destructuring**\n\n```javascript id=\"6qufgb\"\nconst user = {\n  name: \"Prem\",\n  age: 30\n};\n\nconst name = user.name;\nconst age = user.age;\n```\n\n---\n\n**Renaming Variables**\n\n```javascript id=\"d2rzv6\"\nconst user = {\n  name: \"Prem\",\n  age: 30\n};\n\nconst { name: userName } = user;\n\nconsole.log(userName);\n```\n\n---\n\n**Default Values**\n\n```javascript id=\"ydoxcr\"\nconst user = {\n  name: \"Prem\"\n};\n\nconst { name, age = 25 } = user;\n\nconsole.log(age);\n```\n\n---\n\n**Destructuring in Function Parameters**\n\n```javascript id=\"wsbc09\"\nfunction displayUser({name, age}){\n  console.log(name, age);\n}\n\ndisplayUser({\n  name: \"Prem\",\n  age: 30\n});\n```\n\n---\n\n**Summary**\n\n```text id=\"bcyl07\"\nObject Destructuring\n → extracts properties from objects\n → cleaner syntax\n → supports renaming and default values\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21311,7 +21359,11 @@
     "name": "33 What is the spread operator?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The **spread operator (`...`)** is a JavaScript feature that allows you to **expand or unpack elements of an array or properties of an object into individual values**.\n\nIt is commonly used for **copying, merging, and passing arguments**.\n\n---\n\n**1. Spread with Arrays**\n\n```javascript\nconst arr1 = [1,2,3];\n\nconst arr2 = [...arr1,4,5];\n\nconsole.log(arr2);\n```\n\nOutput\n\n```\n[1,2,3,4,5]\n```\n\n---\n\n**2. Copying an Array**\n\n```javascript\nconst arr1 = [10,20,30];\n\nconst arr2 = [...arr1];\n\nconsole.log(arr2);\n```\n\nCreates a **shallow copy**.\n\n---\n\n**3. Merging Arrays**\n\n```javascript\nconst a = [1,2];\nconst b = [3,4];\n\nconst merged = [...a, ...b];\n\nconsole.log(merged);\n```\n\nOutput\n\n```\n[1,2,3,4]\n```\n\n---\n\n**4. Spread with Objects**\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  age: 30\n};\n\nconst updatedUser = {\n  ...user,\n  role: \"Developer\"\n};\n\nconsole.log(updatedUser);\n```\n\n---\n\n**5. Spread in Function Arguments**\n\n```javascript\nconst numbers = [5,10,15];\n\nconsole.log(Math.max(...numbers));\n```\n\n---\n\n**Summary**\n\n```\nSpread Operator (...)\n → expands array or object values\n → used for copying arrays\n → merging objects\n → passing function arguments\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21331,7 +21383,11 @@
     "name": "34 What is the rest operator?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The **rest operator (`...`)** in JavaScript collects **multiple values into a single array or object**. It is used when the number of arguments or properties is **unknown or variable**.\n\nAlthough it uses the same syntax as the **spread operator (`...`)**, the purpose is different:\n\n* **Spread → expands values**\n* **Rest → collects values**\n\n---\n\n**1. Rest in Function Parameters**\n\nThe rest operator collects remaining arguments into an array.\n\n```javascript\nfunction sum(...numbers){\n  return numbers.reduce((total, n) => total + n, 0);\n}\n\nconsole.log(sum(10, 20, 30, 40));\n```\n\nOutput\n\n```\n100\n```\n\n---\n\n**2. Rest with Array Destructuring**\n\n```javascript\nconst numbers = [1,2,3,4,5];\n\nconst [first, second, ...rest] = numbers;\n\nconsole.log(first); // 1\nconsole.log(rest);  // [3,4,5]\n```\n\n---\n\n**3. Rest with Object Destructuring**\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  age: 30,\n  role: \"Developer\"\n};\n\nconst { name, ...details } = user;\n\nconsole.log(details);\n```\n\nOutput\n\n```\n{ age: 30, role: \"Developer\" }\n```\n\n---\n\n**Summary**\n\n```\nRest Operator (...)\n → collects remaining elements\n → used in function parameters\n → used in array/object destructuring\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21351,7 +21407,11 @@
     "name": "35 What is shallow copy vs deep copy?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Shallow copy** and **deep copy** describe how objects or arrays are duplicated in JavaScript.\n\n---\n\n**1. Shallow Copy**\n\nA **shallow copy** creates a new object, but **nested objects still reference the original memory location**.\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  address: {\n    city: \"Delhi\"\n  }\n};\n\nconst copy = {...user};\n\ncopy.address.city = \"Mumbai\";\n\nconsole.log(user.address.city); // Mumbai\n```\n\nThe nested object `address` is **shared**, so changes affect the original.\n\n---\n\n**Common ways to create shallow copy**\n\n```javascript\nconst copy1 = {...obj};\n\nconst copy2 = Object.assign({}, obj);\n\nconst copy3 = arr.slice();\n```\n\n---\n\n**2. Deep Copy**\n\nA **deep copy** creates a completely new object and **duplicates all nested objects**, so changes do not affect the original.\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  address: {\n    city: \"Delhi\"\n  }\n};\n\nconst copy = JSON.parse(JSON.stringify(user));\n\ncopy.address.city = \"Mumbai\";\n\nconsole.log(user.address.city); // Delhi\n```\n\n---\n\n**Modern deep copy**\n\n```javascript\nconst copy = structuredClone(user);\n```\n\n---\n\n**Comparison**\n\n```\nFeature        Shallow Copy        Deep Copy\n---------------------------------------------\nMemory         partial copy        full copy\nNested objects shared              duplicated\nPerformance    faster              slower\nExamples       spread, assign      structuredClone\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21371,7 +21431,11 @@
     "name": "36 What is JSON serialization?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**JSON serialization** is the process of converting a **JavaScript object into a JSON string** so it can be **stored, transmitted, or sent over a network**.\n\nIn JavaScript, serialization is done using **`JSON.stringify()`**.\n\n---\n\n**1. Convert Object to JSON (Serialization)**\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  age: 30,\n  role: \"Developer\"\n};\n\nconst json = JSON.stringify(user);\n\nconsole.log(json);\n```\n\nOutput\n\n```\n{\"name\":\"Prem\",\"age\":30,\"role\":\"Developer\"}\n```\n\nNow the object becomes a **JSON string**.\n\n---\n\n**2. Convert JSON back to Object (Deserialization)**\n\n```javascript\nconst json = '{\"name\":\"Prem\",\"age\":30}';\n\nconst user = JSON.parse(json);\n\nconsole.log(user.name);\n```\n\n---\n\n**3. Common Use Cases**\n\n* Sending data in **API requests**\n* Storing data in **localStorage**\n* Data exchange between **frontend and backend**\n\nExample with localStorage:\n\n```javascript\nlocalStorage.setItem(\"user\", JSON.stringify(user));\n\nconst data = JSON.parse(localStorage.getItem(\"user\"));\n```\n\n---\n\n**4. Limitations**\n\nJSON serialization does **not support**:\n\n* functions\n* `undefined`\n* `Symbol`\n* circular references\n\nExample:\n\n```javascript\nconst obj = {\n  name: \"Prem\",\n  greet: function(){}\n};\n\nJSON.stringify(obj);\n```\n\nOutput\n\n```\n{\"name\":\"Prem\"}\n```\n\nFunctions are ignored.\n\n---\n\n**Summary**\n\n```\nJSON.stringify()\n → converts object → JSON string\n\nJSON.parse()\n → converts JSON string → object\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21391,7 +21455,11 @@
     "name": "37 What is the difference between Object.freeze() and Object.seal()?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`Object.freeze()` and `Object.seal()` are JavaScript methods used to **control modifications to objects**.\n\n---\n\n**1. Object.freeze()**\n\n`Object.freeze()` makes an object **completely immutable**.\n\n* Cannot add properties\n* Cannot delete properties\n* Cannot modify existing properties\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  age: 30\n};\n\nObject.freeze(user);\n\nuser.name = \"John\"; // ignored\nuser.city = \"Delhi\"; // ignored\n\nconsole.log(user);\n```\n\nOutput\n\n```\n{ name: \"Prem\", age: 30 }\n```\n\n---\n\n**2. Object.seal()**\n\n`Object.seal()` prevents **adding or deleting properties**, but **existing properties can still be modified**.\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  age: 30\n};\n\nObject.seal(user);\n\nuser.name = \"John\"; // allowed\nuser.city = \"Delhi\"; // not allowed\n\nconsole.log(user);\n```\n\nOutput\n\n```\n{ name: \"John\", age: 30 }\n```\n\n---\n\n**Comparison**\n\n```\nFeature          Object.freeze()    Object.seal()\n-----------------------------------------------\nAdd properties   ❌ Not allowed      ❌ Not allowed\nDelete property  ❌ Not allowed      ❌ Not allowed\nModify value     ❌ Not allowed      ✅ Allowed\n```\n\n---\n\n**Check Methods**\n\n```javascript\nObject.isFrozen(obj);\nObject.isSealed(obj);\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21411,7 +21479,11 @@
     "name": "38 What are getters and setters?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Getters and setters** are special methods in JavaScript used to **control how object properties are accessed and modified**.\n\n* **Getter (`get`)** → reads a property value\n* **Setter (`set`)** → updates a property value\n\nThey allow **data validation, computed values, and controlled access to properties**.\n\n---\n\n**1. Getter Example**\n\n```javascript id=\"0o3xg6\"\nconst user = {\n  firstName: \"Prem\",\n  lastName: \"Kumar\",\n\n  get fullName(){\n    return this.firstName + \" \" + this.lastName;\n  }\n};\n\nconsole.log(user.fullName);\n```\n\nOutput\n\n```text id=\"dn69bl\"\nPrem Kumar\n```\n\nThe getter calculates the value **when accessed**.\n\n---\n\n**2. Setter Example**\n\n```javascript id=\"rs9gjf\"\nconst user = {\n  name: \"\",\n\n  set setName(value){\n    this.name = value;\n  }\n};\n\nuser.setName = \"Prem\";\n\nconsole.log(user.name);\n```\n\n---\n\n**3. Getter + Setter Together**\n\n```javascript id=\"d9m0rt\"\nconst user = {\n  _name: \"\",\n\n  get name(){\n    return this._name;\n  },\n\n  set name(value){\n    this._name = value;\n  }\n};\n\nuser.name = \"Prem\";\n\nconsole.log(user.name);\n```\n\n---\n\n**Summary**\n\n```text id=\"6ky60n\"\nget\n → retrieve property value\n\nset\n → modify property value\n\nBenefits\n → validation\n → computed properties\n → controlled access\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21431,7 +21503,11 @@
     "name": "39 What are property descriptors?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Property descriptors** are objects that define the **configuration and behavior of properties** in a JavaScript object. They control how properties can be **read, written, modified, or enumerated**.\n\nJavaScript provides methods like **`Object.getOwnPropertyDescriptor()`** and **`Object.defineProperty()`** to work with property descriptors.\n\n---\n\n**1. Viewing Property Descriptor**\n\n```javascript\nconst user = {\n  name: \"Prem\"\n};\n\nconsole.log(Object.getOwnPropertyDescriptor(user, \"name\"));\n```\n\nOutput\n\n```\n{\n  value: \"Prem\",\n  writable: true,\n  enumerable: true,\n  configurable: true\n}\n```\n\n---\n\n**2. Creating Property with Descriptor**\n\n```javascript\nconst user = {};\n\nObject.defineProperty(user, \"name\", {\n  value: \"Prem\",\n  writable: false,\n  enumerable: true,\n  configurable: false\n});\n\nconsole.log(user.name);\n```\n\n---\n\n**3. Descriptor Properties**\n\n```\nvalue        → property value\nwritable     → can the value be changed?\nenumerable   → appears in loops like Object.keys()\nconfigurable → can the property be deleted or modified?\n```\n\n---\n\n**Example**\n\n```javascript\nconst obj = {};\n\nObject.defineProperty(obj, \"id\", {\n  value: 101,\n  writable: false\n});\n\nobj.id = 200;\n\nconsole.log(obj.id); // 101\n```\n\nValue cannot change because **`writable: false`**.\n\n---\n\n**Summary**\n\n```\nProperty Descriptor\n ├─ value\n ├─ writable\n ├─ enumerable\n └─ configurable\n```\n\nThey provide **fine control over object properties in JavaScript**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21451,7 +21527,11 @@
     "name": "40 What are symbols in JavaScript?",
     "parentId": "f41283d8-9662-4eed-961a-f58c4f29e789",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Symbols** are a primitive data type in JavaScript used to create **unique and immutable identifiers**. They are commonly used as **object property keys** to avoid naming conflicts.\n\n---\n\n**1. Creating a Symbol**\n\n```javascript\nconst id = Symbol(\"userId\");\n\nconsole.log(id);\n```\n\nEven if two symbols have the same description, they are **always unique**.\n\n```javascript\nconst a = Symbol(\"id\");\nconst b = Symbol(\"id\");\n\nconsole.log(a === b); // false\n```\n\n---\n\n**2. Using Symbols as Object Keys**\n\n```javascript\nconst userId = Symbol(\"id\");\n\nconst user = {\n  name: \"Prem\",\n  [userId]: 101\n};\n\nconsole.log(user[userId]);\n```\n\nSymbols help prevent property name conflicts.\n\n---\n\n**3. Symbols Are Not Enumerated**\n\nSymbol properties do not appear in loops like `for...in` or `Object.keys()`.\n\n```javascript\nconst id = Symbol(\"id\");\n\nconst user = {\n  name: \"Prem\",\n  [id]: 123\n};\n\nconsole.log(Object.keys(user)); // [\"name\"]\n```\n\n---\n\n**4. Global Symbols**\n\n```javascript\nconst s1 = Symbol.for(\"app\");\nconst s2 = Symbol.for(\"app\");\n\nconsole.log(s1 === s2); // true\n```\n\n`Symbol.for()` creates or retrieves symbols from the **global symbol registry**.\n\n---\n\n**Summary**\n\n```\nSymbol\n → primitive data type\n → unique identifier\n → commonly used as object keys\n → prevents property name conflicts\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21487,7 +21567,11 @@
     "name": "41 What is the difference between map, filter, and reduce?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`map`, `filter`, and `reduce` are **array methods** used to process arrays in JavaScript. They differ in **purpose and return value**.\n\n---\n\n**1. map()**\n\n`map()` transforms each element and returns a **new array of the same length**.\n\n```javascript id=\"2jgwli\"\nconst numbers = [1,2,3,4];\n\nconst doubled = numbers.map(n => n * 2);\n\nconsole.log(doubled);\n```\n\nOutput\n\n```text id=\"p1kghp\"\n[2,4,6,8]\n```\n\n---\n\n**2. filter()**\n\n`filter()` returns a **new array containing elements that match a condition**.\n\n```javascript id=\"e30al2\"\nconst numbers = [1,2,3,4,5];\n\nconst even = numbers.filter(n => n % 2 === 0);\n\nconsole.log(even);\n```\n\nOutput\n\n```text id=\"y50g7r\"\n[2,4]\n```\n\n---\n\n**3. reduce()**\n\n`reduce()` reduces the array into **a single value**.\n\n```javascript id=\"a11e8q\"\nconst numbers = [1,2,3,4];\n\nconst sum = numbers.reduce((total, n) => total + n, 0);\n\nconsole.log(sum);\n```\n\nOutput\n\n```text id=\"smso78\"\n10\n```\n\n---\n\n**Comparison**\n\n```text id=\"13u1it\"\nMethod   Purpose              Output\n-----------------------------------------\nmap      transform elements   new array\nfilter   select elements      new array\nreduce   combine elements     single value\n```\n\n---\n\n**Example Together**\n\n```javascript id=\"9b8g34\"\nconst numbers = [1,2,3,4,5];\n\nconst result = numbers\n  .filter(n => n % 2 === 0)\n  .map(n => n * 2)\n  .reduce((sum, n) => sum + n, 0);\n\nconsole.log(result);\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21507,7 +21591,11 @@
     "name": "42 What is Array.prototype.reduce() used for?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`Array.prototype.reduce()` is used to **process all elements of an array and combine them into a single value** such as a sum, object, or another array.\n\nIt works by repeatedly applying a **reducer function** to each element of the array.\n\n---\n\n**Syntax**\n\n```javascript\narray.reduce((accumulator, currentValue) => {\n  // logic\n}, initialValue);\n```\n\nParameters:\n\n```text\naccumulator   → accumulated result\ncurrentValue  → current array element\ninitialValue  → starting value\n```\n\n---\n\n**Example 1: Sum of Numbers**\n\n```javascript\nconst numbers = [10, 20, 30, 40];\n\nconst sum = numbers.reduce((total, n) => {\n  return total + n;\n}, 0);\n\nconsole.log(sum);\n```\n\nOutput\n\n```\n100\n```\n\n---\n\n**Example 2: Count Items**\n\n```javascript\nconst fruits = [\"apple\",\"banana\",\"apple\",\"orange\"];\n\nconst count = fruits.reduce((acc, fruit) => {\n\n  acc[fruit] = (acc[fruit] || 0) + 1;\n\n  return acc;\n\n}, {});\n\nconsole.log(count);\n```\n\nOutput\n\n```\n{\n apple:2,\n banana:1,\n orange:1\n}\n```\n\n---\n\n**Example 3: Flatten Array**\n\n```javascript\nconst arr = [[1,2],[3,4],[5,6]];\n\nconst flat = arr.reduce((acc, val) => {\n  return acc.concat(val);\n}, []);\n\nconsole.log(flat);\n```\n\n---\n\n**Summary**\n\n```\nreduce()\n → processes array elements\n → accumulates result\n → returns single value\n```\n\nCommon uses:\n\n* sum or average\n* counting items\n* grouping data\n* flatten arrays\n* building objects.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21527,7 +21615,11 @@
     "name": "43 What is immutability in JavaScript?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Immutability** in JavaScript means **data cannot be changed after it is created**.\nInstead of modifying existing data, you **create a new copy with updated values**.\n\nThis concept is widely used in **React and functional programming** to avoid side effects and maintain predictable state.\n\n---\n\n**1. Mutable Example (Bad Practice)**\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  age: 30\n};\n\nuser.age = 31;\n\nconsole.log(user);\n```\n\nHere the **original object is modified**.\n\n---\n\n**2. Immutable Approach**\n\nCreate a **new object instead of modifying the original**.\n\n```javascript\nconst user = {\n  name: \"Prem\",\n  age: 30\n};\n\nconst updatedUser = {\n  ...user,\n  age: 31\n};\n\nconsole.log(updatedUser);\n```\n\nThe original object **remains unchanged**.\n\n---\n\n**3. Immutable Array Example**\n\n```javascript\nconst numbers = [1,2,3];\n\nconst newNumbers = [...numbers, 4];\n\nconsole.log(newNumbers);\n```\n\nInstead of `push()`, we create a **new array**.\n\n---\n\n**4. Primitive Immutability**\n\nPrimitive values are already immutable.\n\n```javascript\nlet name = \"Prem\";\n\nname = \"John\";\n```\n\nThe string itself does not change; a **new value is created**.\n\n---\n\n**Summary**\n\n```\nImmutability\n → data cannot be modified directly\n → create new copy instead\n\nBenefits\n → predictable state\n → easier debugging\n → important for React performance\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21547,7 +21639,11 @@
     "name": "44 What are pure functions?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Pure functions** are functions that:\n\n1. **Always return the same output for the same input**\n2. **Do not modify external data or cause side effects**\n\nThis makes them **predictable, reusable, and easy to test**.\n\n---\n\n**Example of a Pure Function**\n\n```javascript\nfunction add(a, b){\n  return a + b;\n}\n\nconsole.log(add(2,3)); // 5\nconsole.log(add(2,3)); // 5\n```\n\nFor the same inputs (`2,3`), the output is always **5**.\n\n---\n\n**Example of an Impure Function**\n\n```javascript\nlet total = 0;\n\nfunction add(num){\n  total += num;\n  return total;\n}\n\nadd(5);\n```\n\nThis function modifies **external state (`total`)**, so it is **not pure**.\n\n---\n\n**Pure Function with Arrays**\n\n```javascript\nconst numbers = [1,2,3];\n\nfunction double(arr){\n  return arr.map(n => n * 2);\n}\n\nconsole.log(double(numbers));\n```\n\nThe original array is **not modified**.\n\n---\n\n**Key Characteristics**\n\n```text\nPure Function\n → same input → same output\n → no side effects\n → does not modify external variables\n```\n\n---\n\n**Benefits**\n\n* Predictable behavior\n* Easier testing\n* Better performance with memoization\n* Important in **React and functional programming**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21567,7 +21663,11 @@
     "name": "45 What is functional programming in JavaScript?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Functional programming** in JavaScript is a programming style where code is written using **pure functions, immutability, and function composition** to build predictable and maintainable programs.\n\nInstead of modifying data directly, functional programming focuses on **transforming data using functions**.\n\n---\n\n**1. Pure Functions**\n\nFunctions always return the same output for the same input.\n\n```javascript\nfunction add(a, b){\n  return a + b;\n}\n\nconsole.log(add(2,3));\n```\n\n---\n\n**2. Immutability**\n\nData is **not modified**, instead a new copy is created.\n\n```javascript\nconst numbers = [1,2,3];\n\nconst newNumbers = [...numbers, 4];\n\nconsole.log(newNumbers);\n```\n\n---\n\n**3. First-Class Functions**\n\nFunctions can be **stored in variables, passed as arguments, or returned from other functions**.\n\n```javascript\nfunction greet(name){\n  return \"Hello \" + name;\n}\n\nfunction process(fn){\n  console.log(fn(\"Prem\"));\n}\n\nprocess(greet);\n```\n\n---\n\n**4. Higher-Order Functions**\n\nFunctions that **take other functions as arguments or return functions**.\n\n```javascript\nconst numbers = [1,2,3,4];\n\nconst doubled = numbers.map(n => n * 2);\n\nconsole.log(doubled);\n```\n\n---\n\n**5. Function Composition**\n\nCombining multiple functions to build logic.\n\n```javascript\nconst double = x => x * 2;\nconst square = x => x * x;\n\nconst result = square(double(3));\n\nconsole.log(result);\n```\n\n---\n\n**Summary**\n\n```\nFunctional Programming\n ├─ pure functions\n ├─ immutability\n ├─ higher-order functions\n └─ function composition\n```\n\nJavaScript supports functional programming through features like **map, filter, reduce, arrow functions, and closures**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21587,7 +21687,11 @@
     "name": "46 What is currying?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Currying** is a functional programming technique where a function with multiple arguments is **transformed into a sequence of functions**, each taking **one argument at a time**.\n\n---\n\n**Normal Function**\n\n```javascript\nfunction add(a, b, c){\n  return a + b + c;\n}\n\nconsole.log(add(1,2,3));\n```\n\n---\n\n**Curried Version**\n\n```javascript\nfunction add(a){\n  return function(b){\n    return function(c){\n      return a + b + c;\n    }\n  }\n}\n\nconsole.log(add(1)(2)(3));\n```\n\nEach function returns another function until all arguments are provided.\n\n---\n\n**Using Arrow Functions**\n\n```javascript\nconst add = a => b => c => a + b + c;\n\nconsole.log(add(1)(2)(3));\n```\n\n---\n\n**Practical Example**\n\n```javascript\nconst multiply = a => b => a * b;\n\nconst double = multiply(2);\n\nconsole.log(double(5));\nconsole.log(double(10));\n```\n\n---\n\n**Benefits**\n\n```\nCurrying\n → allows partial application\n → improves code reusability\n → commonly used in functional programming\n```\n\nExample libraries using currying: **Lodash, Ramda**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21607,7 +21711,11 @@
     "name": "47 What is memoization?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Memoization** is an optimization technique where the **results of expensive function calls are cached**, so that when the same inputs occur again, the stored result is returned instead of recalculating.\n\nThis improves performance by **avoiding repeated computations**.\n\n---\n\n**Basic Example**\n\n```javascript\nfunction memoizedAdd() {\n\n  const cache = {};\n\n  return function(num){\n\n    if(cache[num]){\n      return cache[num];\n    }\n\n    console.log(\"Calculating...\");\n\n    const result = num + 10;\n\n    cache[num] = result;\n\n    return result;\n  }\n}\n\nconst add = memoizedAdd();\n\nconsole.log(add(5)); \nconsole.log(add(5));\n```\n\nOutput\n\n```\nCalculating...\n15\n15\n```\n\nSecond call uses the **cached result**.\n\n---\n\n**Example with Fibonacci**\n\n```javascript\nfunction fib(n, cache = {}){\n\n  if(n <= 1) return n;\n\n  if(cache[n]) return cache[n];\n\n  cache[n] = fib(n-1, cache) + fib(n-2, cache);\n\n  return cache[n];\n}\n\nconsole.log(fib(10));\n```\n\nThis reduces time complexity drastically.\n\n---\n\n**Memoization in React**\n\n```javascript\nconst result = useMemo(()=>{\n  return expensiveCalculation(data);\n},[data]);\n```\n\n---\n\n**Summary**\n\n```\nMemoization\n → caches function results\n → avoids repeated calculations\n → improves performance\n```\n\nCommon use cases:\n\n* recursive algorithms\n* expensive computations\n* React performance optimization.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21627,7 +21735,11 @@
     "name": "48 What is debouncing?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Debouncing** is a technique used to **limit how often a function executes** by delaying its execution until a certain time has passed since the last event.\n\nIt is commonly used to **improve performance for frequently triggered events** such as typing, scrolling, or resizing.\n\n---\n\n**Example: Debounce Function**\n\n```javascript\nfunction debounce(fn, delay){\n\n  let timer;\n\n  return function(...args){\n\n    clearTimeout(timer);\n\n    timer = setTimeout(()=>{\n      fn.apply(this, args);\n    }, delay);\n\n  };\n\n}\n```\n\n---\n\n**Usage Example**\n\n```javascript\nconst search = debounce((value)=>{\n  console.log(\"Searching:\", value);\n}, 500);\n\nsearch(\"r\");\nsearch(\"re\");\nsearch(\"rea\");\nsearch(\"react\");\n```\n\nOnly the **last call executes after 500ms**.\n\nOutput\n\n```\nSearching: react\n```\n\n---\n\n**Common Use Case (Search Input)**\n\n```javascript\nconst input = document.getElementById(\"search\");\n\ninput.addEventListener(\"keyup\",\n  debounce((e)=>{\n    fetch(\"/api/search?q=\" + e.target.value);\n  }, 400)\n);\n```\n\nThis prevents **API calls on every keystroke**.\n\n---\n\n**Summary**\n\n```\nDebouncing\n → delays function execution\n → resets timer on repeated calls\n → runs only after user stops triggering event\n```\n\nTypical use cases:\n\n* search input\n* autocomplete\n* window resize\n* scroll events.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21647,7 +21759,11 @@
     "name": "49 What is throttling?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Throttling** is a technique used to **limit how often a function can run within a fixed time interval**, even if the event is triggered many times.\n\nUnlike debouncing, throttling ensures the function **executes at regular intervals**.\n\n---\n\n**Throttle Function Implementation**\n\n```javascript\nfunction throttle(fn, limit){\n\n  let flag = true;\n\n  return function(...args){\n\n    if(!flag) return;\n\n    fn.apply(this, args);\n\n    flag = false;\n\n    setTimeout(()=>{\n      flag = true;\n    }, limit);\n\n  };\n\n}\n```\n\n---\n\n**Usage Example**\n\n```javascript\nconst logScroll = throttle(()=>{\n  console.log(\"Scrolling...\");\n}, 1000);\n\nwindow.addEventListener(\"scroll\", logScroll);\n```\n\nHere the function runs **at most once every 1 second**, even if the scroll event fires many times.\n\n---\n\n**Debounce vs Throttle**\n\n```\nDebounce\n → runs after event stops firing\n\nThrottle\n → runs at fixed intervals\n```\n\n---\n\n**Common Use Cases**\n\n* Scroll events\n* Mouse movement tracking\n* Window resize\n* Button click rate limiting.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21667,7 +21783,11 @@
     "name": "50 What are iterators and generators?",
     "parentId": "a9d1f243-bf0c-42fd-b463-575168c86425",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Iterators** and **generators** are JavaScript features used to **control iteration over data step-by-step**.\n\n---\n\n**1. Iterators**\n\nAn **iterator** is an object that defines how to **sequentially access elements of a collection** using a `next()` method.\n\nThe `next()` method returns an object with:\n\n```text\nvalue  → current value\ndone   → whether iteration is complete\n```\n\nExample:\n\n```javascript\nconst arr = [10,20,30];\n\nconst iterator = arr[Symbol.iterator]();\n\nconsole.log(iterator.next());\nconsole.log(iterator.next());\nconsole.log(iterator.next());\nconsole.log(iterator.next());\n```\n\nOutput\n\n```\n{ value: 10, done: false }\n{ value: 20, done: false }\n{ value: 30, done: false }\n{ value: undefined, done: true }\n```\n\n---\n\n**2. Generators**\n\nA **generator** is a special function that can **pause and resume execution** using the `yield` keyword.\n\nGenerators make it easy to create iterators.\n\nExample:\n\n```javascript\nfunction* numbers(){\n\n  yield 1;\n  yield 2;\n  yield 3;\n\n}\n\nconst gen = numbers();\n\nconsole.log(gen.next());\nconsole.log(gen.next());\nconsole.log(gen.next());\n```\n\nOutput\n\n```\n{ value: 1, done: false }\n{ value: 2, done: false }\n{ value: 3, done: false }\n```\n\n---\n\n**3. Generator with Loop**\n\n```javascript\nfunction* counter(n){\n\n  for(let i=1;i<=n;i++){\n    yield i;\n  }\n\n}\n\nfor(const num of counter(5)){\n  console.log(num);\n}\n```\n\n---\n\n**Summary**\n\n```\nIterator\n → object with next() method\n → controls iteration manually\n\nGenerator\n → function that creates iterators\n → uses yield to pause execution\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21703,7 +21823,11 @@
     "name": "51 What are ES6 modules?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**ES6 modules** are a JavaScript feature that allows you to **split code into separate reusable files and share functionality using `export` and `import`**.\n\nThey help organize large applications and improve maintainability.\n\n---\n\n**1. Exporting from a Module**\n\n```javascript\n// math.js\n\nexport function add(a, b){\n  return a + b;\n}\n\nexport const PI = 3.14;\n```\n\n---\n\n**2. Importing in Another File**\n\n```javascript\n// app.js\n\nimport { add, PI } from \"./math.js\";\n\nconsole.log(add(2,3));\nconsole.log(PI);\n```\n\n---\n\n**3. Default Export**\n\nA module can have **one default export**.\n\n```javascript\n// user.js\n\nexport default function greet(){\n  console.log(\"Hello User\");\n}\n```\n\nImporting default export:\n\n```javascript\nimport greet from \"./user.js\";\n\ngreet();\n```\n\n---\n\n**4. Import Everything**\n\n```javascript\nimport * as math from \"./math.js\";\n\nconsole.log(math.add(5,2));\n```\n\n---\n\n**5. Benefits of ES6 Modules**\n\n```text\nCode organization\nReusable components\nBetter maintainability\nSupports tree shaking\n```\n\n---\n\n**Summary**\n\n```\nexport        → expose variables/functions\nimport        → use code from another file\ndefault export→ single main export\n```\n\nES6 modules are widely used in **React, Node.js, and modern JavaScript applications**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21723,7 +21847,11 @@
     "name": "52 What is tree shaking?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Tree shaking** is a build optimization technique that **removes unused (dead) code from JavaScript bundles**, resulting in **smaller and faster applications**.\n\nIt is commonly used by modern bundlers like **Webpack**, **Rollup**, and **Vite**.\n\n---\n\n**Example**\n\n```javascript\n// math.js\n\nexport function add(a,b){\n  return a + b;\n}\n\nexport function multiply(a,b){\n  return a * b;\n}\n```\n\nIf only `add()` is used:\n\n```javascript\nimport { add } from \"./math.js\";\n\nconsole.log(add(2,3));\n```\n\nDuring the build process, the bundler **removes the unused `multiply()` function**.\n\nFinal bundle conceptually becomes:\n\n```javascript\nfunction add(a,b){\n  return a + b;\n}\n\nconsole.log(add(2,3));\n```\n\n---\n\n**Why it is called Tree Shaking**\n\nThe dependency graph looks like a **tree**, and unused branches are **shaken off**.\n\n---\n\n**Requirements for Tree Shaking**\n\n```text\nUse ES6 modules (import/export)\nUse a modern bundler\nRun production build\n```\n\n---\n\n**Example with Library**\n\n```javascript\nimport { debounce } from \"lodash\";\n```\n\nInstead of importing the entire library, the bundler keeps **only the used function**.\n\n---\n\n**Benefits**\n\n```text\nSmaller bundle size\nFaster loading\nBetter performance\nCleaner production code\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21743,7 +21871,11 @@
     "name": "53 What is dynamic import?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Dynamic import** is a JavaScript feature that allows you to **load modules asynchronously at runtime instead of loading them during the initial bundle**.\n\nIt helps improve performance by **loading code only when it is needed** (code splitting).\n\n---\n\n**Syntax**\n\n```javascript\nimport(modulePath)\n```\n\nIt returns a **Promise**.\n\n---\n\n**Basic Example**\n\n```javascript\nimport(\"./math.js\")\n  .then(module => {\n    console.log(module.add(2,3));\n  });\n```\n\nHere the module is loaded **only when the import statement executes**.\n\n---\n\n**Using async/await**\n\n```javascript\nasync function loadModule(){\n\n  const module = await import(\"./math.js\");\n\n  console.log(module.add(5,2));\n\n}\n\nloadModule();\n```\n\n---\n\n**React Example (Code Splitting)**\n\n```javascript\nconst Dashboard = React.lazy(() => import(\"./Dashboard\"));\n```\n\nThis loads the component **only when it is required**.\n\n---\n\n**Use Cases**\n\n* Lazy loading components\n* Loading heavy libraries on demand\n* Feature-based code loading\n* Improving initial page load time\n\n---\n\n**Static vs Dynamic Import**\n\n```\nStatic Import\nimport module from \"./file.js\"\n\nDynamic Import\nimport(\"./file.js\")\n```\n\n---\n\n**Summary**\n\n```\nDynamic Import\n → loads modules at runtime\n → returns a Promise\n → improves performance via code splitting\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21763,7 +21895,11 @@
     "name": "54 What are WeakMap and WeakSet?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**WeakMap** and **WeakSet** are special collections in JavaScript that store **weak references to objects**, allowing them to be **garbage collected automatically when no other references exist**.\n\nThey help prevent **memory leaks**.\n\n---\n\n**1. WeakMap**\n\nA **WeakMap** stores **key–value pairs**, where **keys must be objects**.\n\nFeatures:\n\n* Keys must be objects\n* Keys are weakly referenced\n* Not iterable\n\nExample:\n\n```javascript id=\"p9zzrb\"\nconst weakMap = new WeakMap();\n\nlet user = { name: \"Prem\" };\n\nweakMap.set(user, \"Developer\");\n\nconsole.log(weakMap.get(user));\n```\n\nIf the object reference is removed:\n\n```javascript id=\"7bgdpy\"\nuser = null;\n```\n\nThe entry in `WeakMap` becomes **eligible for garbage collection**.\n\n---\n\n**2. WeakSet**\n\nA **WeakSet** stores **unique objects only**.\n\nFeatures:\n\n* Only objects allowed\n* Weak references\n* Not iterable\n\nExample:\n\n```javascript id=\"ju6ka0\"\nconst weakSet = new WeakSet();\n\nlet obj = { id: 1 };\n\nweakSet.add(obj);\n\nconsole.log(weakSet.has(obj));\n```\n\nIf the object is removed:\n\n```javascript id=\"gu8g6e\"\nobj = null;\n```\n\nThe object can be **garbage collected automatically**.\n\n---\n\n**3. WeakMap vs WeakSet**\n\n```text id=\"khblwq\"\nFeature     WeakMap           WeakSet\n-------------------------------------------\nData        key-value pairs   objects only\nKeys        objects only      objects only\nIterable    No                No\nUse case    private data      object tracking\n```\n\n---\n\n**Common Use Case**\n\n```javascript id=\"0cxx2r\"\nconst privateData = new WeakMap();\n\nclass User {\n\n  constructor(name){\n    privateData.set(this, {name});\n  }\n\n  getName(){\n    return privateData.get(this).name;\n  }\n\n}\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21783,7 +21919,11 @@
     "name": "55 What is garbage collection in JavaScript?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Garbage collection** in JavaScript is the automatic process of **freeing memory by removing objects that are no longer reachable or used in the program**.\n\nJavaScript engines (like **V8** used in **Google Chrome**) manage memory automatically, so developers usually do not need to manually allocate or free memory.\n\n---\n\n**Example**\n\n```javascript\nlet user = {\n  name: \"Prem\",\n  age: 30\n};\n\nuser = null;\n```\n\nAfter `user` is set to `null`, the object is **no longer referenced**, so the garbage collector can remove it from memory.\n\n---\n\n**Memory Lifecycle**\n\n```text\n1. Allocate memory\n2. Use memory\n3. Release memory (garbage collection)\n```\n\n---\n\n**Example with Unreachable Objects**\n\n```javascript\nfunction createUser(){\n\n  let user = {\n    name: \"Prem\"\n  };\n\n}\n\ncreateUser();\n```\n\nAfter the function finishes, `user` becomes **unreachable**, so it can be collected.\n\n---\n\n**Mark-and-Sweep Algorithm**\n\nMost JavaScript engines use the **Mark-and-Sweep algorithm**.\n\nProcess:\n\n```text\n1. Mark all reachable objects\n2. Identify unreachable objects\n3. Remove unused objects from memory\n```\n\n---\n\n**Memory Leak Example**\n\n```javascript\nlet arr = [];\n\nfunction add(){\n  arr.push(new Array(1000000));\n}\n```\n\nIf references keep growing, memory **cannot be freed**, causing a **memory leak**.\n\n---\n\n**Summary**\n\n```text\nGarbage Collection\n → automatic memory management\n → removes unused objects\n → prevents memory waste\n → uses mark-and-sweep algorithm\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21803,7 +21943,11 @@
     "name": "56 What is memory leak in JavaScript?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "A **memory leak** in JavaScript occurs when **memory that is no longer needed is not released**, causing the application to **consume more memory over time**.\n\nEven though JavaScript has **automatic garbage collection**, memory leaks happen when objects **still have references and cannot be removed from memory**.\n\n---\n\n**Example 1: Global Variables**\n\n```javascript\nfunction createUser(){\n  user = { name: \"Prem\" }; // accidental global variable\n}\n```\n\nSince `user` is global, it **stays in memory and cannot be garbage collected**.\n\n---\n\n**Example 2: Unused References**\n\n```javascript\nlet users = [];\n\nfunction addUser(){\n  users.push({ name: \"User\" });\n}\n```\n\nIf `users` keeps growing, memory **continues increasing**.\n\n---\n\n**Example 3: Event Listeners**\n\n```javascript\nconst button = document.getElementById(\"btn\");\n\nbutton.addEventListener(\"click\", function(){\n  console.log(\"Clicked\");\n});\n```\n\nIf the element is removed but the listener remains, it may cause a **memory leak**.\n\n---\n\n**Example 4: Closures**\n\n```javascript\nfunction create(){\n  let largeData = new Array(1000000);\n\n  return function(){\n    console.log(\"Using data\");\n  };\n}\n```\n\nThe closure keeps `largeData` **in memory even if not needed**.\n\n---\n\n**Common Causes**\n\n```\nGlobal variables\nUncleared timers\nEvent listeners not removed\nLarge objects kept in closures\nGrowing arrays or caches\n```\n\n---\n\n**Prevention**\n\n```javascript\nbutton.removeEventListener(\"click\", handler);\n\nclearInterval(timer);\n\nobject = null;\n```\n\n---\n\n**Summary**\n\n```\nMemory Leak\n → unused memory not released\n → caused by lingering references\n → leads to performance issues\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21823,7 +21967,11 @@
     "name": "57 What is event delegation?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Event delegation** is a technique in JavaScript where a **single event listener is attached to a parent element to handle events from its child elements using event bubbling**.\n\nInstead of adding multiple listeners to many elements, one listener manages them all.\n\n---\n\n**Example Without Event Delegation**\n\n```javascript\nconst buttons = document.querySelectorAll(\"button\");\n\nbuttons.forEach(btn => {\n  btn.addEventListener(\"click\", () => {\n    console.log(\"Button clicked\");\n  });\n});\n```\n\nThis creates **many event listeners**.\n\n---\n\n**Example With Event Delegation**\n\n```javascript\nconst container = document.getElementById(\"container\");\n\ncontainer.addEventListener(\"click\", (event) => {\n\n  if(event.target.tagName === \"BUTTON\"){\n    console.log(\"Button clicked:\", event.target.textContent);\n  }\n\n});\n```\n\nHere the **parent element handles events for all buttons**.\n\n---\n\n**HTML Example**\n\n```html\n<div id=\"container\">\n  <button>One</button>\n  <button>Two</button>\n  <button>Three</button>\n</div>\n```\n\n---\n\n**How It Works**\n\n```text\nEvent Flow\nbutton click\n   ↓\nbutton\n   ↓\nparent div\n   ↓\ndocument\n```\n\nThe event **bubbles up to the parent**, where the listener captures it.\n\n---\n\n**Benefits**\n\n```text\nLess memory usage\nBetter performance\nHandles dynamically added elements\nCleaner code\n```\n\n---\n\n**Common Use Cases**\n\n* Lists (`ul/li`)\n* Tables\n* Dynamic UI elements\n* Large DOM structures\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21843,7 +21991,11 @@
     "name": "58 What is the difference between == and ===?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The difference between **`==` (loose equality)** and **`===` (strict equality)** in JavaScript is **type coercion**.\n\n* `==` compares values **after converting types if needed**\n* `===` compares **both value and type without conversion**\n\n---\n\n**1. Loose Equality (`==`)**\n\nPerforms **type coercion** before comparison.\n\n```javascript\nconsole.log(5 == \"5\"); \n```\n\nOutput\n\n```\ntrue\n```\n\nBecause `\"5\"` is converted to number `5`.\n\nAnother example:\n\n```javascript\nconsole.log(false == 0);\n```\n\nOutput\n\n```\ntrue\n```\n\n---\n\n**2. Strict Equality (`===`)**\n\nCompares **value and data type exactly**.\n\n```javascript\nconsole.log(5 === \"5\");\n```\n\nOutput\n\n```\nfalse\n```\n\nBecause one is **number** and the other is **string**.\n\n---\n\n**Example**\n\n```javascript\nconsole.log(null == undefined); \nconsole.log(null === undefined);\n```\n\nOutput\n\n```\ntrue\nfalse\n```\n\n---\n\n**Comparison Table**\n\n```\nOperator   Comparison Type        Type Conversion\n-----------------------------------------------\n==         Loose equality         Yes\n===        Strict equality        No\n```\n\n---\n\n**Best Practice**\n\nAlways prefer **`===`** because it avoids unexpected behavior caused by **automatic type conversion**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21863,7 +22015,11 @@
     "name": "59 What are JavaScript proxies?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**JavaScript Proxy** is an object that **wraps another object and intercepts operations** such as reading, writing, deleting properties, or calling functions.\n\nIt allows you to **customize the behavior of objects**.\n\n---\n\n**Syntax**\n\n```javascript\nconst proxy = new Proxy(target, handler);\n```\n\n* **target** → original object\n* **handler** → object containing trap methods\n\n---\n\n**Basic Example**\n\n```javascript\nconst user = {\n  name: \"Prem\"\n};\n\nconst proxy = new Proxy(user, {\n  get(target, prop){\n    console.log(\"Accessing:\", prop);\n    return target[prop];\n  }\n});\n\nconsole.log(proxy.name);\n```\n\nOutput\n\n```\nAccessing: name\nPrem\n```\n\n---\n\n**Intercept Property Updates**\n\n```javascript\nconst user = {};\n\nconst proxy = new Proxy(user, {\n  set(target, prop, value){\n    if(prop === \"age\" && value < 0){\n      throw new Error(\"Age cannot be negative\");\n    }\n\n    target[prop] = value;\n    return true;\n  }\n});\n\nproxy.age = 30;\n```\n\n---\n\n**Common Proxy Traps**\n\n```\nget()        → property access\nset()        → property assignment\ndeleteProperty() → delete property\nhas()        → \"in\" operator\napply()      → function calls\nconstruct()  → object creation\n```\n\n---\n\n**Example: Default Value**\n\n```javascript\nconst proxy = new Proxy({}, {\n  get(target, prop){\n    return prop in target ? target[prop] : \"Not found\";\n  }\n});\n\nconsole.log(proxy.name);\n```\n\n---\n\n**Use Cases**\n\n```\nValidation\nLogging\nAccess control\nData binding\nFramework internals (Vue reactivity)\n```\n\nProxies are heavily used in modern frameworks like **Vue.js** to implement **reactivity systems**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21883,7 +22039,11 @@
     "name": "60 What is reflection in JavaScript?",
     "parentId": "064129b0-34c8-4e71-9760-725d400bfa51",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Reflection** in JavaScript refers to the ability of a program to **inspect, analyze, and modify its own structure or behavior at runtime**.\n\nJavaScript provides a built-in object called **`Reflect`** that offers methods to **interact with object properties and operations in a consistent way**.\n\n---\n\n**Basic Example**\n\n```javascript\nconst user = {\n  name: \"Prem\"\n};\n\nconsole.log(Reflect.get(user, \"name\"));\n```\n\nOutput\n\n```\nPrem\n```\n\n---\n\n**Setting Property with Reflect**\n\n```javascript\nconst user = {};\n\nReflect.set(user, \"age\", 30);\n\nconsole.log(user.age);\n```\n\n---\n\n**Checking Property**\n\n```javascript\nconst user = {\n  name: \"Prem\"\n};\n\nconsole.log(Reflect.has(user, \"name\"));\n```\n\nOutput\n\n```\ntrue\n```\n\n---\n\n**Common Reflect Methods**\n\n```text\nReflect.get()        → get property value\nReflect.set()        → set property value\nReflect.has()        → check property existence\nReflect.deleteProperty() → delete property\nReflect.apply()      → call a function\nReflect.construct()  → create object instance\n```\n\n---\n\n**Reflect with Proxy**\n\nReflection is often used with **Proxy** to control object behavior.\n\n```javascript\nconst user = {\n  name: \"Prem\"\n};\n\nconst proxy = new Proxy(user, {\n  get(target, prop){\n    return Reflect.get(target, prop);\n  }\n});\n\nconsole.log(proxy.name);\n```\n\n---\n\n**Summary**\n\n```\nReflection\n → inspect objects\n → modify behavior at runtime\n → implemented using Reflect API\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21919,7 +22079,11 @@
     "name": "61 What is React and why is it used?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "![Image](https://upload.wikimedia.org/wikipedia/commons/3/30/React_Logo_SVG.svg)\n\n![Image](https://user-images.githubusercontent.com/1474579/65395139-5daf2580-dd5c-11e9-88bd-489848766507.png)\n\n![Image](https://miro.medium.com/0%2A_C52yYMRTDuMtdBA)\n\n![Image](https://miro.medium.com/1%2A0UQkQTYmQnEmC9msapaKnw.png)\n\n**React** is an open-source JavaScript library developed by **Meta Platforms** for building **user interfaces**, especially **single-page applications (SPAs)**.\n\nIt allows developers to create **reusable UI components** and efficiently update the UI when data changes.\n\n---\n\n**Basic React Example**\n\n```javascript\nimport React from \"react\";\n\nfunction App(){\n  return <h1>Hello React</h1>;\n}\n\nexport default App;\n```\n\n---\n\n**Component Example**\n\n```javascript\nfunction User(props){\n  return <h2>Hello {props.name}</h2>;\n}\n\nfunction App(){\n  return <User name=\"Prem\" />;\n}\n```\n\n---\n\n**State Example**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Counter(){\n\n  const [count,setCount] = useState(0);\n\n  return (\n    <>\n      <h1>{count}</h1>\n      <button onClick={()=>setCount(count+1)}>Increase</button>\n    </>\n  );\n}\n```\n\n---\n\n**Why React is Used**\n\n```text\nReusable Components\nVirtual DOM for fast UI updates\nEfficient state management\nLarge ecosystem and community\nGood for building scalable frontends\n```\n\n---\n\n**Summary**\n\n```text\nReact\n → JavaScript library for UI\n → component-based architecture\n → efficient rendering with Virtual DOM\n → widely used for modern web apps\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21939,7 +22103,11 @@
     "name": "62 What is JSX?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**JSX (JavaScript XML)** is a syntax extension for JavaScript used in **React** that allows you to write **HTML-like code inside JavaScript**.\n\nJSX makes it easier to describe **UI structure in a readable way**.\n\n---\n\n**JSX Example**\n\n```javascript\nfunction App(){\n  return <h1>Hello React</h1>;\n}\n```\n\nThis looks like HTML but it is actually **JavaScript syntax processed by React**.\n\n---\n\n**Equivalent JavaScript (Without JSX)**\n\n```javascript\nfunction App(){\n  return React.createElement(\"h1\", null, \"Hello React\");\n}\n```\n\nJSX is compiled into `React.createElement()` calls.\n\n---\n\n**JSX with JavaScript Expressions**\n\nYou can embed JavaScript inside `{}`.\n\n```javascript\nconst name = \"Prem\";\n\nfunction App(){\n  return <h1>Hello {name}</h1>;\n}\n```\n\n---\n\n**JSX with Components**\n\n```javascript\nfunction User(props){\n  return <h2>{props.name}</h2>;\n}\n\nfunction App(){\n  return <User name=\"Prem\" />;\n}\n```\n\n---\n\n**JSX Rules**\n\n```text\nJSX must return a single parent element\nUse className instead of class\nJavaScript expressions inside {}\nTags must be properly closed\n```\n\nExample:\n\n```javascript\nreturn (\n  <div>\n    <h1>Hello</h1>\n    <p>Welcome</p>\n  </div>\n);\n```\n\n---\n\n**Summary**\n\n```\nJSX\n → HTML-like syntax inside JavaScript\n → compiled to React.createElement()\n → improves readability of UI code\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21959,7 +22127,11 @@
     "name": "63 How does JSX work internally?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "JSX is a syntax extension used with **React**, but browsers **do not understand JSX directly**.\nInternally, JSX is **compiled (transpiled) into normal JavaScript** using tools like **Babel**.\n\n---\n\n**1. JSX Code**\n\n```javascript\nfunction App(){\n  return <h1>Hello React</h1>;\n}\n```\n\n---\n\n**2. Transpiled JavaScript**\n\nBabel converts JSX into `React.createElement()`.\n\n```javascript\nfunction App(){\n  return React.createElement(\"h1\", null, \"Hello React\");\n}\n```\n\n---\n\n**3. React Element Creation**\n\n`React.createElement()` creates a **React element object**.\n\n```javascript\n{\n  type: \"h1\",\n  props: {\n    children: \"Hello React\"\n  }\n}\n```\n\n---\n\n**4. Virtual DOM**\n\nReact stores this element in the **Virtual DOM**.\n\n```text\nReact Element\n      ↓\nVirtual DOM\n      ↓\nCompare with previous Virtual DOM\n      ↓\nUpdate Real DOM efficiently\n```\n\n---\n\n**Example with Props**\n\nJSX:\n\n```javascript\n<User name=\"Prem\" />\n```\n\nCompiled version:\n\n```javascript\nReact.createElement(User, { name: \"Prem\" });\n```\n\n---\n\n**Example with Nested Elements**\n\nJSX:\n\n```javascript\n<div>\n  <h1>Hello</h1>\n  <p>Welcome</p>\n</div>\n```\n\nCompiled:\n\n```javascript\nReact.createElement(\n  \"div\",\n  null,\n  React.createElement(\"h1\", null, \"Hello\"),\n  React.createElement(\"p\", null, \"Welcome\")\n);\n```\n\n---\n\n**Summary**\n\n```\nJSX\n ↓\nBabel transpiles\n ↓\nReact.createElement()\n ↓\nReact Element Object\n ↓\nVirtual DOM\n ↓\nEfficient DOM updates\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21979,7 +22151,11 @@
     "name": "64 What is the Virtual DOM?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "![Image](https://miro.medium.com/0%2A_C52yYMRTDuMtdBA)\n\n![Image](https://media.licdn.com/dms/image/v2/D4D12AQG4QVjwHUhQ7w/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1709405757285?e=2147483647\\&t=eEH08CgdhUoItOJLvhw0kD4U90lMhKevOwnjFsi9EF0\\&v=beta)\n\n![Image](https://media2.dev.to/dynamic/image/width%3D1280%2Cheight%3D720%2Cfit%3Dcover%2Cgravity%3Dauto%2Cformat%3Dauto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjqsuome198owgamcgr3.jpeg)\n\n![Image](https://miro.medium.com/1%2AICKNe8a_l3F7SB0YKw1-ww.png)\n\nThe **Virtual DOM** is a **lightweight JavaScript representation of the real DOM** used internally by **React** to optimize UI updates.\n\nInstead of directly manipulating the browser DOM, React **updates the Virtual DOM first**, compares changes, and then updates only the necessary parts of the real DOM.\n\n---\n\n**Basic Example**\n\n```javascript\nfunction App(){\n  return <h1>Hello React</h1>;\n}\n```\n\nJSX is converted into a **Virtual DOM object**:\n\n```javascript\n{\n  type: \"h1\",\n  props: {\n    children: \"Hello React\"\n  }\n}\n```\n\n---\n\n**How Virtual DOM Works**\n\n```text\nState change\n     ↓\nNew Virtual DOM created\n     ↓\nCompare with previous Virtual DOM (Diffing)\n     ↓\nFind minimal changes\n     ↓\nUpdate Real DOM efficiently\n```\n\nThis process is called **Reconciliation**.\n\n---\n\n**Example with State Update**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Counter(){\n\n  const [count,setCount] = useState(0);\n\n  return (\n    <>\n      <h1>{count}</h1>\n      <button onClick={()=>setCount(count+1)}>Increment</button>\n    </>\n  );\n}\n```\n\nWhen `count` changes:\n\n```text\nOld Virtual DOM → count = 0\nNew Virtual DOM → count = 1\nReact updates only the <h1> text\n```\n\n---\n\n**Real DOM vs Virtual DOM**\n\n```text\nReal DOM\n → slow updates\n → full DOM manipulation\n\nVirtual DOM\n → lightweight JS object\n → updates only changed parts\n → faster rendering\n```\n\n---\n\n**Summary**\n\n```text\nVirtual DOM\n → copy of the real DOM\n → used by React to optimize updates\n → uses diffing + reconciliation\n → improves performance\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -21999,7 +22175,11 @@
     "name": "65 How does React's reconciliation algorithm work?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "![Image](https://media2.dev.to/dynamic/image/width%3D1280%2Cheight%3D720%2Cfit%3Dcover%2Cgravity%3Dauto%2Cformat%3Dauto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fxjqsuome198owgamcgr3.jpeg)\n\n![Image](https://miro.medium.com/0%2A_C52yYMRTDuMtdBA)\n\n![Image](https://miro.medium.com/1%2AiJKfCo2XlFtz-9ST0_HCtA.png)\n\n![Image](https://miro.medium.com/1%2AISTxswJOuNjXIAWuuJuz4A.png)\n\nThe **Reconciliation Algorithm** in **React** is the process React uses to **compare the previous Virtual DOM with the new Virtual DOM and determine the minimal changes needed to update the real DOM efficiently**.\n\nThis process is also called **diffing**.\n\n---\n\n**1. State or Props Change**\n\nWhen component data changes, React creates a **new Virtual DOM tree**.\n\n```javascript\nfunction Counter(){\n\n  const [count,setCount] = React.useState(0);\n\n  return <h1>{count}</h1>;\n}\n```\n\nIf `count` changes:\n\n```text\nOld Virtual DOM → <h1>0</h1>\nNew Virtual DOM → <h1>1</h1>\n```\n\n---\n\n**2. Diffing Algorithm**\n\nReact compares the **old and new Virtual DOM trees**.\n\nRules React follows:\n\n```text\n1. Different element types → replace entire subtree\n2. Same element type → update attributes only\n3. Lists → use keys to track elements\n```\n\nExample:\n\n```javascript\n<h1 className=\"title\">Hello</h1>\n```\n\nChange:\n\n```javascript\n<h1 className=\"header\">Hello</h1>\n```\n\nReact updates only:\n\n```text\nclassName → title → header\n```\n\n---\n\n**3. List Reconciliation Using Keys**\n\nKeys help React identify which elements changed.\n\n```javascript\nconst list = items.map(item => (\n  <li key={item.id}>{item.name}</li>\n));\n```\n\nWithout keys, React may **re-render many elements unnecessarily**.\n\n---\n\n**4. DOM Update**\n\nAfter diffing:\n\n```text\nNew Virtual DOM\n       ↓\nFind minimal changes\n       ↓\nUpdate Real DOM\n```\n\n---\n\n**Example Flow**\n\n```text\nUser Action\n     ↓\nState Change\n     ↓\nNew Virtual DOM\n     ↓\nDiff with Old Virtual DOM\n     ↓\nReconciliation\n     ↓\nEfficient DOM Update\n```\n\n---\n\n**Summary**\n\n```text\nReconciliation\n → compares old and new Virtual DOM\n → uses diffing algorithm\n → updates only changed DOM nodes\n → improves performance\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22019,7 +22199,11 @@
     "name": "66 What is the difference between React and Angular?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "![Image](https://www.altexsoft.com/media/2018/10/Angular-speed.png)\n\n![Image](https://user-images.githubusercontent.com/1474579/65395139-5daf2580-dd5c-11e9-88bd-489848766507.png)\n\n![Image](https://v2.angular.io/resources/images/devguide/architecture/overview2.png)\n\n![Image](https://www.c-sharpcorner.com/article/basic-architecture-of-angular-2-applications/Images/image001.jpg)\n\n**React** and **Angular** are both used to build modern web applications, but they differ in architecture and approach. **React** is a **library**, while **Angular** is a **complete framework**.\n\n---\n\n**1. Type**\n\n```text\nReact   → UI library\nAngular → Full frontend framework\n```\n\n---\n\n**2. Language**\n\n```text\nReact   → JavaScript (JSX)\nAngular → TypeScript\n```\n\nExample React component:\n\n```javascript\nfunction App(){\n  return <h1>Hello React</h1>;\n}\n```\n\nExample Angular component:\n\n```typescript\n@Component({\n selector: 'app-root',\n template: '<h1>Hello Angular</h1>'\n})\nexport class AppComponent {}\n```\n\n---\n\n**3. Architecture**\n\n```text\nReact\n → component-based UI library\n → developers choose routing/state tools\n\nAngular\n → complete MVC framework\n → built-in routing, HTTP, forms\n```\n\n---\n\n**4. DOM Handling**\n\n```text\nReact   → Virtual DOM\nAngular → Real DOM + change detection\n```\n\nVirtual DOM improves performance by updating only changed elements.\n\n---\n\n**5. Learning Curve**\n\n```text\nReact   → easier to start\nAngular → steeper learning curve\n```\n\nAngular requires understanding of **TypeScript, decorators, dependency injection, RxJS**.\n\n---\n\n**6. Data Binding**\n\n```text\nReact   → one-way data binding\nAngular → two-way data binding\n```\n\n---\n\n**7. Ecosystem**\n\n```text\nReact\n → flexible ecosystem\n → choose libraries yourself\n\nAngular\n → everything built-in\n```\n\n---\n\n**Summary**\n\n```text\nFeature        React                 Angular\n--------------------------------------------------\nType           Library               Framework\nLanguage       JavaScript            TypeScript\nDOM            Virtual DOM           Real DOM\nBinding        One-way               Two-way\nLearning       Easier                More complex\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22039,7 +22223,11 @@
     "name": "67 What are functional components?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Functional components** are JavaScript functions used to create UI components in **React**.\nThey receive **props as input and return JSX that describes the UI**.\n\n---\n\n**Basic Functional Component**\n\n```javascript\nfunction App(){\n  return <h1>Hello React</h1>;\n}\n\nexport default App;\n```\n\n---\n\n**Functional Component with Props**\n\n```javascript\nfunction User(props){\n  return <h2>Hello {props.name}</h2>;\n}\n\nfunction App(){\n  return <User name=\"Prem\" />;\n}\n```\n\n---\n\n**Using React Hooks**\n\nFunctional components can manage state using hooks like `useState`.\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Counter(){\n\n  const [count, setCount] = useState(0);\n\n  return (\n    <>\n      <h1>{count}</h1>\n      <button onClick={()=>setCount(count+1)}>Increment</button>\n    </>\n  );\n}\n```\n\n---\n\n**Arrow Function Version**\n\n```javascript\nconst Greeting = () => {\n  return <h1>Welcome</h1>;\n};\n```\n\n---\n\n**Key Characteristics**\n\n```\nFunctional Components\n → simple JavaScript functions\n → return JSX\n → use hooks for state and lifecycle\n → easier to read and test\n```\n\n---\n\n**Summary**\n\n```\nInput  → props\nProcess → component logic\nOutput → JSX UI\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22059,7 +22247,11 @@
     "name": "68 What are class components?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Class components** are ES6 classes used to create components in **React**.\nThey extend `React.Component` and can manage **state and lifecycle methods**.\n\n---\n\n**Basic Class Component**\n\n```javascript\nimport React from \"react\";\n\nclass App extends React.Component {\n\n  render(){\n    return <h1>Hello React</h1>;\n  }\n\n}\n\nexport default App;\n```\n\n---\n\n**Class Component with Props**\n\n```javascript\nclass User extends React.Component {\n\n  render(){\n    return <h2>Hello {this.props.name}</h2>;\n  }\n\n}\n```\n\nUsage:\n\n```javascript\n<User name=\"Prem\" />\n```\n\n---\n\n**Class Component with State**\n\n```javascript\nclass Counter extends React.Component {\n\n  constructor(props){\n    super(props);\n\n    this.state = {\n      count: 0\n    };\n  }\n\n  increment = () => {\n    this.setState({ count: this.state.count + 1 });\n  }\n\n  render(){\n    return (\n      <>\n        <h1>{this.state.count}</h1>\n        <button onClick={this.increment}>Increase</button>\n      </>\n    );\n  }\n\n}\n```\n\n---\n\n**Lifecycle Methods Example**\n\n```javascript\nclass Example extends React.Component {\n\n  componentDidMount(){\n    console.log(\"Component mounted\");\n  }\n\n  render(){\n    return <h1>Lifecycle Example</h1>;\n  }\n\n}\n```\n\n---\n\n**Key Characteristics**\n\n```\nClass Components\n → ES6 classes\n → extend React.Component\n → use this.state\n → use lifecycle methods\n```\n\n---\n\n**Summary**\n\n```\nInput  → props\nState  → this.state\nOutput → render() method\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22079,7 +22271,11 @@
     "name": "69 What are props in React?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Props (short for properties)** are used in **React** to **pass data from a parent component to a child component**.\n\nProps are **read-only** and cannot be modified by the child component.\n\n---\n\n**Basic Example**\n\n```javascript id=\"9xs45r\"\nfunction User(props){\n  return <h2>Hello {props.name}</h2>;\n}\n\nfunction App(){\n  return <User name=\"Prem\" />;\n}\n```\n\nOutput\n\n```\nHello Prem\n```\n\n---\n\n**Props with Destructuring**\n\n```javascript id=\"78ze9a\"\nfunction User({name, age}){\n  return <p>{name} - {age}</p>;\n}\n\nfunction App(){\n  return <User name=\"Prem\" age={30} />;\n}\n```\n\n---\n\n**Passing Multiple Props**\n\n```javascript id=\"vbdxlj\"\nfunction Product(props){\n  return (\n    <h3>\n      {props.name} - ₹{props.price}\n    </h3>\n  );\n}\n\n<Product name=\"Laptop\" price={50000} />\n```\n\n---\n\n**Props Are Read-Only**\n\n```javascript id=\"8um0cl\"\nfunction User(props){\n\n  props.name = \"John\"; // ❌ not allowed\n\n  return <h1>{props.name}</h1>;\n}\n```\n\nProps should **never be modified inside a component**.\n\n---\n\n**Summary**\n\n```\nProps\n → used to pass data\n → parent → child communication\n → immutable (read-only)\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22099,7 +22295,11 @@
     "name": "70 What is state in React?",
     "parentId": "0304aea7-084a-4e0a-9a29-d548902205c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**State** in **React** is a built-in object used to **store data that can change over time and affect what is rendered on the UI**.\n\nWhen state changes, React **re-renders the component automatically**.\n\n---\n\n**Example with useState (Functional Component)**\n\n```javascript id=\"u3ihof\"\nimport { useState } from \"react\";\n\nfunction Counter(){\n\n  const [count, setCount] = useState(0);\n\n  return (\n    <>\n      <h1>{count}</h1>\n\n      <button onClick={() => setCount(count + 1)}>\n        Increment\n      </button>\n    </>\n  );\n}\n```\n\nHere:\n\n```text id=\"bzhpxe\"\ncount     → state value\nsetCount  → function to update state\n```\n\n---\n\n**Example with Object State**\n\n```javascript id=\"p4d34v\"\nconst [user, setUser] = useState({\n  name: \"Prem\",\n  age: 30\n});\n```\n\nUpdating state:\n\n```javascript id=\"7n19lh\"\nsetUser({\n  ...user,\n  age: 31\n});\n```\n\n---\n\n**Class Component State**\n\n```javascript id=\"9wr7gl\"\nclass Counter extends React.Component {\n\n  state = {\n    count: 0\n  };\n\n  increment = () => {\n    this.setState({ count: this.state.count + 1 });\n  };\n\n}\n```\n\n---\n\n**Props vs State**\n\n```text id=\"ld74x2\"\nProps\n → passed from parent\n → read-only\n\nState\n → managed inside component\n → can change\n → triggers re-render\n```\n\n---\n\n**Summary**\n\n```text id=\"ojw99n\"\nState\n → component's internal data\n → managed using useState or this.state\n → UI updates when state changes\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22135,7 +22335,11 @@
     "name": "71 What are React hooks?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**React Hooks** are special functions in **React** that allow **functional components to use state, lifecycle features, and other React capabilities without writing class components**.\n\nHooks were introduced in React **16.8**.\n\n---\n\n**Example: useState Hook**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Counter(){\n\n  const [count, setCount] = useState(0);\n\n  return (\n    <>\n      <h1>{count}</h1>\n      <button onClick={()=>setCount(count+1)}>Increment</button>\n    </>\n  );\n}\n```\n\n---\n\n**Example: useEffect Hook**\n\n```javascript\nimport { useEffect } from \"react\";\n\nfunction App(){\n\n  useEffect(()=>{\n    console.log(\"Component mounted\");\n  }, []);\n\n  return <h1>Hello React</h1>;\n}\n```\n\n---\n\n**Common React Hooks**\n\n```text\nuseState     → manage state\nuseEffect    → side effects (API calls, DOM updates)\nuseRef       → access DOM elements\nuseMemo      → memoize values\nuseCallback  → memoize functions\nuseContext   → access global context\nuseReducer   → complex state logic\n```\n\n---\n\n**Rules of Hooks**\n\n```text\nCall hooks only at top level\nCall hooks only inside React functions\nDo not use hooks inside loops or conditions\n```\n\n---\n\n**Summary**\n\n```text\nHooks\n → enable state and lifecycle in functional components\n → replace many class component features\n → make code cleaner and reusable\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22155,7 +22359,11 @@
     "name": "72 What is useState?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`useState` is a **React Hook** in **React** that allows functional components to **store and manage state**.\n\nWhen the state changes, React **re-renders the component automatically**.\n\n---\n\n**Basic Syntax**\n\n```javascript\nconst [state, setState] = useState(initialValue);\n```\n\n* **state** → current value\n* **setState** → function used to update the value\n\n---\n\n**Example**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Counter(){\n\n  const [count, setCount] = useState(0);\n\n  return (\n    <>\n      <h1>{count}</h1>\n\n      <button onClick={() => setCount(count + 1)}>\n        Increment\n      </button>\n    </>\n  );\n}\n```\n\n---\n\n**Example with Object State**\n\n```javascript\nconst [user, setUser] = useState({\n  name: \"Prem\",\n  age: 30\n});\n```\n\nUpdating state:\n\n```javascript\nsetUser({\n  ...user,\n  age: 31\n});\n```\n\n---\n\n**Multiple States**\n\n```javascript\nconst [name, setName] = useState(\"\");\nconst [age, setAge] = useState(0);\n```\n\n---\n\n**State Update Using Previous Value**\n\n```javascript\nsetCount(prev => prev + 1);\n```\n\n---\n\n**Summary**\n\n```\nuseState\n → React hook for state management\n → used in functional components\n → triggers re-render when state changes\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22175,7 +22383,11 @@
     "name": "73 What is useEffect?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`useEffect` is a **React Hook** in **React** used to handle **side effects in functional components**.\n\nSide effects include:\n\n* API calls\n* DOM updates\n* timers\n* subscriptions\n* logging\n\n---\n\n**Basic Syntax**\n\n```javascript\nuseEffect(() => {\n  // side effect code\n}, [dependencies]);\n```\n\n---\n\n**Example: Run Once (Component Mount)**\n\n```javascript\nimport { useEffect } from \"react\";\n\nfunction App(){\n\n  useEffect(() => {\n    console.log(\"Component mounted\");\n  }, []);\n\n  return <h1>Hello React</h1>;\n}\n```\n\n`[]` means it runs **only once after the component mounts**.\n\n---\n\n**Example: Run When State Changes**\n\n```javascript\nimport { useState, useEffect } from \"react\";\n\nfunction Counter(){\n\n  const [count, setCount] = useState(0);\n\n  useEffect(()=>{\n    console.log(\"Count changed:\", count);\n  }, [count]);\n\n  return (\n    <button onClick={()=>setCount(count+1)}>\n      {count}\n    </button>\n  );\n}\n```\n\n---\n\n**Example: API Call**\n\n```javascript\nimport { useEffect, useState } from \"react\";\n\nfunction Users(){\n\n  const [users,setUsers] = useState([]);\n\n  useEffect(()=>{\n    fetch(\"/api/users\")\n      .then(res => res.json())\n      .then(data => setUsers(data));\n  }, []);\n\n}\n```\n\n---\n\n**Cleanup Function**\n\n```javascript\nuseEffect(()=>{\n\n  const timer = setInterval(()=>{\n    console.log(\"Running...\");\n  },1000);\n\n  return () => {\n    clearInterval(timer);\n  };\n\n},[]);\n```\n\n---\n\n**Summary**\n\n```\nuseEffect\n → handles side effects\n → runs after render\n → supports cleanup\n → controlled by dependency array\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22195,7 +22407,11 @@
     "name": "74 What is useRef?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`useRef` is a React Hook in **React** used to **store a mutable value that persists across renders** and to **access DOM elements directly**.\n\nUnlike state, updating a `useRef` value **does not trigger a re-render**.\n\n---\n\n**Basic Syntax**\n\n```javascript\nconst ref = useRef(initialValue);\n```\n\n---\n\n**Example: Access DOM Element**\n\n```javascript\nimport { useRef } from \"react\";\n\nfunction App(){\n\n  const inputRef = useRef(null);\n\n  const focusInput = () => {\n    inputRef.current.focus();\n  };\n\n  return (\n    <>\n      <input ref={inputRef} />\n      <button onClick={focusInput}>Focus</button>\n    </>\n  );\n}\n```\n\nHere `inputRef.current` refers to the **actual DOM element**.\n\n---\n\n**Example: Store Value Without Re-render**\n\n```javascript\nimport { useRef } from \"react\";\n\nfunction Counter(){\n\n  const countRef = useRef(0);\n\n  const increment = () => {\n    countRef.current++;\n    console.log(countRef.current);\n  };\n\n  return <button onClick={increment}>Increase</button>;\n}\n```\n\n---\n\n**useRef vs useState**\n\n```text\nuseState\n → triggers component re-render\n\nuseRef\n → does NOT trigger re-render\n → stores persistent value\n```\n\n---\n\n**Common Use Cases**\n\n```text\nAccess DOM elements\nStore previous values\nStore timers or intervals\nAvoid unnecessary re-renders\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22215,7 +22431,11 @@
     "name": "75 What is useMemo?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`useMemo` is a React Hook in **React** used to **memoize (cache) the result of expensive calculations** so that the computation **only runs when dependencies change**.\n\nIt helps improve performance by **avoiding unnecessary recalculations during re-renders**.\n\n---\n\n**Basic Syntax**\n\n```javascript\nconst memoizedValue = useMemo(() => {\n  return calculation;\n}, [dependencies]);\n```\n\n* Function runs only when **dependencies change**\n\n---\n\n**Example**\n\n```javascript\nimport { useMemo, useState } from \"react\";\n\nfunction App(){\n\n  const [count, setCount] = useState(0);\n  const [num, setNum] = useState(5);\n\n  const square = useMemo(()=>{\n    console.log(\"Calculating...\");\n    return num * num;\n  }, [num]);\n\n  return (\n    <>\n      <h1>{square}</h1>\n\n      <button onClick={()=>setCount(count+1)}>\n        Re-render\n      </button>\n    </>\n  );\n}\n```\n\nIf `count` changes, **square is not recalculated**.\n\n---\n\n**Without useMemo**\n\n```javascript\nconst square = num * num;\n```\n\nThis calculation would run **on every render**.\n\n---\n\n**Common Use Cases**\n\n```\nHeavy calculations\nFiltering large lists\nSorting large datasets\nExpensive computations\n```\n\n---\n\n**Summary**\n\n```\nuseMemo\n → caches computed values\n → recalculates only when dependencies change\n → improves performance\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22235,7 +22455,11 @@
     "name": "76 What is useCallback?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`useCallback` is a React Hook in **React** used to **memoize functions** so that the same function instance is reused between renders unless its dependencies change.\n\nThis helps prevent **unnecessary re-renders of child components**.\n\n---\n\n**Basic Syntax**\n\n```javascript\nconst memoizedFunction = useCallback(() => {\n  // function logic\n}, [dependencies]);\n```\n\n---\n\n**Example**\n\n```javascript\nimport { useState, useCallback } from \"react\";\n\nfunction App(){\n\n  const [count, setCount] = useState(0);\n\n  const handleClick = useCallback(() => {\n    console.log(\"Button clicked\");\n  }, []);\n\n  return (\n    <>\n      <button onClick={handleClick}>Click</button>\n      <button onClick={()=>setCount(count+1)}>Re-render</button>\n    </>\n  );\n}\n```\n\nHere `handleClick` **does not get recreated on every render**.\n\n---\n\n**Example with Child Component**\n\n```javascript\nconst Button = React.memo(({onClick})=>{\n  console.log(\"Child render\");\n  return <button onClick={onClick}>Click</button>;\n});\n```\n\nParent component:\n\n```javascript\nconst handleClick = useCallback(()=>{\n  console.log(\"clicked\");\n},[]);\n```\n\nNow the child component **won’t re-render unnecessarily**.\n\n---\n\n**useMemo vs useCallback**\n\n```\nuseMemo\n → memoizes values\n\nuseCallback\n → memoizes functions\n```\n\n---\n\n**Summary**\n\n```\nuseCallback\n → caches functions\n → prevents unnecessary re-renders\n → useful with React.memo\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22255,7 +22479,11 @@
     "name": "77 What is useReducer?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`useReducer` is a React Hook in **React** used to manage **complex state logic** in functional components.\n\nIt works similarly to **Redux**, where state changes are handled using **actions and a reducer function**.\n\n---\n\n**Basic Syntax**\n\n```javascript id=\"7w6snr\"\nconst [state, dispatch] = useReducer(reducer, initialState);\n```\n\n* **state** → current state\n* **dispatch** → function to trigger state updates\n* **reducer** → function that defines how state changes\n\n---\n\n**Reducer Function**\n\n```javascript id=\"zptdc0\"\nfunction reducer(state, action){\n\n  switch(action.type){\n\n    case \"increment\":\n      return { count: state.count + 1 };\n\n    case \"decrement\":\n      return { count: state.count - 1 };\n\n    default:\n      return state;\n\n  }\n\n}\n```\n\n---\n\n**Example Component**\n\n```javascript id=\"6odl0p\"\nimport { useReducer } from \"react\";\n\nconst initialState = { count: 0 };\n\nfunction reducer(state, action){\n\n  switch(action.type){\n    case \"increment\":\n      return { count: state.count + 1 };\n\n    case \"decrement\":\n      return { count: state.count - 1 };\n\n    default:\n      return state;\n  }\n\n}\n\nfunction Counter(){\n\n  const [state, dispatch] = useReducer(reducer, initialState);\n\n  return (\n    <>\n      <h1>{state.count}</h1>\n\n      <button onClick={()=>dispatch({type:\"increment\"})}>\n        +\n      </button>\n\n      <button onClick={()=>dispatch({type:\"decrement\"})}>\n        -\n      </button>\n    </>\n  );\n}\n```\n\n---\n\n**useState vs useReducer**\n\n```text id=\"owd8e0\"\nuseState\n → simple state\n\nuseReducer\n → complex state logic\n → multiple state transitions\n```\n\n---\n\n**Summary**\n\n```text id=\"74se9v\"\nuseReducer\n → manages complex state\n → uses reducer + dispatch\n → useful for large components\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22275,7 +22503,11 @@
     "name": "78 What is useContext?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`useContext` is a React Hook in **React** used to **access data from a Context without passing props through multiple component levels**.\n\nIt helps solve the problem of **prop drilling**.\n\n---\n\n**1. Create Context**\n\n```javascript id=\"l6jv3f\"\nimport { createContext } from \"react\";\n\nconst UserContext = createContext();\n```\n\n---\n\n**2. Provide Context**\n\n```javascript id=\"scis1r\"\nfunction App(){\n\n  const user = \"Prem\";\n\n  return (\n    <UserContext.Provider value={user}>\n      <Dashboard />\n    </UserContext.Provider>\n  );\n\n}\n```\n\n---\n\n**3. Consume Context using useContext**\n\n```javascript id=\"l3w3ae\"\nimport { useContext } from \"react\";\n\nfunction Dashboard(){\n\n  const user = useContext(UserContext);\n\n  return <h1>Hello {user}</h1>;\n\n}\n```\n\n---\n\n**Component Structure**\n\n```text id=\"q8r4z5\"\nApp\n └── Provider\n      └── Dashboard\n            └── useContext()\n```\n\nThe child component directly accesses the data **without passing props through intermediate components**.\n\n---\n\n**Common Use Cases**\n\n```text id=\"goie2b\"\nAuthentication state\nTheme (dark/light)\nLanguage settings\nGlobal configuration\n```\n\n---\n\n**Summary**\n\n```text id=\"n4nl27\"\nuseContext\n → access global data\n → avoids prop drilling\n → used with Context API\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22295,7 +22527,11 @@
     "name": "79 What are custom hooks?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Custom hooks** are **JavaScript functions that start with `use` and allow you to reuse stateful logic across multiple components** in **React**.\n\nThey help **avoid code duplication and keep components clean**.\n\n---\n\n**Example: Custom Hook**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction useCounter(){\n\n  const [count, setCount] = useState(0);\n\n  const increment = () => setCount(count + 1);\n  const decrement = () => setCount(count - 1);\n\n  return { count, increment, decrement };\n\n}\n```\n\n---\n\n**Using the Custom Hook**\n\n```javascript\nfunction Counter(){\n\n  const { count, increment, decrement } = useCounter();\n\n  return (\n    <>\n      <h1>{count}</h1>\n      <button onClick={increment}>+</button>\n      <button onClick={decrement}>-</button>\n    </>\n  );\n}\n```\n\n---\n\n**Example: Custom Hook for API**\n\n```javascript\nimport { useState, useEffect } from \"react\";\n\nfunction useFetch(url){\n\n  const [data, setData] = useState([]);\n\n  useEffect(()=>{\n    fetch(url)\n      .then(res => res.json())\n      .then(setData);\n  },[url]);\n\n  return data;\n\n}\n```\n\nUsage:\n\n```javascript\nconst users = useFetch(\"/api/users\");\n```\n\n---\n\n**Rules of Custom Hooks**\n\n```\nStart with \"use\"\nCall hooks only at top level\nUse inside React components or other hooks\n```\n\n---\n\n**Summary**\n\n```\nCustom Hooks\n → reusable logic\n → built using existing hooks\n → improves code organization\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22315,7 +22551,11 @@
     "name": "80 What are rules of hooks?",
     "parentId": "63319157-9f02-4ba3-ac60-ed7bd08461c9",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The **Rules of Hooks** define how React Hooks must be used in **React** to ensure React can correctly track component state and lifecycle.\n\n---\n\n**1. Only Call Hooks at the Top Level**\n\nHooks must **not be used inside loops, conditions, or nested functions**.\n\n❌ Incorrect\n\n```javascript\nif(count > 0){\n  const [value, setValue] = useState(0);\n}\n```\n\n✅ Correct\n\n```javascript\nconst [value, setValue] = useState(0);\n\nif(count > 0){\n  console.log(value);\n}\n```\n\nThis ensures hooks are **called in the same order on every render**.\n\n---\n\n**2. Only Call Hooks Inside React Functions**\n\nHooks can only be used inside:\n\n* React functional components\n* Custom hooks\n\n❌ Incorrect\n\n```javascript\nfunction normalFunction(){\n  const [count, setCount] = useState(0);\n}\n```\n\n✅ Correct\n\n```javascript\nfunction Counter(){\n  const [count, setCount] = useState(0);\n}\n```\n\n---\n\n**3. Custom Hooks Must Start with \"use\"**\n\nThis allows React to **identify hook usage**.\n\n```javascript\nfunction useCounter(){\n  const [count, setCount] = useState(0);\n}\n```\n\n---\n\n**Example**\n\n```javascript\nimport { useState, useEffect } from \"react\";\n\nfunction App(){\n\n  const [count, setCount] = useState(0);\n\n  useEffect(()=>{\n    console.log(\"Component mounted\");\n  },[]);\n\n}\n```\n\n---\n\n**Summary**\n\n```text\nRules of Hooks\n1. Call hooks only at the top level\n2. Call hooks only in React functions\n3. Custom hooks must start with \"use\"\n```\n\nThese rules help React **maintain consistent hook order and predictable behavior**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22351,7 +22591,11 @@
     "name": "81 What is React.memo?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "`React.memo` is a higher-order component in **React** used to **prevent unnecessary re-renders of functional components**.\n\nIt works by **memoizing the component output** and re-rendering the component **only when its props change**.\n\n---\n\n**Basic Syntax**\n\n```javascript\nconst MemoizedComponent = React.memo(Component);\n```\n\n---\n\n**Example**\n\n```javascript\nimport React from \"react\";\n\nfunction Child({name}){\n  console.log(\"Child rendered\");\n\n  return <h1>{name}</h1>;\n}\n\nexport default React.memo(Child);\n```\n\nParent component:\n\n```javascript\nfunction App(){\n\n  const [count,setCount] = React.useState(0);\n\n  return (\n    <>\n      <Child name=\"Prem\" />\n\n      <button onClick={()=>setCount(count+1)}>\n        Re-render Parent\n      </button>\n    </>\n  );\n}\n```\n\nHere the **Child component will not re-render** when the parent updates, because the props remain the same.\n\n---\n\n**Without React.memo**\n\n```text\nParent re-render\n→ Child re-render\n```\n\n**With React.memo**\n\n```text\nParent re-render\n→ Child does NOT re-render (props unchanged)\n```\n\n---\n\n**Custom Comparison**\n\n```javascript\nexport default React.memo(Component, (prevProps, nextProps)=>{\n  return prevProps.id === nextProps.id;\n});\n```\n\n---\n\n**Summary**\n\n```\nReact.memo\n → memoizes functional components\n → skips re-render if props unchanged\n → improves performance\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22371,7 +22615,11 @@
     "name": "82 What is code splitting in React?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Code splitting** in **React** is a technique used to **split a large JavaScript bundle into smaller chunks** so that only the required code is loaded when needed.\n\nThis improves **initial page load performance**.\n\n---\n\n**Without Code Splitting**\n\nAll components load in one bundle.\n\n```text\nbundle.js\n ├─ Home\n ├─ Dashboard\n ├─ Profile\n └─ Settings\n```\n\nEven unused components are loaded.\n\n---\n\n**With Code Splitting**\n\nComponents load **only when required**.\n\n```text\nbundle.js\n ├─ Home\n\ndashboard.chunk.js\nprofile.chunk.js\nsettings.chunk.js\n```\n\n---\n\n**React.lazy Example**\n\n```javascript\nimport React, { Suspense } from \"react\";\n\nconst Dashboard = React.lazy(() => import(\"./Dashboard\"));\n\nfunction App(){\n\n  return (\n    <Suspense fallback={<h1>Loading...</h1>}>\n      <Dashboard />\n    </Suspense>\n  );\n\n}\n```\n\n---\n\n**Dynamic Import**\n\n```javascript\nconst module = await import(\"./math.js\");\n```\n\nThis loads the module **only when needed**.\n\n---\n\n**Common Use Cases**\n\n```text\nRoute-based loading\nLarge components\nAdmin panels\nHeavy libraries\n```\n\n---\n\n**Benefits**\n\n```text\nSmaller initial bundle\nFaster page load\nBetter performance\nImproved user experience\n```\n\n---\n\n**Summary**\n\n```text\nCode Splitting\n → break large bundle into smaller chunks\n → load components on demand\n → implemented using React.lazy + Suspense\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22391,7 +22639,11 @@
     "name": "83 What is lazy loading in React?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Lazy loading** in **React** is a technique used to **load components only when they are needed instead of loading everything at the initial page load**.\n\nThis improves **performance and reduces the initial bundle size**.\n\n---\n\n**Basic Example**\n\n```javascript\nimport React, { Suspense } from \"react\";\n\nconst Dashboard = React.lazy(() => import(\"./Dashboard\"));\n\nfunction App(){\n\n  return (\n    <Suspense fallback={<h1>Loading...</h1>}>\n      <Dashboard />\n    </Suspense>\n  );\n\n}\n```\n\nExplanation:\n\n```text\nReact.lazy() → loads component dynamically\nSuspense → shows fallback UI while component loads\n```\n\n---\n\n**Example with Routing**\n\n```javascript\nimport { BrowserRouter, Routes, Route } from \"react-router-dom\";\n\nconst Home = React.lazy(() => import(\"./Home\"));\nconst Profile = React.lazy(() => import(\"./Profile\"));\n\nfunction App(){\n  return (\n    <BrowserRouter>\n      <Suspense fallback={<h1>Loading...</h1>}>\n        <Routes>\n          <Route path=\"/\" element={<Home />} />\n          <Route path=\"/profile\" element={<Profile />} />\n        </Routes>\n      </Suspense>\n    </BrowserRouter>\n  );\n}\n```\n\n---\n\n**How Lazy Loading Works**\n\n```\nInitial Load\n   ↓\nLoad only required components\n   ↓\nUser navigates\n   ↓\nLoad new component dynamically\n```\n\n---\n\n**Benefits**\n\n```\nFaster initial load\nReduced bundle size\nBetter performance\nImproved user experience\n```\n\n---\n\n**Summary**\n\n```\nLazy Loading\n → load components only when needed\n → implemented using React.lazy()\n → requires Suspense for fallback UI\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22411,7 +22663,11 @@
     "name": "84 What is server-side rendering (SSR)?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Server-Side Rendering (SSR)** is a technique where the **HTML of a web page is generated on the server and sent to the browser**, instead of rendering everything in the browser.\n\nFrameworks built on **React** such as **Next.js** commonly use SSR.\n\n---\n\n**Client-Side Rendering (Normal React)**\n\n```\nBrowser request\n     ↓\nServer sends JS bundle\n     ↓\nBrowser runs JavaScript\n     ↓\nUI rendered\n```\n\nThis can cause **slow first page load**.\n\n---\n\n**Server-Side Rendering Flow**\n\n```\nBrowser request\n     ↓\nServer renders HTML\n     ↓\nHTML sent to browser\n     ↓\nReact hydrates page\n```\n\nThe page appears **faster because HTML is already generated**.\n\n---\n\n**Example using Next.js**\n\n```javascript\nexport async function getServerSideProps(){\n\n  const res = await fetch(\"https://api.example.com/users\");\n\n  const users = await res.json();\n\n  return {\n    props: { users }\n  };\n\n}\n```\n\nThe data is fetched **on the server before rendering the page**.\n\n---\n\n**Benefits**\n\n```\nFaster initial page load\nBetter SEO\nImproved performance for large apps\nBetter social media previews\n```\n\n---\n\n**Drawbacks**\n\n```\nHigher server load\nMore complex architecture\nSlower navigation after first load\n```\n\n---\n\n**Summary**\n\n```\nSSR\n → HTML rendered on server\n → sent to browser\n → React hydrates the page\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22431,7 +22687,11 @@
     "name": "85 What is client-side rendering (CSR)?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Client-Side Rendering (CSR)** is a rendering technique where the **browser downloads JavaScript and generates the UI dynamically on the client side**.\n\nIt is the default approach used by **React** applications.\n\n---\n\n**CSR Flow**\n\n```text\nBrowser request\n     ↓\nServer sends HTML + JS bundle\n     ↓\nBrowser downloads JavaScript\n     ↓\nReact renders UI in the browser\n```\n\n---\n\n**Example React App**\n\n```javascript\nimport React from \"react\";\nimport ReactDOM from \"react-dom/client\";\nimport App from \"./App\";\n\nconst root = ReactDOM.createRoot(document.getElementById(\"root\"));\n\nroot.render(<App />);\n```\n\nThe browser runs JavaScript and **renders the UI dynamically**.\n\n---\n\n**Example Component**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Counter(){\n\n  const [count,setCount] = useState(0);\n\n  return (\n    <>\n      <h1>{count}</h1>\n      <button onClick={()=>setCount(count+1)}>Increment</button>\n    </>\n  );\n}\n```\n\nHere the **UI updates directly in the browser**.\n\n---\n\n**Advantages**\n\n```text\nFast page navigation after initial load\nLess server load\nRich interactive UI\n```\n\n---\n\n**Disadvantages**\n\n```text\nSlow initial page load\nSEO challenges\nRequires JavaScript to render content\n```\n\n---\n\n**CSR vs SSR**\n\n```text\nCSR\n → UI rendered in browser\n\nSSR\n → UI rendered on server\n```\n\nCSR is ideal for **interactive web applications and dashboards**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22451,7 +22711,11 @@
     "name": "86 What is hydration in React?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Hydration** in **React** is the process where React **attaches event listeners and makes server-rendered HTML interactive in the browser**.\n\nIt is mainly used in **Server-Side Rendering (SSR)** frameworks like **Next.js**.\n\n---\n\n**How Hydration Works**\n\n```text\n1 Browser requests page\n2 Server sends pre-rendered HTML\n3 Browser displays HTML immediately\n4 React loads JavaScript\n5 React attaches event listeners\n```\n\nNow the page becomes **fully interactive**.\n\n---\n\n**Example HTML from Server**\n\n```html\n<div id=\"root\">\n  <button>Click</button>\n</div>\n```\n\nThe page is visible but **not interactive yet**.\n\n---\n\n**Hydration in React**\n\n```javascript\nimport React from \"react\";\nimport { hydrateRoot } from \"react-dom/client\";\nimport App from \"./App\";\n\nhydrateRoot(\n  document.getElementById(\"root\"),\n  <App />\n);\n```\n\nReact connects the **existing HTML to React components**.\n\n---\n\n**Example Component**\n\n```javascript\nfunction App(){\n\n  function handleClick(){\n    alert(\"Clicked\");\n  }\n\n  return <button onClick={handleClick}>Click</button>;\n}\n```\n\nDuring hydration, React **attaches the click event handler to the existing DOM**.\n\n---\n\n**Rendering Flow**\n\n```text\nServer Rendering\n      ↓\nHTML sent to browser\n      ↓\nBrowser displays content\n      ↓\nReact hydration\n      ↓\nInteractive UI\n```\n\n---\n\n**Benefits**\n\n```text\nFaster initial load\nBetter SEO\nInteractive UI after hydration\n```\n\n---\n\n**Summary**\n\n```text\nHydration\n → attaches React logic to server-rendered HTML\n → makes SSR pages interactive\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22471,7 +22735,11 @@
     "name": "87 What is React Fiber architecture?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "![Image](https://files.codingninjas.in/article_images/react-fiber-architecture-2-1636956334.webp)\n\n![Image](https://cdn.prod.website-files.com/5d2dd7e1b4a76d8b803ac1aa/5f604fd80b9cb018d27eeda5_UsoMdBUqB9kLNWjrraBggD3QUb-fuTlKw_u6h_vBx5OnMHZnxTYUQcaoZa_nP9fwCA1nWLEvAnAnlwjMDg2io4z7DPJ5LA8K7qSwTs4_rBJHVuZQrEX-TZOzzOPyhN7FEncG91vy.png)\n\n![Image](https://miro.medium.com/v2/resize%3Afit%3A1400/1%2Axwn4xYz5kFjjdQPOP34srg.png)\n\n![Image](https://dropinblog.net/cdn-cgi/image/fit%3Dscale-down%2Cwidth%3D700/34256781/files/diagram-export-28-11-2024-16-37-40.png)\n\n**React Fiber** is the **new reconciliation engine** introduced in **React** (from React 16 onward).\nIt improves how React **updates the UI by breaking rendering work into small units and scheduling them efficiently**.\n\n---\n\n**Problem Before Fiber**\n\nEarlier React rendering was **synchronous**.\n\n```text\nUpdate UI\n   ↓\nRender entire component tree\n   ↓\nBrowser blocked until completion\n```\n\nLarge applications could cause **UI lag**.\n\n---\n\n**Fiber Solution**\n\nReact Fiber introduces **incremental rendering**.\n\n```text\nUpdate UI\n   ↓\nBreak work into small tasks\n   ↓\nPrioritize tasks\n   ↓\nPause / resume rendering\n```\n\nThis allows React to **keep the UI responsive**.\n\n---\n\n**Fiber Node Structure**\n\nEach component becomes a **Fiber node**.\n\n```javascript\n{\n  type: Component,\n  props: {...},\n  stateNode: DOMElement,\n  child: Fiber,\n  sibling: Fiber,\n  return: Fiber\n}\n```\n\n---\n\n**Two Phases of Fiber**\n\n```text\n1 Render Phase (Reconciliation)\n   → builds new fiber tree\n   → can pause and resume\n\n2 Commit Phase\n   → updates the real DOM\n```\n\n---\n\n**Example Flow**\n\n```text\nState change\n      ↓\nCreate new Fiber tree\n      ↓\nCompare with old tree\n      ↓\nSchedule updates\n      ↓\nCommit changes to DOM\n```\n\n---\n\n**Key Features of React Fiber**\n\n```text\nIncremental rendering\nTask prioritization\nPause and resume work\nBetter animations and responsiveness\nConcurrent rendering support\n```\n\n---\n\n**Summary**\n\n```text\nReact Fiber\n → new React rendering engine\n → improves reconciliation\n → enables asynchronous rendering\n → keeps UI responsive\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22491,7 +22759,11 @@
     "name": "88 What are controlled components?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Controlled components** in **React** are form elements whose **value is controlled by React state**.\n\nThe form input value comes from **component state**, and every change updates the state using event handlers.\n\n---\n\n**Basic Example**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Form(){\n\n  const [name, setName] = useState(\"\");\n\n  return (\n    <input\n      value={name}\n      onChange={(e)=>setName(e.target.value)}\n    />\n  );\n}\n```\n\nExplanation:\n\n```text\nInput value → controlled by React state\nonChange → updates state\nState change → UI updates\n```\n\n---\n\n**Example with Form**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Login(){\n\n  const [form,setForm] = useState({\n    email:\"\",\n    password:\"\"\n  });\n\n  function handleChange(e){\n    setForm({\n      ...form,\n      [e.target.name]: e.target.value\n    });\n  }\n\n  return (\n    <>\n      <input name=\"email\" value={form.email} onChange={handleChange} />\n      <input name=\"password\" value={form.password} onChange={handleChange} />\n    </>\n  );\n}\n```\n\n---\n\n**Data Flow**\n\n```text\nUser Input\n     ↓\nonChange Event\n     ↓\nUpdate React State\n     ↓\nReact Re-renders UI\n```\n\n---\n\n**Benefits**\n\n```text\nBetter form control\nValidation handling\nSingle source of truth\nPredictable data flow\n```\n\n---\n\n**Summary**\n\n```text\nControlled Component\n → input value controlled by React state\n → changes handled with onChange\n → React manages form data\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22511,7 +22783,11 @@
     "name": "89 What are uncontrolled components?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Uncontrolled components** in **React** are form elements where **the DOM itself manages the form data instead of React state**.\n\nReact accesses the value using **refs**.\n\n---\n\n**Example**\n\n```javascript\nimport { useRef } from \"react\";\n\nfunction Form(){\n\n  const inputRef = useRef(null);\n\n  function handleSubmit(){\n\n    console.log(inputRef.current.value);\n\n  }\n\n  return (\n    <>\n      <input ref={inputRef} />\n      <button onClick={handleSubmit}>Submit</button>\n    </>\n  );\n}\n```\n\nHere:\n\n```\nInput value → stored in DOM\nReact → reads value using ref\n```\n\n---\n\n**Example with defaultValue**\n\n```javascript\nfunction Form(){\n\n  return (\n    <input defaultValue=\"Prem\" />\n  );\n\n}\n```\n\n`defaultValue` sets the **initial value**, but React does not control it afterward.\n\n---\n\n**Data Flow**\n\n```\nUser Input\n     ↓\nDOM stores value\n     ↓\nReact reads value using ref\n```\n\n---\n\n**Controlled vs Uncontrolled**\n\n```\nControlled\n → value managed by React state\n → uses onChange\n\nUncontrolled\n → value managed by DOM\n → accessed using refs\n```\n\n---\n\n**When to Use**\n\n```\nQuick forms\nIntegrating non-React libraries\nSimple input handling\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22531,7 +22807,11 @@
     "name": "90 What is lifting state up?",
     "parentId": "bfdda57d-9e43-4677-9d67-48db7160f91f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Lifting state up** in **React** means **moving state from a child component to the closest common parent component so multiple components can share and synchronize the same data**.\n\nInstead of each component managing its own state, the parent **controls the state and passes it down through props**.\n\n---\n\n**Problem Example**\n\nTwo components need the same data.\n\n```javascript\nfunction ChildA(){\n  const [count,setCount] = useState(0);\n}\n\nfunction ChildB(){\n  const [count,setCount] = useState(0);\n}\n```\n\nBoth components maintain **separate states**, so they are not synchronized.\n\n---\n\n**Solution: Lift State to Parent**\n\n```javascript\nimport { useState } from \"react\";\n\nfunction App(){\n\n  const [count,setCount] = useState(0);\n\n  return (\n    <>\n      <ChildA count={count} setCount={setCount} />\n      <ChildB count={count} />\n    </>\n  );\n\n}\n```\n\n---\n\n**Child Components**\n\n```javascript\nfunction ChildA({count,setCount}){\n\n  return (\n    <button onClick={()=>setCount(count+1)}>\n      Increase\n    </button>\n  );\n\n}\n```\n\n```javascript\nfunction ChildB({count}){\n\n  return <h1>{count}</h1>;\n\n}\n```\n\n---\n\n**Data Flow**\n\n```text\nParent (state)\n     ↓\nChild components receive props\n     ↓\nChild triggers update\n     ↓\nParent updates state\n     ↓\nAll children re-render\n```\n\n---\n\n**Summary**\n\n```\nLifting State Up\n → move state to common parent\n → share data across components\n → maintain single source of truth\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22567,7 +22847,11 @@
     "name": "091 What is Context API?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Context API** in **React** is a feature that allows you to **share data globally across components without passing props manually at every level**.\n\nIt helps solve the **prop drilling problem**.\n\n---\n\n**1. Create Context**\n\n```javascript\nimport { createContext } from \"react\";\n\nexport const UserContext = createContext();\n```\n\n---\n\n**2. Provide Context**\n\n```javascript\nimport { UserContext } from \"./UserContext\";\n\nfunction App(){\n\n  const user = \"Prem\";\n\n  return (\n    <UserContext.Provider value={user}>\n      <Dashboard />\n    </UserContext.Provider>\n  );\n\n}\n```\n\n---\n\n**3. Consume Context**\n\nUsing `useContext`.\n\n```javascript\nimport { useContext } from \"react\";\nimport { UserContext } from \"./UserContext\";\n\nfunction Dashboard(){\n\n  const user = useContext(UserContext);\n\n  return <h1>Hello {user}</h1>;\n\n}\n```\n\n---\n\n**Component Structure**\n\n```\nApp\n └── UserContext.Provider\n      └── Dashboard\n           └── useContext()\n```\n\nThe child component **directly accesses the data without prop drilling**.\n\n---\n\n**Common Use Cases**\n\n```\nAuthentication state\nTheme (dark/light)\nLanguage settings\nUser preferences\nGlobal configuration\n```\n\n---\n\n**Summary**\n\n```\nContext API\n → global data sharing\n → avoids prop drilling\n → used with Provider + useContext\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22587,7 +22871,11 @@
     "name": "092 What are Higher Order Components (HOC)?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Higher Order Components (HOC)** are functions in **React** that **take a component as input and return a new enhanced component**.\n\nThey are used to **reuse component logic across multiple components**.\n\n---\n\n**Basic Concept**\n\n```text\nComponent\n   ↓\nHigher Order Component\n   ↓\nEnhanced Component\n```\n\n---\n\n**Example HOC**\n\n```javascript id=\"m1b6ro\"\nfunction withLogger(Component){\n\n  return function(props){\n\n    console.log(\"Component rendered\");\n\n    return <Component {...props} />;\n\n  };\n\n}\n```\n\n---\n\n**Using the HOC**\n\n```javascript id=\"zw9ttf\"\nfunction User({name}){\n  return <h1>{name}</h1>;\n}\n\nconst EnhancedUser = withLogger(User);\n```\n\nNow every time `EnhancedUser` renders, logging will happen.\n\n---\n\n**Example: Authentication HOC**\n\n```javascript id=\"zrfk31\"\nfunction withAuth(Component){\n\n  return function(props){\n\n    const isLoggedIn = true;\n\n    if(!isLoggedIn){\n      return <h1>Please login</h1>;\n    }\n\n    return <Component {...props} />;\n\n  };\n\n}\n```\n\nUsage:\n\n```javascript id=\"4p4tgn\"\nconst ProtectedDashboard = withAuth(Dashboard);\n```\n\n---\n\n**Real Example (React.memo)**\n\n`React.memo` is actually a **Higher Order Component**.\n\n```javascript id=\"8tgd3y\"\nconst MemoComponent = React.memo(Component);\n```\n\n---\n\n**Summary**\n\n```text id=\"f9ck1f\"\nHOC\n → function that takes a component\n → returns enhanced component\n → used for code reuse\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22607,7 +22895,11 @@
     "name": "093 What are render props?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Render props** is a pattern in **React** where a component **shares logic with other components by passing a function as a prop**.\nThis function returns the UI that should be rendered.\n\n---\n\n**Basic Idea**\n\n```text id=\"9tyxld\"\nComponent\n   ↓\nPass function as prop\n   ↓\nFunction returns JSX\n```\n\n---\n\n**Example**\n\n```javascript id=\"vkr60g\"\nfunction DataProvider({ render }){\n\n  const data = \"Hello React\";\n\n  return render(data);\n\n}\n```\n\nUsage:\n\n```javascript id=\"tgbbdo\"\nfunction App(){\n\n  return (\n    <DataProvider\n      render={(data) => <h1>{data}</h1>}\n    />\n  );\n\n}\n```\n\n---\n\n**Example: Mouse Tracker**\n\n```javascript id=\"6bttb9\"\nclass Mouse extends React.Component{\n\n  state = { x:0, y:0 };\n\n  handleMove = (e)=>{\n    this.setState({\n      x: e.clientX,\n      y: e.clientY\n    });\n  }\n\n  render(){\n    return (\n      <div onMouseMove={this.handleMove}>\n        {this.props.render(this.state)}\n      </div>\n    );\n  }\n\n}\n```\n\nUsage:\n\n```javascript id=\"7cyz27\"\n<Mouse render={({x,y})=>(\n  <h1>{x}, {y}</h1>\n)} />\n```\n\n---\n\n**Render Props vs HOC**\n\n```text id=\"mn9q2r\"\nHOC\n → wraps component\n\nRender Props\n → passes function to component\n```\n\n---\n\n**Summary**\n\n```text id=\"0hbg32\"\nRender Props\n → function passed as prop\n → returns JSX\n → used for logic sharing\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22627,7 +22919,11 @@
     "name": "094 What is React Suspense?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**React Suspense** is a feature in **React** that allows components to **wait for something (like lazy-loaded components or data) before rendering**, while showing a fallback UI such as a loading indicator.\n\n---\n\n**Basic Syntax**\n\n```javascript\n<Suspense fallback={<Loading />}>\n  <Component />\n</Suspense>\n```\n\n* **fallback** → UI shown while waiting\n\n---\n\n**Example with Lazy Loading**\n\n```javascript\nimport React, { Suspense } from \"react\";\n\nconst Dashboard = React.lazy(() => import(\"./Dashboard\"));\n\nfunction App(){\n\n  return (\n    <Suspense fallback={<h1>Loading...</h1>}>\n      <Dashboard />\n    </Suspense>\n  );\n\n}\n```\n\nFlow:\n\n```\nUser opens page\n      ↓\nComponent not loaded yet\n      ↓\nSuspense shows fallback UI\n      ↓\nComponent loads\n      ↓\nReact renders component\n```\n\n---\n\n**Example Fallback Component**\n\n```javascript\nfunction Loading(){\n  return <h2>Please wait...</h2>;\n}\n```\n\n---\n\n**Common Use Cases**\n\n```\nLazy loading components\nData fetching\nCode splitting\nLarge component loading\n```\n\n---\n\n**Summary**\n\n```\nReact Suspense\n → handles loading states\n → works with React.lazy\n → shows fallback UI while waiting\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22647,7 +22943,11 @@
     "name": "095 What are error boundaries?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Error Boundaries** in **React** are special components used to **catch JavaScript errors in child components and display a fallback UI instead of crashing the entire application**.\n\nThey work similarly to **try-catch for React components**.\n\n---\n\n**Basic Example**\n\n```javascript\nimport React from \"react\";\n\nclass ErrorBoundary extends React.Component {\n\n  constructor(props){\n    super(props);\n\n    this.state = { hasError: false };\n  }\n\n  static getDerivedStateFromError(error){\n    return { hasError: true };\n  }\n\n  componentDidCatch(error, info){\n    console.log(\"Error:\", error);\n    console.log(\"Info:\", info);\n  }\n\n  render(){\n\n    if(this.state.hasError){\n      return <h1>Something went wrong</h1>;\n    }\n\n    return this.props.children;\n\n  }\n\n}\n```\n\n---\n\n**Using Error Boundary**\n\n```javascript\n<ErrorBoundary>\n  <MyComponent />\n</ErrorBoundary>\n```\n\nIf `MyComponent` throws an error, React shows:\n\n```\nSomething went wrong\n```\n\nInstead of breaking the entire app.\n\n---\n\n**Error Boundary Flow**\n\n```\nChild component throws error\n        ↓\nErrorBoundary catches error\n        ↓\nFallback UI displayed\n```\n\n---\n\n**Important Notes**\n\nError boundaries **do NOT catch errors in:**\n\n```\nEvent handlers\nAsync code (setTimeout, promises)\nServer-side rendering\nErrors inside error boundary itself\n```\n\n---\n\n**Summary**\n\n```\nError Boundaries\n → catch rendering errors\n → prevent full app crash\n → show fallback UI\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22667,7 +22967,11 @@
     "name": "096 What is React Strict Mode?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**React Strict Mode** is a development tool in **React** that helps identify **potential problems in an application** by performing additional checks and warnings during development.\n\nIt **does not affect the production build**.\n\n---\n\n**Basic Usage**\n\n```javascript\nimport React from \"react\";\nimport ReactDOM from \"react-dom/client\";\nimport App from \"./App\";\n\nconst root = ReactDOM.createRoot(document.getElementById(\"root\"));\n\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n```\n\n---\n\n**What Strict Mode Detects**\n\n```\nUnsafe lifecycle methods\nDeprecated APIs\nUnexpected side effects\nIncorrect hook usage\nLegacy context usage\n```\n\n---\n\n**Example Warning**\n\n```javascript\nclass App extends React.Component{\n\n  componentWillMount(){\n    console.log(\"Deprecated lifecycle\");\n  }\n\n}\n```\n\nStrict Mode will show a **warning about deprecated lifecycle methods**.\n\n---\n\n**Double Rendering in Development**\n\nStrict Mode intentionally runs certain functions **twice in development** to detect side effects.\n\n```javascript\nuseEffect(()=>{\n  console.log(\"Running effect\");\n},[]);\n```\n\nThis may run twice in development but **only once in production**.\n\n---\n\n**Benefits**\n\n```\nDetect bugs early\nEncourage best practices\nPrepare code for future React updates\nImprove application stability\n```\n\n---\n\n**Summary**\n\n```\nReact Strict Mode\n → development-only tool\n → highlights potential issues\n → does not affect production\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22687,7 +22991,11 @@
     "name": "097 What is reconciliation in React?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Reconciliation** in **React** is the process React uses to **compare the previous Virtual DOM with the new Virtual DOM and determine the minimal changes required to update the real DOM**.\n\nIt ensures **efficient UI updates and better performance**.\n\n---\n\n**How Reconciliation Works**\n\n```text\nState or props change\n        ↓\nReact creates new Virtual DOM\n        ↓\nCompare with previous Virtual DOM\n        ↓\nFind differences (diffing)\n        ↓\nUpdate only changed elements in real DOM\n```\n\n---\n\n**Example**\n\n```javascript\nfunction Counter(){\n\n  const [count, setCount] = React.useState(0);\n\n  return <h1>{count}</h1>;\n\n}\n```\n\nWhen `count` changes:\n\n```text\nOld Virtual DOM → <h1>0</h1>\nNew Virtual DOM → <h1>1</h1>\n```\n\nReact updates only the **text inside `<h1>`**, not the entire DOM.\n\n---\n\n**Reconciliation Rules**\n\n```text\n1 Different element types → replace entire element\n2 Same element type → update attributes only\n3 Lists → use keys to identify elements\n```\n\n---\n\n**Example with List Keys**\n\n```javascript\nconst list = items.map(item => (\n  <li key={item.id}>{item.name}</li>\n));\n```\n\nKeys help React **identify which elements changed**.\n\n---\n\n**Summary**\n\n```text\nReconciliation\n → compare old and new Virtual DOM\n → find minimal changes\n → update real DOM efficiently\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22707,7 +23015,11 @@
     "name": "098 What is the difference between useMemo and useCallback?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "The difference between **`useMemo`** and **`useCallback`** in **React** is **what they memoize**.\n\n* **`useMemo` → memoizes values**\n* **`useCallback` → memoizes functions**\n\nBoth help improve performance by **preventing unnecessary recalculations or re-renders**.\n\n---\n\n**1. useMemo**\n\n`useMemo` caches the **result of a calculation**.\n\n```javascript\nimport { useMemo } from \"react\";\n\nfunction App({num}){\n\n  const square = useMemo(()=>{\n    console.log(\"Calculating...\");\n    return num * num;\n  }, [num]);\n\n  return <h1>{square}</h1>;\n}\n```\n\nHere the calculation runs **only when `num` changes**.\n\n---\n\n**2. useCallback**\n\n`useCallback` caches the **function reference**.\n\n```javascript\nimport { useCallback } from \"react\";\n\nfunction App(){\n\n  const handleClick = useCallback(()=>{\n    console.log(\"Clicked\");\n  }, []);\n\n  return <button onClick={handleClick}>Click</button>;\n}\n```\n\nThe function **is not recreated on every render**.\n\n---\n\n**Example with Child Component**\n\n```javascript\nconst Button = React.memo(({onClick})=>{\n  console.log(\"Child rendered\");\n  return <button onClick={onClick}>Click</button>;\n});\n```\n\nUsing `useCallback` prevents **unnecessary child re-renders**.\n\n---\n\n**Comparison**\n\n```\nFeature      useMemo              useCallback\n------------------------------------------------\nPurpose      Memoize values      Memoize functions\nReturn       Computed value      Function\nUse case     Expensive calc      Stable function reference\n```\n\n---\n\n**Quick Tip**\n\n```\nuseMemo(() => value)\nuseCallback(() => function)\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22727,7 +23039,11 @@
     "name": "099 How does React handle re-rendering?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Re-rendering** in **React** occurs when a component’s **state, props, or context changes**, causing React to update the UI efficiently.\n\nReact uses the **Virtual DOM and reconciliation algorithm** to update only the parts of the UI that changed.\n\n---\n\n**1. When Re-render Happens**\n\nReact re-renders when:\n\n```text\nState changes\nProps change\nContext value changes\nParent component re-renders\n```\n\nExample with state:\n\n```javascript\nimport { useState } from \"react\";\n\nfunction Counter(){\n\n  const [count, setCount] = useState(0);\n\n  return (\n    <>\n      <h1>{count}</h1>\n      <button onClick={()=>setCount(count+1)}>Increment</button>\n    </>\n  );\n}\n```\n\nWhen `setCount()` runs → component **re-renders**.\n\n---\n\n**2. Re-rendering Process**\n\n```text\nState / props change\n        ↓\nReact creates new Virtual DOM\n        ↓\nCompare with previous Virtual DOM\n        ↓\nFind differences (diffing)\n        ↓\nUpdate only changed parts of real DOM\n```\n\n---\n\n**3. Parent Re-render Example**\n\n```javascript\nfunction Parent(){\n\n  const [count,setCount] = useState(0);\n\n  return (\n    <>\n      <Child />\n      <button onClick={()=>setCount(count+1)}>Update</button>\n    </>\n  );\n}\n```\n\nHere **Child may re-render when Parent re-renders**.\n\n---\n\n**4. Prevent Unnecessary Re-renders**\n\n```text\nReact.memo\nuseMemo\nuseCallback\nshouldComponentUpdate\n```\n\nExample:\n\n```javascript\nconst Child = React.memo(function Child(){\n  return <h1>Child</h1>;\n});\n```\n\n---\n\n**Summary**\n\n```text\nRe-render triggers\n → state change\n → props change\n → parent update\n\nReact optimization\n → Virtual DOM\n → diffing algorithm\n → minimal DOM updates\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -22747,7 +23063,11 @@
     "name": "100 What are best practices for large-scale React applications?",
     "parentId": "1dfce7c5-1bf1-4fe9-86f9-c361776a4020",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Building **large-scale applications** with **React** requires proper architecture, performance optimization, and maintainable code practices.\n\n---\n\n**1. Use a Scalable Folder Structure**\n\nOrganize code by **features or modules**.\n\n```text\nsrc/\n ├─ components/\n ├─ pages/\n ├─ hooks/\n ├─ services/\n ├─ context/\n └─ utils/\n```\n\nExample:\n\n```javascript\nsrc/components/Button/Button.jsx\nsrc/pages/Dashboard/Dashboard.jsx\n```\n\n---\n\n**2. Create Reusable Components**\n\nKeep components **small and reusable**.\n\n```javascript\nfunction Button({label,onClick}){\n  return <button onClick={onClick}>{label}</button>;\n}\n```\n\n---\n\n**3. Use Custom Hooks for Logic Reuse**\n\n```javascript\nfunction useFetch(url){\n\n  const [data,setData] = useState([]);\n\n  useEffect(()=>{\n    fetch(url)\n      .then(res => res.json())\n      .then(setData);\n  },[url]);\n\n  return data;\n\n}\n```\n\n---\n\n**4. Manage Global State Properly**\n\nUse:\n\n* Context API\n* **Redux**\n* **Zustand**\n\nExample:\n\n```javascript\nconst user = useContext(UserContext);\n```\n\n---\n\n**5. Optimize Performance**\n\nUse memoization techniques.\n\n```javascript\nconst value = useMemo(()=>{\n  return expensiveCalculation(data);\n},[data]);\n```\n\n```javascript\nconst handleClick = useCallback(()=>{\n  console.log(\"clicked\");\n},[]);\n```\n\n---\n\n**6. Implement Code Splitting**\n\n```javascript\nconst Dashboard = React.lazy(()=>import(\"./Dashboard\"));\n```\n\nUse **Webpack** or **Vite** for optimized bundles.\n\n---\n\n**7. Error Handling**\n\nUse **Error Boundaries**.\n\n```javascript\n<ErrorBoundary>\n  <App />\n</ErrorBoundary>\n```\n\n---\n\n**8. Follow Clean Code Practices**\n\n```text\nUse descriptive component names\nAvoid deeply nested components\nKeep components under 200 lines\nUse TypeScript for type safety\n```\n\n---\n\n**9. Write Tests**\n\nUse testing libraries like:\n\n* **Jest**\n* **React Testing Library**\n\nExample:\n\n```javascript\nrender(<Button label=\"Save\" />);\nexpect(screen.getByText(\"Save\")).toBeInTheDocument();\n```\n\n---\n\n**10. Use Linting and Formatting**\n\nTools:\n\n* **ESLint**\n* **Prettier**\n\n---\n\n**Summary**\n\n```text\nBest Practices\n → modular folder structure\n → reusable components\n → custom hooks\n → proper state management\n → performance optimization\n → code splitting\n → testing and linting\n```\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
