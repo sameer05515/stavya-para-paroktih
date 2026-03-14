@@ -23351,7 +23351,24 @@
         "name": "01 Core Java Fundamentals"
       }
     ],
-    "sections": []
+    "sections": [
+      {
+        "_id": "69b55dcb7700d5230b9ea27b",
+        "uniqueId": "4446e7d2-3149-4b24-bf6f-6b10602948df",
+        "linkedTopicUniqueId": "4adf9da6-cf92-4829-aff4-95985dcc3bfb",
+        "name": "Videos on Garbage collection",
+        "smartContent": {
+          "content": "[https://www.youtube.com/watch?v=Boei7vAu4Cc](https://www.youtube.com/watch?v=Boei7vAu4Cc)",
+          "textOutputType": "markdown",
+          "textInputType": "TextArea"
+        },
+        "order": 9999,
+        "softDelete": false,
+        "tags": [],
+        "createdDate": "2026-03-14T13:08:27.222Z",
+        "updatedDate": "2026-03-14T13:08:27.222Z"
+      }
+    ]
   },
   {
     "uniqueId": "5cf04e91-20f4-4a4a-8f40-4f46bf85d828",
