@@ -23787,6 +23787,34 @@
     "sections": []
   },
   {
+    "uniqueId": "12499f7b-b253-4a6f-a4c4-927e905841a0",
+    "name": "026.1 Treemap me hash collision kaise resolve hota hai?",
+    "parentId": "427138c3-de83-4024-95f2-a5f9c0805fb3",
+    "description": "",
+    "smartContent": {
+      "content": "Java **TreeMap** me **hash collision ka concept hota hi nahi**. Collision ka concept **HashMap** me hota hai.\n\n**Reason:**\n`TreeMap` internally **Red-Black Tree** use karta hai, hashing nahi.\n\n---\n\n**TreeMap working (simplified):**\n\n```java\nTreeMap<K,V> map = new TreeMap<>();\n\nmap.put(10, \"A\");\nmap.put(20, \"B\");\nmap.put(5, \"C\");\n```\n\nInternally structure:\n\n```\n        10\n       /  \\\n      5    20\n```\n\nOrdering based on:\n\n```java\n1. Comparable (natural ordering)\nor\n2. Comparator (custom ordering)\n```\n\n---\n\n**Key comparison logic**\n\n```java\nif (comparator != null)\n    comparator.compare(k1, k2);\nelse\n    ((Comparable)k1).compareTo(k2);\n```\n\n---\n\n**Duplicate key handling**\n\n```java\nTreeMap<Integer, String> map = new TreeMap<>();\n\nmap.put(10, \"A\");\nmap.put(10, \"B\");\n\nSystem.out.println(map);\n```\n\nOutput\n\n```\n{10=B}\n```\n\nBecause internally:\n\n```java\nif(compare(key, existingKey) == 0){\n    replaceValue();\n}\n```\n\n---\n\n**Internal Node structure (simplified)**\n\n```java\nstatic final class Entry<K,V> {\n    K key;\n    V value;\n    Entry<K,V> left;\n    Entry<K,V> right;\n    Entry<K,V> parent;\n    boolean color; // RED or BLACK\n}\n```\n\n---\n\n**Contrast with HashMap collision**\n\nHashMap me collision resolution:\n\n```\nBucket -> LinkedList -> Tree (Java 8+)\n```\n\nPseudo logic:\n\n```java\nif(bucketEmpty)\n    insertNode();\nelse if(hashCollision)\n    addToLinkedList();\n    \nif(listSize > 8)\n    convertToRedBlackTree();\n```\n\n---\n\n**Interview one-liner**\n\n```\nTreeMap does not handle hash collisions because it does not use hashing.\nIt stores entries in a Red-Black Tree and orders keys using Comparable or Comparator.\n```\n\n---\n\nAgar chaho to main **HashMap collision resolution (Java 7 vs Java 8)** bhi **diagram + code** ke saath explain kar sakta hoon — ye interview me bahut pucha jata hai.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      },
+      {
+        "uniqueId": "427138c3-de83-4024-95f2-a5f9c0805fb3",
+        "name": "026 What happens when HashMap collisions occur?"
+      }
+    ],
+    "sections": []
+  },
+  {
     "uniqueId": "b6c2e3bf-cfbe-4692-a254-585a364f6ed1",
     "name": "027 Difference between TreeMap and HashMap?",
     "parentId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
@@ -23806,6 +23834,34 @@
       {
         "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
         "name": "03 Collections Framework"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e9858225-9a35-43a2-8057-ab213b4f72c6",
+    "name": "Map ke different implementation ka details",
+    "parentId": "b6c2e3bf-cfbe-4692-a254-585a364f6ed1",
+    "description": "",
+    "smartContent": {
+      "content": "Java **Map** ke multiple implementations hote hain. Interview aur real projects me sabse common implementations:\n\n* **HashMap**\n* **LinkedHashMap**\n* **TreeMap**\n* **ConcurrentHashMap**\n* **Hashtable**\n* **WeakHashMap**\n* **IdentityHashMap**\n* **EnumMap**\n\nBelow developer-style quick notes + code.\n\n---\n\n**1. HashMap**\n\nFeatures\n\n* O(1) average operations\n* Allows `1 null key`\n* Not thread safe\n* Java 8 → bucket can become **Red-Black Tree**\n\n```java\nMap<Integer,String> map = new HashMap<>();\n\nmap.put(1,\"A\");\nmap.put(2,\"B\");\nmap.put(null,\"C\");\n\nSystem.out.println(map.get(1));\n```\n\nInternal structure\n\n```text\nArray -> Bucket -> LinkedList -> RedBlackTree (if size > 8)\n```\n\n---\n\n**2. LinkedHashMap**\n\nFeatures\n\n* Maintains **insertion order**\n* Used in **LRU cache**\n\n```java\nMap<Integer,String> map = new LinkedHashMap<>();\n\nmap.put(3,\"C\");\nmap.put(1,\"A\");\nmap.put(2,\"B\");\n\nSystem.out.println(map);\n```\n\nOutput\n\n```text\n{3=C, 1=A, 2=B}\n```\n\nLRU example\n\n```java\nclass LRUCache<K,V> extends LinkedHashMap<K,V>{\n\n    private int capacity;\n\n    LRUCache(int capacity){\n        super(capacity,0.75f,true);\n        this.capacity = capacity;\n    }\n\n    protected boolean removeEldestEntry(Map.Entry<K,V> eldest){\n        return size() > capacity;\n    }\n}\n```\n\n---\n\n**3. TreeMap**\n\nFeatures\n\n* Sorted Map\n* Uses **Red-Black Tree**\n* O(log n) operations\n* No null key\n\n```java\nMap<Integer,String> map = new TreeMap<>();\n\nmap.put(30,\"C\");\nmap.put(10,\"A\");\nmap.put(20,\"B\");\n\nSystem.out.println(map);\n```\n\nOutput\n\n```text\n{10=A, 20=B, 30=C}\n```\n\nCustom comparator\n\n```java\nMap<Integer,String> map =\n        new TreeMap<>((a,b) -> b-a);\n```\n\n---\n\n**4. ConcurrentHashMap**\n\nFeatures\n\n* Thread safe\n* High concurrency\n* No null keys/values\n* Uses **CAS + bucket level locking**\n\n```java\nConcurrentHashMap<Integer,String> map =\n        new ConcurrentHashMap<>();\n\nmap.put(1,\"A\");\nmap.put(2,\"B\");\n```\n\nAtomic operation\n\n```java\nmap.computeIfAbsent(10, k -> \"value\");\n```\n\n---\n\n**5. Hashtable**\n\nFeatures\n\n* Legacy class\n* Fully synchronized\n* Slower\n\n```java\nHashtable<Integer,String> map = new Hashtable<>();\n\nmap.put(1,\"A\");\nmap.put(2,\"B\");\n```\n\n---\n\n**6. WeakHashMap**\n\nFeature\n\n* Entry removed when **key garbage collected**\n\n```java\nWeakHashMap<Object,String> map =\n        new WeakHashMap<>();\n\nObject key = new Object();\n\nmap.put(key,\"data\");\n\nkey = null;\nSystem.gc();\n```\n\nUsed in **caches / memory-sensitive maps**\n\n---\n\n**7. IdentityHashMap**\n\nFeature\n\n* Uses **reference equality (==)** instead of `equals()`\n\n```java\nIdentityHashMap<String,String> map =\n        new IdentityHashMap<>();\n\nString a = new String(\"A\");\nString b = new String(\"A\");\n\nmap.put(a,\"first\");\nmap.put(b,\"second\");\n\nSystem.out.println(map.size());\n```\n\nOutput\n\n```text\n2\n```\n\n---\n\n**8. EnumMap**\n\nFeature\n\n* Highly optimized for **Enum keys**\n\n```java\nenum Status { OPEN, CLOSED }\n\nEnumMap<Status,String> map =\n        new EnumMap<>(Status.class);\n\nmap.put(Status.OPEN,\"active\");\n```\n\nInternally uses **array**.\n\n---\n\n**Interview Summary Table**\n\n| Map               | Order      | Null  | Thread Safe | DS                |\n| ----------------- | ---------- | ----- | ----------- | ----------------- |\n| HashMap           | No         | 1 key | No          | HashTable + Tree  |\n| LinkedHashMap     | Insertion  | 1 key | No          | Hash + LinkedList |\n| TreeMap           | Sorted     | No    | No          | RedBlackTree      |\n| ConcurrentHashMap | No         | No    | Yes         | Segmented/CAS     |\n| Hashtable         | No         | No    | Yes         | HashTable         |\n| WeakHashMap       | No         | Yes   | No          | Weak refs         |\n| IdentityHashMap   | No         | Yes   | No          | Reference compare |\n| EnumMap           | Enum order | No    | No          | Array             |\n\n---\n\nIf you want, I can also show a **very important interview topic**:\n\n* **HashMap internal working (Java 8)**\n* **put() implementation step-by-step**\n* **how collision → treeification works**\n\nwith **actual JDK-style code**.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "f6b64ba5-4618-4955-869e-4a9549cb6113",
+        "name": "100 Industry-Level Java Interview Questions"
+      },
+      {
+        "uniqueId": "6d45af8d-0040-4cf3-a2da-bff3427a40d9",
+        "name": "03 Collections Framework"
+      },
+      {
+        "uniqueId": "b6c2e3bf-cfbe-4692-a254-585a364f6ed1",
+        "name": "027 Difference between TreeMap and HashMap?"
       }
     ],
     "sections": []
