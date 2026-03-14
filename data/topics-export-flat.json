@@ -25656,5 +25656,4211 @@
       }
     ],
     "sections": []
+  },
+  {
+    "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+    "name": "100 Industry-Level Solid Principles Interview Questions",
+    "parentId": null,
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [],
+    "sections": []
+  },
+  {
+    "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "name": "01 SOLID Fundamentals",
+    "parentId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "18ea2de8-8b14-4f93-b065-c4a3e16c035f",
+    "name": "001 What are the SOLID principles in object-oriented design?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "61a8fdba-53ff-4976-ac5b-71a1ef81d535",
+    "name": "002 Why were SOLID principles introduced?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a2c078ff-8e30-4e4c-a202-7316630b3436",
+    "name": "003 How do SOLID principles improve maintainability?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a29844aa-6485-4c7d-8698-ef71a4327398",
+    "name": "004 How do SOLID principles improve testability?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "691f5f6a-727f-4d42-b8f0-52001731c328",
+    "name": "005 What problems occur if SOLID principles are ignored?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4a3775d5-0f8e-4531-9ba0-bbf643c0316f",
+    "name": "006 Are SOLID principles applicable only to OOP languages?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "00a2255c-3cf5-4360-9ae6-27c1518253b3",
+    "name": "007 How do SOLID principles relate to Clean Architecture?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7234948c-05ba-42b5-aa8c-742d6aaf49eb",
+    "name": "008 How do SOLID principles relate to design patterns?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8a72c773-01f9-44f0-9f83-f60bfde53525",
+    "name": "009 Which SOLID principle is most commonly violated in large codebases?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "352c1cfc-ad2b-4809-8048-fa4759904823",
+    "name": "010 How do SOLID principles help in microservices design?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "348cb1d4-eb12-4283-80bd-60c2f16738fd",
+    "name": "011 What is the difference between SOLID and DRY?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dce779a0-ceb1-4c24-ba0e-db927aa5b57a",
+    "name": "012 What is the difference between SOLID and KISS?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "84cb89d2-9ca5-44d4-b90c-c21455c0ad6c",
+    "name": "013 When should SOLID principles not be strictly followed?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fb5c0f91-abb0-4569-9e5a-e64b24357de7",
+    "name": "014 How do SOLID principles affect dependency management?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "60cce7f0-25b3-4632-9604-ce502b6d2717",
+    "name": "015 How do SOLID principles impact unit testing?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "72eb5dca-4314-4ebb-9f43-a81f5b5e3c97",
+    "name": "016 Can functional programming follow SOLID principles?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6053b0c3-069e-4f07-b206-38e868ea54e7",
+    "name": "017 How do SOLID principles help in refactoring legacy systems?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "25ee54bd-88dc-420c-a19e-4ee73b41a932",
+    "name": "018 How do SOLID principles improve code scalability?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "835ad9d3-1340-42fb-a196-bf48d13678ac",
+    "name": "019 What are common anti-patterns related to SOLID violations?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "25a32520-7bfa-4b15-a7bf-60314adaeb1f",
+    "name": "020 How do you evaluate if a codebase follows SOLID principles?",
+    "parentId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "1d320a1c-8f53-4136-ba09-99cc0c41fd5f",
+        "name": "01 SOLID Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "name": "02 Single Responsibility Principle (SRP)",
+    "parentId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "eec52484-f578-459d-9965-2b9a0c2188c7",
+    "name": "021 What is the Single Responsibility Principle?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3c880fd0-4ace-4308-9285-36509ac07ac1",
+    "name": "022 What does \"a class should have one reason to change\" mean?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "15cae2d6-ddf1-42a7-aa8c-120a5af1f2e3",
+    "name": "023 How do you identify multiple responsibilities in a class?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1a6e3f25-793c-48c5-a72a-946da13b1792",
+    "name": "024 What are real-world examples of SRP violation?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "406d474a-e3a9-4401-9d81-bb4729b9dd7e",
+    "name": "025 How does SRP affect microservice boundaries?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "caa69b85-668f-4eb2-b0e4-80499a2408fa",
+    "name": "026 How does SRP help in unit testing?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e1588d60-0a40-4a82-afdf-b6b614f94618",
+    "name": "027 What is the difference between SRP and separation of concerns?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "641c8597-7af5-4843-80f4-75a91ecffa65",
+    "name": "028 How does SRP relate to cohesion?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e644b681-d3bf-4fd9-b8e7-669b4aa412c7",
+    "name": "029 How do you refactor a large class violating SRP?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "358925f5-3d1e-4c44-a419-b39d43828797",
+    "name": "030 Does SRP apply only to classes or also modules and services?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "12c7ec11-359d-4322-9c5f-f38c7671c916",
+    "name": "031 What are the drawbacks of excessive SRP?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c07b8454-0347-4128-9640-fdefab177509",
+    "name": "032 How do frameworks sometimes violate SRP?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2a16a9aa-87da-4620-ad1f-772ac515c8cf",
+    "name": "033 How does SRP help in event-driven architectures?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bbe69284-f509-4465-89f9-dab2d2c84f69",
+    "name": "034 How does SRP improve maintainability in enterprise systems?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "39d1be3a-8fca-4912-9200-75dcafa76d47",
+    "name": "035 How do you enforce SRP during code reviews?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d36125c1-902e-4abe-8113-7988b707793a",
+    "name": "036 Why does this violate SRP?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "637a4685-f884-4e90-b814-85f4ba807b7e",
+    "name": "037 How would you refactor it using SRP?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0796dec1-d36a-48fc-b105-f246d51e35ab",
+    "name": "038 Should email logic be in the same service?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "56dcd2c3-a0f3-4635-9478-971673fe2694",
+    "name": "039 What if report generation requires user data?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6ce4f979-345e-4272-b443-a6a1454f75f1",
+    "name": "040 How would you structure packages for SRP?",
+    "parentId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "a6cd3fb0-ecee-4a84-adb5-dfe7a1ab9fbd",
+        "name": "02 Single Responsibility Principle (SRP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "name": "03 Open Closed Principle (OCP)",
+    "parentId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "06734bfe-ff92-47be-9231-258e747dbe93",
+    "name": "041 What is the Open Closed Principle?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "688af591-e35f-45a9-9ac0-a3ab249afe45",
+    "name": "042 What does \"open for extension but closed for modification\" mean?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b8260e9a-b960-4914-b33f-60224520aa3d",
+    "name": "043 How does OCP reduce regression bugs?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2189b919-9f34-4503-a3dd-2837d4a8eba7",
+    "name": "044 What role do interfaces and abstraction play in OCP?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7820baad-3565-43e1-b63b-d9b4935a2b32",
+    "name": "045 How does OCP relate to strategy pattern?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "644446c2-441a-440b-aa95-23e8975e14ac",
+    "name": "046 How does OCP help in plugin architectures?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "16db303c-cd39-4356-86f1-fd06d8e9e143",
+    "name": "047 How does OCP support feature expansion?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "470818ae-a1b9-44d4-bad8-0b5326480bcf",
+    "name": "048 How do you test systems designed using OCP?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ebe45660-ec04-4c9c-a6d9-837b17bc27f6",
+    "name": "049 What are common OCP violations in enterprise applications?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "04c48b5a-a4d4-4ea2-9dd2-d5207ae060f7",
+    "name": "050 How does OCP work in Spring Boot applications?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b1e20902-e632-4a10-b475-55c7b62b8d7d",
+    "name": "051 What is the difference between inheritance vs composition in OCP?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "94900d45-49a9-4ec4-a310-fd11adf9477b",
+    "name": "052 How does OCP affect API design?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "72da49b1-c40b-469c-89f4-1c37e8718d94",
+    "name": "053 Can generics help in implementing OCP?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b188fcac-fdea-4506-a1dd-9092793ed461",
+    "name": "054 How do you refactor a switch-case violating OCP?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "308c2037-53dd-445d-a94e-3c1888626d4f",
+    "name": "055 What tradeoffs exist when implementing OCP?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dbe10814-0947-4767-93bc-75b229392ce6",
+    "name": "056 Why does this violate OCP?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8109495f-b2eb-42c9-9eed-21f2ecf9ab5c",
+    "name": "057 How would you refactor it using interfaces?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7c0bda29-9e7e-4bc7-a326-179adb69821f",
+    "name": "058 How would you add PayPal payment without modifying code?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4431741a-5075-4362-b349-201fd6ccd9b1",
+    "name": "059 Which design pattern fits best here?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1f1a908a-2150-4717-b944-79650f13c39d",
+    "name": "060 How does Spring's @Component scanning support OCP?",
+    "parentId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "2e287c58-e9b0-4ebf-8d3e-1bac2b53d879",
+        "name": "03 Open Closed Principle (OCP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "name": "04 Liskov Substitution Principle (LSP)",
+    "parentId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "65e61379-6a51-4163-8eed-98995490e586",
+    "name": "061 What is the Liskov Substitution Principle?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "90df41ab-c6ed-407c-b144-48c47a0e7441",
+    "name": "062 What does \"subtypes must be substitutable for their base types\" mean?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "89a0008c-5f17-4e98-aaac-9b054c4f2f23",
+    "name": "063 What problems arise when LSP is violated?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fcbddc8f-11c5-4754-b2ba-8d73883bf707",
+    "name": "064 How does LSP affect inheritance hierarchies?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "78df4eb0-8573-4083-a94c-1f3e139606f3",
+    "name": "065 What are behavioral contracts in LSP?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a06715ea-0400-434c-899f-9463ceff631d",
+    "name": "066 How do preconditions and postconditions relate to LSP?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "958be17b-d23a-4981-a7f2-55d2b77f52f4",
+    "name": "067 How does LSP improve polymorphism?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "97675dd7-a88b-4589-85ac-cce00c9f6ef5",
+    "name": "068 What is a classic example of LSP violation?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "100419d6-0523-42a2-a637-799abe5e06dd",
+    "name": "069 How does LSP relate to interface segregation?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d026f4e8-7142-4a86-af59-a9d897c15df9",
+    "name": "070 How does LSP impact API design?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "da1ae1fd-229f-400f-88c0-e61482f99a50",
+    "name": "071 Can composition replace inheritance to satisfy LSP?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c24e3724-58b2-4627-813f-349ca30ceb28",
+    "name": "072 How do you detect LSP violations during code review?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "770ac785-65e0-4ae8-ae2a-5eb2c1ed1f48",
+    "name": "073 Why does this violate LSP?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cf6f14d6-5c61-496d-83b2-c99bf835fdd7",
+    "name": "074 How would you redesign the hierarchy?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d95642fe-f319-4b86-8bb8-0a3f32e2a796",
+    "name": "075 What design pattern can solve this?",
+    "parentId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "d1d81add-6eac-4bfa-b4e0-179228ea0992",
+        "name": "04 Liskov Substitution Principle (LSP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "name": "05 Interface Segregation Principle (ISP)",
+    "parentId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "03da1ed0-844b-44c4-bd65-fc07bd08f3cc",
+    "name": "076 What is the Interface Segregation Principle?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cf2a6eae-b272-40a4-bf82-7cf46ab624fb",
+    "name": "077 Why should clients not depend on interfaces they don't use?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "688c75ec-3f4b-4f50-aa4e-77a486e7b86f",
+    "name": "078 How does ISP improve modularity?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6bf910f2-ad8a-4daa-9cdb-c84b4fb35bc8",
+    "name": "079 What is the difference between fat interfaces vs small interfaces?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a2b4f0f9-dabb-4814-92f9-816889655088",
+    "name": "080 How does ISP help in microservices contracts?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d94eec68-9db1-4929-b184-502a92cab880",
+    "name": "081 How does ISP improve testing and mocking?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "51678794-9444-49d9-a6e4-57e382c834c0",
+    "name": "082 How does ISP relate to API design?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "26d520e2-a7a5-4003-89e4-5da8fbfc968c",
+    "name": "083 How does ISP reduce coupling?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3358dd7a-3f23-4ef3-b980-e7987f7ec5dc",
+    "name": "084 What are real-world examples of ISP violations?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "767a345e-8323-42c0-be8a-4de79e59cc19",
+    "name": "085 How do you refactor large interfaces?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4ce2e7d6-6f0f-42f9-b1cc-09280a9885df",
+    "name": "086 What role do default methods in Java interfaces play with ISP?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9c8c8879-3b3d-4f68-aa94-813e79ce37e1",
+    "name": "087 How does ISP relate to clean architecture use cases?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1536a08c-f745-4ffd-a080-6f591c4d0eee",
+    "name": "088 How do frameworks sometimes violate ISP?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "efd07a2f-1281-48b9-b4ff-a9408cd6a02f",
+    "name": "089 Why is this an ISP violation?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": {
+      "content": "```\ninterface Worker {\n    void work();\n    void eat();\n}\n\nclass Robot implements Worker {\n    public void work() {}\n    public void eat() {} // not needed\n}\n\n```",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "546594f1-ae16-415f-a51b-d3abfa681bc9",
+    "name": "090 How would you redesign the interfaces?",
+    "parentId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+    "description": "",
+    "smartContent": {
+      "content": "```\ninterface Worker {\n    void work();\n    void eat();\n}\n\nclass Robot implements Worker {\n    public void work() {}\n    public void eat() {} // not needed\n}\n\n```",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "ca402f49-1a36-4e93-a348-84bdaf19f381",
+        "name": "05 Interface Segregation Principle (ISP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "name": "06 Dependency Inversion Principle (DIP)",
+    "parentId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fba3169c-3e6d-4b9b-93d8-f0aa1e4e2aeb",
+    "name": "091 What is the Dependency Inversion Principle?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2de1d82e-02a9-4298-8317-b2cb43ea818f",
+    "name": "092 What is the difference between dependency injection vs dependency inversion?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8443598c-1f33-4a75-b830-e5cb78cfb466",
+    "name": "093 How does DIP reduce coupling?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0b4c9780-5510-4903-ab39-7d5cffdaa462",
+    "name": "094 What role do interfaces and abstractions play in DIP?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "334dcd71-6b0d-4ba4-ad14-743c38d4f314",
+    "name": "095 How does DIP help in Spring Boot applications?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8a035dfd-8d07-4864-b4c5-55fd9014f208",
+    "name": "096 What is constructor injection vs field injection?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ebfcc7ca-e749-4759-836b-7d60e5f46b42",
+    "name": "097 How does DIP improve unit testing?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dbbdeda4-cabe-4317-8e2a-45a4d7d1cf1a",
+    "name": "098 How do IoC containers implement DIP?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c8d04dd7-d70c-44ec-bee1-a20e3d18c3fb",
+    "name": "099 What problems occur when DIP is violated?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1100ce12-00dd-4803-86f4-bc167ea319eb",
+    "name": "100 How would you design a highly testable service layer using DIP?",
+    "parentId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "bd8de7de-0d93-482c-bd23-5f072df03c12",
+        "name": "100 Industry-Level Solid Principles Interview Questions"
+      },
+      {
+        "uniqueId": "3946e43f-dab8-4940-9a66-2e0e8be22c8e",
+        "name": "06 Dependency Inversion Principle (DIP)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+    "name": "100 Industry-Level Design Patterns Interview Questions",
+    "parentId": null,
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [],
+    "sections": []
+  },
+  {
+    "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "name": "01 Design Patterns Fundamentals",
+    "parentId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1e9e144d-331e-4c1b-a352-0376da39e0ad",
+    "name": "01 What are design patterns and why are they important in software engineering?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b9810362-4d32-4111-8b43-d57716ba25b8",
+    "name": "02 What is the difference between design patterns and architecture patterns?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "12ec1759-75e7-4b51-ab3f-3aaa4e29c1fa",
+    "name": "03 What are the three categories of design patterns in the GoF book?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9dc6ca0f-a2c4-430d-9fd6-1fec11b4fb61",
+    "name": "04 What problem does a design pattern solve?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f4ff7807-f1aa-416f-8c29-8d48857b9d36",
+    "name": "05 What is the difference between pattern vs anti-pattern?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "686b4188-1105-4e71-8c6d-bed528783ada",
+    "name": "06 What are the benefits of using design patterns in large-scale systems?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "290d81b3-89d1-4f87-9b06-49265d386b85",
+    "name": "07 What are the disadvantages of overusing design patterns?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f5e1e8cb-c20c-40c6-865b-23bd47d463a1",
+    "name": "08 How do design patterns improve maintainability and scalability?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "53039961-b074-4dee-85b4-e86620f8875b",
+    "name": "09 What is the Gang of Four (GoF) design patterns book?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1e67e005-dade-4dc3-8602-5a1bfff956a1",
+    "name": "10 How do you decide when to apply a design pattern?",
+    "parentId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "c58a312e-e6ee-4b8c-9744-8db0b93881a6",
+        "name": "01 Design Patterns Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "name": "02 Creational Design Patterns",
+    "parentId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e763dedb-44ae-442e-a41b-71ac13d0503c",
+    "name": "011 What problem does the Singleton Pattern solve?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7b7ef459-509d-4745-bc7b-83b685014607",
+    "name": "012 How do you implement a thread-safe Singleton in Java?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ad43b75a-12ef-45a4-80b2-8aec19dfd362",
+    "name": "013 What are problems with Singleton in large-scale systems?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5a51f4cd-56ff-4fb3-969b-786b8a54f7c1",
+    "name": "014 What is the Factory Method Pattern?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "aa82eb4f-0a0b-490d-9deb-9cbc6ec70de3",
+    "name": "015 How does Factory Method differ from Simple Factory?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "09b1e71a-f2a1-4717-a6f7-7d19756f3e42",
+    "name": "016 What is the Abstract Factory Pattern?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "933b9ec8-0c76-4b61-bf2f-8b731110d1f4",
+    "name": "017 Difference between Factory Method vs Abstract Factory?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "94139dd0-aa13-4e0d-9936-7e140daecedd",
+    "name": "018 What is the Builder Pattern?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "045f7cfb-c5c8-4dc4-8643-bf120a45c48b",
+    "name": "019 When should Builder be preferred over constructors?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3dcf4e7a-671d-4948-9668-19ccf2f049a2",
+    "name": "020 How does Builder improve immutability?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9141abb6-3210-4c02-92fa-7b3c3c30923b",
+    "name": "021 What is the Prototype Pattern?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ce67a9f7-9502-4ecb-bfdf-cd9d69ec0d5a",
+    "name": "022 Difference between deep copy vs shallow copy in Prototype?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0297a94b-6a91-4946-9a15-c04c3cd6d28a",
+    "name": "023 How does Spring use Factory pattern internally?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2d48b38e-b535-49c8-bcac-60313727740e",
+    "name": "024 How does Object Pool Pattern work?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e9ef923d-cb4d-44e9-91f1-f079d2b5fd49",
+    "name": "025 What is the difference between Dependency Injection vs Factory?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b1a5e43e-6f3a-4d0e-8522-71e1ab78ef6c",
+    "name": "026 When should Singleton be avoided in microservices?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f713448c-4021-48e1-919f-62458c6794ce",
+    "name": "027 How does Builder pattern help in large DTO creation?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f2daf77e-b4c8-4fdb-a1b2-51ebc38fa707",
+    "name": "028 What is the role of creational patterns in Spring Boot?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a7397b25-8c8a-47da-b48a-376a60354e4e",
+    "name": "029 How do creational patterns support loose coupling?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "23209db5-0cfb-4e3c-b5f5-317c27efc1bb",
+    "name": "030 What are real-world examples of creational patterns?",
+    "parentId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "62038e64-360c-4b64-9c0e-1a2c16e2b551",
+        "name": "02 Creational Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "name": "03 Structural Design Patterns",
+    "parentId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "57a77d32-bb7b-418a-ba51-190e05de427e",
+    "name": "031 What is the Adapter Pattern?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1541ae85-d1c8-4788-b15b-0e9881718a08",
+    "name": "032 How does Adapter differ from Facade Pattern?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7177c553-e00a-4ac6-b813-0eeb3054aeda",
+    "name": "033 What is the Decorator Pattern?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ce6b8e33-c669-4f99-a41c-dd0b483f455f",
+    "name": "034 How does Decorator differ from Inheritance?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7e708819-8ee8-4138-af3b-092e44c7b44c",
+    "name": "035 What is the Facade Pattern?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0c3b6af9-2707-4435-8b6a-b7d9f8050fe2",
+    "name": "036 What problem does the Proxy Pattern solve?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "219c451f-3a4b-46c2-9878-50a19665821f",
+    "name": "037 Difference between Proxy vs Decorator?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9efd7d59-6a2f-417f-bd50-c07e122fd288",
+    "name": "038 What is the Composite Pattern?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1f3f9526-320c-49f1-ac67-f697d4a983be",
+    "name": "039 When should Composite be used?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "64e20d7b-4f4a-4db4-971c-c862f838f75a",
+    "name": "040 What is the Bridge Pattern?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a5e20940-a8bf-495e-9e36-f1cd6cda82bc",
+    "name": "041 Difference between Bridge vs Adapter?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "689d4174-8bb7-46c5-a9e3-c372ff832258",
+    "name": "042 What is the Flyweight Pattern?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4ae63f77-f67c-46bc-9ea0-ade824ec6c80",
+    "name": "043 How does Flyweight reduce memory usage?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1fcb4e26-5f5f-4af7-9ee8-2d0fb42a8fd8",
+    "name": "044 Real-world examples of Flyweight?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3565346e-3ad5-4ebe-9129-c7d7f034b8ad",
+    "name": "045 How is Facade used in Spring Boot services?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a01003d8-2876-4c58-b015-6683d60f3c8b",
+    "name": "046 What is DTO pattern and how does it relate to structural patterns?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a107a676-c77c-4fde-b732-418aee478cec",
+    "name": "047 How does Proxy help in lazy loading?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d2fa99c7-17e2-4bb0-b5a0-8dc05718bc9c",
+    "name": "048 How does Hibernate use Proxy pattern?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "133bc1f0-7c18-464f-927d-5fd5e39bb69e",
+    "name": "049 What is Virtual Proxy?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "be203399-c5ac-4198-ad38-af3a67f28d44",
+    "name": "050 What is Protection Proxy?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7d46de93-f81f-46a7-a414-f84dd44be629",
+    "name": "051 What is Remote Proxy?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "454ccded-4933-4ed9-a7c3-4deca46f808a",
+    "name": "052 What are pitfalls of structural patterns?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fa24d0f2-ad5b-4058-ac06-cfa12c5a1ada",
+    "name": "053 How does Decorator support Open Closed Principle?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "87423b4e-fcaa-47cf-908b-4548531b8b9a",
+    "name": "054 What is Composite vs Decorator difference?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2657750f-3440-41f9-b447-f57b6b8d9a2f",
+    "name": "055 How do structural patterns help in microservices?",
+    "parentId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "dad717d8-69d9-4d11-a95d-50e2918c9287",
+        "name": "03 Structural Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "name": "04 Behavioral Design Patterns",
+    "parentId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a2fb84cd-ef98-4f14-b2a3-969922fd6cc9",
+    "name": "056 What is the Strategy Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d2ea4d75-6cda-4b52-aa8e-299334b64c41",
+    "name": "057 How does Strategy remove if-else logic?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "15571e9d-113a-40a3-b991-e665d7f10b2d",
+    "name": "058 What is the Observer Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "35599274-36ae-4d73-985a-f72ebdcc78a2",
+    "name": "059 How is Observer used in event-driven systems?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e1a3c1c1-7a31-40b2-8b6f-59d30c9eaf65",
+    "name": "060 How does Java implement Observer using EventListener?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b75a51fd-92c3-419a-b310-3276cc7fceab",
+    "name": "061 What is the Command Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cfc1ccd9-c330-4bc2-905c-354794765f5a",
+    "name": "062 What is the Chain of Responsibility Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0afd798d-6d2a-4e0a-ba3f-bbdd37791cd5",
+    "name": "063 How is Chain of Responsibility used in Spring Security filters?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "39575e18-6828-43e1-b19f-879ca8e6fc67",
+    "name": "064 What is the Template Method Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1f92e58b-9b04-4521-990e-0237e663c17c",
+    "name": "065 What is the State Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "de2ca32d-9a7c-4c9b-8478-4c567f7e3656",
+    "name": "066 Difference between State vs Strategy Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d65f93a1-3fdf-4f2e-ab74-3c6ed5246ac0",
+    "name": "067 What is the Mediator Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f1dbeffc-2620-479e-a440-93bf928b95e9",
+    "name": "068 When should Mediator be used?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a391a36a-e5ca-4d9d-a3c7-f191f8e33354",
+    "name": "069 What is the Memento Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c832bfaf-6e01-4d51-8f87-d75106a74899",
+    "name": "070 What is the Interpreter Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5f86bdce-dc0b-41dd-9ea6-3d5753703bf2",
+    "name": "071 What is the Visitor Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c4cf0553-c67e-4706-bd0e-cda4b9867cf9",
+    "name": "072 What problem does Visitor solve?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6bb10486-e71a-4973-a923-c5ff0ff50365",
+    "name": "073 What is the Iterator Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "713f4295-82e8-4bf7-9b0b-391692a5e9e3",
+    "name": "074 How does Java Collection use Iterator?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f5b3bd13-0b8c-49a2-9038-fb15d65f01d0",
+    "name": "075 What is the Null Object Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f8ca3a9f-fe60-4b19-9707-116412604c07",
+    "name": "076 What is the Specification Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f0ca53af-d651-4125-a68d-b1c595665f14",
+    "name": "077 What is the Event Sourcing Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ce2e5ccc-1300-4ebf-9344-4885bb5d6992",
+    "name": "078 What is the CQRS Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bce08afb-6894-4d22-b4fc-f103790a29f5",
+    "name": "079 What is the Saga Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5e05c592-4607-4558-bd4b-94d7d99c6cee",
+    "name": "080 What is the Circuit Breaker Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "31380ecc-2de3-48b7-aa4b-dc581c7fcbac",
+    "name": "081 What is the Retry Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "428cd7be-a1d5-4ff2-aeb2-fe1ab7e7dd09",
+    "name": "082 What is the Bulkhead Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "63010e37-a337-420a-8f2e-3baebca1a1f9",
+    "name": "083 What is the Rate Limiting Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ad33a8c9-18d6-47d2-93ea-932e73426eec",
+    "name": "084 What is the Backpressure Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "066c9bae-ab7f-437b-8580-0a30eb22513e",
+    "name": "085 What is the Pub/Sub Pattern?",
+    "parentId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "aae8caf6-e7da-4f97-b420-9ffc77e4d05f",
+        "name": "04 Behavioral Design Patterns"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "name": "05 Real-World Design Pattern Usage",
+    "parentId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "36674677-18f2-4e7a-a611-0fdcaf003e88",
+    "name": "086 Which design patterns are used inside Spring Framework?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bba0768c-fd40-4671-a15e-bfcf26e237ec",
+    "name": "087 Which patterns are used in Hibernate?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "eb648356-a65c-41e6-992b-f49814288bd7",
+    "name": "088 Which patterns are used in Java Collections Framework?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4fed799d-4788-4034-95f2-18ebba6de103",
+    "name": "089 How does Spring Boot implement Dependency Injection pattern?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "adb83f6e-b2aa-4362-a097-b1b82d326dbe",
+    "name": "090 What patterns are used in microservices architecture?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6ccbf638-6116-4538-a414-20a8999bbe59",
+    "name": "091 How do you design a plugin system using Strategy pattern?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "98eb58be-22a3-4f35-89f8-1e3545cc38af",
+    "name": "092 How would you design a notification system using Observer pattern?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "43b389fb-09eb-45cc-a05e-c658e0212144",
+    "name": "093 How would you design a payment gateway using Strategy pattern?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d0b09c4a-f433-4dcb-9a16-3fdf8847feb6",
+    "name": "094 How would you design API rate limiting using Chain of Responsibility?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b988e155-55ed-4ec5-87cc-7acfa419dc19",
+    "name": "095 How would you design undo/redo using Memento pattern?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f13aea63-b8ba-4e44-a911-dbbde23ed8eb",
+    "name": "096 How would you implement logging middleware using Decorator pattern?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a26efbb9-8c20-45cf-ac56-79741b1cddb3",
+    "name": "097 How would you implement API gateway using Facade pattern?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1c8b0479-ecb4-40ca-a224-4b2df0270493",
+    "name": "098 How would you implement authentication pipeline using Chain of Responsibility?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "99f26529-5031-4938-b6f7-025b48f9d668",
+    "name": "099 How would you design a workflow engine using State pattern?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4d3eb34b-302d-4db5-b7d0-3366ccef345c",
+    "name": "100 How would you choose the correct design pattern for a new system?",
+    "parentId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "3fb4f812-5f1f-4244-8697-f2d3c8ff65cb",
+        "name": "100 Industry-Level Design Patterns Interview Questions"
+      },
+      {
+        "uniqueId": "7ff9bc71-1c5c-4ebd-9424-e4746c174ad4",
+        "name": "05 Real-World Design Pattern Usage"
+      }
+    ],
+    "sections": []
   }
 ]
