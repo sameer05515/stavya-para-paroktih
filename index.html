@@ -41,6 +41,26 @@
       .sidebar-collapsed .sidebar-drawer { width: 0; min-width: 0; overflow: hidden; padding: 0; border-right-width: 0; transform: none; }
       .sidebar-collapsed .sidebar-drawer .sidebar-content { opacity: 0; pointer-events: none; }
     }
+    .codeblock { position: relative; }
+    .codeblock-copy {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 5;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(17, 24, 39, 0.55);
+      color: rgba(255,255,255,0.92);
+      cursor: pointer;
+      user-select: none;
+      backdrop-filter: blur(6px);
+    }
+    .codeblock-copy:hover { background: rgba(17, 24, 39, 0.72); }
+    .codeblock-copy:active { transform: translateY(1px); }
+    .dark .codeblock-copy { border-color: rgba(255,255,255,0.20); }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" />
@@ -212,6 +232,52 @@
 
       const contentBlockClasses = 'mb-6 empty:hidden break-words [&_h1]:font-serif [&_h2]:font-serif [&_h3]:font-serif [&_h1]:font-normal [&_h2]:font-normal [&_h3]:font-normal [&_h1]:mt-4 [&_h2]:mt-4 [&_h3]:mt-4 [&_h1]:mb-2 [&_h2]:mb-2 [&_h3]:mb-2 [&_h1:first-child]:mt-0 [&_pre]:bg-neutral-800 [&_pre]:dark:bg-neutral-700 [&_pre]:text-amber-50 [&_pre]:dark:text-neutral-200 [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto [&_pre]:text-sm [&_code]:font-mono [&_code]:text-[0.9em] [&_p]:my-2 [&_ul]:my-2 [&_ol]:my-2 [&_ul]:pl-6 [&_ol]:pl-6 [&_a]:text-accent [&_a]:dark:text-amber-400';
 
+      async function copyTextToClipboard(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(text);
+        }
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        ta.style.top = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+
+      function enhanceCodeBlocks(container) {
+        if (!container) return;
+        const pres = container.querySelectorAll('pre');
+        pres.forEach(function (pre) {
+          const code = pre.querySelector('code');
+          if (!code) return;
+          if (pre.querySelector('.codeblock-copy')) return;
+          pre.classList.add('codeblock');
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'codeblock-copy';
+          btn.textContent = 'Copy';
+          btn.setAttribute('aria-label', 'Copy code to clipboard');
+          btn.addEventListener('click', async function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const text = code.innerText || code.textContent || '';
+            try {
+              await copyTextToClipboard(text);
+              btn.textContent = 'Copied';
+              window.setTimeout(function () { btn.textContent = 'Copy'; }, 900);
+            } catch (err) {
+              btn.textContent = 'Failed';
+              window.setTimeout(function () { btn.textContent = 'Copy'; }, 1200);
+            }
+          });
+          pre.appendChild(btn);
+        });
+      }
+
       function renderTopicContent(smartContent) {
         if (!smartContent || !smartContent.content) return '';
         const type = (smartContent.textOutputType || '').toLowerCase();
@@ -261,6 +327,7 @@
         if (typeof hljs !== 'undefined') {
           detailEl.querySelectorAll('pre code').forEach(function (el) { hljs.highlightElement(el); });
         }
+        enhanceCodeBlocks(detailEl);
         syncSidebarToCurrent();
       }
 
