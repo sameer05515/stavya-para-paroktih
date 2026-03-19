@@ -36442,7 +36442,11 @@
     "name": "077 Serialize and deserialize a binary tree.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level ways** to **serialize & deserialize a binary tree** 👇\n\n---\n\n### 1. BFS (Level Order - Most Common 🔥)\n\n```java id=\"ser1\"\nimport java.util.*;\n\npublic class Codec {\n\n    static class Node {\n        int val;\n        Node left, right;\n        Node(int v) { val = v; }\n    }\n\n    // Serialize\n    public String serialize(Node root) {\n        if (root == null) return \"\";\n\n        StringBuilder sb = new StringBuilder();\n        Queue<Node> q = new LinkedList<>();\n        q.offer(root);\n\n        while (!q.isEmpty()) {\n            Node curr = q.poll();\n\n            if (curr == null) {\n                sb.append(\"null,\");\n                continue;\n            }\n\n            sb.append(curr.val).append(\",\");\n            q.offer(curr.left);\n            q.offer(curr.right);\n        }\n\n        return sb.toString();\n    }\n\n    // Deserialize\n    public Node deserialize(String data) {\n        if (data.isEmpty()) return null;\n\n        String[] arr = data.split(\",\");\n        Node root = new Node(Integer.parseInt(arr[0]));\n\n        Queue<Node> q = new LinkedList<>();\n        q.offer(root);\n\n        int i = 1;\n\n        while (!q.isEmpty()) {\n            Node curr = q.poll();\n\n            if (!arr[i].equals(\"null\")) {\n                curr.left = new Node(Integer.parseInt(arr[i]));\n                q.offer(curr.left);\n            }\n            i++;\n\n            if (!arr[i].equals(\"null\")) {\n                curr.right = new Node(Integer.parseInt(arr[i]));\n                q.offer(curr.right);\n            }\n            i++;\n        }\n\n        return root;\n    }\n}\n```\n\n---\n\n### 2. DFS Preorder (Compact 🔥🔥)\n\n```java id=\"ser2\"\npublic class Codec {\n\n    static class Node {\n        int val;\n        Node left, right;\n        Node(int v) { val = v; }\n    }\n\n    // Serialize\n    public String serialize(Node root) {\n        StringBuilder sb = new StringBuilder();\n        dfs(root, sb);\n        return sb.toString();\n    }\n\n    private void dfs(Node root, StringBuilder sb) {\n        if (root == null) {\n            sb.append(\"null,\");\n            return;\n        }\n\n        sb.append(root.val).append(\",\");\n        dfs(root.left, sb);\n        dfs(root.right, sb);\n    }\n\n    // Deserialize\n    int index = 0;\n\n    public Node deserialize(String data) {\n        String[] arr = data.split(\",\");\n        return build(arr);\n    }\n\n    private Node build(String[] arr) {\n        if (arr[index].equals(\"null\")) {\n            index++;\n            return null;\n        }\n\n        Node root = new Node(Integer.parseInt(arr[index++]));\n        root.left = build(arr);\n        root.right = build(arr);\n\n        return root;\n    }\n}\n```\n\n---\n\n### 3. Using List Instead of String 🔥\n\n```java id=\"ser3\"\nimport java.util.*;\n\nstatic void serialize(Node root, List<String> list) {\n    if (root == null) {\n        list.add(\"null\");\n        return;\n    }\n\n    list.add(String.valueOf(root.val));\n    serialize(root.left, list);\n    serialize(root.right, list);\n}\n```\n\n---\n\n### 4. Iterative DFS (Stack) 🔥\n\n```java id=\"ser4\"\nimport java.util.*;\n\nstatic String serialize(Node root) {\n    if (root == null) return \"\";\n\n    Stack<Node> stack = new Stack<>();\n    StringBuilder sb = new StringBuilder();\n\n    stack.push(root);\n\n    while (!stack.isEmpty()) {\n        Node curr = stack.pop();\n\n        if (curr == null) {\n            sb.append(\"null,\");\n            continue;\n        }\n\n        sb.append(curr.val).append(\",\");\n\n        stack.push(curr.right);\n        stack.push(curr.left);\n    }\n\n    return sb.toString();\n}\n```\n\n---\n\n### 5. Generic Version 🔥\n\n```java id=\"ser5\"\nclass Node<T> {\n    T val;\n    Node<T> left, right;\n}\n\nstatic <T> void serialize(Node<T> root, List<T> list) {\n    if (root == null) return;\n\n    list.add(root.val);\n    serialize(root.left, list);\n    serialize(root.right, list);\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"ser6\"\npublic String serialize(Node root) {\n    if (root == null) return \"\";\n\n    return root.val + \",\" +\n           serialize(root.left) + \",\" +\n           serialize(root.right);\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Vertical order traversal 🔥🔥\n* Boundary traversal\n* Maximum path sum\n* Full Tree + Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36458,7 +36462,11 @@
     "name": "078 Find maximum path sum in a binary tree.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level ways** to find the **Maximum Path Sum in a Binary Tree** 👇\n\n---\n\n### 1. Optimized DFS (Most Important 🔥🔥 O(n))\n\n```java id=\"mps1\"\npublic class MaxPathSum {\n\n    static class Node {\n        int val;\n        Node left, right;\n        Node(int v) { val = v; }\n    }\n\n    static int maxSum = Integer.MIN_VALUE;\n\n    static int maxPath(Node root) {\n        if (root == null) return 0;\n\n        int left = Math.max(0, maxPath(root.left));\n        int right = Math.max(0, maxPath(root.right));\n\n        // path through root\n        maxSum = Math.max(maxSum, left + right + root.val);\n\n        // return single path\n        return root.val + Math.max(left, right);\n    }\n\n    static int maxPathSum(Node root) {\n        maxPath(root);\n        return maxSum;\n    }\n}\n```\n\n---\n\n### 2. Return Pair (Clean Approach 🔥)\n\n```java id=\"mps2\"\nclass Pair {\n    int maxPath;   // max path anywhere\n    int maxDown;   // max downward path\n\n    Pair(int p, int d) {\n        maxPath = p;\n        maxDown = d;\n    }\n}\n\nstatic Pair solve(Node root) {\n    if (root == null) return new Pair(Integer.MIN_VALUE, 0);\n\n    Pair left = solve(root.left);\n    Pair right = solve(root.right);\n\n    int maxDown = Math.max(root.val,\n                    root.val + Math.max(left.maxDown, right.maxDown));\n\n    int throughRoot = root.val + Math.max(0, left.maxDown)\n                                 + Math.max(0, right.maxDown);\n\n    int maxPath = Math.max(throughRoot,\n                    Math.max(left.maxPath, right.maxPath));\n\n    return new Pair(maxPath, maxDown);\n}\n```\n\n---\n\n### 3. Handle All Negative Nodes 🔥\n\n```java id=\"mps3\"\nstatic int maxSum = Integer.MIN_VALUE;\n\nstatic int dfs(Node root) {\n    if (root == null) return 0;\n\n    int left = dfs(root.left);\n    int right = dfs(root.right);\n\n    int single = Math.max(root.val,\n                  root.val + Math.max(left, right));\n\n    int top = Math.max(single, root.val + left + right);\n\n    maxSum = Math.max(maxSum, top);\n\n    return single;\n}\n```\n\n---\n\n### 4. Iterative (Postorder using Stack 🔥)\n\n```java id=\"mps4\"\nimport java.util.*;\n\nstatic int maxPathSum(Node root) {\n    Map<Node, Integer> map = new HashMap<>();\n    Stack<Node> stack = new Stack<>();\n    Node curr = root, last = null;\n    int max = Integer.MIN_VALUE;\n\n    while (curr != null || !stack.isEmpty()) {\n        if (curr != null) {\n            stack.push(curr);\n            curr = curr.left;\n        } else {\n            Node peek = stack.peek();\n\n            if (peek.right != null && last != peek.right) {\n                curr = peek.right;\n            } else {\n                int left = Math.max(0, map.getOrDefault(peek.left, 0));\n                int right = Math.max(0, map.getOrDefault(peek.right, 0));\n\n                max = Math.max(max, left + right + peek.val);\n\n                map.put(peek, peek.val + Math.max(left, right));\n\n                last = stack.pop();\n            }\n        }\n    }\n\n    return max;\n}\n```\n\n---\n\n### 5. Generic Version 🔥\n\n```java id=\"mps5\"\nclass Node<T extends Number> {\n    T val;\n    Node<T> left, right;\n}\n\nstatic int maxSum = Integer.MIN_VALUE;\n\nstatic int dfs(Node<Integer> root) {\n    if (root == null) return 0;\n\n    int left = Math.max(0, dfs(root.left));\n    int right = Math.max(0, dfs(root.right));\n\n    maxSum = Math.max(maxSum, left + right + root.val);\n\n    return root.val + Math.max(left, right);\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"mps6\"\nstatic int maxPathSum(Node root) {\n    if (root == null) return 0;\n\n    int[] max = new int[]{Integer.MIN_VALUE};\n    dfs(root, max);\n    return max[0];\n}\n\nstatic int dfs(Node root, int[] max) {\n    if (root == null) return 0;\n\n    int left = Math.max(0, dfs(root.left, max));\n    int right = Math.max(0, dfs(root.right, max));\n\n    max[0] = Math.max(max[0], left + right + root.val);\n\n    return root.val + Math.max(left, right);\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Vertical order traversal 🔥🔥\n* Boundary traversal\n* Tree to DLL conversion\n* Full Tree + Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36474,7 +36482,11 @@
     "name": "079 Implement Trie (prefix tree).",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Trie (Prefix Tree)** = tree-like DS used for fast **prefix-based search** (strings, autocomplete, dictionary).\nEach node stores children (a–z) + `isEnd` flag.\n\n---\n\n### 1. Basic Trie (Insert, Search, StartsWith 🔥)\n\n```java id=\"trie1\"\nclass Trie {\n\n    static class Node {\n        Node[] children = new Node[26];\n        boolean isEnd;\n    }\n\n    private Node root;\n\n    public Trie() {\n        root = new Node();\n    }\n\n    public void insert(String word) {\n        Node curr = root;\n\n        for (char c : word.toCharArray()) {\n            int idx = c - 'a';\n\n            if (curr.children[idx] == null) {\n                curr.children[idx] = new Node();\n            }\n\n            curr = curr.children[idx];\n        }\n\n        curr.isEnd = true;\n    }\n\n    public boolean search(String word) {\n        Node node = find(word);\n        return node != null && node.isEnd;\n    }\n\n    public boolean startsWith(String prefix) {\n        return find(prefix) != null;\n    }\n\n    private Node find(String s) {\n        Node curr = root;\n\n        for (char c : s.toCharArray()) {\n            int idx = c - 'a';\n            if (curr.children[idx] == null) return null;\n            curr = curr.children[idx];\n        }\n\n        return curr;\n    }\n}\n```\n\n---\n\n### 2. Trie using HashMap (Flexible charset 🔥)\n\n```java id=\"trie2\"\nimport java.util.*;\n\nclass Trie {\n\n    static class Node {\n        Map<Character, Node> children = new HashMap<>();\n        boolean isEnd;\n    }\n\n    private Node root = new Node();\n\n    public void insert(String word) {\n        Node curr = root;\n\n        for (char c : word.toCharArray()) {\n            curr.children.putIfAbsent(c, new Node());\n            curr = curr.children.get(c);\n        }\n\n        curr.isEnd = true;\n    }\n\n    public boolean search(String word) {\n        Node node = find(word);\n        return node != null && node.isEnd;\n    }\n\n    public boolean startsWith(String prefix) {\n        return find(prefix) != null;\n    }\n\n    private Node find(String s) {\n        Node curr = root;\n\n        for (char c : s.toCharArray()) {\n            if (!curr.children.containsKey(c)) return null;\n            curr = curr.children.get(c);\n        }\n\n        return curr;\n    }\n}\n```\n\n---\n\n### 3. Trie with Delete 🔥🔥\n\n```java id=\"trie3\"\nclass Trie {\n\n    static class Node {\n        Node[] children = new Node[26];\n        boolean isEnd;\n    }\n\n    private Node root = new Node();\n\n    public void insert(String word) {\n        Node curr = root;\n        for (char c : word.toCharArray()) {\n            int i = c - 'a';\n            if (curr.children[i] == null)\n                curr.children[i] = new Node();\n            curr = curr.children[i];\n        }\n        curr.isEnd = true;\n    }\n\n    public void delete(String word) {\n        delete(root, word, 0);\n    }\n\n    private boolean delete(Node node, String word, int d) {\n        if (node == null) return false;\n\n        if (d == word.length()) {\n            if (!node.isEnd) return false;\n            node.isEnd = false;\n            return isEmpty(node);\n        }\n\n        int i = word.charAt(d) - 'a';\n\n        if (delete(node.children[i], word, d + 1)) {\n            node.children[i] = null;\n            return !node.isEnd && isEmpty(node);\n        }\n\n        return false;\n    }\n\n    private boolean isEmpty(Node node) {\n        for (Node child : node.children)\n            if (child != null) return false;\n        return true;\n    }\n}\n```\n\n---\n\n### 4. Count Words with Prefix 🔥\n\n```java id=\"trie4\"\nclass Trie {\n\n    static class Node {\n        Node[] children = new Node[26];\n        int prefixCount = 0;\n        int wordCount = 0;\n    }\n\n    Node root = new Node();\n\n    public void insert(String word) {\n        Node curr = root;\n\n        for (char c : word.toCharArray()) {\n            int i = c - 'a';\n\n            if (curr.children[i] == null)\n                curr.children[i] = new Node();\n\n            curr = curr.children[i];\n            curr.prefixCount++;\n        }\n\n        curr.wordCount++;\n    }\n\n    public int countPrefix(String prefix) {\n        Node curr = root;\n\n        for (char c : prefix.toCharArray()) {\n            int i = c - 'a';\n            if (curr.children[i] == null) return 0;\n            curr = curr.children[i];\n        }\n\n        return curr.prefixCount;\n    }\n}\n```\n\n---\n\n### 5. Autocomplete (Return all words 🔥🔥)\n\n```java id=\"trie5\"\nimport java.util.*;\n\nclass Trie {\n\n    static class Node {\n        Map<Character, Node> children = new HashMap<>();\n        boolean isEnd;\n    }\n\n    Node root = new Node();\n\n    public void insert(String word) {\n        Node curr = root;\n        for (char c : word.toCharArray()) {\n            curr.children.putIfAbsent(c, new Node());\n            curr = curr.children.get(c);\n        }\n        curr.isEnd = true;\n    }\n\n    public List<String> autocomplete(String prefix) {\n        List<String> res = new ArrayList<>();\n        Node node = find(prefix);\n\n        if (node != null) dfs(node, prefix, res);\n        return res;\n    }\n\n    private void dfs(Node node, String path, List<String> res) {\n        if (node.isEnd) res.add(path);\n\n        for (char c : node.children.keySet()) {\n            dfs(node.children.get(c), path + c, res);\n        }\n    }\n\n    private Node find(String s) {\n        Node curr = root;\n\n        for (char c : s.toCharArray()) {\n            if (!curr.children.containsKey(c)) return null;\n            curr = curr.children.get(c);\n        }\n\n        return curr;\n    }\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"trie6\"\npublic boolean search(String word) {\n    if (word == null || word.length() == 0) return false;\n    return find(word) != null;\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Word Search II (Trie + DFS 🔥🔥)\n* Replace words problem\n* Trie + DP problems\n* Full String + Trie roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36490,7 +36502,11 @@
     "name": "080 Implement autocomplete using Trie.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **Autocomplete using Trie** 👇\n\n---\n\n### 1. Basic Autocomplete (Prefix → All Words 🔥)\n\n```java id=\"ac1\"\nimport java.util.*;\n\nclass Trie {\n\n    static class Node {\n        Map<Character, Node> children = new HashMap<>();\n        boolean isEnd;\n    }\n\n    Node root = new Node();\n\n    public void insert(String word) {\n        Node curr = root;\n        for (char c : word.toCharArray()) {\n            curr.children.putIfAbsent(c, new Node());\n            curr = curr.children.get(c);\n        }\n        curr.isEnd = true;\n    }\n\n    public List<String> autocomplete(String prefix) {\n        List<String> res = new ArrayList<>();\n        Node node = find(prefix);\n\n        if (node != null) dfs(node, prefix, res);\n        return res;\n    }\n\n    private void dfs(Node node, String path, List<String> res) {\n        if (node.isEnd) res.add(path);\n\n        for (char c : node.children.keySet()) {\n            dfs(node.children.get(c), path + c, res);\n        }\n    }\n\n    private Node find(String s) {\n        Node curr = root;\n\n        for (char c : s.toCharArray()) {\n            if (!curr.children.containsKey(c)) return null;\n            curr = curr.children.get(c);\n        }\n        return curr;\n    }\n}\n```\n\n---\n\n### 2. Top-K Autocomplete (Priority Queue 🔥🔥)\n\n```java id=\"ac2\"\nimport java.util.*;\n\nclass Trie {\n\n    static class Node {\n        Map<Character, Node> children = new HashMap<>();\n        boolean isEnd;\n        int freq;\n    }\n\n    Node root = new Node();\n\n    public void insert(String word) {\n        Node curr = root;\n\n        for (char c : word.toCharArray()) {\n            curr.children.putIfAbsent(c, new Node());\n            curr = curr.children.get(c);\n        }\n\n        curr.isEnd = true;\n        curr.freq++;\n    }\n\n    public List<String> autocomplete(String prefix, int k) {\n        Node node = find(prefix);\n        List<Pair> list = new ArrayList<>();\n\n        dfs(node, prefix, list);\n\n        PriorityQueue<Pair> pq = new PriorityQueue<>(\n            (a, b) -> b.freq - a.freq\n        );\n\n        pq.addAll(list);\n\n        List<String> res = new ArrayList<>();\n        while (k-- > 0 && !pq.isEmpty()) {\n            res.add(pq.poll().word);\n        }\n\n        return res;\n    }\n\n    static class Pair {\n        String word;\n        int freq;\n\n        Pair(String w, int f) {\n            word = w;\n            freq = f;\n        }\n    }\n\n    private void dfs(Node node, String path, List<Pair> list) {\n        if (node == null) return;\n\n        if (node.isEnd) {\n            list.add(new Pair(path, node.freq));\n        }\n\n        for (char c : node.children.keySet()) {\n            dfs(node.children.get(c), path + c, list);\n        }\n    }\n\n    private Node find(String s) {\n        Node curr = root;\n\n        for (char c : s.toCharArray()) {\n            if (!curr.children.containsKey(c)) return null;\n            curr = curr.children.get(c);\n        }\n\n        return curr;\n    }\n}\n```\n\n---\n\n### 3. Optimized (Store Top Suggestions at Each Node 🔥🔥🔥)\n\n```java id=\"ac3\"\nimport java.util.*;\n\nclass Trie {\n\n    static class Node {\n        Map<Character, Node> children = new HashMap<>();\n        List<String> top = new ArrayList<>();\n    }\n\n    Node root = new Node();\n\n    public void insert(String word) {\n        Node curr = root;\n\n        for (char c : word.toCharArray()) {\n            curr.children.putIfAbsent(c, new Node());\n            curr = curr.children.get(c);\n\n            curr.top.add(word);\n            Collections.sort(curr.top);\n\n            if (curr.top.size() > 3) {\n                curr.top.remove(curr.top.size() - 1);\n            }\n        }\n    }\n\n    public List<String> autocomplete(String prefix) {\n        Node curr = root;\n\n        for (char c : prefix.toCharArray()) {\n            if (!curr.children.containsKey(c)) return new ArrayList<>();\n            curr = curr.children.get(c);\n        }\n\n        return curr.top;\n    }\n}\n```\n\n---\n\n### 4. Real-time Search Suggestion (LeetCode style 🔥)\n\n```java id=\"ac4\"\nimport java.util.*;\n\nclass Solution {\n\n    public List<List<String>> suggestedProducts(String[] products, String searchWord) {\n        Arrays.sort(products);\n\n        Trie trie = new Trie();\n        for (String p : products) trie.insert(p);\n\n        List<List<String>> res = new ArrayList<>();\n        String prefix = \"\";\n\n        for (char c : searchWord.toCharArray()) {\n            prefix += c;\n            res.add(trie.autocomplete(prefix));\n        }\n\n        return res;\n    }\n}\n```\n\n---\n\n### 5. Edge Case Safe Version\n\n```java id=\"ac5\"\npublic List<String> autocomplete(String prefix) {\n    if (prefix == null || prefix.length() == 0)\n        return new ArrayList<>();\n\n    Node node = find(prefix);\n    if (node == null) return new ArrayList<>();\n\n    List<String> res = new ArrayList<>();\n    dfs(node, prefix, res);\n    return res;\n}\n```\n\n---\n\n### 6. Test Example\n\n```java id=\"ac6\"\npublic static void main(String[] args) {\n    Trie t = new Trie();\n\n    t.insert(\"apple\");\n    t.insert(\"app\");\n    t.insert(\"apex\");\n\n    System.out.println(t.autocomplete(\"ap\")); \n    // [app, apple, apex]\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Word Search II (Trie + Backtracking 🔥🔥)\n* Replace Words problem\n* Longest Word in Dictionary\n* Full String + Trie + Graph roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36506,7 +36522,11 @@
     "name": "081 Detect cycle in a graph (DFS).",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** to **detect cycle in a graph using DFS** 👇\n\n---\n\n### 1. Undirected Graph (DFS + Parent Tracking 🔥)\n\n```java id=\"gdfs1\"\nimport java.util.*;\n\npublic class CycleUndirected {\n\n    static boolean hasCycle(int V, List<List<Integer>> adj) {\n        boolean[] visited = new boolean[V];\n\n        for (int i = 0; i < V; i++) {\n            if (!visited[i] && dfs(i, -1, visited, adj)) {\n                return true;\n            }\n        }\n        return false;\n    }\n\n    static boolean dfs(int node, int parent, boolean[] visited, List<List<Integer>> adj) {\n        visited[node] = true;\n\n        for (int nei : adj.get(node)) {\n            if (!visited[nei]) {\n                if (dfs(nei, node, visited, adj)) return true;\n            } else if (nei != parent) {\n                return true;\n            }\n        }\n\n        return false;\n    }\n}\n```\n\n---\n\n### 2. Directed Graph (DFS + Recursion Stack 🔥🔥)\n\n```java id=\"gdfs2\"\nimport java.util.*;\n\npublic class CycleDirected {\n\n    static boolean hasCycle(int V, List<List<Integer>> adj) {\n        boolean[] visited = new boolean[V];\n        boolean[] recStack = new boolean[V];\n\n        for (int i = 0; i < V; i++) {\n            if (dfs(i, visited, recStack, adj)) return true;\n        }\n        return false;\n    }\n\n    static boolean dfs(int node, boolean[] visited, boolean[] recStack, List<List<Integer>> adj) {\n        if (recStack[node]) return true;\n        if (visited[node]) return false;\n\n        visited[node] = true;\n        recStack[node] = true;\n\n        for (int nei : adj.get(node)) {\n            if (dfs(nei, visited, recStack, adj)) return true;\n        }\n\n        recStack[node] = false;\n        return false;\n    }\n}\n```\n\n---\n\n### 3. Using Colors (Directed Graph 🔥)\n\n```java id=\"gdfs3\"\nimport java.util.*;\n\npublic class CycleDirected {\n\n    static boolean hasCycle(int V, List<List<Integer>> adj) {\n        int[] color = new int[V]; // 0=white,1=gray,2=black\n\n        for (int i = 0; i < V; i++) {\n            if (color[i] == 0 && dfs(i, color, adj)) {\n                return true;\n            }\n        }\n        return false;\n    }\n\n    static boolean dfs(int node, int[] color, List<List<Integer>> adj) {\n        color[node] = 1; // visiting\n\n        for (int nei : adj.get(node)) {\n            if (color[nei] == 1) return true;\n            if (color[nei] == 0 && dfs(nei, color, adj)) return true;\n        }\n\n        color[node] = 2; // done\n        return false;\n    }\n}\n```\n\n---\n\n### 4. Iterative DFS (Undirected 🔥)\n\n```java id=\"gdfs4\"\nimport java.util.*;\n\nstatic boolean hasCycle(int V, List<List<Integer>> adj) {\n    boolean[] visited = new boolean[V];\n\n    for (int i = 0; i < V; i++) {\n        if (!visited[i]) {\n            Stack<int[]> stack = new Stack<>();\n            stack.push(new int[]{i, -1});\n\n            while (!stack.isEmpty()) {\n                int[] curr = stack.pop();\n                int node = curr[0], parent = curr[1];\n\n                if (visited[node]) continue;\n                visited[node] = true;\n\n                for (int nei : adj.get(node)) {\n                    if (!visited[nei]) {\n                        stack.push(new int[]{nei, node});\n                    } else if (nei != parent) {\n                        return true;\n                    }\n                }\n            }\n        }\n    }\n    return false;\n}\n```\n\n---\n\n### 5. Generic Graph (Map based 🔥)\n\n```java id=\"gdfs5\"\nimport java.util.*;\n\nstatic boolean hasCycle(Map<Integer, List<Integer>> graph) {\n    Set<Integer> visited = new HashSet<>();\n    Set<Integer> recStack = new HashSet<>();\n\n    for (int node : graph.keySet()) {\n        if (dfs(node, graph, visited, recStack)) return true;\n    }\n    return false;\n}\n\nstatic boolean dfs(int node, Map<Integer, List<Integer>> graph,\n                   Set<Integer> visited, Set<Integer> recStack) {\n\n    if (recStack.contains(node)) return true;\n    if (visited.contains(node)) return false;\n\n    visited.add(node);\n    recStack.add(node);\n\n    for (int nei : graph.getOrDefault(node, new ArrayList<>())) {\n        if (dfs(nei, graph, visited, recStack)) return true;\n    }\n\n    recStack.remove(node);\n    return false;\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"gdfs6\"\nstatic boolean hasCycle(int V, List<List<Integer>> adj) {\n    if (V == 0) return false;\n\n    boolean[] visited = new boolean[V];\n\n    for (int i = 0; i < V; i++) {\n        if (!visited[i]) {\n            if (dfs(i, -1, visited, adj)) return true;\n        }\n    }\n    return false;\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Cycle detection using BFS (Kahn’s Algorithm 🔥🔥)\n* Topological sort\n* Dijkstra / shortest path\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36522,7 +36542,11 @@
     "name": "082 Detect cycle in a directed graph.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level ways** to **detect cycle in a directed graph** 👇\n\n---\n\n### 1. DFS + Recursion Stack (Most Important 🔥🔥 O(V+E))\n\n```java id=\"dc1\"\nimport java.util.*;\n\npublic class DirectedCycle {\n\n    static boolean hasCycle(int V, List<List<Integer>> adj) {\n        boolean[] visited = new boolean[V];\n        boolean[] recStack = new boolean[V];\n\n        for (int i = 0; i < V; i++) {\n            if (dfs(i, visited, recStack, adj)) return true;\n        }\n        return false;\n    }\n\n    static boolean dfs(int node, boolean[] visited, boolean[] recStack,\n                       List<List<Integer>> adj) {\n\n        if (recStack[node]) return true;\n        if (visited[node]) return false;\n\n        visited[node] = true;\n        recStack[node] = true;\n\n        for (int nei : adj.get(node)) {\n            if (dfs(nei, visited, recStack, adj)) return true;\n        }\n\n        recStack[node] = false;\n        return false;\n    }\n}\n```\n\n---\n\n### 2. DFS with Coloring (Clean Approach 🔥)\n\n```java id=\"dc2\"\nimport java.util.*;\n\npublic class DirectedCycle {\n\n    static boolean hasCycle(int V, List<List<Integer>> adj) {\n        int[] color = new int[V]; // 0=white,1=gray,2=black\n\n        for (int i = 0; i < V; i++) {\n            if (color[i] == 0 && dfs(i, color, adj)) {\n                return true;\n            }\n        }\n        return false;\n    }\n\n    static boolean dfs(int node, int[] color, List<List<Integer>> adj) {\n        color[node] = 1; // visiting\n\n        for (int nei : adj.get(node)) {\n            if (color[nei] == 1) return true; // back edge\n            if (color[nei] == 0 && dfs(nei, color, adj)) return true;\n        }\n\n        color[node] = 2; // done\n        return false;\n    }\n}\n```\n\n---\n\n### 3. Kahn’s Algorithm (BFS Topological Sort 🔥🔥)\n\n```java id=\"dc3\"\nimport java.util.*;\n\npublic class DirectedCycle {\n\n    static boolean hasCycle(int V, List<List<Integer>> adj) {\n        int[] indegree = new int[V];\n\n        for (int i = 0; i < V; i++) {\n            for (int nei : adj.get(i)) {\n                indegree[nei]++;\n            }\n        }\n\n        Queue<Integer> q = new LinkedList<>();\n\n        for (int i = 0; i < V; i++) {\n            if (indegree[i] == 0) q.offer(i);\n        }\n\n        int count = 0;\n\n        while (!q.isEmpty()) {\n            int node = q.poll();\n            count++;\n\n            for (int nei : adj.get(node)) {\n                if (--indegree[nei] == 0) {\n                    q.offer(nei);\n                }\n            }\n        }\n\n        return count != V; // cycle exists\n    }\n}\n```\n\n---\n\n### 4. Iterative DFS (Using Stack 🔥)\n\n```java id=\"dc4\"\nimport java.util.*;\n\nstatic boolean hasCycle(int V, List<List<Integer>> adj) {\n    int[] color = new int[V];\n\n    for (int i = 0; i < V; i++) {\n        if (color[i] != 0) continue;\n\n        Stack<Integer> stack = new Stack<>();\n        stack.push(i);\n\n        while (!stack.isEmpty()) {\n            int node = stack.peek();\n\n            if (color[node] == 0) {\n                color[node] = 1;\n\n                for (int nei : adj.get(node)) {\n                    if (color[nei] == 1) return true;\n                    if (color[nei] == 0) stack.push(nei);\n                }\n            } else {\n                stack.pop();\n                color[node] = 2;\n            }\n        }\n    }\n\n    return false;\n}\n```\n\n---\n\n### 5. Generic Graph (Map-based 🔥)\n\n```java id=\"dc5\"\nimport java.util.*;\n\nstatic boolean hasCycle(Map<Integer, List<Integer>> graph) {\n    Set<Integer> visited = new HashSet<>();\n    Set<Integer> stack = new HashSet<>();\n\n    for (int node : graph.keySet()) {\n        if (dfs(node, graph, visited, stack)) return true;\n    }\n    return false;\n}\n\nstatic boolean dfs(int node, Map<Integer, List<Integer>> graph,\n                   Set<Integer> visited, Set<Integer> stack) {\n\n    if (stack.contains(node)) return true;\n    if (visited.contains(node)) return false;\n\n    visited.add(node);\n    stack.add(node);\n\n    for (int nei : graph.getOrDefault(node, new ArrayList<>())) {\n        if (dfs(nei, graph, visited, stack)) return true;\n    }\n\n    stack.remove(node);\n    return false;\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"dc6\"\nstatic boolean hasCycle(int V, List<List<Integer>> adj) {\n    if (V == 0) return false;\n\n    boolean[] visited = new boolean[V];\n    boolean[] rec = new boolean[V];\n\n    for (int i = 0; i < V; i++) {\n        if (dfs(i, visited, rec, adj)) return true;\n    }\n\n    return false;\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Topological Sort (DFS + BFS 🔥🔥)\n* Detect cycle in **undirected graph (Union-Find 🔥)**\n* Dijkstra / Shortest Path\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36538,7 +36562,11 @@
     "name": "083 Implement BFS traversal.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **BFS Traversal (Breadth-First Search)** 👇\n\n---\n\n### 1. BFS (Graph - Adjacency List 🔥)\n\n```java id=\"bfs1\"\nimport java.util.*;\n\npublic class BFS {\n\n    static void bfs(int start, List<List<Integer>> adj, int V) {\n        boolean[] visited = new boolean[V];\n        Queue<Integer> q = new LinkedList<>();\n\n        q.offer(start);\n        visited[start] = true;\n\n        while (!q.isEmpty()) {\n            int node = q.poll();\n            System.out.print(node + \" \");\n\n            for (int nei : adj.get(node)) {\n                if (!visited[nei]) {\n                    visited[nei] = true;\n                    q.offer(nei);\n                }\n            }\n        }\n    }\n}\n```\n\n---\n\n### 2. BFS for Disconnected Graph 🔥🔥\n\n```java id=\"bfs2\"\nstatic void bfsAll(int V, List<List<Integer>> adj) {\n    boolean[] visited = new boolean[V];\n\n    for (int i = 0; i < V; i++) {\n        if (!visited[i]) {\n            Queue<Integer> q = new LinkedList<>();\n            q.offer(i);\n            visited[i] = true;\n\n            while (!q.isEmpty()) {\n                int node = q.poll();\n                System.out.print(node + \" \");\n\n                for (int nei : adj.get(node)) {\n                    if (!visited[nei]) {\n                        visited[nei] = true;\n                        q.offer(nei);\n                    }\n                }\n            }\n        }\n    }\n}\n```\n\n---\n\n### 3. BFS with Level (Shortest Path Style 🔥)\n\n```java id=\"bfs3\"\nstatic void bfsWithLevel(int start, List<List<Integer>> adj, int V) {\n    boolean[] visited = new boolean[V];\n    Queue<int[]> q = new LinkedList<>();\n\n    q.offer(new int[]{start, 0});\n    visited[start] = true;\n\n    while (!q.isEmpty()) {\n        int[] curr = q.poll();\n        int node = curr[0], level = curr[1];\n\n        System.out.println(\"Node: \" + node + \" Level: \" + level);\n\n        for (int nei : adj.get(node)) {\n            if (!visited[nei]) {\n                visited[nei] = true;\n                q.offer(new int[]{nei, level + 1});\n            }\n        }\n    }\n}\n```\n\n---\n\n### 4. BFS using Deque 🔥\n\n```java id=\"bfs4\"\nimport java.util.*;\n\nstatic void bfs(int start, List<List<Integer>> adj, int V) {\n    boolean[] visited = new boolean[V];\n    Deque<Integer> dq = new ArrayDeque<>();\n\n    dq.offer(start);\n    visited[start] = true;\n\n    while (!dq.isEmpty()) {\n        int node = dq.poll();\n        System.out.print(node + \" \");\n\n        for (int nei : adj.get(node)) {\n            if (!visited[nei]) {\n                visited[nei] = true;\n                dq.offer(nei);\n            }\n        }\n    }\n}\n```\n\n---\n\n### 5. BFS using Map (Generic Graph 🔥)\n\n```java id=\"bfs5\"\nimport java.util.*;\n\nstatic void bfs(Map<Integer, List<Integer>> graph, int start) {\n    Set<Integer> visited = new HashSet<>();\n    Queue<Integer> q = new LinkedList<>();\n\n    q.offer(start);\n    visited.add(start);\n\n    while (!q.isEmpty()) {\n        int node = q.poll();\n        System.out.print(node + \" \");\n\n        for (int nei : graph.getOrDefault(node, new ArrayList<>())) {\n            if (!visited.contains(nei)) {\n                visited.add(nei);\n                q.offer(nei);\n            }\n        }\n    }\n}\n```\n\n---\n\n### 6. BFS for Grid (Matrix 🔥🔥)\n\n```java id=\"bfs6\"\nimport java.util.*;\n\nstatic void bfsGrid(int[][] grid) {\n    int m = grid.length, n = grid[0].length;\n\n    boolean[][] visited = new boolean[m][n];\n    Queue<int[]> q = new LinkedList<>();\n\n    q.offer(new int[]{0, 0});\n    visited[0][0] = true;\n\n    int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};\n\n    while (!q.isEmpty()) {\n        int[] cell = q.poll();\n        int r = cell[0], c = cell[1];\n\n        System.out.println(r + \",\" + c);\n\n        for (int[] d : dirs) {\n            int nr = r + d[0], nc = c + d[1];\n\n            if (nr>=0 && nc>=0 && nr<m && nc<n && !visited[nr][nc]) {\n                visited[nr][nc] = true;\n                q.offer(new int[]{nr, nc});\n            }\n        }\n    }\n}\n```\n\n---\n\n### 7. Edge Case Safe Version\n\n```java id=\"bfs7\"\nstatic void bfs(int start, List<List<Integer>> adj, int V) {\n    if (V == 0) return;\n\n    boolean[] visited = new boolean[V];\n    Queue<Integer> q = new LinkedList<>();\n\n    q.offer(start);\n    visited[start] = true;\n\n    while (!q.isEmpty()) {\n        int node = q.poll();\n\n        for (int nei : adj.get(node)) {\n            if (!visited[nei]) {\n                visited[nei] = true;\n                q.offer(nei);\n            }\n        }\n    }\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* DFS traversal\n* Topological sort\n* Dijkstra / shortest path 🔥🔥\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36554,7 +36582,11 @@
     "name": "084 Implement DFS traversal.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **DFS Traversal (Depth-First Search)** 👇\n\n---\n\n### 1. Recursive DFS (Graph - Adjacency List 🔥)\n\n```java id=\"dfs1\"\nimport java.util.*;\n\npublic class DFS {\n\n    static void dfs(int node, boolean[] visited, List<List<Integer>> adj) {\n        visited[node] = true;\n        System.out.print(node + \" \");\n\n        for (int nei : adj.get(node)) {\n            if (!visited[nei]) {\n                dfs(nei, visited, adj);\n            }\n        }\n    }\n\n    static void startDFS(int V, List<List<Integer>> adj) {\n        boolean[] visited = new boolean[V];\n\n        for (int i = 0; i < V; i++) {\n            if (!visited[i]) {\n                dfs(i, visited, adj);\n            }\n        }\n    }\n}\n```\n\n---\n\n### 2. Iterative DFS using Stack 🔥🔥\n\n```java id=\"dfs2\"\nimport java.util.*;\n\nstatic void dfs(int start, List<List<Integer>> adj, int V) {\n    boolean[] visited = new boolean[V];\n    Stack<Integer> stack = new Stack<>();\n\n    stack.push(start);\n\n    while (!stack.isEmpty()) {\n        int node = stack.pop();\n\n        if (visited[node]) continue;\n\n        visited[node] = true;\n        System.out.print(node + \" \");\n\n        // reverse order (optional)\n        List<Integer> neighbors = adj.get(node);\n        for (int i = neighbors.size() - 1; i >= 0; i--) {\n            int nei = neighbors.get(i);\n            if (!visited[nei]) {\n                stack.push(nei);\n            }\n        }\n    }\n}\n```\n\n---\n\n### 3. DFS for Disconnected Graph 🔥\n\n```java id=\"dfs3\"\nstatic void dfsAll(int V, List<List<Integer>> adj) {\n    boolean[] visited = new boolean[V];\n\n    for (int i = 0; i < V; i++) {\n        if (!visited[i]) {\n            dfs(i, visited, adj);\n        }\n    }\n}\n```\n\n---\n\n### 4. DFS with Time (Entry/Exit Time 🔥)\n\n```java id=\"dfs4\"\nstatic int time = 0;\n\nstatic void dfs(int node, boolean[] visited, List<List<Integer>> adj) {\n    visited[node] = true;\n\n    int in = ++time;\n    System.out.println(\"Enter \" + node + \" at \" + in);\n\n    for (int nei : adj.get(node)) {\n        if (!visited[nei]) {\n            dfs(nei, visited, adj);\n        }\n    }\n\n    int out = ++time;\n    System.out.println(\"Exit \" + node + \" at \" + out);\n}\n```\n\n---\n\n### 5. DFS using Map (Generic Graph 🔥)\n\n```java id=\"dfs5\"\nimport java.util.*;\n\nstatic void dfs(int node, Map<Integer, List<Integer>> graph, Set<Integer> visited) {\n    if (visited.contains(node)) return;\n\n    visited.add(node);\n    System.out.print(node + \" \");\n\n    for (int nei : graph.getOrDefault(node, new ArrayList<>())) {\n        dfs(nei, graph, visited);\n    }\n}\n```\n\n---\n\n### 6. DFS for Grid (Matrix 🔥🔥)\n\n```java id=\"dfs6\"\nstatic void dfsGrid(int[][] grid, int r, int c, boolean[][] visited) {\n    int m = grid.length, n = grid[0].length;\n\n    if (r < 0 || c < 0 || r >= m || c >= n || visited[r][c]) return;\n\n    visited[r][c] = true;\n    System.out.println(r + \",\" + c);\n\n    int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};\n\n    for (int[] d : dirs) {\n        dfsGrid(grid, r + d[0], c + d[1], visited);\n    }\n}\n```\n\n---\n\n### 7. Edge Case Safe Version\n\n```java id=\"dfs7\"\nstatic void dfs(int node, boolean[] visited, List<List<Integer>> adj) {\n    if (visited[node]) return;\n\n    visited[node] = true;\n\n    for (int nei : adj.get(node)) {\n        dfs(nei, visited, adj);\n    }\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Topological Sort (DFS + BFS 🔥🔥)\n* Dijkstra / Shortest Path\n* Union-Find (Disjoint Set 🔥)\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36570,7 +36602,11 @@
     "name": "085 Find shortest path using Dijkstra.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **Dijkstra’s Algorithm (Shortest Path)** 👇\n\n---\n\n### 1. Basic Dijkstra (Adjacency List + PriorityQueue 🔥🔥)\n\n```java id=\"dj1\"\nimport java.util.*;\n\npublic class Dijkstra {\n\n    static class Pair {\n        int node, dist;\n        Pair(int n, int d) { node = n; dist = d; }\n    }\n\n    static int[] dijkstra(int V, List<List<Pair>> adj, int src) {\n        int[] dist = new int[V];\n        Arrays.fill(dist, Integer.MAX_VALUE);\n\n        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.dist - b.dist);\n\n        dist[src] = 0;\n        pq.offer(new Pair(src, 0));\n\n        while (!pq.isEmpty()) {\n            Pair curr = pq.poll();\n            int node = curr.node;\n            int d = curr.dist;\n\n            if (d > dist[node]) continue;\n\n            for (Pair nei : adj.get(node)) {\n                int newDist = d + nei.dist;\n\n                if (newDist < dist[nei.node]) {\n                    dist[nei.node] = newDist;\n                    pq.offer(new Pair(nei.node, newDist));\n                }\n            }\n        }\n\n        return dist;\n    }\n}\n```\n\n---\n\n### 2. Print Shortest Path (Parent Tracking 🔥)\n\n```java id=\"dj2\"\nimport java.util.*;\n\nstatic List<Integer> shortestPath(int V, List<List<Pair>> adj, int src, int dest) {\n    int[] dist = new int[V];\n    int[] parent = new int[V];\n\n    Arrays.fill(dist, Integer.MAX_VALUE);\n    for (int i = 0; i < V; i++) parent[i] = i;\n\n    PriorityQueue<Pair> pq = new PriorityQueue<>((a,b)->a.dist-b.dist);\n\n    dist[src] = 0;\n    pq.offer(new Pair(src, 0));\n\n    while (!pq.isEmpty()) {\n        Pair curr = pq.poll();\n\n        for (Pair nei : adj.get(curr.node)) {\n            if (dist[curr.node] + nei.dist < dist[nei.node]) {\n                dist[nei.node] = dist[curr.node] + nei.dist;\n                parent[nei.node] = curr.node;\n                pq.offer(new Pair(nei.node, dist[nei.node]));\n            }\n        }\n    }\n\n    List<Integer> path = new ArrayList<>();\n    int node = dest;\n\n    while (parent[node] != node) {\n        path.add(node);\n        node = parent[node];\n    }\n    path.add(src);\n\n    Collections.reverse(path);\n    return path;\n}\n```\n\n---\n\n### 3. Using Adjacency Matrix 🔥\n\n```java id=\"dj3\"\nstatic int[] dijkstra(int[][] graph, int V, int src) {\n    int[] dist = new int[V];\n    boolean[] visited = new boolean[V];\n\n    Arrays.fill(dist, Integer.MAX_VALUE);\n    dist[src] = 0;\n\n    for (int i = 0; i < V - 1; i++) {\n        int u = minDist(dist, visited);\n\n        visited[u] = true;\n\n        for (int v = 0; v < V; v++) {\n            if (!visited[v] && graph[u][v] != 0 &&\n                dist[u] + graph[u][v] < dist[v]) {\n\n                dist[v] = dist[u] + graph[u][v];\n            }\n        }\n    }\n\n    return dist;\n}\n\nstatic int minDist(int[] dist, boolean[] visited) {\n    int min = Integer.MAX_VALUE, idx = -1;\n\n    for (int i = 0; i < dist.length; i++) {\n        if (!visited[i] && dist[i] < min) {\n            min = dist[i];\n            idx = i;\n        }\n    }\n\n    return idx;\n}\n```\n\n---\n\n### 4. Grid Shortest Path (Dijkstra 🔥🔥)\n\n```java id=\"dj4\"\nimport java.util.*;\n\nstatic int shortestPath(int[][] grid) {\n    int m = grid.length, n = grid[0].length;\n\n    int[][] dist = new int[m][n];\n    for (int[] row : dist)\n        Arrays.fill(row, Integer.MAX_VALUE);\n\n    PriorityQueue<int[]> pq = new PriorityQueue<>((a,b)->a[2]-b[2]);\n\n    pq.offer(new int[]{0,0,grid[0][0]});\n    dist[0][0] = grid[0][0];\n\n    int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};\n\n    while (!pq.isEmpty()) {\n        int[] curr = pq.poll();\n        int r = curr[0], c = curr[1], d = curr[2];\n\n        for (int[] dir : dirs) {\n            int nr = r + dir[0], nc = c + dir[1];\n\n            if (nr>=0 && nc>=0 && nr<m && nc<n) {\n                int newDist = d + grid[nr][nc];\n\n                if (newDist < dist[nr][nc]) {\n                    dist[nr][nc] = newDist;\n                    pq.offer(new int[]{nr,nc,newDist});\n                }\n            }\n        }\n    }\n\n    return dist[m-1][n-1];\n}\n```\n\n---\n\n### 5. Generic Version 🔥\n\n```java id=\"dj5\"\nclass Edge<T> {\n    T node;\n    int weight;\n\n    Edge(T n, int w) {\n        node = n;\n        weight = w;\n    }\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"dj6\"\nstatic int[] dijkstra(int V, List<List<Pair>> adj, int src) {\n    if (V == 0) return new int[0];\n\n    int[] dist = new int[V];\n    Arrays.fill(dist, Integer.MAX_VALUE);\n\n    dist[src] = 0;\n    return dist;\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Bellman-Ford (negative weights 🔥🔥)\n* Floyd-Warshall (all pairs shortest path)\n* A* Algorithm\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36586,7 +36622,11 @@
     "name": "086 Find shortest path using BFS (unweighted graph).",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** to find the **shortest path using BFS (Unweighted Graph)** 👇\n\n---\n\n### 1. Shortest Distance from Source (Most Important 🔥 O(V+E))\n\n```java id=\"bfs_sp1\"\nimport java.util.*;\n\npublic class ShortestPathBFS {\n\n    static int[] shortestPath(int V, List<List<Integer>> adj, int src) {\n        int[] dist = new int[V];\n        Arrays.fill(dist, -1);\n\n        Queue<Integer> q = new LinkedList<>();\n\n        q.offer(src);\n        dist[src] = 0;\n\n        while (!q.isEmpty()) {\n            int node = q.poll();\n\n            for (int nei : adj.get(node)) {\n                if (dist[nei] == -1) {\n                    dist[nei] = dist[node] + 1;\n                    q.offer(nei);\n                }\n            }\n        }\n\n        return dist;\n    }\n}\n```\n\n---\n\n### 2. Print Actual Shortest Path 🔥🔥\n\n```java id=\"bfs_sp2\"\nimport java.util.*;\n\nstatic List<Integer> shortestPath(int V, List<List<Integer>> adj, int src, int dest) {\n    int[] parent = new int[V];\n    Arrays.fill(parent, -1);\n\n    Queue<Integer> q = new LinkedList<>();\n    q.offer(src);\n    parent[src] = src;\n\n    while (!q.isEmpty()) {\n        int node = q.poll();\n\n        if (node == dest) break;\n\n        for (int nei : adj.get(node)) {\n            if (parent[nei] == -1) {\n                parent[nei] = node;\n                q.offer(nei);\n            }\n        }\n    }\n\n    List<Integer> path = new ArrayList<>();\n    if (parent[dest] == -1) return path;\n\n    int curr = dest;\n    while (curr != src) {\n        path.add(curr);\n        curr = parent[curr];\n    }\n    path.add(src);\n\n    Collections.reverse(path);\n    return path;\n}\n```\n\n---\n\n### 3. Multi-Source BFS 🔥\n\n```java id=\"bfs_sp3\"\nimport java.util.*;\n\nstatic int[] multiSourceBFS(int V, List<List<Integer>> adj, List<Integer> sources) {\n    int[] dist = new int[V];\n    Arrays.fill(dist, -1);\n\n    Queue<Integer> q = new LinkedList<>();\n\n    for (int s : sources) {\n        q.offer(s);\n        dist[s] = 0;\n    }\n\n    while (!q.isEmpty()) {\n        int node = q.poll();\n\n        for (int nei : adj.get(node)) {\n            if (dist[nei] == -1) {\n                dist[nei] = dist[node] + 1;\n                q.offer(nei);\n            }\n        }\n    }\n\n    return dist;\n}\n```\n\n---\n\n### 4. BFS in Grid (Matrix Shortest Path 🔥🔥)\n\n```java id=\"bfs_sp4\"\nimport java.util.*;\n\nstatic int shortestPath(int[][] grid) {\n    int m = grid.length, n = grid[0].length;\n\n    Queue<int[]> q = new LinkedList<>();\n    boolean[][] visited = new boolean[m][n];\n\n    q.offer(new int[]{0, 0, 0}); // r,c,dist\n    visited[0][0] = true;\n\n    int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};\n\n    while (!q.isEmpty()) {\n        int[] curr = q.poll();\n        int r = curr[0], c = curr[1], d = curr[2];\n\n        if (r == m-1 && c == n-1) return d;\n\n        for (int[] dir : dirs) {\n            int nr = r + dir[0], nc = c + dir[1];\n\n            if (nr>=0 && nc>=0 && nr<m && nc<n && !visited[nr][nc]) {\n                visited[nr][nc] = true;\n                q.offer(new int[]{nr, nc, d+1});\n            }\n        }\n    }\n\n    return -1;\n}\n```\n\n---\n\n### 5. Using Map (Generic Graph 🔥)\n\n```java id=\"bfs_sp5\"\nimport java.util.*;\n\nstatic Map<Integer, Integer> shortestPath(Map<Integer, List<Integer>> graph, int src) {\n    Map<Integer, Integer> dist = new HashMap<>();\n    Queue<Integer> q = new LinkedList<>();\n\n    q.offer(src);\n    dist.put(src, 0);\n\n    while (!q.isEmpty()) {\n        int node = q.poll();\n\n        for (int nei : graph.getOrDefault(node, new ArrayList<>())) {\n            if (!dist.containsKey(nei)) {\n                dist.put(nei, dist.get(node) + 1);\n                q.offer(nei);\n            }\n        }\n    }\n\n    return dist;\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"bfs_sp6\"\nstatic int[] shortestPath(int V, List<List<Integer>> adj, int src) {\n    if (V == 0) return new int[0];\n\n    int[] dist = new int[V];\n    Arrays.fill(dist, -1);\n\n    if (src < 0 || src >= V) return dist;\n\n    Queue<Integer> q = new LinkedList<>();\n    q.offer(src);\n    dist[src] = 0;\n\n    while (!q.isEmpty()) {\n        int node = q.poll();\n\n        for (int nei : adj.get(node)) {\n            if (dist[nei] == -1) {\n                dist[nei] = dist[node] + 1;\n                q.offer(nei);\n            }\n        }\n    }\n\n    return dist;\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Bellman-Ford (negative weights 🔥🔥)\n* Floyd-Warshall\n* A* Algorithm\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36602,7 +36642,11 @@
     "name": "087 Implement topological sorting.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **Topological Sorting (DAG)** 👇\n\n---\n\n### 1. DFS Based Topological Sort 🔥 (Stack)\n\n```java id=\"topo1\"\nimport java.util.*;\n\npublic class TopoSortDFS {\n\n    static void dfs(int node, boolean[] visited,\n                    Stack<Integer> stack, List<List<Integer>> adj) {\n\n        visited[node] = true;\n\n        for (int nei : adj.get(node)) {\n            if (!visited[nei]) {\n                dfs(nei, visited, stack, adj);\n            }\n        }\n\n        stack.push(node); // post-order\n    }\n\n    static List<Integer> topoSort(int V, List<List<Integer>> adj) {\n        boolean[] visited = new boolean[V];\n        Stack<Integer> stack = new Stack<>();\n\n        for (int i = 0; i < V; i++) {\n            if (!visited[i]) {\n                dfs(i, visited, stack, adj);\n            }\n        }\n\n        List<Integer> res = new ArrayList<>();\n        while (!stack.isEmpty()) {\n            res.add(stack.pop());\n        }\n\n        return res;\n    }\n}\n```\n\n---\n\n### 2. Kahn’s Algorithm (BFS 🔥🔥 Most Used)\n\n```java id=\"topo2\"\nimport java.util.*;\n\npublic class TopoSortBFS {\n\n    static List<Integer> topoSort(int V, List<List<Integer>> adj) {\n        int[] indegree = new int[V];\n\n        for (int i = 0; i < V; i++) {\n            for (int nei : adj.get(i)) {\n                indegree[nei]++;\n            }\n        }\n\n        Queue<Integer> q = new LinkedList<>();\n\n        for (int i = 0; i < V; i++) {\n            if (indegree[i] == 0) {\n                q.offer(i);\n            }\n        }\n\n        List<Integer> res = new ArrayList<>();\n\n        while (!q.isEmpty()) {\n            int node = q.poll();\n            res.add(node);\n\n            for (int nei : adj.get(node)) {\n                if (--indegree[nei] == 0) {\n                    q.offer(nei);\n                }\n            }\n        }\n\n        return res;\n    }\n}\n```\n\n---\n\n### 3. Detect Cycle using Topo Sort 🔥\n\n```java id=\"topo3\"\nstatic boolean hasCycle(int V, List<List<Integer>> adj) {\n    int[] indegree = new int[V];\n\n    for (int i = 0; i < V; i++) {\n        for (int nei : adj.get(i)) {\n            indegree[nei]++;\n        }\n    }\n\n    Queue<Integer> q = new LinkedList<>();\n\n    for (int i = 0; i < V; i++) {\n        if (indegree[i] == 0) q.offer(i);\n    }\n\n    int count = 0;\n\n    while (!q.isEmpty()) {\n        int node = q.poll();\n        count++;\n\n        for (int nei : adj.get(node)) {\n            if (--indegree[nei] == 0) {\n                q.offer(nei);\n            }\n        }\n    }\n\n    return count != V;\n}\n```\n\n---\n\n### 4. Topological Sort using Array (DFS 🔥)\n\n```java id=\"topo4\"\nstatic int idx;\n\nstatic void dfs(int node, boolean[] visited, int[] res,\n                List<List<Integer>> adj) {\n\n    visited[node] = true;\n\n    for (int nei : adj.get(node)) {\n        if (!visited[nei]) {\n            dfs(nei, visited, res, adj);\n        }\n    }\n\n    res[idx--] = node;\n}\n\nstatic int[] topoSort(int V, List<List<Integer>> adj) {\n    boolean[] visited = new boolean[V];\n    int[] res = new int[V];\n    idx = V - 1;\n\n    for (int i = 0; i < V; i++) {\n        if (!visited[i]) {\n            dfs(i, visited, res, adj);\n        }\n    }\n\n    return res;\n}\n```\n\n---\n\n### 5. Generic Graph (Map-based 🔥)\n\n```java id=\"topo5\"\nimport java.util.*;\n\nstatic List<Integer> topoSort(Map<Integer, List<Integer>> graph) {\n    Map<Integer, Integer> indegree = new HashMap<>();\n\n    for (int node : graph.keySet()) {\n        indegree.putIfAbsent(node, 0);\n        for (int nei : graph.get(node)) {\n            indegree.put(nei, indegree.getOrDefault(nei, 0) + 1);\n        }\n    }\n\n    Queue<Integer> q = new LinkedList<>();\n    for (int node : indegree.keySet()) {\n        if (indegree.get(node) == 0) q.offer(node);\n    }\n\n    List<Integer> res = new ArrayList<>();\n\n    while (!q.isEmpty()) {\n        int node = q.poll();\n        res.add(node);\n\n        for (int nei : graph.getOrDefault(node, new ArrayList<>())) {\n            indegree.put(nei, indegree.get(nei) - 1);\n            if (indegree.get(nei) == 0) q.offer(nei);\n        }\n    }\n\n    return res;\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"topo6\"\nstatic List<Integer> topoSort(int V, List<List<Integer>> adj) {\n    if (V == 0) return new ArrayList<>();\n\n    return topoSort(V, adj);\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Course Schedule problem (LeetCode 🔥🔥)\n* Alien Dictionary\n* Strongly Connected Components (Kosaraju 🔥🔥🔥)\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36618,7 +36662,11 @@
     "name": "088 Find number of connected components.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level ways** to **find number of connected components** 👇\n\n---\n\n### 1. DFS (Most Important 🔥 O(V+E))\n\n```java id=\"cc1\"\nimport java.util.*;\n\npublic class ConnectedComponents {\n\n    static int countComponents(int V, List<List<Integer>> adj) {\n        boolean[] visited = new boolean[V];\n        int count = 0;\n\n        for (int i = 0; i < V; i++) {\n            if (!visited[i]) {\n                dfs(i, visited, adj);\n                count++;\n            }\n        }\n\n        return count;\n    }\n\n    static void dfs(int node, boolean[] visited, List<List<Integer>> adj) {\n        visited[node] = true;\n\n        for (int nei : adj.get(node)) {\n            if (!visited[nei]) {\n                dfs(nei, visited, adj);\n            }\n        }\n    }\n}\n```\n\n---\n\n### 2. BFS Approach 🔥\n\n```java id=\"cc2\"\nimport java.util.*;\n\nstatic int countComponents(int V, List<List<Integer>> adj) {\n    boolean[] visited = new boolean[V];\n    int count = 0;\n\n    for (int i = 0; i < V; i++) {\n        if (!visited[i]) {\n            Queue<Integer> q = new LinkedList<>();\n            q.offer(i);\n            visited[i] = true;\n\n            while (!q.isEmpty()) {\n                int node = q.poll();\n\n                for (int nei : adj.get(node)) {\n                    if (!visited[nei]) {\n                        visited[nei] = true;\n                        q.offer(nei);\n                    }\n                }\n            }\n\n            count++;\n        }\n    }\n\n    return count;\n}\n```\n\n---\n\n### 3. Union-Find (Disjoint Set 🔥🔥)\n\n```java id=\"cc3\"\nclass DSU {\n    int[] parent, rank;\n\n    DSU(int n) {\n        parent = new int[n];\n        rank = new int[n];\n\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n\n    int find(int x) {\n        if (parent[x] != x)\n            parent[x] = find(parent[x]);\n        return parent[x];\n    }\n\n    void union(int a, int b) {\n        int pa = find(a), pb = find(b);\n\n        if (pa == pb) return;\n\n        if (rank[pa] < rank[pb]) {\n            parent[pa] = pb;\n        } else if (rank[pa] > rank[pb]) {\n            parent[pb] = pa;\n        } else {\n            parent[pb] = pa;\n            rank[pa]++;\n        }\n    }\n}\n\nstatic int countComponents(int V, int[][] edges) {\n    DSU dsu = new DSU(V);\n\n    for (int[] e : edges) {\n        dsu.union(e[0], e[1]);\n    }\n\n    Set<Integer> set = new HashSet<>();\n\n    for (int i = 0; i < V; i++) {\n        set.add(dsu.find(i));\n    }\n\n    return set.size();\n}\n```\n\n---\n\n### 4. Using Map (Generic Graph 🔥)\n\n```java id=\"cc4\"\nimport java.util.*;\n\nstatic int countComponents(Map<Integer, List<Integer>> graph) {\n    Set<Integer> visited = new HashSet<>();\n    int count = 0;\n\n    for (int node : graph.keySet()) {\n        if (!visited.contains(node)) {\n            dfs(node, graph, visited);\n            count++;\n        }\n    }\n\n    return count;\n}\n\nstatic void dfs(int node, Map<Integer, List<Integer>> graph, Set<Integer> visited) {\n    if (visited.contains(node)) return;\n\n    visited.add(node);\n\n    for (int nei : graph.getOrDefault(node, new ArrayList<>())) {\n        dfs(nei, graph, visited);\n    }\n}\n```\n\n---\n\n### 5. Grid (Number of Islands 🔥🔥)\n\n```java id=\"cc5\"\nstatic int numIslands(char[][] grid) {\n    int m = grid.length, n = grid[0].length;\n    int count = 0;\n\n    for (int i = 0; i < m; i++) {\n        for (int j = 0; j < n; j++) {\n            if (grid[i][j] == '1') {\n                dfs(grid, i, j);\n                count++;\n            }\n        }\n    }\n\n    return count;\n}\n\nstatic void dfs(char[][] g, int r, int c) {\n    if (r < 0 || c < 0 || r >= g.length || c >= g[0].length || g[r][c] == '0')\n        return;\n\n    g[r][c] = '0';\n\n    dfs(g, r+1, c);\n    dfs(g, r-1, c);\n    dfs(g, r, c+1);\n    dfs(g, r, c-1);\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"cc6\"\nstatic int countComponents(int V, List<List<Integer>> adj) {\n    if (V == 0) return 0;\n\n    boolean[] visited = new boolean[V];\n    int count = 0;\n\n    for (int i = 0; i < V; i++) {\n        if (!visited[i]) {\n            dfs(i, visited, adj);\n            count++;\n        }\n    }\n\n    return count;\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Strongly Connected Components (Kosaraju 🔥🔥🔥)\n* Bridges & Articulation Points\n* Minimum Spanning Tree (Kruskal + Prim 🔥)\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36634,7 +36682,11 @@
     "name": "089 Implement Union-Find (Disjoint Set).",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **Union-Find (Disjoint Set / DSU)** 👇\n\n---\n\n### 1. Basic DSU (Find + Union 🔥)\n\n```java id=\"dsu1\"\nclass DSU {\n    int[] parent;\n\n    DSU(int n) {\n        parent = new int[n];\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n\n    int find(int x) {\n        if (parent[x] == x) return x;\n        return find(parent[x]);\n    }\n\n    void union(int a, int b) {\n        int pa = find(a);\n        int pb = find(b);\n\n        if (pa != pb) {\n            parent[pb] = pa;\n        }\n    }\n}\n```\n\n---\n\n### 2. Path Compression 🔥🔥\n\n```java id=\"dsu2\"\nclass DSU {\n    int[] parent;\n\n    DSU(int n) {\n        parent = new int[n];\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n\n    int find(int x) {\n        if (parent[x] != x) {\n            parent[x] = find(parent[x]); // compression\n        }\n        return parent[x];\n    }\n\n    void union(int a, int b) {\n        int pa = find(a);\n        int pb = find(b);\n\n        if (pa != pb) {\n            parent[pb] = pa;\n        }\n    }\n}\n```\n\n---\n\n### 3. Union by Rank + Path Compression 🔥🔥🔥 (Best Practice)\n\n```java id=\"dsu3\"\nclass DSU {\n    int[] parent, rank;\n\n    DSU(int n) {\n        parent = new int[n];\n        rank = new int[n];\n\n        for (int i = 0; i < n; i++) {\n            parent[i] = i;\n        }\n    }\n\n    int find(int x) {\n        if (parent[x] != x) {\n            parent[x] = find(parent[x]);\n        }\n        return parent[x];\n    }\n\n    void union(int a, int b) {\n        int pa = find(a);\n        int pb = find(b);\n\n        if (pa == pb) return;\n\n        if (rank[pa] < rank[pb]) {\n            parent[pa] = pb;\n        } else if (rank[pa] > rank[pb]) {\n            parent[pb] = pa;\n        } else {\n            parent[pb] = pa;\n            rank[pa]++;\n        }\n    }\n}\n```\n\n---\n\n### 4. Union by Size 🔥\n\n```java id=\"dsu4\"\nclass DSU {\n    int[] parent, size;\n\n    DSU(int n) {\n        parent = new int[n];\n        size = new int[n];\n\n        for (int i = 0; i < n; i++) {\n            parent[i] = i;\n            size[i] = 1;\n        }\n    }\n\n    int find(int x) {\n        if (parent[x] != x)\n            parent[x] = find(parent[x]);\n        return parent[x];\n    }\n\n    void union(int a, int b) {\n        int pa = find(a);\n        int pb = find(b);\n\n        if (pa == pb) return;\n\n        if (size[pa] < size[pb]) {\n            parent[pa] = pb;\n            size[pb] += size[pa];\n        } else {\n            parent[pb] = pa;\n            size[pa] += size[pb];\n        }\n    }\n}\n```\n\n---\n\n### 5. Count Connected Components using DSU 🔥\n\n```java id=\"dsu5\"\nstatic int countComponents(int n, int[][] edges) {\n    DSU dsu = new DSU(n);\n\n    for (int[] e : edges) {\n        dsu.union(e[0], e[1]);\n    }\n\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        if (dsu.find(i) == i) count++;\n    }\n\n    return count;\n}\n```\n\n---\n\n### 6. Detect Cycle using DSU 🔥\n\n```java id=\"dsu6\"\nstatic boolean hasCycle(int n, int[][] edges) {\n    DSU dsu = new DSU(n);\n\n    for (int[] e : edges) {\n        int u = e[0], v = e[1];\n\n        if (dsu.find(u) == dsu.find(v)) {\n            return true;\n        }\n\n        dsu.union(u, v);\n    }\n\n    return false;\n}\n```\n\n---\n\n### 7. Edge Case Safe Version\n\n```java id=\"dsu7\"\nclass DSU {\n    int[] parent;\n\n    DSU(int n) {\n        if (n <= 0) return;\n        parent = new int[n];\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n}\n```\n\n---\n\nIf you want next 🔥:\n\n* Kruskal’s Algorithm (MST 🔥🔥)\n* Prim’s Algorithm\n* Strongly Connected Components (Kosaraju 🔥🔥🔥)\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36650,7 +36702,11 @@
     "name": "090 Detect cycle using Union-Find.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** to **detect cycle using Union-Find (DSU)** 👇\n\n---\n\n### 1. Basic Cycle Detection (Undirected Graph 🔥)\n\n```java id=\"ufc1\"\nclass DSU {\n    int[] parent;\n\n    DSU(int n) {\n        parent = new int[n];\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n\n    int find(int x) {\n        if (parent[x] == x) return x;\n        return find(parent[x]);\n    }\n\n    void union(int a, int b) {\n        int pa = find(a);\n        int pb = find(b);\n\n        if (pa != pb) {\n            parent[pb] = pa;\n        }\n    }\n}\n\nstatic boolean hasCycle(int n, int[][] edges) {\n    DSU dsu = new DSU(n);\n\n    for (int[] e : edges) {\n        int u = e[0], v = e[1];\n\n        if (dsu.find(u) == dsu.find(v)) {\n            return true; // cycle found\n        }\n\n        dsu.union(u, v);\n    }\n\n    return false;\n}\n```\n\n---\n\n### 2. Optimized (Path Compression + Rank 🔥🔥)\n\n```java id=\"ufc2\"\nclass DSU {\n    int[] parent, rank;\n\n    DSU(int n) {\n        parent = new int[n];\n        rank = new int[n];\n\n        for (int i = 0; i < n; i++) parent[i] = i;\n    }\n\n    int find(int x) {\n        if (parent[x] != x)\n            parent[x] = find(parent[x]);\n        return parent[x];\n    }\n\n    boolean union(int a, int b) {\n        int pa = find(a);\n        int pb = find(b);\n\n        if (pa == pb) return false; // cycle\n\n        if (rank[pa] < rank[pb]) {\n            parent[pa] = pb;\n        } else if (rank[pa] > rank[pb]) {\n            parent[pb] = pa;\n        } else {\n            parent[pb] = pa;\n            rank[pa]++;\n        }\n\n        return true;\n    }\n}\n\nstatic boolean hasCycle(int n, int[][] edges) {\n    DSU dsu = new DSU(n);\n\n    for (int[] e : edges) {\n        if (!dsu.union(e[0], e[1])) {\n            return true;\n        }\n    }\n\n    return false;\n}\n```\n\n---\n\n### 3. Using Size (Alternative 🔥)\n\n```java id=\"ufc3\"\nclass DSU {\n    int[] parent, size;\n\n    DSU(int n) {\n        parent = new int[n];\n        size = new int[n];\n\n        for (int i = 0; i < n; i++) {\n            parent[i] = i;\n            size[i] = 1;\n        }\n    }\n\n    int find(int x) {\n        if (parent[x] != x)\n            parent[x] = find(parent[x]);\n        return parent[x];\n    }\n\n    boolean union(int a, int b) {\n        int pa = find(a);\n        int pb = find(b);\n\n        if (pa == pb) return false;\n\n        if (size[pa] < size[pb]) {\n            parent[pa] = pb;\n            size[pb] += size[pa];\n        } else {\n            parent[pb] = pa;\n            size[pa] += size[pb];\n        }\n\n        return true;\n    }\n}\n```\n\n---\n\n### 4. Detect Cycle (Return Edge causing cycle 🔥)\n\n```java id=\"ufc4\"\nstatic int[] findCycleEdge(int n, int[][] edges) {\n    DSU dsu = new DSU(n);\n\n    for (int[] e : edges) {\n        if (dsu.find(e[0]) == dsu.find(e[1])) {\n            return e; // cycle edge\n        }\n        dsu.union(e[0], e[1]);\n    }\n\n    return new int[]{-1, -1};\n}\n```\n\n---\n\n### 5. Edge Case Safe Version\n\n```java id=\"ufc5\"\nstatic boolean hasCycle(int n, int[][] edges) {\n    if (n == 0) return false;\n\n    DSU dsu = new DSU(n);\n\n    for (int[] e : edges) {\n        if (dsu.find(e[0]) == dsu.find(e[1])) {\n            return true;\n        }\n        dsu.union(e[0], e[1]);\n    }\n\n    return false;\n}\n```\n\n---\n\n### ⚠️ Important Note (Interview)\n\n* Works for **undirected graphs only**\n* For **directed graph → use DFS / Kahn’s Algorithm**\n\n---\n\nIf you want next 🔥:\n\n* Kruskal’s Algorithm (uses DSU 🔥🔥)\n* Prim’s Algorithm\n* Bridges & Articulation Points\n* Full Graph + System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36666,7 +36722,11 @@
     "name": "091 Implement producer-consumer using threads.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **Producer–Consumer using threads (Java)** 👇\n\n---\n\n### 1. Using `wait()` / `notifyAll()` (Classic 🔥)\n\n```java id=\"pc1\"\nimport java.util.*;\n\nclass SharedBuffer {\n    private Queue<Integer> queue = new LinkedList<>();\n    private int capacity;\n\n    SharedBuffer(int cap) {\n        this.capacity = cap;\n    }\n\n    public synchronized void produce(int val) throws InterruptedException {\n        while (queue.size() == capacity) {\n            wait();\n        }\n\n        queue.offer(val);\n        System.out.println(\"Produced: \" + val);\n\n        notifyAll();\n    }\n\n    public synchronized void consume() throws InterruptedException {\n        while (queue.isEmpty()) {\n            wait();\n        }\n\n        int val = queue.poll();\n        System.out.println(\"Consumed: \" + val);\n\n        notifyAll();\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n\n        SharedBuffer buffer = new SharedBuffer(5);\n\n        Thread producer = new Thread(() -> {\n            int i = 0;\n            try {\n                while (true) {\n                    buffer.produce(i++);\n                    Thread.sleep(500);\n                }\n            } catch (InterruptedException e) {}\n        });\n\n        Thread consumer = new Thread(() -> {\n            try {\n                while (true) {\n                    buffer.consume();\n                    Thread.sleep(800);\n                }\n            } catch (InterruptedException e) {}\n        });\n\n        producer.start();\n        consumer.start();\n    }\n}\n```\n\n---\n\n### 2. Using `BlockingQueue` (Best Practice 🔥🔥🔥)\n\n```java id=\"pc2\"\nimport java.util.concurrent.*;\n\npublic class ProducerConsumer {\n\n    public static void main(String[] args) {\n\n        BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(5);\n\n        Thread producer = new Thread(() -> {\n            int i = 0;\n            try {\n                while (true) {\n                    queue.put(i);\n                    System.out.println(\"Produced: \" + i++);\n                    Thread.sleep(500);\n                }\n            } catch (InterruptedException e) {}\n        });\n\n        Thread consumer = new Thread(() -> {\n            try {\n                while (true) {\n                    int val = queue.take();\n                    System.out.println(\"Consumed: \" + val);\n                    Thread.sleep(800);\n                }\n            } catch (InterruptedException e) {}\n        });\n\n        producer.start();\n        consumer.start();\n    }\n}\n```\n\n---\n\n### 3. Using `ReentrantLock` + `Condition` 🔥\n\n```java id=\"pc3\"\nimport java.util.*;\nimport java.util.concurrent.locks.*;\n\nclass Buffer {\n    Queue<Integer> queue = new LinkedList<>();\n    int capacity;\n\n    Lock lock = new ReentrantLock();\n    Condition notFull = lock.newCondition();\n    Condition notEmpty = lock.newCondition();\n\n    Buffer(int cap) {\n        this.capacity = cap;\n    }\n\n    void produce(int val) throws InterruptedException {\n        lock.lock();\n        try {\n            while (queue.size() == capacity) {\n                notFull.await();\n            }\n\n            queue.offer(val);\n            System.out.println(\"Produced: \" + val);\n\n            notEmpty.signal();\n        } finally {\n            lock.unlock();\n        }\n    }\n\n    void consume() throws InterruptedException {\n        lock.lock();\n        try {\n            while (queue.isEmpty()) {\n                notEmpty.await();\n            }\n\n            int val = queue.poll();\n            System.out.println(\"Consumed: \" + val);\n\n            notFull.signal();\n        } finally {\n            lock.unlock();\n        }\n    }\n}\n```\n\n---\n\n### 4. Multiple Producers & Consumers 🔥\n\n```java id=\"pc4\"\nBlockingQueue<Integer> queue = new ArrayBlockingQueue<>(5);\n\nRunnable producer = () -> {\n    try {\n        while (true) {\n            int val = new Random().nextInt(100);\n            queue.put(val);\n            System.out.println(Thread.currentThread().getName() + \" Produced \" + val);\n        }\n    } catch (Exception e) {}\n};\n\nRunnable consumer = () -> {\n    try {\n        while (true) {\n            int val = queue.take();\n            System.out.println(Thread.currentThread().getName() + \" Consumed \" + val);\n        }\n    } catch (Exception e) {}\n};\n\nfor (int i = 0; i < 2; i++) new Thread(producer).start();\nfor (int i = 0; i < 2; i++) new Thread(consumer).start();\n```\n\n---\n\n### 5. Using ExecutorService 🔥\n\n```java id=\"pc5\"\nimport java.util.concurrent.*;\n\nExecutorService executor = Executors.newFixedThreadPool(2);\nBlockingQueue<Integer> queue = new ArrayBlockingQueue<>(5);\n\nexecutor.submit(() -> {\n    int i = 0;\n    while (true) {\n        queue.put(i);\n        System.out.println(\"Produced \" + i++);\n    }\n});\n\nexecutor.submit(() -> {\n    while (true) {\n        System.out.println(\"Consumed \" + queue.take());\n    }\n});\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"pc6\"\nif (queue == null || capacity <= 0) {\n    throw new IllegalArgumentException();\n}\n```\n\n---\n\n### 🔥 Interview Tips\n\n* Prefer **BlockingQueue** in real-world systems\n* `wait/notify` → low-level, error-prone\n* `Lock + Condition` → fine-grained control\n* Always use `while`, not `if` (spurious wakeups)\n\n---\n\nIf you want next 🔥:\n\n* Thread Pool implementation 🔥🔥\n* CompletableFuture deep dive\n* Rate limiter (very important 🔥)\n* Full Java concurrency roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36682,7 +36742,11 @@
     "name": "092 Print even and odd numbers using two threads.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level ways** to **print even & odd numbers using two threads** 👇\n\n---\n\n### 1. Using `wait()` / `notify()` (Most Asked 🔥)\n\n```java id=\"eo1\"\nclass Printer {\n    private int num = 1;\n    private final int limit;\n\n    Printer(int limit) {\n        this.limit = limit;\n    }\n\n    public synchronized void printOdd() throws InterruptedException {\n        while (num <= limit) {\n            if (num % 2 == 0) {\n                wait();\n            } else {\n                System.out.println(\"Odd: \" + num++);\n                notify();\n            }\n        }\n    }\n\n    public synchronized void printEven() throws InterruptedException {\n        while (num <= limit) {\n            if (num % 2 != 0) {\n                wait();\n            } else {\n                System.out.println(\"Even: \" + num++);\n                notify();\n            }\n        }\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n\n        Printer printer = new Printer(10);\n\n        Thread t1 = new Thread(() -> {\n            try { printer.printOdd(); } catch (Exception e) {}\n        });\n\n        Thread t2 = new Thread(() -> {\n            try { printer.printEven(); } catch (Exception e) {}\n        });\n\n        t1.start();\n        t2.start();\n    }\n}\n```\n\n---\n\n### 2. Using `ReentrantLock` + `Condition` 🔥🔥\n\n```java id=\"eo2\"\nimport java.util.concurrent.locks.*;\n\nclass Printer {\n    private int num = 1;\n    private final int limit;\n\n    Lock lock = new ReentrantLock();\n    Condition oddCond = lock.newCondition();\n    Condition evenCond = lock.newCondition();\n\n    Printer(int limit) {\n        this.limit = limit;\n    }\n\n    void printOdd() throws InterruptedException {\n        lock.lock();\n        try {\n            while (num <= limit) {\n                if (num % 2 == 0) {\n                    oddCond.await();\n                } else {\n                    System.out.println(\"Odd: \" + num++);\n                    evenCond.signal();\n                }\n            }\n        } finally {\n            lock.unlock();\n        }\n    }\n\n    void printEven() throws InterruptedException {\n        lock.lock();\n        try {\n            while (num <= limit) {\n                if (num % 2 != 0) {\n                    evenCond.await();\n                } else {\n                    System.out.println(\"Even: \" + num++);\n                    oddCond.signal();\n                }\n            }\n        } finally {\n            lock.unlock();\n        }\n    }\n}\n```\n\n---\n\n### 3. Using `AtomicInteger` (Simpler 🔥)\n\n```java id=\"eo3\"\nimport java.util.concurrent.atomic.AtomicInteger;\n\npublic class EvenOdd {\n\n    static AtomicInteger num = new AtomicInteger(1);\n    static int limit = 10;\n\n    public static void main(String[] args) {\n\n        Thread odd = new Thread(() -> {\n            while (num.get() <= limit) {\n                if (num.get() % 2 != 0) {\n                    System.out.println(\"Odd: \" + num.getAndIncrement());\n                }\n            }\n        });\n\n        Thread even = new Thread(() -> {\n            while (num.get() <= limit) {\n                if (num.get() % 2 == 0) {\n                    System.out.println(\"Even: \" + num.getAndIncrement());\n                }\n            }\n        });\n\n        odd.start();\n        even.start();\n    }\n}\n```\n\n---\n\n### 4. Using `Semaphore` 🔥🔥\n\n```java id=\"eo4\"\nimport java.util.concurrent.*;\n\npublic class EvenOdd {\n\n    static Semaphore oddSem = new Semaphore(1);\n    static Semaphore evenSem = new Semaphore(0);\n    static int limit = 10;\n\n    public static void main(String[] args) {\n\n        Thread odd = new Thread(() -> {\n            for (int i = 1; i <= limit; i += 2) {\n                try {\n                    oddSem.acquire();\n                    System.out.println(\"Odd: \" + i);\n                    evenSem.release();\n                } catch (Exception e) {}\n            }\n        });\n\n        Thread even = new Thread(() -> {\n            for (int i = 2; i <= limit; i += 2) {\n                try {\n                    evenSem.acquire();\n                    System.out.println(\"Even: \" + i);\n                    oddSem.release();\n                } catch (Exception e) {}\n            }\n        });\n\n        odd.start();\n        even.start();\n    }\n}\n```\n\n---\n\n### 5. Using `ExecutorService` 🔥\n\n```java id=\"eo5\"\nimport java.util.concurrent.*;\n\nExecutorService ex = Executors.newFixedThreadPool(2);\n\nPrinter p = new Printer(10);\n\nex.submit(() -> { try { p.printOdd(); } catch(Exception e) {} });\nex.submit(() -> { try { p.printEven(); } catch(Exception e) {} });\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"eo6\"\nif (limit <= 0) return;\n```\n\n---\n\n### 🔥 Interview Tips\n\n* Use **wait/notify OR semaphore** for best answers\n* Always use `while` (not `if`) → avoids race conditions\n* Avoid busy-wait (Atomic version not ideal in real systems)\n\n---\n\nIf you want next 🔥:\n\n* Thread-safe Singleton\n* Deadlock example + prevention\n* Producer-Consumer advanced\n* Full Java concurrency roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36698,7 +36762,11 @@
     "name": "093 Implement a thread-safe blocking queue.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of a **thread-safe blocking queue** 👇\n\n---\n\n### 1. Using `wait()` / `notifyAll()` (Classic 🔥)\n\n```java id=\"bq1\"\nimport java.util.*;\n\nclass BlockingQueue<T> {\n    private Queue<T> queue = new LinkedList<>();\n    private int capacity;\n\n    BlockingQueue(int capacity) {\n        this.capacity = capacity;\n    }\n\n    public synchronized void put(T item) throws InterruptedException {\n        while (queue.size() == capacity) {\n            wait();\n        }\n\n        queue.offer(item);\n        notifyAll();\n    }\n\n    public synchronized T take() throws InterruptedException {\n        while (queue.isEmpty()) {\n            wait();\n        }\n\n        T item = queue.poll();\n        notifyAll();\n        return item;\n    }\n\n    public synchronized int size() {\n        return queue.size();\n    }\n}\n```\n\n---\n\n### 2. Using `ReentrantLock` + `Condition` 🔥🔥 (Better Control)\n\n```java id=\"bq2\"\nimport java.util.*;\nimport java.util.concurrent.locks.*;\n\nclass BlockingQueue<T> {\n    private Queue<T> queue = new LinkedList<>();\n    private int capacity;\n\n    private Lock lock = new ReentrantLock();\n    private Condition notFull = lock.newCondition();\n    private Condition notEmpty = lock.newCondition();\n\n    BlockingQueue(int capacity) {\n        this.capacity = capacity;\n    }\n\n    public void put(T item) throws InterruptedException {\n        lock.lock();\n        try {\n            while (queue.size() == capacity) {\n                notFull.await();\n            }\n\n            queue.offer(item);\n            notEmpty.signal();\n        } finally {\n            lock.unlock();\n        }\n    }\n\n    public T take() throws InterruptedException {\n        lock.lock();\n        try {\n            while (queue.isEmpty()) {\n                notEmpty.await();\n            }\n\n            T item = queue.poll();\n            notFull.signal();\n            return item;\n        } finally {\n            lock.unlock();\n        }\n    }\n}\n```\n\n---\n\n### 3. Using Array (Ring Buffer 🔥🔥🔥)\n\n```java id=\"bq3\"\nimport java.util.concurrent.locks.*;\n\nclass BlockingQueue<T> {\n    private Object[] arr;\n    private int head = 0, tail = 0, size = 0;\n\n    private Lock lock = new ReentrantLock();\n    private Condition notFull = lock.newCondition();\n    private Condition notEmpty = lock.newCondition();\n\n    BlockingQueue(int capacity) {\n        arr = new Object[capacity];\n    }\n\n    public void put(T item) throws InterruptedException {\n        lock.lock();\n        try {\n            while (size == arr.length) {\n                notFull.await();\n            }\n\n            arr[tail] = item;\n            tail = (tail + 1) % arr.length;\n            size++;\n\n            notEmpty.signal();\n        } finally {\n            lock.unlock();\n        }\n    }\n\n    public T take() throws InterruptedException {\n        lock.lock();\n        try {\n            while (size == 0) {\n                notEmpty.await();\n            }\n\n            T item = (T) arr[head];\n            head = (head + 1) % arr.length;\n            size--;\n\n            notFull.signal();\n            return item;\n        } finally {\n            lock.unlock();\n        }\n    }\n}\n```\n\n---\n\n### 4. With Timeout Support 🔥\n\n```java id=\"bq4\"\npublic boolean offer(T item, long timeout) throws InterruptedException {\n    long end = System.currentTimeMillis() + timeout;\n\n    lock.lock();\n    try {\n        while (queue.size() == capacity) {\n            long waitTime = end - System.currentTimeMillis();\n            if (waitTime <= 0) return false;\n            notFull.awaitNanos(waitTime * 1_000_000);\n        }\n\n        queue.offer(item);\n        notEmpty.signal();\n        return true;\n    } finally {\n        lock.unlock();\n    }\n}\n```\n\n---\n\n### 5. Multiple Producers/Consumers Safe 🔥\n\n```java id=\"bq5\"\n// Already safe due to:\n// - Locking\n// - Condition signaling\n// - while loops for spurious wakeups\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"bq6\"\nBlockingQueue(int capacity) {\n    if (capacity <= 0) {\n        throw new IllegalArgumentException();\n    }\n    this.capacity = capacity;\n}\n```\n\n---\n\n### 🔥 Interview Tips\n\n* Prefer **ReentrantLock + Condition** → production-level\n* Use **while**, not `if` → avoid spurious wakeups\n* Ring buffer → best performance (no object overhead)\n* Java already provides: `ArrayBlockingQueue`, `LinkedBlockingQueue`\n\n---\n\nIf you want next 🔥:\n\n* Custom ThreadPool implementation 🔥🔥\n* Rate Limiter (Token Bucket / Leaky Bucket)\n* CompletableFuture deep dive\n* Full Java concurrency roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36714,7 +36782,11 @@
     "name": "094 Implement a rate limiter.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of a **Rate Limiter (Java)** 👇\n\n---\n\n### 1. Fixed Window Counter 🔥 (Simple)\n\n```java id=\"rl1\"\nimport java.util.concurrent.atomic.AtomicInteger;\n\nclass FixedWindowRateLimiter {\n    private final int limit;\n    private final long windowSizeMs;\n\n    private long windowStart;\n    private AtomicInteger count = new AtomicInteger(0);\n\n    FixedWindowRateLimiter(int limit, long windowSizeMs) {\n        this.limit = limit;\n        this.windowSizeMs = windowSizeMs;\n        this.windowStart = System.currentTimeMillis();\n    }\n\n    public synchronized boolean allow() {\n        long now = System.currentTimeMillis();\n\n        if (now - windowStart >= windowSizeMs) {\n            windowStart = now;\n            count.set(0);\n        }\n\n        if (count.incrementAndGet() <= limit) {\n            return true;\n        }\n\n        return false;\n    }\n}\n```\n\n---\n\n### 2. Sliding Window Log 🔥🔥 (Accurate)\n\n```java id=\"rl2\"\nimport java.util.*;\n\nclass SlidingWindowLog {\n    private final int limit;\n    private final long windowSizeMs;\n    private Deque<Long> timestamps = new ArrayDeque<>();\n\n    SlidingWindowLog(int limit, long windowSizeMs) {\n        this.limit = limit;\n        this.windowSizeMs = windowSizeMs;\n    }\n\n    public synchronized boolean allow() {\n        long now = System.currentTimeMillis();\n\n        while (!timestamps.isEmpty() &&\n               now - timestamps.peekFirst() >= windowSizeMs) {\n            timestamps.pollFirst();\n        }\n\n        if (timestamps.size() < limit) {\n            timestamps.offerLast(now);\n            return true;\n        }\n\n        return false;\n    }\n}\n```\n\n---\n\n### 3. Sliding Window Counter 🔥 (Optimized)\n\n```java id=\"rl3\"\nclass SlidingWindowCounter {\n    private final int limit;\n    private final long windowSize;\n\n    private long currWindowStart;\n    private int currCount;\n    private int prevCount;\n\n    SlidingWindowCounter(int limit, long windowSize) {\n        this.limit = limit;\n        this.windowSize = windowSize;\n        this.currWindowStart = System.currentTimeMillis();\n    }\n\n    public synchronized boolean allow() {\n        long now = System.currentTimeMillis();\n\n        if (now - currWindowStart >= windowSize) {\n            prevCount = currCount;\n            currCount = 0;\n            currWindowStart = now;\n        }\n\n        double weight = (double)(windowSize - (now - currWindowStart)) / windowSize;\n        double total = currCount + prevCount * weight;\n\n        if (total < limit) {\n            currCount++;\n            return true;\n        }\n\n        return false;\n    }\n}\n```\n\n---\n\n### 4. Token Bucket 🔥🔥🔥 (Best for APIs)\n\n```java id=\"rl4\"\nclass TokenBucket {\n    private final int capacity;\n    private final double refillRate; // tokens per ms\n\n    private double tokens;\n    private long lastRefillTime;\n\n    TokenBucket(int capacity, double refillRatePerSec) {\n        this.capacity = capacity;\n        this.refillRate = refillRatePerSec / 1000.0;\n        this.tokens = capacity;\n        this.lastRefillTime = System.currentTimeMillis();\n    }\n\n    public synchronized boolean allow() {\n        long now = System.currentTimeMillis();\n\n        double tokensToAdd = (now - lastRefillTime) * refillRate;\n        tokens = Math.min(capacity, tokens + tokensToAdd);\n        lastRefillTime = now;\n\n        if (tokens >= 1) {\n            tokens -= 1;\n            return true;\n        }\n\n        return false;\n    }\n}\n```\n\n---\n\n### 5. Leaky Bucket 🔥\n\n```java id=\"rl5\"\nimport java.util.*;\n\nclass LeakyBucket {\n    private final int capacity;\n    private final long leakInterval;\n\n    private Queue<Long> queue = new LinkedList<>();\n\n    LeakyBucket(int capacity, long leakIntervalMs) {\n        this.capacity = capacity;\n        this.leakInterval = leakIntervalMs;\n    }\n\n    public synchronized boolean allow() {\n        long now = System.currentTimeMillis();\n\n        while (!queue.isEmpty() &&\n               now - queue.peek() >= leakInterval) {\n            queue.poll();\n        }\n\n        if (queue.size() < capacity) {\n            queue.offer(now);\n            return true;\n        }\n\n        return false;\n    }\n}\n```\n\n---\n\n### 6. Concurrent Version (Atomic + Lock-Free 🔥)\n\n```java id=\"rl6\"\nimport java.util.concurrent.atomic.AtomicLong;\n\nclass SimpleRateLimiter {\n    private final long intervalNs;\n    private AtomicLong nextAllowedTime = new AtomicLong(0);\n\n    SimpleRateLimiter(int permitsPerSecond) {\n        this.intervalNs = 1_000_000_000L / permitsPerSecond;\n    }\n\n    public boolean allow() {\n        long now = System.nanoTime();\n        long allowedTime = nextAllowedTime.get();\n\n        if (now >= allowedTime) {\n            return nextAllowedTime.compareAndSet(allowedTime, now + intervalNs);\n        }\n\n        return false;\n    }\n}\n```\n\n---\n\n### 🔥 Interview Tips\n\n* **Token Bucket** → most asked (APIs, rate limiting systems)\n* **Sliding Window Log** → most accurate\n* **Fixed Window** → simple but bursty\n* **Leaky Bucket** → smooth output rate\n* Use **synchronized / atomic / locks** for thread safety\n\n---\n\nIf you want next 🔥:\n\n* Distributed rate limiter (Redis + Lua 🔥🔥🔥)\n* API Gateway design\n* ThreadPool implementation\n* Full System Design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36730,7 +36802,11 @@
     "name": "095 Implement a thread pool.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of a **custom Thread Pool (Java)** 👇\n\n---\n\n### 1. Basic Thread Pool (Worker Threads 🔥)\n\n```java id=\"tp1\"\nimport java.util.*;\n\nclass ThreadPool {\n\n    private final int nThreads;\n    private final List<Worker> workers = new ArrayList<>();\n    private final Queue<Runnable> taskQueue = new LinkedList<>();\n\n    ThreadPool(int nThreads) {\n        this.nThreads = nThreads;\n\n        for (int i = 0; i < nThreads; i++) {\n            Worker w = new Worker();\n            workers.add(w);\n            w.start();\n        }\n    }\n\n    public synchronized void submit(Runnable task) {\n        taskQueue.offer(task);\n        notify();\n    }\n\n    private synchronized Runnable getTask() throws InterruptedException {\n        while (taskQueue.isEmpty()) {\n            wait();\n        }\n        return taskQueue.poll();\n    }\n\n    class Worker extends Thread {\n        public void run() {\n            while (true) {\n                try {\n                    Runnable task = getTask();\n                    task.run();\n                } catch (InterruptedException e) {\n                    break;\n                }\n            }\n        }\n    }\n}\n```\n\n---\n\n### 2. Thread Pool with Blocking Queue 🔥🔥\n\n```java id=\"tp2\"\nimport java.util.concurrent.*;\n\nclass ThreadPool {\n\n    private final BlockingQueue<Runnable> queue;\n    private final Worker[] workers;\n\n    ThreadPool(int nThreads, int capacity) {\n        queue = new ArrayBlockingQueue<>(capacity);\n        workers = new Worker[nThreads];\n\n        for (int i = 0; i < nThreads; i++) {\n            workers[i] = new Worker();\n            workers[i].start();\n        }\n    }\n\n    public void submit(Runnable task) throws InterruptedException {\n        queue.put(task);\n    }\n\n    class Worker extends Thread {\n        public void run() {\n            while (true) {\n                try {\n                    Runnable task = queue.take();\n                    task.run();\n                } catch (InterruptedException e) {\n                    break;\n                }\n            }\n        }\n    }\n}\n```\n\n---\n\n### 3. Thread Pool with Shutdown 🔥\n\n```java id=\"tp3\"\nimport java.util.concurrent.*;\n\nclass ThreadPool {\n\n    private final BlockingQueue<Runnable> queue;\n    private final Worker[] workers;\n    private volatile boolean isShutdown = false;\n\n    ThreadPool(int nThreads) {\n        queue = new LinkedBlockingQueue<>();\n        workers = new Worker[nThreads];\n\n        for (int i = 0; i < nThreads; i++) {\n            workers[i] = new Worker();\n            workers[i].start();\n        }\n    }\n\n    public void submit(Runnable task) {\n        if (!isShutdown) {\n            queue.offer(task);\n        }\n    }\n\n    public void shutdown() {\n        isShutdown = true;\n        for (Worker w : workers) {\n            w.interrupt();\n        }\n    }\n\n    class Worker extends Thread {\n        public void run() {\n            while (!isShutdown || !queue.isEmpty()) {\n                try {\n                    Runnable task = queue.poll();\n                    if (task != null) task.run();\n                } catch (Exception e) {}\n            }\n        }\n    }\n}\n```\n\n---\n\n### 4. Thread Pool with Future Result 🔥🔥🔥\n\n```java id=\"tp4\"\nimport java.util.concurrent.*;\n\nclass ThreadPool {\n\n    private final ExecutorService executor;\n\n    ThreadPool(int n) {\n        executor = Executors.newFixedThreadPool(n);\n    }\n\n    public Future<Integer> submit(Callable<Integer> task) {\n        return executor.submit(task);\n    }\n}\n```\n\n---\n\n### 5. Custom Future Implementation 🔥\n\n```java id=\"tp5\"\nclass SimpleFuture<T> {\n    private T result;\n    private boolean done = false;\n\n    public synchronized void set(T res) {\n        result = res;\n        done = true;\n        notifyAll();\n    }\n\n    public synchronized T get() throws InterruptedException {\n        while (!done) wait();\n        return result;\n    }\n}\n```\n\n---\n\n### 6. Production-Level (ThreadPoolExecutor 🔥🔥)\n\n```java id=\"tp6\"\nimport java.util.concurrent.*;\n\nExecutorService executor = new ThreadPoolExecutor(\n        2,                      // core threads\n        5,                      // max threads\n        60, TimeUnit.SECONDS,   // keep alive\n        new ArrayBlockingQueue<>(10),\n        Executors.defaultThreadFactory(),\n        new ThreadPoolExecutor.AbortPolicy()\n);\n\nexecutor.submit(() -> System.out.println(\"Task executed\"));\n```\n\n---\n\n### 🔥 Interview Tips\n\n* Core concepts:\n\n  * Worker threads\n  * Task queue\n  * Blocking vs non-blocking queue\n* Production → use **ThreadPoolExecutor**\n* Always discuss:\n\n  * **queue size**\n  * **rejection policy**\n  * **graceful shutdown**\n\n---\n\nIf you want next 🔥:\n\n* CompletableFuture deep dive 🔥🔥\n* Deadlock + starvation examples\n* Distributed thread pool\n* Full Java concurrency roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36746,7 +36822,11 @@
     "name": "096 Implement debounce logic.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **Debounce Logic** 👇\n\n---\n\n### 1. Basic Debounce (Using `Timer` 🔥)\n\n```java id=\"deb1\"\nimport java.util.*;\n\nclass Debouncer {\n    private Timer timer = new Timer();\n\n    public void debounce(Runnable task, int delayMs) {\n        timer.cancel();\n        timer = new Timer();\n\n        timer.schedule(new TimerTask() {\n            @Override\n            public void run() {\n                task.run();\n            }\n        }, delayMs);\n    }\n}\n```\n\n---\n\n### 2. Using `ScheduledExecutorService` (Best Practice 🔥🔥)\n\n```java id=\"deb2\"\nimport java.util.concurrent.*;\n\nclass Debouncer {\n    private final ScheduledExecutorService scheduler =\n            Executors.newSingleThreadScheduledExecutor();\n\n    private ScheduledFuture<?> future;\n\n    public void debounce(Runnable task, long delayMs) {\n        if (future != null && !future.isDone()) {\n            future.cancel(false);\n        }\n\n        future = scheduler.schedule(task, delayMs, TimeUnit.MILLISECONDS);\n    }\n}\n```\n\n---\n\n### 3. Thread-Safe Debouncer 🔥🔥🔥\n\n```java id=\"deb3\"\nimport java.util.concurrent.*;\nimport java.util.concurrent.atomic.AtomicReference;\n\nclass Debouncer {\n    private final ScheduledExecutorService scheduler =\n            Executors.newSingleThreadScheduledExecutor();\n\n    private final AtomicReference<ScheduledFuture<?>> futureRef = new AtomicReference<>();\n\n    public void debounce(Runnable task, long delayMs) {\n        ScheduledFuture<?> prev = futureRef.getAndSet(\n                scheduler.schedule(task, delayMs, TimeUnit.MILLISECONDS)\n        );\n\n        if (prev != null) {\n            prev.cancel(false);\n        }\n    }\n}\n```\n\n---\n\n### 4. Leading + Trailing Debounce 🔥\n\n```java id=\"deb4\"\nimport java.util.concurrent.*;\n\nclass Debouncer {\n    private final ScheduledExecutorService scheduler =\n            Executors.newSingleThreadScheduledExecutor();\n\n    private ScheduledFuture<?> future;\n    private boolean leadingCalled = false;\n\n    public void debounce(Runnable task, long delayMs, boolean leading) {\n\n        if (leading && !leadingCalled) {\n            task.run();\n            leadingCalled = true;\n        }\n\n        if (future != null && !future.isDone()) {\n            future.cancel(false);\n        }\n\n        future = scheduler.schedule(() -> {\n            if (!leading) task.run();\n            leadingCalled = false;\n        }, delayMs, TimeUnit.MILLISECONDS);\n    }\n}\n```\n\n---\n\n### 5. Debounce with Return Value (Future 🔥)\n\n```java id=\"deb5\"\nimport java.util.concurrent.*;\n\nclass Debouncer {\n    private final ScheduledExecutorService scheduler =\n            Executors.newSingleThreadScheduledExecutor();\n\n    private ScheduledFuture<?> future;\n\n    public <T> Future<T> debounce(Callable<T> task, long delayMs) {\n        if (future != null && !future.isDone()) {\n            future.cancel(false);\n        }\n\n        return (Future<T>) scheduler.schedule(task, delayMs, TimeUnit.MILLISECONDS);\n    }\n}\n```\n\n---\n\n### 6. Example Usage 🔥\n\n```java id=\"deb6\"\npublic static void main(String[] args) throws Exception {\n    Debouncer d = new Debouncer();\n\n    for (int i = 0; i < 5; i++) {\n        d.debounce(() -> System.out.println(\"Executed\"), 1000);\n        Thread.sleep(200);\n    }\n}\n// Only one execution after last call\n```\n\n---\n\n### 🔥 Interview Tips\n\n* Debounce = **delay execution until no calls for X ms**\n* Used in:\n\n  * Search box (API calls)\n  * Button clicks\n* Difference:\n\n  * **Debounce** → last call executes\n  * **Throttle** → limit calls per interval\n\n---\n\nIf you want next 🔥:\n\n* Throttling implementation\n* Rate limiter vs debounce vs throttle 🔥\n* JavaScript debounce (frontend 🔥)\n* Full concurrency + system design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36762,7 +36842,11 @@
     "name": "097 Implement retry logic with exponential backoff.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of **Retry Logic with Exponential Backoff (Java)** 👇\n\n---\n\n### 1. Basic Retry with Exponential Backoff 🔥\n\n```java id=\"rb1\"\npublic class Retry {\n\n    public static <T> T retry(Callable<T> task,\n                              int maxAttempts,\n                              long initialDelayMs) throws Exception {\n\n        int attempt = 0;\n        long delay = initialDelayMs;\n\n        while (true) {\n            try {\n                return task.call();\n            } catch (Exception e) {\n                attempt++;\n\n                if (attempt >= maxAttempts) {\n                    throw e;\n                }\n\n                Thread.sleep(delay);\n                delay *= 2; // exponential backoff\n            }\n        }\n    }\n}\n```\n\n---\n\n### 2. Retry with Jitter (Best Practice 🔥🔥🔥)\n\n```java id=\"rb2\"\nimport java.util.concurrent.*;\nimport java.util.concurrent.ThreadLocalRandom;\n\npublic class Retry {\n\n    public static <T> T retry(Callable<T> task,\n                              int maxAttempts,\n                              long baseDelay) throws Exception {\n\n        int attempt = 0;\n\n        while (true) {\n            try {\n                return task.call();\n            } catch (Exception e) {\n                attempt++;\n\n                if (attempt >= maxAttempts) throw e;\n\n                long jitter = ThreadLocalRandom.current().nextLong(baseDelay);\n                long delay = (long) Math.pow(2, attempt) * baseDelay + jitter;\n\n                Thread.sleep(delay);\n            }\n        }\n    }\n}\n```\n\n---\n\n### 3. Retry with Max Cap 🔥\n\n```java id=\"rb3\"\npublic static <T> T retry(Callable<T> task,\n                          int maxAttempts,\n                          long baseDelay,\n                          long maxDelay) throws Exception {\n\n    int attempt = 0;\n\n    while (true) {\n        try {\n            return task.call();\n        } catch (Exception e) {\n            attempt++;\n            if (attempt >= maxAttempts) throw e;\n\n            long delay = Math.min(\n                maxDelay,\n                (long) Math.pow(2, attempt) * baseDelay\n            );\n\n            Thread.sleep(delay);\n        }\n    }\n}\n```\n\n---\n\n### 4. Retry with Specific Exception 🔥\n\n```java id=\"rb4\"\npublic static <T> T retry(Callable<T> task,\n                          int maxAttempts,\n                          long delay) throws Exception {\n\n    for (int i = 1; i <= maxAttempts; i++) {\n        try {\n            return task.call();\n        } catch (IOException e) { // retry only IO\n            if (i == maxAttempts) throw e;\n\n            Thread.sleep(delay * i);\n        }\n    }\n    return null;\n}\n```\n\n---\n\n### 5. Async Retry (ScheduledExecutor 🔥🔥)\n\n```java id=\"rb5\"\nimport java.util.concurrent.*;\n\npublic class RetryAsync {\n\n    static ScheduledExecutorService scheduler =\n            Executors.newScheduledThreadPool(1);\n\n    public static <T> CompletableFuture<T> retryAsync(\n            Callable<T> task, int maxAttempts, long delay) {\n\n        CompletableFuture<T> future = new CompletableFuture<>();\n        attempt(task, maxAttempts, delay, future);\n        return future;\n    }\n\n    private static <T> void attempt(Callable<T> task,\n                                   int attempts,\n                                   long delay,\n                                   CompletableFuture<T> future) {\n\n        scheduler.schedule(() -> {\n            try {\n                future.complete(task.call());\n            } catch (Exception e) {\n                if (attempts <= 1) {\n                    future.completeExceptionally(e);\n                } else {\n                    attempt(task, attempts - 1, delay * 2, future);\n                }\n            }\n        }, delay, TimeUnit.MILLISECONDS);\n    }\n}\n```\n\n---\n\n### 6. Production-style (Builder Pattern 🔥)\n\n```java id=\"rb6\"\nclass RetryPolicy {\n\n    int maxAttempts;\n    long baseDelay;\n    long maxDelay;\n\n    RetryPolicy(int maxAttempts, long baseDelay, long maxDelay) {\n        this.maxAttempts = maxAttempts;\n        this.baseDelay = baseDelay;\n        this.maxDelay = maxDelay;\n    }\n\n    public <T> T execute(Callable<T> task) throws Exception {\n        int attempt = 0;\n\n        while (true) {\n            try {\n                return task.call();\n            } catch (Exception e) {\n                attempt++;\n                if (attempt >= maxAttempts) throw e;\n\n                long delay = Math.min(maxDelay,\n                        baseDelay * (1L << attempt));\n\n                Thread.sleep(delay);\n            }\n        }\n    }\n}\n```\n\n---\n\n### 🔥 Interview Tips\n\n* Always include:\n\n  * **Max attempts**\n  * **Exponential delay**\n  * **Jitter (very important 🔥)**\n* Use cases:\n\n  * API calls\n  * DB retries\n  * Microservices resilience\n* Combine with:\n\n  * **Circuit Breaker 🔥**\n  * **Timeouts**\n\n---\n\nIf you want next 🔥:\n\n* Circuit Breaker implementation 🔥🔥\n* Bulkhead pattern\n* Distributed retry (Kafka / microservices)\n* Full system design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36778,7 +36862,11 @@
     "name": "098 Implement a circuit breaker pattern.",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of the **Circuit Breaker Pattern (Java)** 👇\n\n---\n\n### 1. Basic Circuit Breaker 🔥 (Closed → Open → Half-Open)\n\n```java id=\"cb1\"\nimport java.util.concurrent.Callable;\n\nclass CircuitBreaker {\n\n    enum State { CLOSED, OPEN, HALF_OPEN }\n\n    private State state = State.CLOSED;\n\n    private int failureCount = 0;\n    private final int failureThreshold;\n    private final long timeoutMs;\n\n    private long lastFailureTime = 0;\n\n    CircuitBreaker(int threshold, long timeoutMs) {\n        this.failureThreshold = threshold;\n        this.timeoutMs = timeoutMs;\n    }\n\n    public synchronized <T> T call(Callable<T> task) throws Exception {\n        long now = System.currentTimeMillis();\n\n        if (state == State.OPEN) {\n            if (now - lastFailureTime > timeoutMs) {\n                state = State.HALF_OPEN;\n            } else {\n                throw new RuntimeException(\"Circuit OPEN\");\n            }\n        }\n\n        try {\n            T result = task.call();\n            onSuccess();\n            return result;\n        } catch (Exception e) {\n            onFailure();\n            throw e;\n        }\n    }\n\n    private void onSuccess() {\n        failureCount = 0;\n        state = State.CLOSED;\n    }\n\n    private void onFailure() {\n        failureCount++;\n        lastFailureTime = System.currentTimeMillis();\n\n        if (failureCount >= failureThreshold) {\n            state = State.OPEN;\n        }\n    }\n}\n```\n\n---\n\n### 2. Circuit Breaker with Half-Open Control 🔥🔥\n\n```java id=\"cb2\"\nclass CircuitBreaker {\n\n    enum State { CLOSED, OPEN, HALF_OPEN }\n\n    private State state = State.CLOSED;\n    private int failures = 0;\n    private final int threshold;\n    private final long timeout;\n\n    private boolean halfOpenAllowed = true;\n    private long lastFailureTime = 0;\n\n    CircuitBreaker(int threshold, long timeout) {\n        this.threshold = threshold;\n        this.timeout = timeout;\n    }\n\n    public synchronized <T> T call(Callable<T> task) throws Exception {\n        long now = System.currentTimeMillis();\n\n        if (state == State.OPEN) {\n            if (now - lastFailureTime > timeout) {\n                state = State.HALF_OPEN;\n            } else {\n                throw new RuntimeException(\"Circuit OPEN\");\n            }\n        }\n\n        if (state == State.HALF_OPEN && !halfOpenAllowed) {\n            throw new RuntimeException(\"Half-open busy\");\n        }\n\n        try {\n            if (state == State.HALF_OPEN) halfOpenAllowed = false;\n\n            T result = task.call();\n            reset();\n            return result;\n\n        } catch (Exception e) {\n            recordFailure();\n            throw e;\n        }\n    }\n\n    private void reset() {\n        failures = 0;\n        state = State.CLOSED;\n        halfOpenAllowed = true;\n    }\n\n    private void recordFailure() {\n        failures++;\n        lastFailureTime = System.currentTimeMillis();\n        halfOpenAllowed = true;\n\n        if (failures >= threshold) {\n            state = State.OPEN;\n        }\n    }\n}\n```\n\n---\n\n### 3. Thread-Safe (Atomic + Lock-Free 🔥🔥🔥)\n\n```java id=\"cb3\"\nimport java.util.concurrent.atomic.*;\n\nclass CircuitBreaker {\n\n    enum State { CLOSED, OPEN, HALF_OPEN }\n\n    private AtomicInteger failures = new AtomicInteger(0);\n    private AtomicReference<State> state =\n            new AtomicReference<>(State.CLOSED);\n\n    private final int threshold;\n    private final long timeout;\n\n    private volatile long lastFailureTime = 0;\n\n    CircuitBreaker(int threshold, long timeout) {\n        this.threshold = threshold;\n        this.timeout = timeout;\n    }\n\n    public <T> T call(Callable<T> task) throws Exception {\n        long now = System.currentTimeMillis();\n\n        if (state.get() == State.OPEN) {\n            if (now - lastFailureTime > timeout) {\n                state.set(State.HALF_OPEN);\n            } else {\n                throw new RuntimeException(\"Circuit OPEN\");\n            }\n        }\n\n        try {\n            T result = task.call();\n            failures.set(0);\n            state.set(State.CLOSED);\n            return result;\n\n        } catch (Exception e) {\n            lastFailureTime = now;\n\n            if (failures.incrementAndGet() >= threshold) {\n                state.set(State.OPEN);\n            }\n\n            throw e;\n        }\n    }\n}\n```\n\n---\n\n### 4. With Fallback 🔥\n\n```java id=\"cb4\"\npublic <T> T call(Callable<T> task, Callable<T> fallback) {\n    try {\n        return call(task);\n    } catch (Exception e) {\n        try {\n            return fallback.call();\n        } catch (Exception ex) {\n            throw new RuntimeException(ex);\n        }\n    }\n}\n```\n\n---\n\n### 5. Async Circuit Breaker 🔥\n\n```java id=\"cb5\"\nimport java.util.concurrent.*;\n\nCompletableFuture<String> callAsync(\n        Callable<String> task, CircuitBreaker cb) {\n\n    return CompletableFuture.supplyAsync(() -> {\n        try {\n            return cb.call(task);\n        } catch (Exception e) {\n            return \"fallback\";\n        }\n    });\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"cb6\"\nif (threshold <= 0 || timeout <= 0) {\n    throw new IllegalArgumentException();\n}\n```\n\n---\n\n### 🔥 Interview Tips\n\n* States:\n\n  * **CLOSED** → normal\n  * **OPEN** → fail fast\n  * **HALF_OPEN** → trial request\n* Combine with:\n\n  * Retry (with backoff 🔥)\n  * Timeout\n  * Fallback\n* Used in:\n\n  * Microservices\n  * API calls\n  * DB resilience\n\n---\n\nIf you want next 🔥:\n\n* Resilience4j / Hystrix real-world usage\n* Bulkhead pattern\n* API Gateway design\n* Full system design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36794,7 +36882,11 @@
     "name": "099 Design a URL shortener (coding portion).",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level coding implementations** for a **URL Shortener (like bit.ly)** 👇\n\n---\n\n### 1. Basic URL Shortener (Base62 Encoding 🔥)\n\n```java id=\"url1\"\nimport java.util.*;\n\nclass UrlShortener {\n\n    private static final String BASE62 =\n            \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\";\n\n    private Map<String, String> shortToLong = new HashMap<>();\n    private int counter = 1;\n\n    public String encode(String longUrl) {\n        String shortKey = toBase62(counter++);\n        shortToLong.put(shortKey, longUrl);\n        return \"http://short.ly/\" + shortKey;\n    }\n\n    public String decode(String shortUrl) {\n        String key = shortUrl.substring(shortUrl.lastIndexOf(\"/\") + 1);\n        return shortToLong.get(key);\n    }\n\n    private String toBase62(int num) {\n        StringBuilder sb = new StringBuilder();\n\n        while (num > 0) {\n            sb.append(BASE62.charAt(num % 62));\n            num /= 62;\n        }\n\n        return sb.reverse().toString();\n    }\n}\n```\n\n---\n\n### 2. With Reverse Mapping (Avoid duplicates 🔥🔥)\n\n```java id=\"url2\"\nimport java.util.*;\n\nclass UrlShortener {\n\n    private static final String BASE62 =\n            \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\";\n\n    private Map<String, String> shortToLong = new HashMap<>();\n    private Map<String, String> longToShort = new HashMap<>();\n\n    private int counter = 1;\n\n    public String encode(String longUrl) {\n        if (longToShort.containsKey(longUrl)) {\n            return longToShort.get(longUrl);\n        }\n\n        String key = toBase62(counter++);\n        String shortUrl = \"http://short.ly/\" + key;\n\n        shortToLong.put(key, longUrl);\n        longToShort.put(longUrl, shortUrl);\n\n        return shortUrl;\n    }\n\n    public String decode(String shortUrl) {\n        String key = shortUrl.substring(shortUrl.lastIndexOf(\"/\") + 1);\n        return shortToLong.get(key);\n    }\n\n    private String toBase62(int num) {\n        StringBuilder sb = new StringBuilder();\n\n        while (num > 0) {\n            sb.append(BASE62.charAt(num % 62));\n            num /= 62;\n        }\n\n        return sb.reverse().toString();\n    }\n}\n```\n\n---\n\n### 3. Random Key Generation 🔥🔥🔥\n\n```java id=\"url3\"\nimport java.util.*;\n\nclass UrlShortener {\n\n    private static final String BASE62 =\n            \"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\";\n\n    private Map<String, String> map = new HashMap<>();\n    private Random rand = new Random();\n\n    public String encode(String longUrl) {\n        String key;\n\n        do {\n            key = generateKey(6);\n        } while (map.containsKey(key));\n\n        map.put(key, longUrl);\n        return \"http://short.ly/\" + key;\n    }\n\n    public String decode(String shortUrl) {\n        String key = shortUrl.substring(shortUrl.lastIndexOf(\"/\") + 1);\n        return map.get(key);\n    }\n\n    private String generateKey(int len) {\n        StringBuilder sb = new StringBuilder();\n\n        for (int i = 0; i < len; i++) {\n            sb.append(BASE62.charAt(rand.nextInt(62)));\n        }\n\n        return sb.toString();\n    }\n}\n```\n\n---\n\n### 4. Thread-Safe Version 🔥\n\n```java id=\"url4\"\nimport java.util.concurrent.*;\n\nclass UrlShortener {\n\n    private ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();\n    private AtomicInteger counter = new AtomicInteger(1);\n\n    public String encode(String longUrl) {\n        int id = counter.getAndIncrement();\n        String key = Integer.toString(id, 36);\n\n        map.put(key, longUrl);\n        return \"http://short.ly/\" + key;\n    }\n\n    public String decode(String shortUrl) {\n        String key = shortUrl.substring(shortUrl.lastIndexOf(\"/\") + 1);\n        return map.get(key);\n    }\n}\n```\n\n---\n\n### 5. With Expiry (TTL 🔥)\n\n```java id=\"url5\"\nclass Entry {\n    String url;\n    long expiry;\n\n    Entry(String u, long e) {\n        url = u;\n        expiry = e;\n    }\n}\n\nMap<String, Entry> map = new HashMap<>();\n\npublic String decode(String shortUrl) {\n    String key = shortUrl.substring(shortUrl.lastIndexOf(\"/\") + 1);\n\n    Entry e = map.get(key);\n\n    if (e == null || System.currentTimeMillis() > e.expiry) {\n        return null;\n    }\n\n    return e.url;\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"url6\"\nif (longUrl == null || longUrl.isEmpty()) {\n    throw new IllegalArgumentException();\n}\n```\n\n---\n\n### 🔥 Interview Tips\n\n* Key points:\n\n  * **Base62 encoding** (ID → short key)\n  * **Collision handling**\n  * **DB mapping (short → long)**\n* Follow-ups:\n\n  * Distributed system (use Redis, DB)\n  * Cache (read-heavy)\n  * Analytics (click count)\n* Scale:\n\n  * Use **auto-increment ID / Snowflake ID 🔥**\n  * Store in **NoSQL (Cassandra / DynamoDB)**\n\n---\n\nIf you want next 🔥:\n\n* Full system design (HLD + LLD of URL shortener)\n* TinyURL production architecture\n* Rate limiting + caching integration\n* Complete system design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36810,13 +36902,1628 @@
     "name": "100 Implement a distributed unique ID generator (Snowflake style).",
     "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Here are **industry-level implementations** of a **Distributed Unique ID Generator (Snowflake style)** 👇\n\n---\n\n### 1. Snowflake Generator (64-bit ID 🔥🔥🔥)\n\n```java id=\"sf1\"\npublic class Snowflake {\n\n    private final long epoch = 1609459200000L; // custom epoch (2021)\n\n    private final long nodeIdBits = 10;\n    private final long sequenceBits = 12;\n\n    private final long maxNodeId = (1L << nodeIdBits) - 1;\n    private final long maxSequence = (1L << sequenceBits) - 1;\n\n    private final long nodeId;\n    private long sequence = 0L;\n    private long lastTimestamp = -1L;\n\n    private final long nodeShift = sequenceBits;\n    private final long timeShift = sequenceBits + nodeIdBits;\n\n    public Snowflake(long nodeId) {\n        if (nodeId < 0 || nodeId > maxNodeId) {\n            throw new IllegalArgumentException(\"Invalid nodeId\");\n        }\n        this.nodeId = nodeId;\n    }\n\n    public synchronized long nextId() {\n        long timestamp = currentTime();\n\n        if (timestamp < lastTimestamp) {\n            throw new RuntimeException(\"Clock moved backwards\");\n        }\n\n        if (timestamp == lastTimestamp) {\n            sequence = (sequence + 1) & maxSequence;\n\n            if (sequence == 0) {\n                timestamp = waitNextMillis(lastTimestamp);\n            }\n        } else {\n            sequence = 0;\n        }\n\n        lastTimestamp = timestamp;\n\n        return ((timestamp - epoch) << timeShift)\n                | (nodeId << nodeShift)\n                | sequence;\n    }\n\n    private long waitNextMillis(long lastTs) {\n        long ts = currentTime();\n        while (ts <= lastTs) {\n            ts = currentTime();\n        }\n        return ts;\n    }\n\n    private long currentTime() {\n        return System.currentTimeMillis();\n    }\n}\n```\n\n---\n\n### 2. Thread-Safe (High Concurrency 🔥)\n\n```java id=\"sf2\"\nimport java.util.concurrent.locks.*;\n\npublic class Snowflake {\n\n    private final Lock lock = new ReentrantLock();\n\n    private long lastTimestamp = -1;\n    private long sequence = 0;\n\n    public long nextId() {\n        lock.lock();\n        try {\n            return generate();\n        } finally {\n            lock.unlock();\n        }\n    }\n\n    private long generate() {\n        long ts = System.currentTimeMillis();\n\n        if (ts == lastTimestamp) {\n            sequence = (sequence + 1) & 4095;\n        } else {\n            sequence = 0;\n        }\n\n        lastTimestamp = ts;\n\n        return (ts << 22) | sequence;\n    }\n}\n```\n\n---\n\n### 3. Using Atomic (Lock-Free 🔥)\n\n```java id=\"sf3\"\nimport java.util.concurrent.atomic.AtomicLong;\n\nclass Snowflake {\n\n    private AtomicLong lastTs = new AtomicLong(-1);\n    private AtomicLong seq = new AtomicLong(0);\n\n    public long nextId() {\n        long ts = System.currentTimeMillis();\n\n        if (ts == lastTs.get()) {\n            seq.set((seq.get() + 1) & 4095);\n        } else {\n            seq.set(0);\n            lastTs.set(ts);\n        }\n\n        return (ts << 22) | seq.get();\n    }\n}\n```\n\n---\n\n### 4. Custom Bit Layout 🔥\n\n```java id=\"sf4\"\n// 64 bits:\n// 41 bits -> timestamp\n// 10 bits -> nodeId\n// 12 bits -> sequence\n```\n\n---\n\n### 5. Example Usage 🔥\n\n```java id=\"sf5\"\npublic static void main(String[] args) {\n    Snowflake sf = new Snowflake(1);\n\n    for (int i = 0; i < 5; i++) {\n        System.out.println(sf.nextId());\n    }\n}\n```\n\n---\n\n### 6. Edge Case Safe Version\n\n```java id=\"sf6\"\nif (timestamp < lastTimestamp) {\n    throw new RuntimeException(\"Clock moved backwards\");\n}\n```\n\n---\n\n### 🔥 Interview Tips\n\n* 64-bit structure:\n\n  * **Timestamp (41 bits)**\n  * **Node ID (10 bits)**\n  * **Sequence (12 bits)**\n* Guarantees:\n\n  * Unique\n  * Ordered (time-based)\n* Challenges:\n\n  * Clock skew ⚠️\n  * Node ID management\n* Used in:\n\n  * Twitter Snowflake\n  * Distributed DBs\n  * Microservices IDs\n\n---\n\nIf you want next 🔥:\n\n* Distributed ID using Redis / DB 🔥🔥\n* UUID vs Snowflake comparison\n* Full system design of ID generator\n* Complete system design roadmap\n\nJust tell 👍\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
         "name": "100 Industry-Level Java coding Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "name": "100 Industry-Level Java Reflection API Interview Questions",
+    "parentId": null,
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [],
+    "sections": []
+  },
+  {
+    "uniqueId": "6dd4a4d4-e043-4e3e-a25b-81efeef8e9a1",
+    "name": "001 What is the Java Reflection API and what problems does it solve?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "df788b52-6b92-491f-acfe-66dc158861cf",
+    "name": "002 How does Reflection differ from normal compile-time access to classes and methods?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4885ae0f-dbb2-4599-9003-ffa74aedb330",
+    "name": "003 What are the main classes in the java.lang.reflect package?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2a931dae-d325-4c20-b8e2-d8885a55d25e",
+    "name": "004 How do you obtain a Class object in Java?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "55174abf-8581-49b7-8578-58b3ebeed6c3",
+    "name": "005 What is the difference between Class.forName() and ClassLoader.loadClass()?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dc86d6a2-4790-4393-84b0-3d0674b1c061",
+    "name": "006 How do you retrieve all declared methods of a class using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "605c3127-bb52-4218-bff9-d1e5fa4c0435",
+    "name": "007 What is the difference between getMethods() and getDeclaredMethods()?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "87133e18-633b-4ad4-aecc-ff948ddc148d",
+    "name": "008 How can you dynamically invoke a method using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e697690f-d4f8-4350-ac0f-1c013d79be74",
+    "name": "009 How can you access private methods using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ef22d8a3-5de7-409a-9487-527f10b086cc",
+    "name": "010 What is the purpose of setAccessible(true)?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4cc1b7e2-7b18-403d-bc15-26a8dba5d111",
+    "name": "011 How do you retrieve constructors of a class using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e8e92ece-38f8-41b2-8b79-7f75cc010717",
+    "name": "012 What is the difference between getConstructors() and getDeclaredConstructors()?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e295fdf8-6906-4ef0-b389-28cd7e83eeeb",
+    "name": "013 How do you instantiate an object using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "adfa3673-c110-4fb0-b1b6-ba4dd86f3077",
+    "name": "014 What is the difference between Class.newInstance() and Constructor.newInstance()?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "94e0c4c1-dc1c-4d19-98bc-549a1f17481d",
+    "name": "015 How do you retrieve fields of a class using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "97941700-16d3-4b78-8cae-66c5b8e604c3",
+    "name": "016 What is the difference between getFields() and getDeclaredFields()?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4ecc3568-6ada-4d6d-8476-e22b8c6dec97",
+    "name": "017 How can you modify private fields using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ffe47c70-7fc6-44e9-a3d4-3494675b2c9c",
+    "name": "018 How do you access static fields using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b6682c42-4229-44e8-b039-4b819f47e447",
+    "name": "019 How do you determine if a class is an interface using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f910213d-3652-426a-a6aa-614fcee60fc8",
+    "name": "020 How do you check if a class is abstract using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "32caefe1-f120-45a8-a2ea-88bdbb72295a",
+    "name": "021 How do you retrieve annotations from a class using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1bd46265-fe41-4cb3-92c7-89403ab65278",
+    "name": "022 What is the difference between getAnnotation() and getAnnotations()?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5d71002f-fc69-4d8f-ae2e-cb274145476c",
+    "name": "023 How do you read method parameter annotations using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "26f41669-0b86-47fd-85e5-04530cfbb569",
+    "name": "024 How can Reflection be used to inspect generic types?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8f0bba9e-9384-4407-a8ff-90de21ee3c36",
+    "name": "025 How do you retrieve generic return types of methods?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "30b98992-14fc-4e5d-89d6-11f8878d4c1c",
+    "name": "026 What is ParameterizedType in Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1dc7d90d-11a6-4c7a-b4d7-1fcf336d3a67",
+    "name": "027 How can you inspect generic fields using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "77e7d9f5-e162-46df-9fc0-d6a75641255a",
+    "name": "028 How do frameworks like Spring use Reflection internally?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "24fd5c60-da4a-4d66-9b73-fe4ce41c3007",
+    "name": "029 How does Hibernate use Reflection to map entities?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3a50b7ba-dfe2-4139-8389-7b9d911eeb17",
+    "name": "030 How do you check if a method is public, private, or protected using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "00363a72-1c0f-42c6-ac8f-f523882bf554",
+    "name": "031 How do you determine if a field is final using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5c1f8027-2846-42f4-b918-fbcc3c374a3e",
+    "name": "032 What is the Modifier class in Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b325b782-dd1b-4bac-b306-f697b9f8b1cf",
+    "name": "033 How do you retrieve superclass information using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "717bf8e0-134c-49d1-9e52-3c85df44e91d",
+    "name": "034 How do you retrieve implemented interfaces using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ddf6ca58-87d7-4b9e-82da-dd123f9770b4",
+    "name": "035 How do you dynamically call overloaded methods using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b2c35378-7da6-4da7-8a21-7e01f98a3752",
+    "name": "036 What exceptions are commonly thrown when using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3cb00e1f-cacd-4c04-a6f3-809de02239ef",
+    "name": "037 What is InvocationTargetException?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "43e04a27-5937-450a-b088-38ad3f66b53e",
+    "name": "038 What is IllegalAccessException?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4a6ed150-68f7-435c-b44c-bc279410a713",
+    "name": "039 What is NoSuchMethodException?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "55e9ebc6-2784-4afb-8653-06c392b3ec60",
+    "name": "040 What is the performance impact of using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "94e332d6-a0e3-495a-8393-ba153039c8ab",
+    "name": "041 Why is Reflection slower than direct method invocation?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a3ea843a-779b-4e68-9a1e-5b9fd02a4d67",
+    "name": "042 How can Reflection impact JVM optimizations?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "10d55bad-f095-436b-94ee-0f685ee8f0fc",
+    "name": "043 How does Reflection interact with the Java Security Manager?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "95c1c0d9-16bc-46de-9670-b965d5f3d139",
+    "name": "044 What is AccessibleObject in Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "28c14836-518f-4693-b512-8cd1afbbd29e",
+    "name": "045 How do you suppress Java access checks using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "acc52260-f0da-49ea-811b-5b2afbcfa859",
+    "name": "046 What is the difference between Reflection and MethodHandle?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c515fd55-93ed-40ea-b377-5a3ef564ed6c",
+    "name": "047 What are MethodHandles introduced in Java 7?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "003becc3-80de-4561-a475-d5374244c0e9",
+    "name": "048 When should MethodHandles be preferred over Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "99f1208a-4a20-4dc2-986b-88d32675c3e2",
+    "name": "049 How do you dynamically create arrays using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c17f70a0-ffc1-414d-a808-45b5e9882f9a",
+    "name": "050 What is the Array class in java.lang.reflect?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "69e23c3d-2c54-4f98-a9a4-3da23fc2dc41",
+    "name": "051 How do you get the component type of an array using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a5662872-5325-476f-8ce9-61b11625f578",
+    "name": "052 How do you inspect nested classes using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "60e48520-4f04-4db1-9b49-53381b5d7a3e",
+    "name": "053 How do you determine if a class is an enum using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "62bceb08-81a6-47c0-908f-1239947af1f2",
+    "name": "054 How do you retrieve enum constants using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3398083e-36d3-472e-9910-4020acf462a4",
+    "name": "055 How can you check if a method is varargs using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e8b4e7e2-77aa-46a2-a8f9-ef34dc686387",
+    "name": "056 How can you detect bridge methods using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c1936820-463f-4a37-93a3-99df2184f15b",
+    "name": "057 What are synthetic methods and how can they be detected via Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4a0afcc1-c46a-435f-b07d-7c1d3e9ddc80",
+    "name": "058 How does Reflection work with lambda expressions?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "72ebb117-682d-4783-8166-090a821584ff",
+    "name": "059 How can Reflection be used to implement dependency injection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6931d7ee-b5fe-4bae-93d6-ac2a8303d876",
+    "name": "060 How can Reflection be used to build a simple IoC container?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "024ff230-03c5-4a55-a695-98bae460c947",
+    "name": "061 How do serialization frameworks use Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1eb22a0a-fdc9-4a37-99ad-232a3f9afe91",
+    "name": "062 How do testing frameworks like JUnit use Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "608b2c9b-154b-424c-bbd9-90fcdab6a5b9",
+    "name": "063 How do annotation-based frameworks rely on Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c30969b7-b5df-4977-9662-d3887ee8fbf7",
+    "name": "064 What is runtime type information (RTTI) and how is it related to Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7c8c491d-db9a-4456-b783-7c405b9adea7",
+    "name": "065 What are the security risks of using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fbaf183a-62b2-4825-ba1b-d76fe2d137ae",
+    "name": "066 How can Reflection break encapsulation?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cc3edc6f-2fb6-401d-a579-abbf50ea935f",
+    "name": "067 What is the role of Reflection in dynamic proxies?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7b100903-0776-4da4-af53-7f8d94eb40f6",
+    "name": "068 What is Proxy.newProxyInstance() in Java?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a62425fe-6c39-4e6e-aa62-8c57b20d4499",
+    "name": "069 How does InvocationHandler work with Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f6000b07-24a2-4705-9d02-1d1f31617927",
+    "name": "070 How do you inspect method parameters using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "a8524089-155f-4e02-b762-ffe54e462f31",
+    "name": "071 How do you get parameter names using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4c93cf8a-856d-4ed1-8075-17455094e944",
+    "name": "072 What are the limitations of retrieving parameter names at runtime?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f3e60e07-346d-4b5d-a16c-7188ca90f836",
+    "name": "073 How do you check if a class is anonymous using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6a503fb4-315a-479c-b059-84f4584d19ea",
+    "name": "074 How do you check if a class is local or member class using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e9bce551-b826-483e-8dc5-6aa216e80b56",
+    "name": "075 What is Type interface in Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b89e72b2-3c52-4f61-92a3-90a01c6e6a93",
+    "name": "076 What is the difference between Class and Type?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b2cdc412-a318-4969-8b5c-68a6781cfd2b",
+    "name": "077 What is WildcardType in Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4f410099-713a-45c2-a350-2b2d21b15b5f",
+    "name": "078 What is GenericArrayType in Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "fc0614b1-7a2f-4a91-8c9f-d3e13b107147",
+    "name": "079 What is TypeVariable in Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f1caba13-85a7-483d-917e-95266bce3ae2",
+    "name": "080 How can Reflection be used to inspect method return types?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "47fbcb01-3e62-4cef-8ca5-ac724ee231b1",
+    "name": "081 How do you get default values of annotation attributes using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f7f18164-fe41-41c7-bce5-35010b129917",
+    "name": "082 How do you inspect record classes using Reflection in Java 16+?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8bf73466-33bf-4e2a-bc21-a80f437f2a4f",
+    "name": "083 How can Reflection detect sealed classes in Java 17?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f8cdda92-8add-465f-9e09-26aeb0f7a176",
+    "name": "084 How do modules (Java 9+) affect Reflection access?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4b0fd361-612d-415f-9dff-63be6ad1f617",
+    "name": "085 What is IllegalAccessError in the context of Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "8fd91515-af53-46bc-8a91-22683581763e",
+    "name": "086 How does opens keyword affect Reflection in Java modules?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4f7401f8-3f61-4685-9af9-899a7cb1b48c",
+    "name": "087 What is deep reflection in Java?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "065d547e-79bf-49ff-8d1f-d8d949cd31b4",
+    "name": "088 How does the JVM treat reflective calls internally?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e54194a5-070e-4c16-832f-9b2d7c9b222c",
+    "name": "089 How can you cache reflection results to improve performance?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d134babe-7af2-4bfa-8c02-60a3cf61a53d",
+    "name": "090 How can Reflection be used in plugin-based architectures?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6b9564ec-152d-42a2-8739-d4e3d0f95443",
+    "name": "091 How can you dynamically load and execute classes using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "500ad185-4d37-4de5-b0cd-f310df60a214",
+    "name": "092 How can Reflection help build object mappers like Jackson?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1a44ca97-216f-4591-83be-7360f3ec9f70",
+    "name": "093 What is the difference between compile-time and runtime introspection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "db1638f6-b8e9-4ed3-b485-0f13194529d5",
+    "name": "094 How can Reflection be used to inspect method exceptions?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "28cc1eb1-6366-412a-8e08-3e13acddc9c3",
+    "name": "095 How can you retrieve default constructors using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4a83b174-7ff1-45cf-8330-585b3ff67eab",
+    "name": "096 How do you inspect class loaders using Reflection?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "82bf9f18-e420-475a-82e3-f7b4bb6c36a2",
+    "name": "097 How does Reflection interact with bytecode manipulation libraries?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1936118b-e26c-4eae-b911-5b787962f854",
+    "name": "098 What are alternatives to Reflection in modern Java frameworks?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1c8bc2fd-cb1b-4874-abba-19d4c5cbfee5",
+    "name": "099 What are best practices when using Reflection in production systems?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2305b0c1-0c22-4421-803b-6490f5a84582",
+    "name": "100 When should Reflection be avoided in Java applications?",
+    "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
+        "name": "100 Industry-Level Java Reflection API Interview Questions"
       }
     ],
     "sections": []
