@@ -39687,5 +39687,45 @@
       }
     ],
     "sections": []
+  },
+  {
+    "uniqueId": "33944ca8-9b3a-4c1f-a8b4-09eb4ccb51f6",
+    "name": "00 Introduction",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "672f8dbe-24f8-48fd-8e0b-c3b59a66c67b",
+    "name": "00A Introduction",
+    "parentId": "33944ca8-9b3a-4c1f-a8b4-09eb4ccb51f6",
+    "description": "",
+    "smartContent": {
+      "content": "## 🎬 Introduction Lecture – Welcome to the Course\n\nHi everyone, welcome to the course **“100+ Industry-Level Java 8 Interview Questions”**.\n\nIf you're preparing for Java interviews or already working as a backend developer, you already know that **Java 8 is one of the most important versions of Java ever released**. Almost every modern Java application — especially in **Spring Boot and microservices** — heavily uses Java 8 features.\n\nBut here’s the problem…\n\n👉 Most developers **know the syntax**, but struggle in interviews when questions go deeper —\nlike **Stream internals, Lambda behavior, Optional edge cases, or performance scenarios**.\n\nAnd that’s exactly where this course will help you.\n\n---\n\n## 💡 What is this course about?\n\nThis course is designed around **real industry-level interview questions**.\n\nNot just theory…\nNot just definitions…\n\n👉 You will learn:\n\n* How to **think like an interviewer**\n* How to **answer questions confidently**\n* And most importantly, how to **write clean, production-level code**\n\n---\n\n## 🚀 What will you learn?\n\nIn this course, we will cover:\n\n* Lambda Expressions & Functional Interfaces\n* Stream API (map, filter, reduce, collectors)\n* Optional (null handling + best practices)\n* Method References\n* Date & Time API\n* Parallel Streams & ForkJoinPool\n* Real-world coding problems & tricky edge cases\n\n---\n\n## 🎯 How is this course structured?\n\n* 100+ **carefully selected interview questions**\n* Each question explained with:\n\n  * ✅ Concept\n  * ✅ Code\n  * ✅ Real-world usage\n  * ✅ Interview tips\n\nThis is not just a course…\n👉 It’s a **complete Java 8 interview preparation guide**.\n\n---\n\n## 👨‍💻 Who is this course for?\n\n* Java developers preparing for interviews\n* Backend developers working with Spring Boot\n* Students targeting product-based companies\n* Anyone who wants to **master Java 8 deeply**\n\n---\n\n## ⚠️ What do you need before starting?\n\n* Basic knowledge of Java\n* Understanding of OOP concepts\n* Some familiarity with collections\n\nThat’s it — no advanced knowledge required.\n\n---\n\n## 🧠 What will you achieve?\n\nBy the end of this course, you will:\n\n* Answer Java 8 questions with confidence\n* Write clean and optimized code\n* Understand real-world usage of Java 8\n* Be ready for **top tech company interviews**\n\n---\n\n## 🔥 Final Note\n\nThis course is designed to be:\n\n* **Practical**\n* **Interview-focused**\n* **Straight to the point**\n\nSo I highly recommend:\n👉 Code along with me\n👉 Practice the questions\n👉 And revise regularly\n\n---\n\n## 🚀 Let’s Get Started\n\nIn the next lecture, we’ll begin with one of the most fundamental questions:\n\n👉 **What are the major features introduced in Java 8?**\n\nLet’s begin your journey to becoming a **strong Java developer** 💪\n\nIf you want next:\n👉 **Lecture 2 script + slides (ready for recording 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "33944ca8-9b3a-4c1f-a8b4-09eb4ccb51f6",
+        "name": "00 Introduction"
+      }
+    ],
+    "sections": []
   }
 ]
