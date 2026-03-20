@@ -37897,7 +37897,11 @@
     "name": "037 Difference between Collection and Stream?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## Collection vs Stream (Java 8)\n\n---\n\n## 1. Basic Idea\n\n```java id=\"cs1\"\n// Collection → stores data\nList<Integer> list = Arrays.asList(1,2,3);\n\n// Stream → processes data\nlist.stream().forEach(System.out::println);\n```\n\n---\n\n## 2. Storage\n\n```java id=\"cs2\"\n// Collection → stores elements in memory\n\n// Stream → does NOT store data, only processes\n```\n\n---\n\n## 3. Nature\n\n```java id=\"cs3\"\n// Collection → data structure\n\n// Stream → computation pipeline\n```\n\n---\n\n## 3. Traversal\n\n```java id=\"cs4\"\n// Collection → can iterate multiple times\nfor (int i : list) {}\n\n// Stream → can be consumed only once\nStream<Integer> s = list.stream();\ns.forEach(System.out::println);\n// s.forEach(...) ❌ error\n```\n\n---\n\n## 4. Processing Style\n\n```java id=\"cs5\"\n// Collection → external iteration\nfor (int i : list) {}\n\n// Stream → internal iteration\nlist.stream().forEach(System.out::println);\n```\n\n---\n\n## 5. Lazy vs Eager\n\n```java id=\"cs6\"\n// Collection → eager\n\n// Stream → lazy (intermediate ops)\nlist.stream()\n    .filter(x -> x > 2)\n    .map(x -> x * 2);\n```\n\n---\n\n## 6. Performance\n\n```java id=\"cs7\"\n// Collection → sequential\n\n// Stream → supports parallel processing\nlist.parallelStream().forEach(System.out::println);\n```\n\n---\n\n## 7. Modification\n\n```java id=\"cs8\"\n// Collection → can modify\nlist.add(10);\n\n// Stream → cannot modify source\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"cs9\"\n// Collection → stores data\n// Stream → processes data\n\n// Collection → reusable\n// Stream → single-use\n\n// Collection → external iteration\n// Stream → internal iteration\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Collection is used to **store data**, while Stream is used to **process data in a functional and efficient way**.\n\n---\n\nNext?\n👉 **Intermediate vs Terminal operations (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37917,7 +37921,11 @@
     "name": "038 What are intermediate operations?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Intermediate Operations (Stream API)\n\n👉 **Definition (crisp)**\nIntermediate operations are operations that **transform a stream and return another stream**.\n\n---\n\n## Key Properties 🔥\n\n* Return **Stream**\n* **Lazy** (execute only when terminal op is called)\n* Can be **chained**\n\n---\n\n## Example\n\n```java id=\"io1\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .filter(x -> x % 2 == 0)  // intermediate\n    .map(x -> x * x)          // intermediate\n    .forEach(System.out::println); // terminal\n```\n\n---\n\n## Common Intermediate Operations\n\n```java id=\"io2\"\nfilter()\nmap()\nflatMap()\ndistinct()\nsorted()\nlimit()\nskip()\npeek()\n```\n\n---\n\n## Lazy Execution 🔥\n\n```java id=\"io3\"\nlist.stream()\n    .filter(x -> {\n        System.out.println(\"Filtering: \" + x);\n        return x > 2;\n    });\n// ❌ nothing happens (no terminal op)\n```\n\n---\n\n## Trigger Execution\n\n```java id=\"io4\"\nlist.stream()\n    .filter(x -> x > 2)\n    .forEach(System.out::println); // ✅ executes\n```\n\n---\n\n## Chaining Example\n\n```java id=\"io5\"\nlist.stream()\n    .filter(x -> x > 1)\n    .map(x -> x * 10)\n    .sorted();\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Intermediate operations are **lazy operations that transform a stream and return another stream**, such as `filter`, `map`, and `sorted`.\n\n---\n\nNext?\n👉 **Terminal operations (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37937,7 +37945,11 @@
     "name": "039 What are terminal operations?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Terminal Operations (Stream API)\n\n👉 **Definition (crisp)**\nTerminal operations are operations that **consume the stream and produce a final result**.\n\n---\n\n## Key Properties 🔥\n\n* Return **result / void (not Stream)**\n* **Trigger execution** of stream pipeline\n* Stream becomes **closed (cannot reuse)**\n\n---\n\n## Example\n\n```java id=\"to1\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .filter(x -> x % 2 == 0)\n    .map(x -> x * x)\n    .forEach(System.out::println); // terminal\n```\n\n---\n\n## Common Terminal Operations\n\n```java id=\"to2\"\nforEach()\ncollect()\nreduce()\ncount()\nfindFirst()\nfindAny()\nanyMatch()\nallMatch()\nnoneMatch()\nmin()\nmax()\n```\n\n---\n\n## Example: collect()\n\n```java id=\"to3\"\nList<Integer> result = list.stream()\n        .filter(x -> x > 2)\n        .collect(Collectors.toList());\n```\n\n---\n\n## Example: reduce()\n\n```java id=\"to4\"\nint sum = list.stream()\n        .reduce(0, (a, b) -> a + b);\n```\n\n---\n\n## Example: count()\n\n```java id=\"to5\"\nlong count = list.stream()\n        .filter(x -> x > 2)\n        .count();\n```\n\n---\n\n## Important 🔥 (Execution Trigger)\n\n```java id=\"to6\"\nlist.stream()\n    .filter(x -> {\n        System.out.println(\"Filtering: \" + x);\n        return x > 2;\n    })\n    .count(); // triggers execution\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Terminal operations are **operations that consume a stream and produce a result, triggering the execution of the entire pipeline**.\n\n---\n\nNext?\n👉 **Lazy evaluation in Streams (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37957,7 +37969,11 @@
     "name": "040 What is lazy evaluation in Streams?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Lazy Evaluation (Stream API)\n\n👉 **Definition (crisp)**\nLazy evaluation means **intermediate operations are NOT executed until a terminal operation is called**.\n\n---\n\n## Example\n\n```java id=\"le1\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .filter(x -> {\n        System.out.println(\"Filtering: \" + x);\n        return x > 2;\n    });\n// ❌ No output (no terminal operation)\n```\n\n---\n\n## Execution Starts Only with Terminal Operation\n\n```java id=\"le2\"\nlist.stream()\n    .filter(x -> {\n        System.out.println(\"Filtering: \" + x);\n        return x > 2;\n    })\n    .forEach(System.out::println); // ✅ triggers execution\n```\n\n---\n\n## Pipeline Behavior (Important 🔥)\n\n```java id=\"le3\"\nlist.stream()\n    .filter(x -> {\n        System.out.println(\"Filter: \" + x);\n        return x > 2;\n    })\n    .map(x -> {\n        System.out.println(\"Map: \" + x);\n        return x * 2;\n    })\n    .forEach(System.out::println);\n```\n\n👉 Output shows **one-by-one processing**, not full pass\n\n---\n\n## Output Flow 🔥\n\n```\nFilter: 1\nFilter: 2\nFilter: 3\nMap: 3\n6\nFilter: 4\nMap: 4\n8\n...\n```\n\n👉 Each element goes through **entire pipeline step-by-step**\n\n---\n\n## Benefits\n\n* Better performance\n* Avoids unnecessary computation\n* Supports short-circuiting (`findFirst`, `anyMatch`)\n\n---\n\n## One-line Answer 💡\n\n👉 Lazy evaluation means **stream operations are executed only when a terminal operation is invoked, and elements are processed one at a time through the pipeline**.\n\n---\n\nNext?\n👉 **Stream pipeline internal working (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37977,7 +37993,11 @@
     "name": "041 What is pipeline processing in Streams?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Pipeline Processing (Stream API)\n\n👉 **Definition (crisp)**\nPipeline processing means **a sequence of operations (source → intermediate → terminal) applied on a stream**.\n\n---\n\n## Structure\n\n```java id=\"pp1\"\nsource → intermediate ops → terminal op\n```\n\n---\n\n## Example\n\n```java id=\"pp2\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()                      // source\n    .filter(x -> x > 2)           // intermediate\n    .map(x -> x * 2)              // intermediate\n    .forEach(System.out::println); // terminal\n```\n\n---\n\n## Key Concept 🔥 (Element-wise Processing)\n\n```java id=\"pp3\"\nlist.stream()\n    .filter(x -> {\n        System.out.println(\"Filter: \" + x);\n        return x > 2;\n    })\n    .map(x -> {\n        System.out.println(\"Map: \" + x);\n        return x * 2;\n    })\n    .forEach(System.out::println);\n```\n\n👉 Execution happens **per element**, not step-by-step for whole list\n\n---\n\n## Flow 🔥\n\n```java id=\"pp4\"\n// 1 → filter → map → output\n// 2 → filter → map → output\n// 3 → filter → map → output\n```\n\n---\n\n## Benefits\n\n* Lazy execution\n* Better performance\n* Less memory usage\n* Supports parallel processing\n\n---\n\n## One-line Answer 💡\n\n👉 Pipeline processing in streams is a **chain of operations where data flows from source through intermediate operations to a terminal operation, processed element by element**.\n\n---\n\nNext?\n👉 **Why Streams are faster than loops (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37997,7 +38017,11 @@
     "name": "042 What is a stream source?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Stream Source (Java 8)\n\n👉 **Definition (crisp)**\nA stream source is the **origin from where a stream is created**.\n\n---\n\n## Common Sources\n\n---\n\n### 1. Collection\n\n```java id=\"ss1\"\nList<Integer> list = Arrays.asList(1,2,3);\n\nStream<Integer> s = list.stream();\n```\n\n---\n\n### 2. Arrays\n\n```java id=\"ss2\"\nint[] arr = {1,2,3};\n\nIntStream s = Arrays.stream(arr);\n```\n\n---\n\n### 3. Stream.of()\n\n```java id=\"ss3\"\nStream<String> s = Stream.of(\"A\", \"B\", \"C\");\n```\n\n---\n\n### 4. Files\n\n```java id=\"ss4\"\nStream<String> lines = Files.lines(Paths.get(\"file.txt\"));\n```\n\n---\n\n### 5. Generate / Iterate\n\n```java id=\"ss5\"\n// infinite stream\nStream<Integer> s1 = Stream.generate(() -> 1);\n\n// sequence\nStream<Integer> s2 = Stream.iterate(0, n -> n + 1);\n```\n\n---\n\n### 6. Primitive Streams\n\n```java id=\"ss6\"\nIntStream range = IntStream.range(1, 5);\n```\n\n---\n\n## Full Example\n\n```java id=\"ss7\"\nStream<Integer> s = Stream.of(1,2,3,4);\n\ns.filter(x -> x > 2)\n .forEach(System.out::println);\n```\n\n---\n\n## One-line Answer 💡\n\n👉 A stream source is the **data provider from which a stream is created**, such as collections, arrays, files, or generators.\n\n---\n\nNext?\n👉 **Can streams be reused? (very important trap 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38017,7 +38041,11 @@
     "name": "043 Can streams be reused?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Can Streams be Reused?\n\n👉 **NO ❌ — Streams cannot be reused**\n\n---\n\n## Example (Wrong ❌)\n\n```java id=\"sr1\"\nStream<Integer> s = Stream.of(1,2,3);\n\ns.forEach(System.out::println);\n\n// reuse ❌\ns.forEach(System.out::println); // Exception\n```\n\n---\n\n## Exception 🔥\n\n```java id=\"sr2\"\njava.lang.IllegalStateException: stream has already been operated upon or closed\n```\n\n---\n\n## Why?\n\n👉 Stream is **consumed after terminal operation**\n\n```java id=\"sr3\"\n// terminal operation closes stream\ns.forEach(...);\n```\n\n---\n\n## Correct Way ✅\n\n### 1. Create New Stream\n\n```java id=\"sr4\"\nStream<Integer> s1 = Stream.of(1,2,3);\ns1.forEach(System.out::println);\n\nStream<Integer> s2 = Stream.of(1,2,3);\ns2.forEach(System.out::println);\n```\n\n---\n\n### 2. Use Supplier (Advanced 🔥)\n\n```java id=\"sr5\"\nSupplier<Stream<Integer>> supplier =\n        () -> Stream.of(1,2,3);\n\nsupplier.get().forEach(System.out::println);\nsupplier.get().forEach(System.out::println);\n```\n\n---\n\n## Key Points\n\n* Stream = **single-use**\n* Terminal operation = **closes stream**\n* Need new stream for reuse\n\n---\n\n## One-line Answer 💡\n\n👉 No, streams cannot be reused because **once a terminal operation is performed, the stream is consumed and closed**.\n\n---\n\nNext?\n👉 **What happens internally when stream is reused (deep JVM behavior 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38037,7 +38065,11 @@
     "name": "044 What happens if you reuse a stream?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + deep + code-heavy 👇\n\n---\n\n## What happens internally if you reuse a Stream?\n\n👉 **Runtime Exception is thrown**\n👉 Because stream is **already consumed & closed**\n\n---\n\n## Example ❌\n\n```java id=\"rs1\"\nStream<Integer> s = Stream.of(1,2,3);\n\ns.forEach(System.out::println);\n\n// reuse\ns.forEach(System.out::println); // ❌\n```\n\n---\n\n## Exception 🔥\n\n```java id=\"rs2\"\njava.lang.IllegalStateException:\nstream has already been operated upon or closed\n```\n\n---\n\n## Internal Working (Important 🔥)\n\n### 1. Stream has a “consumed” flag\n\n```java id=\"rs3\"\n// internal idea\nboolean consumed = false;\n```\n\n---\n\n### 2. Terminal Operation\n\n```java id=\"rs4\"\ns.forEach(...);\n```\n\n👉 Internally:\n\n```java id=\"rs5\"\nif (consumed) throw exception;\nconsumed = true;\n```\n\n---\n\n### 3. Second Call\n\n```java id=\"rs6\"\ns.forEach(...);\n```\n\n👉 JVM checks:\n\n```java id=\"rs7\"\nif (consumed == true)\n    throw IllegalStateException;\n```\n\n---\n\n## Why This Design? 🔥\n\n* Streams are **one-time pipelines**\n* Prevents inconsistent results\n* Supports **lazy + optimized execution**\n* Enables **parallel processing safely**\n\n---\n\n## Real Internal Concept\n\n```java id=\"rs8\"\n// Stream pipeline = linked stages\nsource → filter → map → terminal\n\n// after terminal → pipeline destroyed\n```\n\n---\n\n## Correct Approach ✅\n\n```java id=\"rs9\"\nSupplier<Stream<Integer>> sup =\n        () -> Stream.of(1,2,3);\n\nsup.get().forEach(System.out::println);\nsup.get().forEach(System.out::println);\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Internally, a stream maintains a **consumed state**, and after a terminal operation it is marked as closed, so reusing it throws an **IllegalStateException**.\n\n---\n\nNext?\n👉 **Primitive Streams (IntStream, LongStream, DoubleStream) 🔥**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38057,7 +38089,11 @@
     "name": "045 What are primitive streams?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Primitive Streams (Java 8)\n\n👉 **Definition (crisp)**\nPrimitive streams are specialized streams for **primitive types** to avoid boxing/unboxing overhead.\n\n---\n\n## Types 🔥\n\n```java id=\"ps1\"\n// int stream\nIntStream\n\n// long stream\nLongStream\n\n// double stream\nDoubleStream\n```\n\n---\n\n## Why Needed?\n\n```java id=\"ps2\"\n// Normal Stream (boxing ❌)\nStream<Integer> s = list.stream();\n\n// Primitive Stream (no boxing ✅)\nIntStream s = IntStream.of(1,2,3);\n```\n\n👉 Improves **performance + memory**\n\n---\n\n## Example 1 (Basic)\n\n```java id=\"ps3\"\nIntStream s = IntStream.of(1,2,3,4);\n\ns.forEach(System.out::println);\n```\n\n---\n\n## Example 2 (Range)\n\n```java id=\"ps4\"\nIntStream.range(1, 5)\n         .forEach(System.out::println);\n```\n\n---\n\n## Example 3 (Sum, Avg 🔥)\n\n```java id=\"ps5\"\nint sum = IntStream.of(1,2,3,4).sum();\n\ndouble avg = IntStream.of(1,2,3,4).average().getAsDouble();\n```\n\n---\n\n## Example 4 (Convert to Stream)\n\n```java id=\"ps6\"\nIntStream s = IntStream.of(1,2,3);\n\nStream<Integer> boxed = s.boxed();\n```\n\n---\n\n## Example 5 (Map)\n\n```java id=\"ps7\"\nIntStream.range(1,5)\n         .map(x -> x * 2)\n         .forEach(System.out::println);\n```\n\n---\n\n## Key Points\n\n* No boxing/unboxing\n* Faster than `Stream<Integer>`\n* Extra methods: `sum()`, `average()`, `max()`\n* Convert using `.boxed()`\n\n---\n\n## One-line Answer 💡\n\n👉 Primitive streams are specialized streams like **IntStream, LongStream, and DoubleStream** that operate directly on primitive data types for better performance.\n\n---\n\nNext?\n👉 **map vs flatMap (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38093,7 +38129,11 @@
     "name": "046 What is map() in Stream?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `map()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`map()` is an intermediate operation used to **transform each element of a stream**.\n\n---\n\n## Method Signature\n\n```java id=\"m1\"\n<R> Stream<R> map(Function<? super T, ? extends R> mapper);\n```\n\n---\n\n## Basic Example\n\n```java id=\"m2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nlist.stream()\n    .map(x -> x * 2)\n    .forEach(System.out::println);\n```\n\n---\n\n## String Transformation\n\n```java id=\"m3\"\nList<String> list = Arrays.asList(\"java\", \"spring\");\n\nlist.stream()\n    .map(String::toUpperCase)\n    .forEach(System.out::println);\n```\n\n---\n\n## Object Transformation 🔥\n\n```java id=\"m4\"\nclass User {\n    String name;\n    User(String name) { this.name = name; }\n}\n\nList<User> users = Arrays.asList(\n    new User(\"Prem\"),\n    new User(\"Ram\")\n);\n\nList<String> names = users.stream()\n    .map(u -> u.name)\n    .collect(Collectors.toList());\n```\n\n---\n\n## Key Points\n\n* Transforms **each element**\n* Returns **new Stream**\n* Lazy operation\n* Uses `Function<T, R>`\n\n---\n\n## map vs filter 🔥\n\n```java id=\"m5\"\n// map → transform\n.map(x -> x * 2)\n\n// filter → condition\n.filter(x -> x > 2)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `map()` is used to **transform each element of a stream into another form using a function**.\n\n---\n\nNext?\n👉 **flatMap vs map (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38113,7 +38153,11 @@
     "name": "047 What is filter() in Stream?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `filter()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`filter()` is an intermediate operation used to **select elements based on a condition**.\n\n---\n\n## Method Signature\n\n```java id=\"f1\"\nStream<T> filter(Predicate<? super T> predicate);\n```\n\n---\n\n## Basic Example\n\n```java id=\"f2\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .filter(x -> x % 2 == 0)\n    .forEach(System.out::println); // 2, 4\n```\n\n---\n\n## String Example\n\n```java id=\"f3\"\nList<String> list = Arrays.asList(\"java\", \"spring\", \"go\");\n\nlist.stream()\n    .filter(s -> s.length() > 4)\n    .forEach(System.out::println);\n```\n\n---\n\n## Object Filtering 🔥\n\n```java id=\"f4\"\nclass User {\n    String name;\n    int age;\n\n    User(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n}\n\nList<User> users = Arrays.asList(\n    new User(\"Prem\", 25),\n    new User(\"Ram\", 17)\n);\n\nusers.stream()\n    .filter(u -> u.age >= 18)\n    .forEach(u -> System.out.println(u.name));\n```\n\n---\n\n## Key Points\n\n* Uses `Predicate<T>`\n* Returns **new Stream**\n* Lazy operation\n* Used for **condition-based filtering**\n\n---\n\n## filter vs map 🔥\n\n```java id=\"f5\"\n// filter → condition\n.filter(x -> x > 2)\n\n// map → transform\n.map(x -> x * 2)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `filter()` is used to **select elements from a stream based on a boolean condition**.\n\n---\n\nNext?\n👉 **flatMap() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38133,7 +38177,11 @@
     "name": "048 What is flatMap()?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `flatMap()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`flatMap()` is used to **transform each element into a stream and then flatten all streams into a single stream**.\n\n---\n\n## Method Signature\n\n```java id=\"fm1\"\n<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper);\n```\n\n---\n\n## Problem it Solves 🔥\n\n```java id=\"fm2\"\n// Input (nested list)\nList<List<Integer>> list = Arrays.asList(\n    Arrays.asList(1,2),\n    Arrays.asList(3,4)\n);\n\n// Without flatMap ❌ → Stream<List<Integer>>\nlist.stream().map(x -> x.stream());\n```\n\n---\n\n## Using flatMap ✅\n\n```java id=\"fm3\"\nlist.stream()\n    .flatMap(x -> x.stream())\n    .forEach(System.out::println); // 1 2 3 4\n```\n\n---\n\n## String Example\n\n```java id=\"fm4\"\nList<String> list = Arrays.asList(\"java\", \"go\");\n\nlist.stream()\n    .flatMap(s -> Arrays.stream(s.split(\"\")))\n    .forEach(System.out::println);\n```\n\n---\n\n## Real Use Case 🔥\n\n```java id=\"fm5\"\nclass User {\n    List<String> roles;\n}\n\nList<User> users = ...;\n\nusers.stream()\n     .flatMap(u -> u.roles.stream())\n     .forEach(System.out::println);\n```\n\n---\n\n## map vs flatMap 🔥\n\n```java id=\"fm6\"\n// map → 1-to-1\n.map(x -> x * 2)\n\n// flatMap → 1-to-many + flatten\n.flatMap(x -> Stream.of(x, x*2))\n```\n\n---\n\n## Key Points\n\n* Flattens nested structures\n* Avoids `Stream<Stream<T>>`\n* Used for **list of lists / nested data**\n\n---\n\n## One-line Answer 💡\n\n👉 `flatMap()` is used to **convert each element into a stream and flatten the result into a single stream**.\n\n---\n\nNext?\n👉 **map vs flatMap deep difference (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38153,7 +38201,11 @@
     "name": "049 Difference between map() and flatMap()?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## map() vs flatMap() (Java 8)\n\n---\n\n## 1. Basic Idea\n\n```java id=\"mf1\"\n// map → 1 element → 1 element\n.map(x -> x * 2)\n\n// flatMap → 1 element → multiple elements + flatten\n.flatMap(x -> Stream.of(x, x * 2))\n```\n\n---\n\n## 2. Return Type\n\n```java id=\"mf2\"\n// map → Stream<R>\nStream<String> s1 = list.stream().map(x -> x.toString());\n\n// flatMap → flattened Stream<R>\nStream<String> s2 = list.stream().flatMap(x -> Stream.of(x.toString()));\n```\n\n---\n\n## 3. Nested Structure 🔥\n\n```java id=\"mf3\"\nList<List<Integer>> list = Arrays.asList(\n    Arrays.asList(1,2),\n    Arrays.asList(3,4)\n);\n\n// map ❌ → Stream<Stream<Integer>>\nlist.stream()\n    .map(l -> l.stream());\n\n// flatMap ✅ → Stream<Integer>\nlist.stream()\n    .flatMap(l -> l.stream())\n    .forEach(System.out::println);\n```\n\n---\n\n## 4. Real Use Case\n\n```java id=\"mf4\"\n// map → simple transformation\nList<String> names = users.stream()\n    .map(u -> u.name)\n    .collect(Collectors.toList());\n\n// flatMap → nested list flatten\nList<String> roles = users.stream()\n    .flatMap(u -> u.roles.stream())\n    .collect(Collectors.toList());\n```\n\n---\n\n## 5. Visualization 🔥\n\n```java id=\"mf5\"\n// map\n[1,2,3] → [2,4,6]\n\n// flatMap\n[[1,2],[3,4]] → [1,2,3,4]\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"mf6\"\n// map → one-to-one transformation\n// flatMap → one-to-many + flatten\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `map()` transforms each element individually, while `flatMap()` transforms and **flattens nested structures into a single stream**.\n\n---\n\nNext?\n👉 **distinct(), sorted(), limit() (important Stream ops 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38173,7 +38225,11 @@
     "name": "050 What is distinct()?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `distinct()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`distinct()` is an intermediate operation used to **remove duplicate elements from a stream**.\n\n---\n\n## Method Signature\n\n```java id=\"d1\"\nStream<T> distinct();\n```\n\n---\n\n## Basic Example\n\n```java id=\"d2\"\nList<Integer> list = Arrays.asList(1,2,2,3,3,4);\n\nlist.stream()\n    .distinct()\n    .forEach(System.out::println); // 1 2 3 4\n```\n\n---\n\n## String Example\n\n```java id=\"d3\"\nList<String> list = Arrays.asList(\"java\", \"java\", \"spring\");\n\nlist.stream()\n    .distinct()\n    .forEach(System.out::println);\n```\n\n---\n\n## How It Works 🔥\n\n👉 Internally uses:\n\n```java id=\"d4\"\nequals() + hashCode()\n```\n\n---\n\n## Custom Object Example ⚠️\n\n```java id=\"d5\"\nclass User {\n    int id;\n    User(int id) { this.id = id; }\n}\n\nList<User> list = Arrays.asList(new User(1), new User(1));\n\nlist.stream()\n    .distinct()\n    .forEach(u -> System.out.println(u.id));\n```\n\n👉 Without overriding `equals()` & `hashCode()` → duplicates NOT removed ❌\n\n---\n\n## Key Points\n\n* Removes duplicates\n* Uses `equals()`\n* Maintains order\n* Lazy operation\n\n---\n\n## One-line Answer 💡\n\n👉 `distinct()` is used to **remove duplicate elements from a stream based on equals() comparison**.\n\n---\n\nNext?\n👉 **sorted() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38193,7 +38249,11 @@
     "name": "051 What is sorted()?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `sorted()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`sorted()` is an intermediate operation used to **sort elements of a stream**.\n\n---\n\n## Method Signatures\n\n```java id=\"srt1\"\n// Natural ordering\nStream<T> sorted();\n\n// Custom comparator\nStream<T> sorted(Comparator<? super T> comparator);\n```\n\n---\n\n## Basic Example (Natural Order)\n\n```java id=\"srt2\"\nList<Integer> list = Arrays.asList(5,2,4,1,3);\n\nlist.stream()\n    .sorted()\n    .forEach(System.out::println); // 1 2 3 4 5\n```\n\n---\n\n## Reverse Order\n\n```java id=\"srt3\"\nlist.stream()\n    .sorted(Comparator.reverseOrder())\n    .forEach(System.out::println); // 5 4 3 2 1\n```\n\n---\n\n## String Sorting\n\n```java id=\"srt4\"\nList<String> list = Arrays.asList(\"java\", \"go\", \"spring\");\n\nlist.stream()\n    .sorted()\n    .forEach(System.out::println);\n```\n\n---\n\n## Custom Object Sorting 🔥\n\n```java id=\"srt5\"\nclass User {\n    String name;\n    int age;\n\n    User(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n}\n\nList<User> users = Arrays.asList(\n    new User(\"Prem\", 25),\n    new User(\"Ram\", 20)\n);\n\nusers.stream()\n    .sorted((u1, u2) -> u1.age - u2.age)\n    .forEach(u -> System.out.println(u.name));\n```\n\n---\n\n## Using Method Reference\n\n```java id=\"srt6\"\nusers.stream()\n    .sorted(Comparator.comparing(u -> u.age))\n    .forEach(u -> System.out.println(u.name));\n```\n\n---\n\n## Key Points\n\n* Returns new sorted stream\n* Uses natural order or comparator\n* Stable sorting\n* Lazy operation\n\n---\n\n## One-line Answer 💡\n\n👉 `sorted()` is used to **sort elements in a stream either using natural order or a custom comparator**.\n\n---\n\nNext?\n👉 **limit() & skip() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38213,7 +38273,11 @@
     "name": "052 What is limit()?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `limit()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`limit(n)` is an intermediate operation used to **restrict the stream to first `n` elements**.\n\n---\n\n## Method Signature\n\n```java id=\"l1\"\nStream<T> limit(long maxSize);\n```\n\n---\n\n## Basic Example\n\n```java id=\"l2\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .limit(3)\n    .forEach(System.out::println); // 1 2 3\n```\n\n---\n\n## With Sorting 🔥\n\n```java id=\"l3\"\nlist.stream()\n    .sorted()\n    .limit(2)\n    .forEach(System.out::println); // smallest 2 elements\n```\n\n---\n\n## With Infinite Stream 🚀\n\n```java id=\"l4\"\nStream<Integer> s = Stream.iterate(1, n -> n + 1);\n\ns.limit(5)\n .forEach(System.out::println); // 1 2 3 4 5\n```\n\n---\n\n## Pagination Style Use Case\n\n```java id=\"l5\"\nlist.stream()\n    .skip(2)\n    .limit(2)\n    .forEach(System.out::println);\n```\n\n---\n\n## Key Points\n\n* Returns first `n` elements\n* Works well with infinite streams\n* Lazy operation\n* Short-circuiting operation\n\n---\n\n## One-line Answer 💡\n\n👉 `limit()` is used to **truncate a stream to a specified number of elements**.\n\n---\n\nNext?\n👉 **skip() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38233,7 +38297,11 @@
     "name": "053 What is skip()?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `skip()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`skip(n)` is an intermediate operation used to **ignore the first `n` elements of a stream**.\n\n---\n\n## Method Signature\n\n```java id=\"sk1\"\nStream<T> skip(long n);\n```\n\n---\n\n## Basic Example\n\n```java id=\"sk2\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .skip(2)\n    .forEach(System.out::println); // 3 4 5\n```\n\n---\n\n## With limit() (Pagination 🔥)\n\n```java id=\"sk3\"\nlist.stream()\n    .skip(2)\n    .limit(2)\n    .forEach(System.out::println); // 3 4\n```\n\n---\n\n## With Sorted\n\n```java id=\"sk4\"\nlist.stream()\n    .sorted()\n    .skip(1)\n    .forEach(System.out::println);\n```\n\n---\n\n## Key Points\n\n* Skips first `n` elements\n* Returns remaining stream\n* Lazy operation\n* Often used with `limit()` for pagination\n\n---\n\n## One-line Answer 💡\n\n👉 `skip()` is used to **ignore a specified number of elements from the beginning of a stream**.\n\n---\n\nNext?\n👉 **peek() (very tricky interview question 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38253,7 +38321,11 @@
     "name": "054 What is peek()?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `peek()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`peek()` is an intermediate operation used to **perform an action (mainly for debugging) on each element without modifying it**.\n\n---\n\n## Method Signature\n\n```java id=\"pk1\"\nStream<T> peek(Consumer<? super T> action);\n```\n\n---\n\n## Basic Example\n\n```java id=\"pk2\"\nList<Integer> list = Arrays.asList(1,2,3);\n\nlist.stream()\n    .peek(x -> System.out.println(\"Processing: \" + x))\n    .forEach(System.out::println);\n```\n\n---\n\n## Debugging Use Case 🔥\n\n```java id=\"pk3\"\nlist.stream()\n    .filter(x -> x > 1)\n    .peek(x -> System.out.println(\"After filter: \" + x))\n    .map(x -> x * 2)\n    .peek(x -> System.out.println(\"After map: \" + x))\n    .forEach(System.out::println);\n```\n\n---\n\n## Important ⚠️\n\n```java id=\"pk4\"\nlist.stream()\n    .peek(System.out::println);\n// ❌ no output (no terminal operation)\n```\n\n👉 `peek()` runs only when a **terminal operation** is present\n\n---\n\n## Key Points\n\n* Used for **debugging / logging**\n* Does NOT modify elements\n* Lazy operation\n* Uses `Consumer<T>`\n\n---\n\n## ⚠️ Not for Business Logic\n\n```java id=\"pk5\"\n// ❌ bad practice\n.peek(x -> x = x * 2);\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `peek()` is used to **inspect elements in a stream pipeline without modifying them, mainly for debugging purposes**.\n\n---\n\nNext?\n👉 **collect() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38273,7 +38345,11 @@
     "name": "055 When should you use peek()?",
     "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + practical + code-heavy 👇\n\n---\n\n## When should you use `peek()`?\n\n👉 **Main use = Debugging / Logging inside stream pipeline**\n\n---\n\n## 1. Debug Intermediate Steps ✅\n\n```java id=\"pku1\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nlist.stream()\n    .filter(x -> x > 2)\n    .peek(x -> System.out.println(\"After filter: \" + x))\n    .map(x -> x * 2)\n    .peek(x -> System.out.println(\"After map: \" + x))\n    .forEach(System.out::println);\n```\n\n---\n\n## 2. Trace Pipeline Flow 🔥\n\n```java id=\"pku2\"\nlist.stream()\n    .peek(x -> System.out.println(\"Start: \" + x))\n    .filter(x -> x % 2 == 0)\n    .peek(x -> System.out.println(\"Filtered: \" + x))\n    .forEach(System.out::println);\n```\n\n---\n\n## 3. Logging (Non-critical side effects)\n\n```java id=\"pku3\"\nlist.stream()\n    .peek(x -> logger.info(\"Processing: \" + x))\n    .forEach(System.out::println);\n```\n\n---\n\n## ❌ When NOT to Use\n\n```java id=\"pku4\"\n// ❌ business logic (wrong)\n.peek(x -> x = x * 2);\n```\n\n👉 Use `map()` instead:\n\n```java id=\"pku5\"\n.map(x -> x * 2);\n```\n\n---\n\n## Important Rule 🔥\n\n```java id=\"pku6\"\n// peek runs only with terminal operation\nlist.stream()\n    .peek(System.out::println); // ❌ no execution\n```\n\n---\n\n## Key Points\n\n* Use for **debugging / inspection**\n* Should NOT modify data\n* Lazy (needs terminal op)\n* Uses `Consumer`\n\n---\n\n## One-line Answer 💡\n\n👉 Use `peek()` for **debugging or logging inside a stream pipeline, not for modifying data or business logic**.\n\n---\n\nNext?\n👉 **collect() deep dive (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38309,7 +38385,11 @@
     "name": "056 What is collect()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `collect()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`collect()` is a terminal operation used to **convert a stream into a collection or result container**.\n\n---\n\n## Method Signature\n\n```java id=\"col1\"\n<R, A> R collect(Collector<? super T, A, R> collector);\n```\n\n---\n\n## Basic Example (List)\n\n```java id=\"col2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nList<Integer> result = list.stream()\n    .filter(x -> x > 2)\n    .collect(Collectors.toList());\n\nSystem.out.println(result);\n```\n\n---\n\n## Convert to Set\n\n```java id=\"col3\"\nSet<Integer> set = list.stream()\n    .collect(Collectors.toSet());\n```\n\n---\n\n## Joining Strings 🔥\n\n```java id=\"col4\"\nList<String> list = Arrays.asList(\"Java\", \"Spring\");\n\nString result = list.stream()\n    .collect(Collectors.joining(\", \"));\n\nSystem.out.println(result);\n```\n\n---\n\n## Grouping\n\n```java id=\"col5\"\nMap<Integer, List<Integer>> map = list.stream()\n    .collect(Collectors.groupingBy(x -> x % 2));\n\nSystem.out.println(map);\n```\n\n---\n\n## Counting\n\n```java id=\"col6\"\nlong count = list.stream()\n    .collect(Collectors.counting());\n```\n\n---\n\n## Custom Collect (Advanced 🔥)\n\n```java id=\"col7\"\nList<Integer> result = list.stream()\n    .collect(\n        ArrayList::new,\n        (l, x) -> l.add(x),\n        (l1, l2) -> l1.addAll(l2)\n    );\n```\n\n---\n\n## Key Points\n\n* Terminal operation\n* Converts stream → collection/result\n* Uses `Collector`\n* Very flexible (grouping, joining, etc.)\n\n---\n\n## One-line Answer 💡\n\n👉 `collect()` is used to **accumulate stream elements into a collection or any other result using a Collector**.\n\n---\n\nNext?\n👉 **reduce() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38329,7 +38409,11 @@
     "name": "057 What is forEach()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `forEach()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`forEach()` is a terminal operation used to **iterate over elements and perform an action**.\n\n---\n\n## Method Signature\n\n```java id=\"fe1\"\nvoid forEach(Consumer<? super T> action);\n```\n\n---\n\n## Basic Example\n\n```java id=\"fe2\"\nList<Integer> list = Arrays.asList(1,2,3);\n\nlist.stream()\n    .forEach(x -> System.out.println(x));\n```\n\n---\n\n## Using Method Reference\n\n```java id=\"fe3\"\nlist.stream()\n    .forEach(System.out::println);\n```\n\n---\n\n## With Stream Operations\n\n```java id=\"fe4\"\nlist.stream()\n    .filter(x -> x > 1)\n    .map(x -> x * 2)\n    .forEach(System.out::println);\n```\n\n---\n\n## Parallel Stream ⚠️\n\n```java id=\"fe5\"\nlist.parallelStream()\n    .forEach(System.out::println); // order NOT guaranteed\n```\n\n---\n\n## Ordered Version 🔥\n\n```java id=\"fe6\"\nlist.parallelStream()\n    .forEachOrdered(System.out::println); // maintains order\n```\n\n---\n\n## Key Points\n\n* Terminal operation\n* Uses `Consumer<T>`\n* Does NOT return value\n* Order not guaranteed in parallel\n\n---\n\n## One-line Answer 💡\n\n👉 `forEach()` is a terminal operation used to **process each element of a stream by applying an action**.\n\n---\n\nNext?\n👉 **reduce() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38349,7 +38433,11 @@
     "name": "058 Difference between forEach() and forEachOrdered()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## forEach() vs forEachOrdered() (Java 8)\n\n---\n\n## 1. Order Guarantee\n\n```java id=\"feo1\"\n// forEach → NO order guarantee (parallel)\n\nlist.parallelStream()\n    .forEach(System.out::println);\n```\n\n```java id=\"feo2\"\n// forEachOrdered → maintains order\n\nlist.parallelStream()\n    .forEachOrdered(System.out::println);\n```\n\n---\n\n## 2. Sequential Stream\n\n```java id=\"feo3\"\n// Both behave SAME in sequential stream\n\nlist.stream()\n    .forEach(System.out::println);\n\nlist.stream()\n    .forEachOrdered(System.out::println);\n```\n\n---\n\n## 3. Parallel Stream Behavior 🔥\n\n```java id=\"feo4\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\n// forEach → unordered output (fast)\nlist.parallelStream()\n    .forEach(System.out::print);\n\n// forEachOrdered → ordered output (slower)\nlist.parallelStream()\n    .forEachOrdered(System.out::print);\n```\n\n---\n\n## 4. Performance\n\n```java id=\"feo5\"\n// forEach → faster (no ordering constraint)\n\n// forEachOrdered → slower (maintains order)\n```\n\n---\n\n## 5. Use Case\n\n```java id=\"feo6\"\n// Use forEach → when order doesn't matter\n\n// Use forEachOrdered → when order is important\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"feo7\"\n// forEach        → unordered (parallel), faster\n// forEachOrdered → ordered, slightly slower\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `forEach()` may process elements in any order (especially in parallel), while `forEachOrdered()` **guarantees encounter order but may reduce performance**.\n\n---\n\nNext?\n👉 **reduce() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38369,7 +38457,11 @@
     "name": "059 What is reduce()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `reduce()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`reduce()` is a terminal operation used to **combine all elements of a stream into a single result**.\n\n---\n\n## Method Variants\n\n```java id=\"rd1\"\n// 1. With identity\nT reduce(T identity, BinaryOperator<T> accumulator);\n\n// 2. Without identity\nOptional<T> reduce(BinaryOperator<T> accumulator);\n\n// 3. With combiner (parallel)\n<U> U reduce(U identity,\n             BiFunction<U, ? super T, U> accumulator,\n             BinaryOperator<U> combiner);\n```\n\n---\n\n## Example 1 (Sum)\n\n```java id=\"rd2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nint sum = list.stream()\n    .reduce(0, (a, b) -> a + b);\n\nSystem.out.println(sum); // 10\n```\n\n---\n\n## Example 2 (Max)\n\n```java id=\"rd3\"\nOptional<Integer> max = list.stream()\n    .reduce((a, b) -> a > b ? a : b);\n\nSystem.out.println(max.get());\n```\n\n---\n\n## Example 3 (String Join)\n\n```java id=\"rd4\"\nList<String> list = Arrays.asList(\"Java\", \"Stream\");\n\nString result = list.stream()\n    .reduce(\"\", (a, b) -> a + \" \" + b);\n\nSystem.out.println(result);\n```\n\n---\n\n## Example 4 (Parallel Reduce 🔥)\n\n```java id=\"rd5\"\nint sum = list.parallelStream()\n    .reduce(0,\n        (a, b) -> a + b,   // accumulator\n        (x, y) -> x + y    // combiner\n    );\n```\n\n---\n\n## How It Works 🔥\n\n```java id=\"rd6\"\n// [1,2,3,4]\n// step1: ((0+1)+2)+3)+4\n```\n\n---\n\n## Using Method Reference\n\n```java id=\"rd7\"\nint sum = list.stream()\n    .reduce(0, Integer::sum);\n```\n\n---\n\n## Key Points\n\n* Reduces stream → single value\n* Uses `BinaryOperator`\n* Identity = initial value\n* Supports parallel processing\n\n---\n\n## One-line Answer 💡\n\n👉 `reduce()` is used to **aggregate all elements of a stream into a single result using a combining function**.\n\n---\n\nNext?\n👉 **collect vs reduce (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38389,7 +38481,11 @@
     "name": "060 What is count()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `count()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`count()` is a terminal operation used to **return the number of elements in a stream**.\n\n---\n\n## Method Signature\n\n```java id=\"cnt1\"\nlong count();\n```\n\n---\n\n## Basic Example\n\n```java id=\"cnt2\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlong count = list.stream()\n    .count();\n\nSystem.out.println(count); // 5\n```\n\n---\n\n## With filter() 🔥\n\n```java id=\"cnt3\"\nlong count = list.stream()\n    .filter(x -> x % 2 == 0)\n    .count();\n\nSystem.out.println(count); // 2\n```\n\n---\n\n## With Strings\n\n```java id=\"cnt4\"\nList<String> list = Arrays.asList(\"java\", \"go\", \"spring\");\n\nlong count = list.stream()\n    .filter(s -> s.length() > 4)\n    .count();\n```\n\n---\n\n## Important Points\n\n* Returns `long`\n* Terminal operation\n* Triggers execution\n* Often used with `filter()`\n\n---\n\n## One-line Answer 💡\n\n👉 `count()` is a terminal operation used to **return the total number of elements in a stream**.\n\n---\n\nNext?\n👉 **anyMatch(), allMatch(), noneMatch() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38409,7 +38505,11 @@
     "name": "061 What is anyMatch()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `anyMatch()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`anyMatch()` is a terminal operation used to **check if ANY element in the stream matches a condition**.\n\n---\n\n## Method Signature\n\n```java id=\"am1\"\nboolean anyMatch(Predicate<? super T> predicate);\n```\n\n---\n\n## Basic Example\n\n```java id=\"am2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nboolean result = list.stream()\n    .anyMatch(x -> x > 3);\n\nSystem.out.println(result); // true\n```\n\n---\n\n## String Example\n\n```java id=\"am3\"\nList<String> list = Arrays.asList(\"java\", \"go\", \"spring\");\n\nboolean result = list.stream()\n    .anyMatch(s -> s.length() > 5);\n\nSystem.out.println(result); // true\n```\n\n---\n\n## Short-Circuiting 🔥\n\n```java id=\"am4\"\nlist.stream()\n    .anyMatch(x -> {\n        System.out.println(\"Checking: \" + x);\n        return x > 2;\n    });\n```\n\n👉 Stops as soon as condition becomes **true**\n\n---\n\n## Output Flow\n\n```java id=\"am5\"\n// Checking: 1\n// Checking: 2\n// Checking: 3 → stops here\n```\n\n---\n\n## Key Points\n\n* Returns `boolean`\n* Uses `Predicate<T>`\n* Terminal operation\n* **Short-circuiting** (fast)\n\n---\n\n## One-line Answer 💡\n\n👉 `anyMatch()` checks whether **at least one element in the stream satisfies a given condition**.\n\n---\n\nNext?\n👉 **allMatch() vs noneMatch() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38429,7 +38529,11 @@
     "name": "062 What is allMatch()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `allMatch()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`allMatch()` is a terminal operation used to **check if ALL elements satisfy a condition**.\n\n---\n\n## Method Signature\n\n```java id=\"am1\"\nboolean allMatch(Predicate<? super T> predicate);\n```\n\n---\n\n## Basic Example\n\n```java id=\"am2\"\nList<Integer> list = Arrays.asList(2,4,6);\n\nboolean result = list.stream()\n    .allMatch(x -> x % 2 == 0);\n\nSystem.out.println(result); // true\n```\n\n---\n\n## Negative Case\n\n```java id=\"am3\"\nList<Integer> list = Arrays.asList(2,4,5);\n\nboolean result = list.stream()\n    .allMatch(x -> x % 2 == 0);\n\nSystem.out.println(result); // false\n```\n\n---\n\n## Short-Circuiting 🔥\n\n```java id=\"am4\"\nlist.stream()\n    .allMatch(x -> {\n        System.out.println(\"Checking: \" + x);\n        return x < 5;\n    });\n```\n\n👉 Stops as soon as condition becomes **false**\n\n---\n\n## Output Flow\n\n```java id=\"am5\"\n// Checking: 2\n// Checking: 4\n// Checking: 5 → stops here\n```\n\n---\n\n## Key Points\n\n* Returns `boolean`\n* Uses `Predicate<T>`\n* Terminal operation\n* **Short-circuiting**\n\n---\n\n## One-line Answer 💡\n\n👉 `allMatch()` checks whether **all elements in a stream satisfy a given condition**.\n\n---\n\nNext?\n👉 **noneMatch() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38449,7 +38553,11 @@
     "name": "063 What is noneMatch()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `noneMatch()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`noneMatch()` checks if **NO elements in the stream match a condition**.\n\n---\n\n## Method Signature\n\n```java id=\"nm1\"\nboolean noneMatch(Predicate<? super T> predicate);\n```\n\n---\n\n## Basic Example\n\n```java id=\"nm2\"\nList<Integer> list = Arrays.asList(1,3,5);\n\nboolean result = list.stream()\n    .noneMatch(x -> x % 2 == 0);\n\nSystem.out.println(result); // true\n```\n\n---\n\n## Negative Case\n\n```java id=\"nm3\"\nList<Integer> list = Arrays.asList(1,2,3);\n\nboolean result = list.stream()\n    .noneMatch(x -> x % 2 == 0);\n\nSystem.out.println(result); // false\n```\n\n---\n\n## Short-Circuiting 🔥\n\n```java id=\"nm4\"\nlist.stream()\n    .noneMatch(x -> {\n        System.out.println(\"Checking: \" + x);\n        return x > 2;\n    });\n```\n\n👉 Stops as soon as condition becomes **true**\n\n---\n\n## Output Flow\n\n```java id=\"nm5\"\n// Checking: 1\n// Checking: 2\n// Checking: 3 → stops here\n```\n\n---\n\n## Key Points\n\n* Returns `boolean`\n* Uses `Predicate<T>`\n* Terminal operation\n* **Short-circuiting**\n\n---\n\n## Quick Comparison 🔥\n\n```java id=\"nm6\"\n// anyMatch  → at least one matches\n// allMatch  → all must match\n// noneMatch → none should match\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `noneMatch()` checks whether **no elements in a stream satisfy a given condition**.\n\n---\n\nNext?\n👉 **findFirst() vs findAny() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38469,7 +38577,11 @@
     "name": "064 What is findFirst()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `findFirst()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`findFirst()` is a terminal operation used to **return the first element of a stream** (respecting encounter order).\n\n---\n\n## Method Signature\n\n```java id=\"ff1\"\nOptional<T> findFirst();\n```\n\n---\n\n## Basic Example\n\n```java id=\"ff2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nOptional<Integer> result = list.stream()\n    .findFirst();\n\nSystem.out.println(result.get()); // 1\n```\n\n---\n\n## With filter() 🔥\n\n```java id=\"ff3\"\nOptional<Integer> result = list.stream()\n    .filter(x -> x > 2)\n    .findFirst();\n\nSystem.out.println(result.get()); // 3\n```\n\n---\n\n## Safe Handling (Recommended)\n\n```java id=\"ff4\"\nlist.stream()\n    .filter(x -> x > 10)\n    .findFirst()\n    .ifPresent(System.out::println);\n```\n\n---\n\n## With Default Value\n\n```java id=\"ff5\"\nint val = list.stream()\n    .filter(x -> x > 10)\n    .findFirst()\n    .orElse(-1);\n```\n\n---\n\n## Key Points\n\n* Returns `Optional<T>`\n* Respects **encounter order**\n* Terminal operation\n* Short-circuiting\n\n---\n\n## Parallel Stream ⚠️\n\n```java id=\"ff6\"\nlist.parallelStream()\n    .findFirst(); // still maintains order\n```\n\n👉 May be slower than `findAny()`\n\n---\n\n## One-line Answer 💡\n\n👉 `findFirst()` returns the **first element of a stream wrapped in Optional, maintaining encounter order**.\n\n---\n\nNext?\n👉 **findAny() vs findFirst() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38489,7 +38601,11 @@
     "name": "065 What is findAny()?",
     "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `findAny()` in Stream (Java 8)\n\n👉 **Definition (crisp)**\n`findAny()` is a terminal operation used to **return any element from the stream** (no guarantee of order).\n\n---\n\n## Method Signature\n\n```java id=\"fa1\"\nOptional<T> findAny();\n```\n\n---\n\n## Basic Example\n\n```java id=\"fa2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nOptional<Integer> result = list.stream()\n    .findAny();\n\nSystem.out.println(result.get()); // usually 1 (sequential)\n```\n\n---\n\n## With filter() 🔥\n\n```java id=\"fa3\"\nOptional<Integer> result = list.stream()\n    .filter(x -> x > 2)\n    .findAny();\n\nSystem.out.println(result.get()); // 3 or 4\n```\n\n---\n\n## Parallel Stream 🚀\n\n```java id=\"fa4\"\nlist.parallelStream()\n    .findAny()\n    .ifPresent(System.out::println);\n```\n\n👉 May return **any element (fastest available)**\n\n---\n\n## Safe Handling\n\n```java id=\"fa5\"\nint val = list.stream()\n    .filter(x -> x > 10)\n    .findAny()\n    .orElse(-1);\n```\n\n---\n\n## Key Points\n\n* Returns `Optional<T>`\n* Does NOT guarantee order\n* Faster in parallel streams\n* Short-circuiting\n\n---\n\n## findFirst vs findAny 🔥\n\n```java id=\"fa6\"\n// findFirst → first element (ordered)\n// findAny   → any element (faster in parallel)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `findAny()` returns **any element from the stream (especially useful for parallel processing) without guaranteeing order**.\n\n---\n\nIf you want next:\n👉 **collect vs reduce (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38525,7 +38641,11 @@
     "name": "066 What is Collectors utility class?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors` Utility Class (Java 8)\n\n👉 **Definition (crisp)**\n`Collectors` is a utility class that provides **predefined implementations of `Collector`** used with `collect()` to transform stream data.\n\n---\n\n## Package\n\n```java id=\"cl1\"\nimport java.util.stream.Collectors;\n```\n\n---\n\n## Basic Example\n\n```java id=\"cl2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nList<Integer> result = list.stream()\n    .filter(x -> x > 2)\n    .collect(Collectors.toList());\n```\n\n---\n\n## Common Methods 🔥\n\n---\n\n### 1. toList()\n\n```java id=\"cl3\"\nlist.stream()\n    .collect(Collectors.toList());\n```\n\n---\n\n### 2. toSet()\n\n```java id=\"cl4\"\nlist.stream()\n    .collect(Collectors.toSet());\n```\n\n---\n\n### 3. joining()\n\n```java id=\"cl5\"\nList<String> list = Arrays.asList(\"Java\", \"Spring\");\n\nString s = list.stream()\n    .collect(Collectors.joining(\", \"));\n```\n\n---\n\n### 4. groupingBy()\n\n```java id=\"cl6\"\nMap<Integer, List<Integer>> map = list.stream()\n    .collect(Collectors.groupingBy(x -> x % 2));\n```\n\n---\n\n### 5. counting()\n\n```java id=\"cl7\"\nlong count = list.stream()\n    .collect(Collectors.counting());\n```\n\n---\n\n### 6. mapping()\n\n```java id=\"cl8\"\nList<String> names = list.stream()\n    .collect(Collectors.mapping(\n        x -> \"Num:\" + x,\n        Collectors.toList()\n    ));\n```\n\n---\n\n### 7. partitioningBy()\n\n```java id=\"cl9\"\nMap<Boolean, List<Integer>> map = list.stream()\n    .collect(Collectors.partitioningBy(x -> x % 2 == 0));\n```\n\n---\n\n## Key Points\n\n* Used with `collect()`\n* Provides ready-made collectors\n* Supports grouping, joining, mapping, etc.\n* Improves readability\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors` is a utility class that provides **predefined collector implementations to accumulate stream elements into collections or other results**.\n\n---\n\nNext?\n👉 **groupingBy() deep dive (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38545,7 +38665,11 @@
     "name": "067 What is Collectors.toList()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.toList()` (Java 8)\n\n👉 **Definition (crisp)**\n`Collectors.toList()` is a collector used with `collect()` to **convert a stream into a `List`**.\n\n---\n\n## Method\n\n```java id=\"tl1\"\nCollector<T, ?, List<T>> toList();\n```\n\n---\n\n## Basic Example\n\n```java id=\"tl2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nList<Integer> result = list.stream()\n    .collect(Collectors.toList());\n\nSystem.out.println(result);\n```\n\n---\n\n## With filter() 🔥\n\n```java id=\"tl3\"\nList<Integer> result = list.stream()\n    .filter(x -> x > 2)\n    .collect(Collectors.toList());\n```\n\n---\n\n## With map()\n\n```java id=\"tl4\"\nList<Integer> result = list.stream()\n    .map(x -> x * 2)\n    .collect(Collectors.toList());\n```\n\n---\n\n## Important Points ⚠️\n\n```java id=\"tl5\"\n// Type not guaranteed (usually ArrayList)\nList<Integer> result = list.stream()\n    .collect(Collectors.toList());\n```\n\n👉 If you need specific type:\n\n```java id=\"tl6\"\nList<Integer> result = list.stream()\n    .collect(Collectors.toCollection(ArrayList::new));\n```\n\n---\n\n## Immutable List (Java 10+)\n\n```java id=\"tl7\"\nList<Integer> list = stream.toList(); // unmodifiable\n```\n\n---\n\n## Key Points\n\n* Converts stream → List\n* Terminal operation (via `collect()`)\n* Mutable list (Java 8)\n* Most commonly used collector\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.toList()` is used to **accumulate stream elements into a List**.\n\n---\n\nNext?\n👉 **groupingBy() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38565,7 +38689,11 @@
     "name": "068 What is Collectors.toSet()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.toSet()` (Java 8)\n\n👉 **Definition (crisp)**\n`Collectors.toSet()` is a collector used with `collect()` to **convert a stream into a `Set` (unique elements)**.\n\n---\n\n## Method\n\n```java id=\"ts1\"\nCollector<T, ?, Set<T>> toSet();\n```\n\n---\n\n## Basic Example\n\n```java id=\"ts2\"\nList<Integer> list = Arrays.asList(1,2,2,3,3,4);\n\nSet<Integer> result = list.stream()\n    .collect(Collectors.toSet());\n\nSystem.out.println(result); // duplicates removed\n```\n\n---\n\n## With filter() 🔥\n\n```java id=\"ts3\"\nSet<Integer> result = list.stream()\n    .filter(x -> x > 2)\n    .collect(Collectors.toSet());\n```\n\n---\n\n## With map()\n\n```java id=\"ts4\"\nSet<Integer> result = list.stream()\n    .map(x -> x * 2)\n    .collect(Collectors.toSet());\n```\n\n---\n\n## Important Points ⚠️\n\n```java id=\"ts5\"\n// Type NOT guaranteed (usually HashSet)\nSet<Integer> set = list.stream()\n    .collect(Collectors.toSet());\n```\n\n👉 If you want specific type:\n\n```java id=\"ts6\"\nSet<Integer> set = list.stream()\n    .collect(Collectors.toCollection(TreeSet::new));\n```\n\n---\n\n## Key Points\n\n* Removes duplicates\n* No guaranteed order\n* Returns Set (usually HashSet)\n* Terminal operation (via collect)\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.toSet()` is used to **collect stream elements into a Set, automatically removing duplicates**.\n\n---\n\nNext?\n👉 **groupingBy() deep dive (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38585,7 +38713,11 @@
     "name": "069 What is Collectors.groupingBy()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.groupingBy()` (Java 8)\n\n👉 **Definition (crisp)**\n`groupingBy()` is used to **group elements of a stream based on a key** and returns a `Map<K, List<T>>`.\n\n---\n\n## Method (Basic)\n\n```java id=\"gb1\"\nMap<K, List<T>> groupingBy(Function<? super T, ? extends K> classifier);\n```\n\n---\n\n## Basic Example\n\n```java id=\"gb2\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nMap<Integer, List<Integer>> map = list.stream()\n    .collect(Collectors.groupingBy(x -> x % 2));\n\nSystem.out.println(map);\n// {0=[2,4], 1=[1,3,5]}\n```\n\n---\n\n## With Strings\n\n```java id=\"gb3\"\nList<String> list = Arrays.asList(\"java\", \"go\", \"spring\");\n\nMap<Integer, List<String>> map = list.stream()\n    .collect(Collectors.groupingBy(s -> s.length()));\n```\n\n---\n\n## With Custom Object 🔥\n\n```java id=\"gb4\"\nclass User {\n    String name;\n    int age;\n\n    User(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n}\n\nList<User> users = Arrays.asList(\n    new User(\"Prem\", 25),\n    new User(\"Ram\", 20),\n    new User(\"Shyam\", 25)\n);\n\nMap<Integer, List<User>> map = users.stream()\n    .collect(Collectors.groupingBy(u -> u.age));\n```\n\n---\n\n## Advanced (Downstream Collector)\n\n```java id=\"gb5\"\nMap<Integer, Long> count = list.stream()\n    .collect(Collectors.groupingBy(\n        x -> x % 2,\n        Collectors.counting()\n    ));\n```\n\n---\n\n## Nested Grouping 🔥\n\n```java id=\"gb6\"\nMap<Integer, Map<Integer, List<Integer>>> map = list.stream()\n    .collect(Collectors.groupingBy(\n        x -> x % 2,\n        Collectors.groupingBy(x -> x > 2 ? 1 : 0)\n    ));\n```\n\n---\n\n## Key Points\n\n* Returns `Map<K, List<T>>`\n* Groups based on key function\n* Supports downstream collectors\n* Very useful in real projects\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.groupingBy()` is used to **group stream elements into a Map based on a classification function**.\n\n---\n\nNext?\n👉 **partitioningBy() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38605,7 +38737,11 @@
     "name": "070 What is Collectors.partitioningBy()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.partitioningBy()` (Java 8)\n\n👉 **Definition (crisp)**\n`partitioningBy()` is used to **split elements into two groups (true/false) based on a condition**.\n\n---\n\n## Method\n\n```java id=\"pb1\"\nMap<Boolean, List<T>> partitioningBy(Predicate<? super T> predicate);\n```\n\n---\n\n## Basic Example\n\n```java id=\"pb2\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nMap<Boolean, List<Integer>> map = list.stream()\n    .collect(Collectors.partitioningBy(x -> x % 2 == 0));\n\nSystem.out.println(map);\n// true → [2,4]\n// false → [1,3,5]\n```\n\n---\n\n## With Strings\n\n```java id=\"pb3\"\nList<String> list = Arrays.asList(\"java\", \"go\", \"spring\");\n\nMap<Boolean, List<String>> map = list.stream()\n    .collect(Collectors.partitioningBy(s -> s.length() > 4));\n```\n\n---\n\n## With Counting 🔥\n\n```java id=\"pb4\"\nMap<Boolean, Long> count = list.stream()\n    .collect(Collectors.partitioningBy(\n        x -> x % 2 == 0,\n        Collectors.counting()\n    ));\n```\n\n---\n\n## Difference from groupingBy 🔥\n\n```java id=\"pb5\"\n// groupingBy → multiple keys\ngroupingBy(x -> x % 3);\n\n// partitioningBy → only 2 groups (true/false)\npartitioningBy(x -> x % 2 == 0);\n```\n\n---\n\n## Key Points\n\n* Always returns `Map<Boolean, ...>`\n* Only 2 groups: `true` & `false`\n* Uses `Predicate`\n* Special case of grouping\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.partitioningBy()` is used to **divide stream elements into two groups based on a boolean condition**.\n\n---\n\nNext?\n👉 **mapping() collector (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38625,7 +38761,11 @@
     "name": "071 What is Collectors.mapping()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.mapping()` (Java 8)\n\n👉 **Definition (crisp)**\n`mapping()` is a downstream collector used to **transform elements before collecting them**.\n\n---\n\n## Method\n\n```java id=\"mp1\"\nmapping(Function<? super T, ? extends U> mapper,\n        Collector<? super U, A, R> downstream)\n```\n\n---\n\n## Basic Example\n\n```java id=\"mp2\"\nList<Integer> list = Arrays.asList(1,2,3);\n\nList<String> result = list.stream()\n    .collect(Collectors.mapping(\n        x -> \"Val:\" + x,\n        Collectors.toList()\n    ));\n\nSystem.out.println(result);\n```\n\n---\n\n## With groupingBy 🔥\n\n```java id=\"mp3\"\nList<String> list = Arrays.asList(\"java\", \"go\", \"spring\");\n\nMap<Integer, List<String>> map = list.stream()\n    .collect(Collectors.groupingBy(\n        s -> s.length(),\n        Collectors.mapping(\n            String::toUpperCase,\n            Collectors.toList()\n        )\n    ));\n```\n\n---\n\n## Without mapping (Normal way)\n\n```java id=\"mp4\"\nlist.stream()\n    .map(String::toUpperCase)\n    .collect(Collectors.toList());\n```\n\n---\n\n## With mapping (inside grouping)\n\n```java id=\"mp5\"\n.collect(Collectors.groupingBy(\n    s -> s.length(),\n    Collectors.mapping(String::toUpperCase, Collectors.toList())\n));\n```\n\n---\n\n## Key Points\n\n* Used as **downstream collector**\n* Applies transformation during collection\n* Common with `groupingBy()` / `partitioningBy()`\n* Avoids extra `.map()` call\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.mapping()` is used to **apply a transformation on elements before collecting them, typically used inside grouping or partitioning operations**.\n\n---\n\nNext?\n👉 **joining() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38645,7 +38785,11 @@
     "name": "072 What is Collectors.joining()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.joining()` (Java 8)\n\n👉 **Definition (crisp)**\n`joining()` is a collector used to **concatenate stream elements into a single `String`**.\n\n---\n\n## Method Variants\n\n```java id=\"jn1\"\n// 1. Simple join\nCollectors.joining()\n\n// 2. With delimiter\nCollectors.joining(CharSequence delimiter)\n\n// 3. With delimiter, prefix, suffix\nCollectors.joining(delimiter, prefix, suffix)\n```\n\n---\n\n## Basic Example\n\n```java id=\"jn2\"\nList<String> list = Arrays.asList(\"Java\", \"Spring\", \"Boot\");\n\nString result = list.stream()\n    .collect(Collectors.joining());\n\nSystem.out.println(result); // JavaSpringBoot\n```\n\n---\n\n## With Delimiter\n\n```java id=\"jn3\"\nString result = list.stream()\n    .collect(Collectors.joining(\", \"));\n\nSystem.out.println(result); // Java, Spring, Boot\n```\n\n---\n\n## With Prefix & Suffix 🔥\n\n```java id=\"jn4\"\nString result = list.stream()\n    .collect(Collectors.joining(\", \", \"[\", \"]\"));\n\nSystem.out.println(result); // [Java, Spring, Boot]\n```\n\n---\n\n## With map()\n\n```java id=\"jn5\"\nList<Integer> list = Arrays.asList(1,2,3);\n\nString result = list.stream()\n    .map(String::valueOf)\n    .collect(Collectors.joining(\"-\"));\n\nSystem.out.println(result); // 1-2-3\n```\n\n---\n\n## Key Points\n\n* Returns `String`\n* Works on `CharSequence`\n* Often used with `map()`\n* Terminal operation (via `collect()`)\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.joining()` is used to **combine stream elements into a single String with optional delimiter, prefix, and suffix**.\n\n---\n\nNext?\n👉 **counting(), summingInt() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38665,7 +38809,11 @@
     "name": "073 What is Collectors.counting()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.counting()` (Java 8)\n\n👉 **Definition (crisp)**\n`Collectors.counting()` is a collector used to **count the number of elements in a stream**.\n\n---\n\n## Method\n\n```java id=\"ct1\"\nCollector<T, ?, Long> counting();\n```\n\n---\n\n## Basic Example\n\n```java id=\"ct2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nlong count = list.stream()\n    .collect(Collectors.counting());\n\nSystem.out.println(count); // 4\n```\n\n---\n\n## With filter() 🔥\n\n```java id=\"ct3\"\nlong count = list.stream()\n    .filter(x -> x > 2)\n    .collect(Collectors.counting());\n\nSystem.out.println(count); // 2\n```\n\n---\n\n## With groupingBy (Very Important 🔥)\n\n```java id=\"ct4\"\nList<String> list = Arrays.asList(\"java\", \"go\", \"spring\");\n\nMap<Integer, Long> map = list.stream()\n    .collect(Collectors.groupingBy(\n        s -> s.length(),\n        Collectors.counting()\n    ));\n\nSystem.out.println(map);\n// {2=1, 4=1, 6=1}\n```\n\n---\n\n## counting() vs count() 🔥\n\n```java id=\"ct5\"\n// count()\nlong c1 = list.stream().count();\n\n// counting()\nlong c2 = list.stream().collect(Collectors.counting());\n```\n\n👉 Difference:\n\n* `count()` → direct terminal op\n* `counting()` → used inside collectors (grouping, etc.)\n\n---\n\n## Key Points\n\n* Returns `Long`\n* Used with `collect()`\n* Often used with `groupingBy()`\n* Equivalent to `count()`\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.counting()` is used to **count elements in a stream, especially within grouping or downstream operations**.\n\n---\n\nNext?\n👉 **summingInt(), averagingInt() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38685,7 +38833,11 @@
     "name": "074 What is Collectors.summingInt()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.summingInt()` (Java 8)\n\n👉 **Definition (crisp)**\n`summingInt()` is a collector used to **sum integer values from stream elements**.\n\n---\n\n## Method\n\n```java id=\"si1\"\nCollector<T, ?, Integer> summingInt(ToIntFunction<? super T> mapper);\n```\n\n---\n\n## Basic Example\n\n```java id=\"si2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nint sum = list.stream()\n    .collect(Collectors.summingInt(x -> x));\n\nSystem.out.println(sum); // 10\n```\n\n---\n\n## With Objects 🔥\n\n```java id=\"si3\"\nclass User {\n    int age;\n    User(int age) { this.age = age; }\n}\n\nList<User> users = Arrays.asList(\n    new User(20),\n    new User(25)\n);\n\nint totalAge = users.stream()\n    .collect(Collectors.summingInt(u -> u.age));\n\nSystem.out.println(totalAge); // 45\n```\n\n---\n\n## With groupingBy\n\n```java id=\"si4\"\nMap<Integer, Integer> map = list.stream()\n    .collect(Collectors.groupingBy(\n        x -> x % 2,\n        Collectors.summingInt(x -> x)\n    ));\n```\n\n---\n\n## Using Method Reference\n\n```java id=\"si5\"\nint sum = list.stream()\n    .collect(Collectors.summingInt(Integer::intValue));\n```\n\n---\n\n## summingInt vs reduce 🔥\n\n```java id=\"si6\"\n// summingInt\nlist.stream().collect(Collectors.summingInt(x -> x));\n\n// reduce\nlist.stream().reduce(0, Integer::sum);\n```\n\n---\n\n## Key Points\n\n* Returns `int`\n* Uses `ToIntFunction`\n* Often used with `groupingBy()`\n* Cleaner than `reduce()`\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.summingInt()` is used to **sum integer values from stream elements using a mapping function**.\n\n---\n\nNext?\n👉 **averagingInt(), summarizingInt() (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38705,7 +38857,11 @@
     "name": "075 What is Collectors.collectingAndThen()?",
     "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Collectors.collectingAndThen()` (Java 8)\n\n👉 **Definition (crisp)**\n`collectingAndThen()` is used to **apply an additional transformation after a collection operation is completed**.\n\n---\n\n## Method\n\n```java id=\"cat1\"\n<T, A, R, RR> Collector<T, A, RR> collectingAndThen(\n    Collector<T, A, R> downstream,\n    Function<R, RR> finisher\n);\n```\n\n---\n\n## Basic Example\n\n```java id=\"cat2\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nList<Integer> result = list.stream()\n    .collect(Collectors.collectingAndThen(\n        Collectors.toList(),\n        l -> {\n            Collections.reverse(l);\n            return l;\n        }\n    ));\n\nSystem.out.println(result);\n```\n\n---\n\n## Immutable List 🔥\n\n```java id=\"cat3\"\nList<Integer> result = list.stream()\n    .collect(Collectors.collectingAndThen(\n        Collectors.toList(),\n        Collections::unmodifiableList\n    ));\n```\n\n---\n\n## Get Max Value\n\n```java id=\"cat4\"\nint max = list.stream()\n    .collect(Collectors.collectingAndThen(\n        Collectors.maxBy(Integer::compare),\n        Optional::get\n    ));\n```\n\n---\n\n## With groupingBy\n\n```java id=\"cat5\"\nMap<Integer, List<Integer>> map = list.stream()\n    .collect(Collectors.groupingBy(\n        x -> x % 2,\n        Collectors.collectingAndThen(\n            Collectors.toList(),\n            l -> {\n                l.sort(Integer::compareTo);\n                return l;\n            }\n        )\n    ));\n```\n\n---\n\n## Key Points\n\n* Applies **post-processing** after collection\n* Uses **downstream collector + finisher function**\n* Useful for **immutable results / transformations**\n* Common with `groupingBy()`\n\n---\n\n## One-line Answer 💡\n\n👉 `Collectors.collectingAndThen()` is used to **perform an additional operation on the result after collecting stream elements**.\n\n---\n\nNext?\n👉 **Optional class (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
