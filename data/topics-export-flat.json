@@ -35322,7 +35322,11 @@
     "name": "001 What is the Java Reflection API and what problems does it solve?",
     "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Short answer (interview-ready):**\nJava Reflection API allows a program to inspect and manipulate classes, methods, fields, constructors, and annotations **at runtime**, even if they are private or unknown at compile time.\n\n---\n\n### 🔹 Core Idea (code-first)\n\n```java\nClass<?> clazz = Class.forName(\"java.lang.String\");\n\n// methods\nMethod[] methods = clazz.getDeclaredMethods();\n\n// fields\nField[] fields = clazz.getDeclaredFields();\n\n// constructors\nConstructor<?>[] constructors = clazz.getDeclaredConstructors();\n```\n\n---\n\n### 🔹 Invoke method dynamically\n\n```java\nclass User {\n    private String sayHello(String name) {\n        return \"Hello \" + name;\n    }\n}\n\nUser user = new User();\n\nMethod method = User.class.getDeclaredMethod(\"sayHello\", String.class);\nmethod.setAccessible(true); // access private method\n\nString result = (String) method.invoke(user, \"Prem\");\nSystem.out.println(result);\n```\n\n---\n\n### 🔹 Modify private field\n\n```java\nclass User {\n    private String name = \"Old\";\n}\n\nUser user = new User();\n\nField field = User.class.getDeclaredField(\"name\");\nfield.setAccessible(true);\nfield.set(user, \"New\");\n\nSystem.out.println(field.get(user)); // New\n```\n\n---\n\n### 🔹 Create object dynamically\n\n```java\nClass<?> clazz = Class.forName(\"java.util.ArrayList\");\nObject obj = clazz.getDeclaredConstructor().newInstance();\n\nSystem.out.println(obj.getClass()); // class java.util.ArrayList\n```\n\n---\n\n## 🔥 Problems it solves (real-world)\n\n### 1. **Frameworks (Spring, Hibernate, JUnit)**\n\n```java\n// Spring example (concept)\nfor (Field field : clazz.getDeclaredFields()) {\n    if (field.isAnnotationPresent(Autowired.class)) {\n        field.setAccessible(true);\n        field.set(obj, dependency);\n    }\n}\n```\n\n👉 Used for:\n\n* Dependency Injection\n* Bean creation\n* ORM mapping\n\n---\n\n### 2. **Unknown classes at runtime (Plugin systems)**\n\n```java\nClass<?> plugin = Class.forName(\"com.app.PluginImpl\");\nObject instance = plugin.getDeclaredConstructor().newInstance();\n```\n\n👉 Load classes dynamically without recompiling\n\n---\n\n### 3. **Annotation Processing (Runtime)**\n\n```java\nif (method.isAnnotationPresent(Test.class)) {\n    method.invoke(instance);\n}\n```\n\n👉 Used in:\n\n* JUnit\n* Spring Boot\n* Custom frameworks\n\n---\n\n### 4. **Serialization / Deserialization**\n\n```java\nfor (Field field : obj.getClass().getDeclaredFields()) {\n    field.setAccessible(true);\n    map.put(field.getName(), field.get(obj));\n}\n```\n\n👉 Used in:\n\n* Jackson\n* Gson\n\n---\n\n### 5. **Breaking Encapsulation (controlled use)**\n\n```java\nfield.setAccessible(true); // bypass private\n```\n\n👉 Useful for:\n\n* Testing\n* Framework internals\n\n---\n\n## ⚠️ Downsides\n\n```java\n// slower than direct call\nmethod.invoke(obj);\n\n// no compile-time safety\nClass.forName(\"WrongClass\"); // runtime error\n```\n\n* Slower (no JVM optimizations)\n* Unsafe (breaks encapsulation)\n* Harder to debug\n\n---\n\n## 🧠 One-line summary (best for interviews)\n\n👉 *“Reflection lets Java inspect and manipulate program structure at runtime, enabling frameworks, dynamic loading, and annotation-driven behavior.”*\n\n---\n\nIf you want, next I can show:\n👉 **How Spring internally uses Reflection (real flow + code)**\n👉 **Reflection vs MethodHandles vs Bytecode (very important interview topic)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -35338,7 +35342,11 @@
     "name": "002 How does Reflection differ from normal compile-time access to classes and methods?",
     "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Interview-ready difference (code-heavy 👇)**\n\n---\n\n## 🔹 Compile-time access (normal Java)\n\n```java\nclass User {\n    public String greet(String name) {\n        return \"Hello \" + name;\n    }\n}\n\nUser user = new User();\nString res = user.greet(\"Prem\");   // ✅ compile-time checked\n```\n\n### ✔️ Characteristics\n\n* Type-safe\n* Fast (JVM optimizations like inlining)\n* Errors caught at compile time\n* Direct method/field access\n\n---\n\n## 🔹 Reflection (runtime access)\n\n```java\nClass<?> clazz = Class.forName(\"User\");\n\nObject obj = clazz.getDeclaredConstructor().newInstance();\n\nMethod method = clazz.getDeclaredMethod(\"greet\", String.class);\nString res = (String) method.invoke(obj, \"Prem\"); // runtime call\n```\n\n### ✔️ Characteristics\n\n* No compile-time type checking\n* Slower (no inlining, dynamic dispatch)\n* Works even if class not known at compile time\n* Can access private members\n\n---\n\n## 🔥 Side-by-side comparison\n\n```java\n// Compile-time\nUser u = new User();\nu.greet(\"Prem\");\n\n// Reflection\nClass<?> c = User.class;\nObject o = c.getDeclaredConstructor().newInstance();\nMethod m = c.getDeclaredMethod(\"greet\", String.class);\nm.invoke(o, \"Prem\");\n```\n\n---\n\n## 🔑 Key Differences\n\n| Feature                | Compile-time Access  | Reflection                  |\n| ---------------------- | -------------------- | --------------------------- |\n| Binding time           | Compile-time         | Runtime                     |\n| Performance            | Fast ⚡               | Slower 🐢                   |\n| Type safety            | Yes ✅                | No ❌                        |\n| Access private members | No ❌                 | Yes (setAccessible)         |\n| IDE support            | Full (auto-complete) | None                        |\n| Use case               | Business logic       | Frameworks, dynamic systems |\n\n---\n\n## 🔥 Real-world insight\n\n```java\n// Compile-time (your code)\nuserService.save(user);\n\n// Reflection (framework)\nfor (Field f : obj.getClass().getDeclaredFields()) {\n    if (f.isAnnotationPresent(Autowired.class)) {\n        f.setAccessible(true);\n        f.set(obj, dependency);\n    }\n}\n```\n\n👉 **You write compile-time code**\n👉 **Frameworks use reflection under the hood**\n\n---\n\n## 🧠 One-liner\n\n👉 *Compile-time access is static, fast, and safe; Reflection is dynamic, flexible, but slower and less safe.*\n\n---\n\nIf you want next:\n👉 Reflection vs MethodHandles (VERY IMPORTANT for senior interviews)\n👉 Internal JVM working of reflection (deep dive)\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -35354,7 +35362,11 @@
     "name": "003 What are the main classes in the java.lang.reflect package?",
     "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Main classes in `java.lang.reflect` (with quick usage snippets 👇)**\n\n---\n\n### 🔹 1. `Class`\n\n```java\nClass<?> clazz = String.class;\nSystem.out.println(clazz.getName());\n```\n\n---\n\n### 🔹 2. `Method`\n\n```java\nMethod m = String.class.getDeclaredMethod(\"substring\", int.class);\nObject res = m.invoke(\"Hello\", 2);  // \"llo\"\n```\n\n---\n\n### 🔹 3. `Field`\n\n```java\nclass User { private String name = \"Prem\"; }\n\nField f = User.class.getDeclaredField(\"name\");\nf.setAccessible(true);\n\nUser u = new User();\nSystem.out.println(f.get(u)); // Prem\n```\n\n---\n\n### 🔹 4. `Constructor`\n\n```java\nConstructor<String> c = String.class.getConstructor(String.class);\nString s = c.newInstance(\"Hello\");\n```\n\n---\n\n### 🔹 5. `Modifier`\n\n```java\nint mod = String.class.getModifiers();\nSystem.out.println(Modifier.isFinal(mod)); // true\n```\n\n---\n\n### 🔹 6. `Array`\n\n```java\nObject arr = Array.newInstance(int.class, 3);\nArray.set(arr, 0, 10);\nSystem.out.println(Array.get(arr, 0)); // 10\n```\n\n---\n\n### 🔹 7. `Proxy`\n\n```java\ninterface A { void run(); }\n\nA proxy = (A) Proxy.newProxyInstance(\n    A.class.getClassLoader(),\n    new Class[]{A.class},\n    (p, method, args) -> {\n        System.out.println(\"Intercepted\");\n        return null;\n    }\n);\n\nproxy.run();\n```\n\n---\n\n### 🔹 8. `InvocationHandler`\n\n```java\nInvocationHandler handler = (proxy, method, args) -> {\n    System.out.println(\"Method: \" + method.getName());\n    return null;\n};\n```\n\n---\n\n### 🔹 9. `AccessibleObject`\n\n```java\nField f = User.class.getDeclaredField(\"name\");\nf.setAccessible(true); // bypass private\n```\n\n---\n\n### 🔹 10. `Parameter`\n\n```java\nMethod m = User.class.getDeclaredMethod(\"setName\", String.class);\nParameter[] params = m.getParameters();\nSystem.out.println(params[0].getType());\n```\n\n---\n\n## 🔥 Bonus (Generics-related types)\n\n### 🔹 `Type`, `ParameterizedType`, `TypeVariable`, `WildcardType`\n\n```java\nField field = MyClass.class.getDeclaredField(\"list\");\nType type = field.getGenericType();\n\nif (type instanceof ParameterizedType pt) {\n    System.out.println(pt.getActualTypeArguments()[0]);\n}\n```\n\n---\n\n## 🧠 One-line summary\n\n👉 *Core reflection classes = `Class`, `Method`, `Field`, `Constructor` + helpers like `Modifier`, `Proxy`, `Array`, and generics types.*\n\n---\n\nIf you want next:\n👉 **Real Spring/Hibernate internal reflection flow (very important for interviews)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -35370,7 +35382,11 @@
     "name": "004 How do you obtain a Class object in Java?",
     "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**All ways to get a `Class` object in Java (code-first 👇)**\n\n---\n\n## 🔹 1. Using `.class` (most common, compile-time)\n\n```java\nClass<String> c1 = String.class;\nClass<int[]> c2 = int[].class;\n```\n\n---\n\n## 🔹 2. Using `object.getClass()` (runtime object)\n\n```java\nString str = \"hello\";\nClass<?> c = str.getClass();\n```\n\n---\n\n## 🔹 3. Using `Class.forName()` (dynamic loading)\n\n```java\nClass<?> c = Class.forName(\"java.lang.String\");\n```\n\n👉 loads class at runtime (used in frameworks)\n\n---\n\n## 🔹 4. Using `ClassLoader`\n\n```java\nClassLoader loader = Thread.currentThread().getContextClassLoader();\nClass<?> c = loader.loadClass(\"java.lang.String\");\n```\n\n---\n\n## 🔹 5. Primitive types\n\n```java\nClass<Integer> c1 = int.class;\nClass<Boolean> c2 = boolean.class;\n```\n\n---\n\n## 🔹 6. Wrapper types\n\n```java\nClass<Integer> c = Integer.class;\n```\n\n---\n\n## 🔹 7. Arrays\n\n```java\nClass<?> c = Class.forName(\"[Ljava.lang.String;\"); // String[]\n```\n\nBetter way 👇\n\n```java\nClass<?> c = String[].class;\n```\n\n---\n\n## 🔥 Side-by-side quick view\n\n```java\nClass<?> c1 = String.class;\nClass<?> c2 = \"hello\".getClass();\nClass<?> c3 = Class.forName(\"java.lang.String\");\n```\n\n---\n\n## ⚠️ Key differences (important)\n\n```java\n// loads + initializes class\nClass.forName(\"com.app.MyClass\");\n\n// only loads (no initialization)\nloader.loadClass(\"com.app.MyClass\");\n```\n\n---\n\n## 🧠 One-liner\n\n👉 *You can obtain a Class object via `.class`, `getClass()`, `Class.forName()`, or `ClassLoader`, depending on whether the type is known at compile-time or runtime.*\n\n---\n\nIf you want next:\n👉 **Difference between Class.forName vs loadClass (deep JVM level)**\n👉 **How Spring uses ClassLoader + Reflection internally**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -35386,7 +35402,11 @@
     "name": "005 What is the difference between Class.forName() and ClassLoader.loadClass()?",
     "parentId": "2350c796-373f-476f-aa63-80e201096ae1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "**Interview-ready difference (code-first 👇)**\n\n---\n\n## 🔹 `Class.forName()`\n\n```java\nclass Demo {\n    static {\n        System.out.println(\"Class Initialized\");\n    }\n}\n\n// triggers loading + linking + initialization\nClass<?> c = Class.forName(\"Demo\");\n```\n\n✔️ **Behavior**\n\n* Loads class\n* Links class\n* **Initializes class (static blocks run)**\n\n---\n\n## 🔹 `ClassLoader.loadClass()`\n\n```java\nClassLoader loader = Thread.currentThread().getContextClassLoader();\n\nClass<?> c = loader.loadClass(\"Demo\"); // only loads (no init)\n\n// initialization happens later\nObject obj = c.getDeclaredConstructor().newInstance();\n```\n\n✔️ **Behavior**\n\n* Loads class\n* Links class\n* ❌ **Does NOT initialize immediately**\n\n---\n\n## 🔥 Key Difference (most important)\n\n```java\n// initialization happens\nClass.forName(\"Demo\");\n\n// no initialization here\nloader.loadClass(\"Demo\");\n```\n\n---\n\n## 🔹 Force control (advanced)\n\n```java\n// control initialization manually\nClass<?> c = Class.forName(\"Demo\", false, loader); // no init\n```\n\n---\n\n## 🔹 Side-by-side\n\n| Feature           | Class.forName() | ClassLoader.loadClass() |\n| ----------------- | --------------- | ----------------------- |\n| Loading           | ✅               | ✅                       |\n| Linking           | ✅               | ✅                       |\n| Initialization    | ✅ (default)     | ❌                       |\n| Static blocks run | ✅               | ❌                       |\n| Use case          | JDBC, drivers   | Framework internals     |\n\n---\n\n## 🔥 Real-world example (JDBC)\n\n```java\n// loads + initializes driver (registers itself)\nClass.forName(\"com.mysql.cj.jdbc.Driver\");\n```\n\n---\n\n## 🔹 When to use what\n\n```java\n// Need static init logic\nClass.forName(\"com.app.Plugin\");\n\n// Just load class (lazy init)\nloader.loadClass(\"com.app.Plugin\");\n```\n\n---\n\n## 🧠 One-liner\n\n👉 *`Class.forName()` loads + initializes class, while `ClassLoader.loadClass()` only loads it (initialization is lazy).*\n\n---\n\nIf you want next:\n👉 **Class loading lifecycle (Loading → Linking → Initialization) deep dive**\n👉 **Custom ClassLoader implementation (asked in senior interviews)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36913,6 +36933,2309 @@
       {
         "uniqueId": "2350c796-373f-476f-aa63-80e201096ae1",
         "name": "100 Industry-Level Java Reflection API Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "name": "100+ Industry-Level Java 8 Interview Questions",
+    "parentId": null,
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [],
+    "sections": []
+  },
+  {
+    "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "name": "01 Core Java 8 Fundamentals",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "dd408278-96c5-4449-ad64-5a4bd618d175",
+    "name": "001 What are the major features introduced in Java 8?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "03ed1a4f-9eba-4528-9e98-e1998b83dfee",
+    "name": "002 What is Lambda Expression in Java 8?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3a534e02-25a1-4f47-a06a-c6d28b1857b1",
+    "name": "003 What problem do Lambda expressions solve?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f5382982-1545-48fc-b303-a774b16666b9",
+    "name": "004 What is the syntax of a Lambda expression?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "38b0eb96-52d6-49c5-86e5-fd777ff25cb2",
+    "name": "005 What is a functional interface?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c28695b9-f63c-4374-9c67-848a97288ee3",
+    "name": "006 What is the @FunctionalInterface annotation?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cbda2bc2-db9a-4532-8015-ca36a346f638",
+    "name": "007 Can a functional interface have default methods?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "95e59aed-cbe4-4e14-a653-ac27e499a288",
+    "name": "008 Can a functional interface have static methods?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1daa2b55-0693-4d04-930d-7f07f750c8c9",
+    "name": "009 Can a functional interface extend another interface?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "37e1315e-c83e-4f79-8b99-75d877c058d8",
+    "name": "010 How many abstract methods can a functional interface have?",
+    "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
+        "name": "01 Core Java 8 Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "name": "02 Lambda Expressions",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d05d8aa6-5150-407d-84d4-09e7b58ccc7c",
+    "name": "011 How does Lambda improve code readability?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e3c6c73e-5cd6-4b1e-a4bd-060f32eb4e72",
+    "name": "012 What is effectively final variable in Lambda?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "47859bc7-da50-46e2-ac59-b5848d2ede0b",
+    "name": "013 Why must captured variables be effectively final?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9c73acc8-77bc-4aae-a61a-2660f11bbfbf",
+    "name": "014 Can Lambda expressions throw exceptions?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "605343f4-6f88-4e48-ade8-851b893a6284",
+    "name": "015 How are Lambda expressions compiled internally?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d29cec97-6366-4c48-9c32-6b35080e7bf3",
+    "name": "016 What is the difference between anonymous class and Lambda?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "534c7bae-0cf5-4a65-9cc6-0fbc0bcb9b7f",
+    "name": "017 Can Lambda access instance variables?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "66e51b7c-5e6e-4034-b834-c7f756143b52",
+    "name": "018 Can Lambda access static variables?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e91bca44-1ef4-4ece-bfbb-e59ae7ab9eef",
+    "name": "019 What is method reference?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e0a51b01-b389-4bfc-a6ed-b893616f7f96",
+    "name": "020 What are the types of method references?",
+    "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
+        "name": "02 Lambda Expressions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+    "name": "03 Method References",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "df511e89-1245-4ba2-9880-6f0d5cf2e091",
+    "name": "021 What is the syntax of method reference?",
+    "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+        "name": "03 Method References"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2565c79c-9d87-4ade-bf44-367a44721015",
+    "name": "022 What are the four types of method references?",
+    "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+        "name": "03 Method References"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d524788a-207a-4c9b-9cde-cfc96d8e4ae3",
+    "name": "023 What is constructor reference?",
+    "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+        "name": "03 Method References"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "44f88f1e-6707-431d-9c0d-1eeb86cef2b8",
+    "name": "024 Difference between Lambda and method reference?",
+    "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+        "name": "03 Method References"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "17895575-a6e7-4600-a8e3-7f56e8726676",
+    "name": "025 When should you use method reference instead of Lambda?",
+    "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
+        "name": "03 Method References"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "name": "04 Functional Interfaces in Java 8",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "45c1506d-d2c5-406a-a903-6fe591f95ef6",
+    "name": "026 What are built-in functional interfaces?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "274cb4a1-7ebd-4e64-bdaa-dbc1bfc2f892",
+    "name": "027 What is Predicate interface?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9286e916-a26d-4bc1-afa1-2100a39ed419",
+    "name": "028 What is Function interface?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7516cd9f-2ab2-417d-969f-d1933baf2d00",
+    "name": "029 What is Supplier interface?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "68d7d2c4-9821-4c01-a1e6-df8b2439fe9b",
+    "name": "030 What is Consumer interface?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e2a1d62b-93b0-4c1a-b3d9-bf5d2e7f647a",
+    "name": "031 Difference between Predicate and Function?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2b612ead-c309-4e26-8121-636246cd5a45",
+    "name": "032 Difference between Supplier and Consumer?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "aaf93628-79ad-496e-9e76-2d8d521766b7",
+    "name": "033 What is BiFunction?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6f8bdb87-961a-44c6-88d9-9d6df4ca3225",
+    "name": "034 What is BinaryOperator?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "80cdf3da-be67-477f-8fad-2268ac3d6500",
+    "name": "035 What is UnaryOperator?",
+    "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
+        "name": "04 Functional Interfaces in Java 8"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "name": "05 Stream API Fundamentals",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3c4aaee6-1c72-477a-826b-1e81210286e9",
+    "name": "036 What is Stream API in Java 8?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c94da934-6c19-4db8-8f35-b5917784b3fe",
+    "name": "037 Difference between Collection and Stream?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "48d7f61c-7609-49e4-a053-547de4e1c4db",
+    "name": "038 What are intermediate operations?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f922a769-5ba9-4c4a-b0f8-9a780e517590",
+    "name": "039 What are terminal operations?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b889698d-9356-462d-a323-e5c56ae7c898",
+    "name": "040 What is lazy evaluation in Streams?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "89675e3a-dc63-464a-8dba-7739a1dd4195",
+    "name": "041 What is pipeline processing in Streams?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "08e5b956-1ef8-4a6f-b725-5de2864276c6",
+    "name": "042 What is a stream source?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f32b6288-3360-4eff-838b-d81d2c19693c",
+    "name": "043 Can streams be reused?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1d739912-2d0c-484e-b65d-2aab45c94856",
+    "name": "044 What happens if you reuse a stream?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "da3533f8-3d8f-4141-aef8-38161a65223f",
+    "name": "045 What are primitive streams?",
+    "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
+        "name": "05 Stream API Fundamentals"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "name": "06 Stream Operations",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "88fcbddd-9b4c-4518-86b7-0ab8024ba63f",
+    "name": "046 What is map() in Stream?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "61ca2ed7-7580-4658-8cfa-816b2da1f3a9",
+    "name": "047 What is filter() in Stream?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1a369add-a2e6-4d3a-9115-0b05ac937295",
+    "name": "048 What is flatMap()?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f665ef20-01ad-4c53-a328-5a3bd1a8b989",
+    "name": "049 Difference between map() and flatMap()?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1084cf64-7ee9-44b9-9d1e-887aab1a0e9c",
+    "name": "050 What is distinct()?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "56cc0047-8c3d-4da2-9f76-7f1671e76b80",
+    "name": "051 What is sorted()?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "b78084e1-efd9-4518-bdab-5f5ed251c55c",
+    "name": "052 What is limit()?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6776360c-5e4b-4211-a2bd-80ecc2fe486b",
+    "name": "053 What is skip()?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7e3350da-08e2-4698-9b6e-da73d26df7eb",
+    "name": "054 What is peek()?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "64b59da9-1535-4d7f-85e2-49cd552fb8ae",
+    "name": "055 When should you use peek()?",
+    "parentId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "f60b7575-1d2b-4265-925f-34a2d60fae13",
+        "name": "06 Stream Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "name": "07 Terminal Operations",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2c063c34-e04a-4753-b04d-e51aeb97a9bc",
+    "name": "056 What is collect()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "31814c45-7081-42a9-8831-92cb9bb62fa1",
+    "name": "057 What is forEach()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2c3d8332-23ea-40ba-b04c-20ae5ae08f57",
+    "name": "058 Difference between forEach() and forEachOrdered()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "30008a80-b936-4943-9135-8313a2a54560",
+    "name": "059 What is reduce()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e68d4436-680f-49f1-9b55-f48f3b004ec0",
+    "name": "060 What is count()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "23b5fbd1-1f85-4c0a-b81f-4c745b2020a2",
+    "name": "061 What is anyMatch()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "37269f70-43d3-43b3-8461-705381c47711",
+    "name": "062 What is allMatch()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6c277fc6-9ce2-4af7-9d85-e31567a7c07e",
+    "name": "063 What is noneMatch()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "7d8630f6-0628-4430-86d4-33afcb77a423",
+    "name": "064 What is findFirst()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "d63e06c7-dccc-441a-ba18-6d463b626273",
+    "name": "065 What is findAny()?",
+    "parentId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "83c69bab-25b3-4eae-bea3-433883fb2aa3",
+        "name": "07 Terminal Operations"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "name": "08 Collectors",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "edec8031-7cb1-4b9d-9107-74625597a4a2",
+    "name": "066 What is Collectors utility class?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "633af6bc-4de3-46bd-b8a6-3ce2e3e68519",
+    "name": "067 What is Collectors.toList()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5ac10dee-7947-4f51-901c-f3b22436278c",
+    "name": "068 What is Collectors.toSet()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bf60307c-8c8b-4664-ad39-32fcc10d10e5",
+    "name": "069 What is Collectors.groupingBy()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "615ce204-ba17-4036-9268-5d8148274610",
+    "name": "070 What is Collectors.partitioningBy()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bb4a0b64-ee03-43e0-a900-a2daa8c9d5e6",
+    "name": "071 What is Collectors.mapping()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2c9abc4c-f3c2-4672-b7e6-4bd9e04b8d3f",
+    "name": "072 What is Collectors.joining()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ae0325b8-6771-4eab-8538-154c44697af1",
+    "name": "073 What is Collectors.counting()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "9576dc1d-373d-4a6f-9b16-1d0dfeaacf3e",
+    "name": "074 What is Collectors.summingInt()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "da94f2d6-66a0-4221-b859-31410399ebfb",
+    "name": "075 What is Collectors.collectingAndThen()?",
+    "parentId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "86e1714f-ba7f-4bfc-bbaf-9db31561cd5b",
+        "name": "08 Collectors"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "name": "09 Optional Class",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5c5f13bf-b509-4f3f-b8ee-03512d29e449",
+    "name": "076 What is Optional in Java 8?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e12ff437-1b52-4c2e-941d-facad4df1e6e",
+    "name": "077 Why was Optional introduced?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "73dfcca2-08a1-4540-a30f-a5106ebe8be4",
+    "name": "078 How does Optional help avoid NullPointerException?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ca06bedd-add2-4738-8e7f-c6fe93963d5c",
+    "name": "079 What is Optional.of()?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "bcf59bac-0792-4bdc-b8b2-9df188e7ebf6",
+    "name": "080 What is Optional.ofNullable()?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2c6bb103-5c53-4008-9edc-04bd91603c26",
+    "name": "081 What is Optional.empty()?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2da85d06-1639-4fee-8098-27394a6c4e06",
+    "name": "082 What is Optional.orElse()?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ab46f660-cb41-4973-b89b-c5c4694e696a",
+    "name": "083 What is Optional.orElseGet()?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "81e9bc4e-5108-4d79-bb45-66809d4bbc46",
+    "name": "084 Difference between orElse and orElseGet?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ecf1d039-e2bb-47c1-b905-a1ad13a88f63",
+    "name": "085 What is Optional.ifPresent()?",
+    "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "ba018040-0214-422f-8f48-5948aa9e0264",
+    "name": "10 Default and Static Methods in Interfaces",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "c80a1bb6-10af-4cdd-b5ce-e63a0dde8a0f",
+    "name": "086 What are default methods?",
+    "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "ba018040-0214-422f-8f48-5948aa9e0264",
+        "name": "10 Default and Static Methods in Interfaces"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "93192634-a6f0-437e-89cd-bd673384f4c8",
+    "name": "087 Why were default methods introduced?",
+    "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "ba018040-0214-422f-8f48-5948aa9e0264",
+        "name": "10 Default and Static Methods in Interfaces"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2ea3c0ac-3f83-49eb-826b-80fa75f75c61",
+    "name": "088 What is the diamond problem in Java 8?",
+    "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "ba018040-0214-422f-8f48-5948aa9e0264",
+        "name": "10 Default and Static Methods in Interfaces"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "99b9fa40-6d8b-4db1-97ae-f70ad8efba83",
+    "name": "089 How does Java resolve default method conflicts?",
+    "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "ba018040-0214-422f-8f48-5948aa9e0264",
+        "name": "10 Default and Static Methods in Interfaces"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "be8f6e28-a5ee-43f1-ae74-c5e2ebb0fb59",
+    "name": "090 What are static methods in interfaces?",
+    "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "ba018040-0214-422f-8f48-5948aa9e0264",
+        "name": "10 Default and Static Methods in Interfaces"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "name": "11 Date & Time API (java.time)",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "78d06c6d-1b82-4df3-aa87-dd5dafd97cc7",
+    "name": "091 Why was the new Date API introduced?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "01d3ea4f-490c-41d6-b21e-db02a34aed66",
+    "name": "092 What is LocalDate?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "3f8efe8d-6932-434e-883e-31ce6178fef7",
+    "name": "093 What is LocalTime?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "0868d0d4-ba93-4c61-aaf5-7ed518d79bc1",
+    "name": "094 What is LocalDateTime?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "037a0b8d-3028-432f-b493-958d6328f9d9",
+    "name": "095 What is ZonedDateTime?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "cedbc3b5-99e9-4aba-b5b3-394ed74be9cb",
+    "name": "096 What is Instant?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "1e71a6da-2c01-4859-8a0f-9f459c239ee5",
+    "name": "097 What is Duration?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "4ae3740c-56f8-4e65-9ac1-3527f84e7c65",
+    "name": "098 What is Period?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "57dd5a60-5715-47ba-9601-b5c2b175a216",
+    "name": "099 Difference between Period and Duration?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "f4ddb5cb-5b85-4c61-b2a1-4fd9c2f82c18",
+    "name": "100 How is Java 8 Date API thread safe?",
+    "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
+        "name": "11 Date & Time API (java.time)"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+    "name": "12 Parallel Streams",
+    "parentId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "2de75b45-c312-49d3-b12c-a3b5b1628281",
+    "name": "101 What is a parallel stream?",
+    "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+        "name": "12 Parallel Streams"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "db3a4d79-9838-4595-b331-73027266de56",
+    "name": "102 How do you create a parallel stream?",
+    "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+        "name": "12 Parallel Streams"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "82ee7cbc-1a4c-401b-8047-16a29a93fb4e",
+    "name": "103 When should parallel streams be used?",
+    "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+        "name": "12 Parallel Streams"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "5f8a36de-833f-4b8a-a877-2ee0750ed9c1",
+    "name": "104 What are the drawbacks of parallel streams?",
+    "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+        "name": "12 Parallel Streams"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "eded655e-609b-4c7c-a1e5-32b080e09126",
+    "name": "105 What is ForkJoinPool in Java 8?",
+    "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+    "description": "",
+    "smartContent": null,
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
+        "name": "12 Parallel Streams"
       }
     ],
     "sections": []
