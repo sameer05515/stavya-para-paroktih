@@ -37617,7 +37617,11 @@
     "name": "026 What are built-in functional interfaces?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Built-in Functional Interfaces (Java 8)\n\n👉 Provided in **`java.util.function`** package\n👉 Used with **Lambda + Stream API**\n\n---\n\n## 1. Predicate (boolean condition)\n\n```java id=\"fi1\"\nPredicate<Integer> p = x -> x > 10;\n\nSystem.out.println(p.test(15)); // true\n```\n\n---\n\n## 2. Function (input → output)\n\n```java id=\"fi2\"\nFunction<Integer, String> f = x -> \"Val: \" + x;\n\nSystem.out.println(f.apply(10));\n```\n\n---\n\n## 3. Consumer (input → no return)\n\n```java id=\"fi3\"\nConsumer<String> c = s -> System.out.println(s);\n\nc.accept(\"Hello\");\n```\n\n---\n\n## 4. Supplier (no input → return)\n\n```java id=\"fi4\"\nSupplier<Double> s = () -> Math.random();\n\nSystem.out.println(s.get());\n```\n\n---\n\n## 5. BiFunction (2 inputs → output)\n\n```java id=\"fi5\"\nBiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;\n\nSystem.out.println(add.apply(2, 3));\n```\n\n---\n\n## 6. BinaryOperator (same type input/output)\n\n```java id=\"fi6\"\nBinaryOperator<Integer> sum = (a, b) -> a + b;\n```\n\n---\n\n## 7. UnaryOperator (single input/output same type)\n\n```java id=\"fi7\"\nUnaryOperator<Integer> square = x -> x * x;\n```\n\n---\n\n## 8. BiPredicate\n\n```java id=\"fi8\"\nBiPredicate<Integer, Integer> bp = (a, b) -> a > b;\n```\n\n---\n\n## 9. BiConsumer\n\n```java id=\"fi9\"\nBiConsumer<String, Integer> bc = (name, age) ->\n        System.out.println(name + \" \" + age);\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"fi10\"\n// Predicate<T>      → boolean\n// Function<T,R>     → T -> R\n// Consumer<T>       → T -> void\n// Supplier<T>       → () -> T\n// BiFunction<T,U,R> → (T,U) -> R\n// BinaryOperator<T> → (T,T) -> T\n// UnaryOperator<T>  → T -> T\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Built-in functional interfaces are **predefined interfaces in `java.util.function` used for lambda expressions**, like Predicate, Function, Consumer, and Supplier.\n\n---\n\nNext?\n👉 **Difference between Predicate vs Function (very common interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37637,7 +37641,11 @@
     "name": "027 What is Predicate interface?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Predicate Interface (Java 8)\n\n👉 **Definition (crisp)**\n`Predicate<T>` represents a **boolean condition (test)** on input.\n\n---\n\n## Method\n\n```java id=\"p1\"\nboolean test(T t);\n```\n\n---\n\n## Basic Example\n\n```java id=\"p2\"\nPredicate<Integer> p = x -> x > 10;\n\nSystem.out.println(p.test(15)); // true\nSystem.out.println(p.test(5));  // false\n```\n\n---\n\n## With Collections\n\n```java id=\"p3\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .filter(x -> x % 2 == 0)\n    .forEach(System.out::println);\n```\n\n---\n\n## Predicate Chaining 🔥\n\n```java id=\"p4\"\nPredicate<Integer> p1 = x -> x > 10;\nPredicate<Integer> p2 = x -> x % 2 == 0;\n\nPredicate<Integer> result = p1.and(p2);\n\nSystem.out.println(result.test(12)); // true\n```\n\n---\n\n## Other Methods\n\n```java id=\"p5\"\np1.and(p2);\np1.or(p2);\np1.negate();\n```\n\n---\n\n## BiPredicate\n\n```java id=\"p6\"\nBiPredicate<Integer, Integer> bp = (a, b) -> a > b;\n\nSystem.out.println(bp.test(10, 5)); // true\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `Predicate` is a functional interface that takes an input and returns a **boolean result**, commonly used for filtering and condition checking.\n\n---\n\nNext?\n👉 **Predicate vs Function (very common interview trap 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37657,7 +37665,11 @@
     "name": "028 What is Function interface?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Function Interface (Java 8)\n\n👉 **Definition (crisp)**\n`Function<T, R>` represents a function that **takes input T and returns output R**.\n\n---\n\n## Method\n\n```java id=\"f1\"\nR apply(T t);\n```\n\n---\n\n## Basic Example\n\n```java id=\"f2\"\nFunction<Integer, String> f = x -> \"Value: \" + x;\n\nSystem.out.println(f.apply(10)); // Value: 10\n```\n\n---\n\n## Transform Data (Very Common 🔥)\n\n```java id=\"f3\"\nList<String> list = Arrays.asList(\"1\", \"2\", \"3\");\n\nlist.stream()\n    .map(Integer::parseInt)\n    .forEach(System.out::println);\n```\n\n---\n\n## Function Chaining\n\n```java id=\"f4\"\nFunction<Integer, Integer> f1 = x -> x * 2;\nFunction<Integer, Integer> f2 = x -> x + 3;\n\nFunction<Integer, Integer> result = f1.andThen(f2);\n\nSystem.out.println(result.apply(5)); // (5*2)+3 = 13\n```\n\n---\n\n## compose() (Reverse Order)\n\n```java id=\"f5\"\nFunction<Integer, Integer> result = f1.compose(f2);\n\nSystem.out.println(result.apply(5)); // (5+3)*2 = 16\n```\n\n---\n\n## Identity Function\n\n```java id=\"f6\"\nFunction<Integer, Integer> identity = Function.identity();\n\nSystem.out.println(identity.apply(10)); // 10\n```\n\n---\n\n## BiFunction\n\n```java id=\"f7\"\nBiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;\n\nSystem.out.println(add.apply(2, 3)); // 5\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `Function<T, R>` is a functional interface that **takes one input and returns a result**, commonly used for transformation.\n\n---\n\nNext?\n👉 **Function vs Predicate vs Consumer (very important comparison 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37677,7 +37689,11 @@
     "name": "029 What is Supplier interface?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Supplier Interface (Java 8)\n\n👉 **Definition (crisp)**\n`Supplier<T>` represents a function that **takes NO input and returns a value**.\n\n---\n\n## Method\n\n```java id=\"s1\"\nT get();\n```\n\n---\n\n## Basic Example\n\n```java id=\"s2\"\nSupplier<String> s = () -> \"Hello\";\n\nSystem.out.println(s.get()); // Hello\n```\n\n---\n\n## Generate Random Values\n\n```java id=\"s3\"\nSupplier<Double> random = () -> Math.random();\n\nSystem.out.println(random.get());\n```\n\n---\n\n## Object Creation (Common Use 🔥)\n\n```java id=\"s4\"\nSupplier<List<String>> s = ArrayList::new;\n\nList<String> list = s.get();\n```\n\n---\n\n## Lazy Initialization\n\n```java id=\"s5\"\nSupplier<String> lazy = () -> {\n    System.out.println(\"Executing...\");\n    return \"Data\";\n};\n\nSystem.out.println(lazy.get());\n```\n\n---\n\n## With Optional\n\n```java id=\"s6\"\nOptional<String> opt = Optional.ofNullable(null);\n\nString val = opt.orElseGet(() -> \"Default Value\");\n```\n\n---\n\n## Key Points\n\n* No input\n* Returns value\n* Used for **lazy generation / object creation**\n* Opposite of `Consumer`\n\n---\n\n## One-line Answer 💡\n\n👉 `Supplier<T>` is a functional interface that **provides a result without taking any input**.\n\n---\n\nNext?\n👉 **Supplier vs Consumer (very common interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37697,7 +37713,11 @@
     "name": "030 What is Consumer interface?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Consumer Interface (Java 8)\n\n👉 **Definition (crisp)**\n`Consumer<T>` represents an operation that **takes input and returns nothing (void)**.\n\n---\n\n## Method\n\n```java id=\"c1\"\nvoid accept(T t);\n```\n\n---\n\n## Basic Example\n\n```java id=\"c2\"\nConsumer<String> c = s -> System.out.println(s);\n\nc.accept(\"Hello\"); // Hello\n```\n\n---\n\n## With Collections\n\n```java id=\"c3\"\nList<String> list = Arrays.asList(\"A\", \"B\", \"C\");\n\nlist.forEach(s -> System.out.println(s));\n```\n\n---\n\n## Using Method Reference\n\n```java id=\"c4\"\nlist.forEach(System.out::println);\n```\n\n---\n\n## Consumer Chaining 🔥\n\n```java id=\"c5\"\nConsumer<String> c1 = s -> System.out.println(s);\nConsumer<String> c2 = s -> System.out.println(s.toUpperCase());\n\nConsumer<String> result = c1.andThen(c2);\n\nresult.accept(\"java\");\n```\n\n---\n\n## BiConsumer\n\n```java id=\"c6\"\nBiConsumer<String, Integer> bc = (name, age) ->\n        System.out.println(name + \" \" + age);\n\nbc.accept(\"Prem\", 25);\n```\n\n---\n\n## Key Points\n\n* Takes input\n* No return value\n* Used for **side effects (print, update, save, etc.)**\n* Opposite of `Supplier`\n\n---\n\n## One-line Answer 💡\n\n👉 `Consumer<T>` is a functional interface that **accepts an input and performs an operation without returning any result**.\n\n---\n\nNext?\n👉 **Consumer vs Function vs Predicate (very important comparison 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37717,7 +37737,11 @@
     "name": "031 Difference between Predicate and Function?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## Predicate vs Function (Java 8)\n\n---\n\n## 1. Purpose\n\n```java id=\"pf1\"\n// Predicate → condition check (true/false)\nPredicate<Integer> p = x -> x > 10;\n\n// Function → transformation (input → output)\nFunction<Integer, String> f = x -> \"Val: \" + x;\n```\n\n---\n\n## 2. Method\n\n```java id=\"pf2\"\n// Predicate\nboolean test(T t);\n\n// Function\nR apply(T t);\n```\n\n---\n\n## 3. Return Type\n\n```java id=\"pf3\"\n// Predicate → boolean\np.test(5); // true/false\n\n// Function → any type\nf.apply(5); // \"Val: 5\"\n```\n\n---\n\n## 4. Usage in Streams\n\n```java id=\"pf4\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\n// Predicate → filter\nlist.stream()\n    .filter(x -> x % 2 == 0)\n    .forEach(System.out::println);\n\n// Function → map\nlist.stream()\n    .map(x -> x * 2)\n    .forEach(System.out::println);\n```\n\n---\n\n## 5. Chaining\n\n```java id=\"pf5\"\n// Predicate\np1.and(p2).or(p3).negate();\n\n// Function\nf1.andThen(f2).compose(f3);\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"pf6\"\n// Predicate<T>  → T -> boolean (condition)\n// Function<T,R> → T -> R (transform)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Predicate is used for **boolean condition checking**, while Function is used for **input-to-output transformation**.\n\n---\n\nIf you want next:\n👉 **Supplier vs Consumer vs Function vs Predicate (complete comparison 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37737,7 +37761,11 @@
     "name": "032 Difference between Supplier and Consumer?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## Supplier vs Consumer (Java 8)\n\n---\n\n## 1. Purpose\n\n```java id=\"sc1\"\n// Supplier → provides data (no input)\nSupplier<String> s = () -> \"Hello\";\n\n// Consumer → consumes data (no return)\nConsumer<String> c = str -> System.out.println(str);\n```\n\n---\n\n## 2. Method\n\n```java id=\"sc2\"\n// Supplier\nT get();\n\n// Consumer\nvoid accept(T t);\n```\n\n---\n\n## 3. Input / Output\n\n```java id=\"sc3\"\n// Supplier → () -> T\nString val = s.get();\n\n// Consumer → T -> void\nc.accept(\"Hello\");\n```\n\n---\n\n## 4. Usage Example\n\n```java id=\"sc4\"\n// Supplier → generate value\nSupplier<Double> random = () -> Math.random();\n\n// Consumer → use value\nConsumer<Double> print = x -> System.out.println(x);\n\nprint.accept(random.get());\n```\n\n---\n\n## 5. Real Use Case 🔥\n\n```java id=\"sc5\"\n// Supplier (lazy value)\nOptional<String> opt = Optional.ofNullable(null);\n\nString val = opt.orElseGet(() -> \"Default\");\n\n// Consumer (side effect)\nlist.forEach(System.out::println);\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"sc6\"\n// Supplier<T> → () -> T      (no input, returns value)\n// Consumer<T> → T -> void    (takes input, no return)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Supplier **produces data without input**, while Consumer **accepts data and performs an operation without returning anything**.\n\n---\n\nNext?\n👉 **All 4 (Predicate, Function, Supplier, Consumer) in one diagram 🔥**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37757,7 +37785,11 @@
     "name": "033 What is BiFunction?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## BiFunction (Java 8)\n\n👉 **Definition (crisp)**\n`BiFunction<T, U, R>` represents a function that **takes 2 inputs and returns 1 output**.\n\n---\n\n## Method\n\n```java id=\"bf1\"\nR apply(T t, U u);\n```\n\n---\n\n## Basic Example\n\n```java id=\"bf2\"\nBiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;\n\nSystem.out.println(add.apply(10, 20)); // 30\n```\n\n---\n\n## Different Types Example\n\n```java id=\"bf3\"\nBiFunction<String, String, Integer> f = (a, b) -> (a + b).length();\n\nSystem.out.println(f.apply(\"Hello\", \"Java\")); // length\n```\n\n---\n\n## With Object Creation 🔥\n\n```java id=\"bf4\"\nclass Student {\n    int id;\n    String name;\n\n    Student(int id, String name) {\n        this.id = id;\n        this.name = name;\n    }\n}\n\nBiFunction<Integer, String, Student> f = Student::new;\n\nStudent s = f.apply(1, \"Prem\");\n```\n\n---\n\n## Chaining (andThen)\n\n```java id=\"bf5\"\nBiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;\n\nFunction<Integer, String> after = x -> \"Result: \" + x;\n\nFunction<Integer, String> result = add.andThen(after);\n\nSystem.out.println(result.apply(2, 3));\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"bf6\"\n// BiFunction<T,U,R> → (T,U) -> R\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `BiFunction` is a functional interface that **takes two inputs and produces a result**.\n\n---\n\nNext?\n👉 **BiFunction vs BinaryOperator (very common interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37777,7 +37809,11 @@
     "name": "034 What is BinaryOperator?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## BinaryOperator (Java 8)\n\n👉 **Definition (crisp)**\n`BinaryOperator<T>` is a special type of `BiFunction` where **both inputs and output are of the same type**.\n\n---\n\n## Inheritance\n\n```java id=\"bo1\"\nBinaryOperator<T> extends BiFunction<T, T, T>\n```\n\n---\n\n## Method\n\n```java id=\"bo2\"\nT apply(T t1, T t2);\n```\n\n---\n\n## Basic Example\n\n```java id=\"bo3\"\nBinaryOperator<Integer> add = (a, b) -> a + b;\n\nSystem.out.println(add.apply(10, 20)); // 30\n```\n\n---\n\n## With Strings\n\n```java id=\"bo4\"\nBinaryOperator<String> concat = (a, b) -> a + b;\n\nSystem.out.println(concat.apply(\"Hello \", \"Java\"));\n```\n\n---\n\n## With Streams (Very Important 🔥)\n\n```java id=\"bo5\"\nList<Integer> list = Arrays.asList(1,2,3,4);\n\nint sum = list.stream()\n              .reduce(0, (a, b) -> a + b);\n\nSystem.out.println(sum);\n```\n\n---\n\n## Using Method Reference\n\n```java id=\"bo6\"\nBinaryOperator<Integer> sum = Integer::sum;\n```\n\n---\n\n## Special Methods\n\n```java id=\"bo7\"\nBinaryOperator<Integer> max = BinaryOperator.maxBy(Comparator.naturalOrder());\n\nSystem.out.println(max.apply(10, 20)); // 20\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"bo8\"\n// BinaryOperator<T> → (T, T) -> T\n// Same input type + same return type\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `BinaryOperator` is a functional interface that **takes two inputs of the same type and returns a result of the same type**.\n\n---\n\nNext?\n👉 **BinaryOperator vs BiFunction (very common interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37797,7 +37833,11 @@
     "name": "035 What is UnaryOperator?",
     "parentId": "d3163989-9014-4945-9aa5-2fa2191a1eb0",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## UnaryOperator (Java 8)\n\n👉 **Definition (crisp)**\n`UnaryOperator<T>` is a special type of `Function` where **input and output are of the same type**.\n\n---\n\n## Inheritance\n\n```java id=\"uo1\"\nUnaryOperator<T> extends Function<T, T>\n```\n\n---\n\n## Method\n\n```java id=\"uo2\"\nT apply(T t);\n```\n\n---\n\n## Basic Example\n\n```java id=\"uo3\"\nUnaryOperator<Integer> square = x -> x * x;\n\nSystem.out.println(square.apply(5)); // 25\n```\n\n---\n\n## String Example\n\n```java id=\"uo4\"\nUnaryOperator<String> upper = s -> s.toUpperCase();\n\nSystem.out.println(upper.apply(\"java\"));\n```\n\n---\n\n## With Streams 🔥\n\n```java id=\"uo5\"\nList<Integer> list = Arrays.asList(1,2,3);\n\nlist.stream()\n    .map(x -> x * 2)\n    .forEach(System.out::println);\n```\n\n---\n\n## Using Method Reference\n\n```java id=\"uo6\"\nUnaryOperator<String> upper = String::toUpperCase;\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"uo7\"\n// UnaryOperator<T> → T -> T\n// Same input type + same output type\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `UnaryOperator` is a functional interface that **takes one input and returns a result of the same type**.\n\n---\n\nNext?\n👉 **UnaryOperator vs Function (very common interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37833,7 +37873,11 @@
     "name": "036 What is Stream API in Java 8?",
     "parentId": "294bc30b-91fb-441d-ab65-4bfc683f3edb",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Stream API (Java 8)\n\n👉 **Definition (crisp)**\nStream API is used to **process collections of data in a functional, declarative way** (filter, map, reduce).\n\n---\n\n## Basic Example\n\n```java id=\"st1\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .filter(x -> x % 2 == 0)\n    .map(x -> x * x)\n    .forEach(System.out::println);\n```\n\n---\n\n## What Stream Does 🔥\n\n```java id=\"st2\"\n// filter → select data\n// map    → transform data\n// reduce → aggregate result\n```\n\n---\n\n## Stream Pipeline\n\n```java id=\"st3\"\nlist.stream()        // source\n    .filter(...)     // intermediate\n    .map(...)        // intermediate\n    .collect(...);   // terminal\n```\n\n---\n\n## Key Features\n\n* Functional style (lambda आधारित)\n* Lazy execution\n* Supports parallel processing\n* No data storage (works on source)\n* Pipeline processing\n\n---\n\n## Example (Real Use Case)\n\n```java id=\"st4\"\nList<String> list = Arrays.asList(\"java\", \"spring\", \"boot\");\n\nList<String> result = list.stream()\n        .filter(s -> s.length() > 4)\n        .map(String::toUpperCase)\n        .collect(Collectors.toList());\n```\n\n---\n\n## Parallel Stream 🚀\n\n```java id=\"st5\"\nlist.parallelStream()\n    .forEach(System.out::println);\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Stream API is used to **process collections in a functional and efficient way using operations like filter, map, and reduce**.\n\n---\n\nNext?\n👉 **Difference between Collection vs Stream (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
