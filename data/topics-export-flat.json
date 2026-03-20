@@ -36969,7 +36969,11 @@
     "name": "001 What are the major features introduced in Java 8?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + interview-ready + developer-focused 👇\n\n---\n\n## Major Features of Java 8\n\n### 1. Lambda Expressions\n\n```java\nList<String> list = Arrays.asList(\"A\", \"B\", \"C\");\n\nlist.forEach(s -> System.out.println(s));\n```\n\n---\n\n### 2. Functional Interfaces\n\n```java\n@FunctionalInterface\ninterface MyFunc {\n    void apply();\n}\n```\n\nBuilt-in:\n\n```java\nPredicate<Integer> p = x -> x > 10;\nFunction<Integer, String> f = x -> \"Val: \" + x;\nConsumer<String> c = System.out::println;\nSupplier<Double> s = Math::random;\n```\n\n---\n\n### 3. Stream API\n\n```java\nList<Integer> nums = Arrays.asList(1,2,3,4,5);\n\nList<Integer> result = nums.stream()\n        .filter(n -> n % 2 == 0)\n        .map(n -> n * n)\n        .collect(Collectors.toList());\n```\n\n---\n\n### 4. Method References\n\n```java\nlist.forEach(System.out::println);\n```\n\nTypes:\n\n```java\nClass::staticMethod\nobj::instanceMethod\nClass::instanceMethod\nClass::new\n```\n\n---\n\n### 5. Default & Static Methods (Interface)\n\n```java\ninterface A {\n    default void show() {\n        System.out.println(\"Default method\");\n    }\n\n    static void util() {\n        System.out.println(\"Static method\");\n    }\n}\n```\n\n---\n\n### 6. Optional Class (Avoid NullPointerException)\n\n```java\nOptional<String> opt = Optional.ofNullable(null);\n\nString val = opt.orElse(\"Default\");\n```\n\n---\n\n### 7. New Date & Time API (java.time)\n\n```java\nLocalDate date = LocalDate.now();\nLocalTime time = LocalTime.now();\nLocalDateTime dt = LocalDateTime.now();\n\nSystem.out.println(date + \" \" + time);\n```\n\n---\n\n### 8. Parallel Streams\n\n```java\nnums.parallelStream()\n    .forEach(System.out::println);\n```\n\n---\n\n### 9. Nashorn JavaScript Engine\n\n```java\nScriptEngine engine = new ScriptEngineManager()\n        .getEngineByName(\"nashorn\");\n\nengine.eval(\"print('Hello from JS')\");\n```\n\n---\n\n### 10. CompletableFuture (Async Programming)\n\n```java\nCompletableFuture.supplyAsync(() -> \"Hello\")\n        .thenApply(s -> s + \" World\")\n        .thenAccept(System.out::println);\n```\n\n---\n\n## One-line Summary (Interview Killer Line 💡)\n\nJava 8 introduced **functional programming support, Stream processing, improved APIs, and async capabilities**, making Java more concise, readable, and scalable.\n\n---\n\nIf you want next level prep → I can give:\n👉 **Real interview answers (2–3 lines crisp)**\n👉 **Deep internals (how streams/lambda work internally)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -36989,7 +36993,11 @@
     "name": "002 What is Lambda Expression in Java 8?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + interview-ready + code-heavy 👇\n\n---\n\n## Lambda Expression (Java 8)\n\n👉 **Definition (crisp)**\nLambda Expression = **anonymous function** (no name, no class) used to implement **functional interfaces**.\n\n---\n\n## Basic Syntax\n\n```java\n(parameters) -> expression\n```\n\n```java\n(parameters) -> {\n    // multiple statements\n}\n```\n\n---\n\n## Example 1 (Runnable)\n\n```java\nRunnable r = () -> System.out.println(\"Running...\");\n\nnew Thread(r).start();\n```\n\n---\n\n## Example 2 (Comparator)\n\n```java\nList<String> list = Arrays.asList(\"A\", \"CCC\", \"BB\");\n\nlist.sort((a, b) -> a.length() - b.length());\n```\n\n---\n\n## Example 3 (Functional Interface)\n\n```java\n@FunctionalInterface\ninterface Add {\n    int sum(int a, int b);\n}\n\nAdd add = (a, b) -> a + b;\n\nSystem.out.println(add.sum(10, 20));\n```\n\n---\n\n## Example 4 (With Streams)\n\n```java\nList<Integer> nums = Arrays.asList(1,2,3,4);\n\nnums.stream()\n    .filter(n -> n % 2 == 0)\n    .forEach(n -> System.out.println(n));\n```\n\n---\n\n## Behind the Scene (Important for Interview 🔥)\n\n```java\n// Lambda\n(a, b) -> a + b\n\n// Converted internally to (rough idea)\nnew Add() {\n    public int sum(int a, int b) {\n        return a + b;\n    }\n};\n```\n\n👉 Actually implemented using **invokedynamic + LambdaMetaFactory (JVM level)**\n\n---\n\n## Key Points (Rapid Fire)\n\n* Works only with **functional interfaces**\n* Reduces **boilerplate code**\n* Supports **functional programming**\n* Can capture **effectively final variables**\n* No need of `new` keyword or class\n\n---\n\n## One-line Answer 💡\n\nLambda expression is a **concise way to represent a functional interface implementation using an anonymous function**.\n\n---\n\nIf you want, next I can show:\n👉 **Lambda internal working (JVM bytecode + invokedynamic)**\n👉 **Tricky interview questions on Lambda (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37009,7 +37017,11 @@
     "name": "003 What problem do Lambda expressions solve?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short, crisp + code-heavy (interview-ready) 👇\n\n---\n\n## Problem Lambda Expressions Solve\n\n### ❌ Before Java 8 (Too Much Boilerplate)\n\n```java\nRunnable r = new Runnable() {\n    @Override\n    public void run() {\n        System.out.println(\"Running...\");\n    }\n};\n\nnew Thread(r).start();\n```\n\n👉 Problems:\n\n* Too verbose\n* Hard to read\n* Extra class/object creation\n* Focus shifts from **logic → syntax noise**\n\n---\n\n### ✅ With Lambda (Clean + Concise)\n\n```java\nnew Thread(() -> System.out.println(\"Running...\")).start();\n```\n\n---\n\n## Problem #1: Boilerplate Code Reduction\n\n```java\n// Before\nComparator<String> c = new Comparator<String>() {\n    public int compare(String a, String b) {\n        return a.length() - b.length();\n    }\n};\n\n// After\nComparator<String> c = (a, b) -> a.length() - b.length();\n```\n\n---\n\n## Problem #2: Functional Programming Support\n\n```java\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.stream()\n    .filter(n -> n % 2 == 0)\n    .map(n -> n * n)\n    .forEach(System.out::println);\n```\n\n👉 Enables **map, filter, reduce style programming**\n\n---\n\n## Problem #3: Passing Behavior as Data\n\n```java\ninterface Operation {\n    int apply(int a, int b);\n}\n\nOperation add = (a, b) -> a + b;\nOperation mul = (a, b) -> a * b;\n```\n\n👉 You can pass **logic as parameter**\n\n---\n\n## Problem #4: Readability & Maintainability\n\n```java\n// Before (nested, ugly)\nbutton.setOnClickListener(new View.OnClickListener() {\n    public void onClick(View v) {\n        System.out.println(\"Clicked\");\n    }\n});\n\n// After\nbutton.setOnClickListener(v -> System.out.println(\"Clicked\"));\n```\n\n---\n\n## Problem #5: Better Parallel Processing (with Streams)\n\n```java\nlist.parallelStream()\n    .forEach(System.out::println);\n```\n\n---\n\n## One-line Answer 💡 (Interview Killer)\n\n👉 Lambda expressions solve **boilerplate code, improve readability, and enable functional programming by allowing behavior to be passed as data.**\n\n---\n\nIf you want next level prep:\n👉 **Tricky Lambda interview edge cases**\n👉 **Lambda vs Anonymous class deep comparison (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37029,7 +37041,11 @@
     "name": "004 What is the syntax of a Lambda expression?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short, crisp + code-heavy 👇\n\n---\n\n## Lambda Expression Syntax\n\n```java\n(parameters) -> expression\n```\n\nOR\n\n```java\n(parameters) -> {\n    // multiple statements\n}\n```\n\n---\n\n## 1. No Parameter\n\n```java\nRunnable r = () -> System.out.println(\"Hello\");\n```\n\n---\n\n## 2. Single Parameter\n\n```java\nConsumer<String> c = s -> System.out.println(s);\n```\n\n---\n\n## 3. Multiple Parameters\n\n```java\nComparator<Integer> comp = (a, b) -> a - b;\n```\n\n---\n\n## 4. Multiple Statements (Block)\n\n```java\nFunction<Integer, Integer> f = x -> {\n    int square = x * x;\n    return square;\n};\n```\n\n---\n\n## 5. Return Type (Auto Inferred)\n\n```java\nFunction<Integer, Integer> f = x -> x * 2;\n```\n\n---\n\n## 6. Explicit Types (Optional)\n\n```java\nComparator<Integer> comp = (Integer a, Integer b) -> a - b;\n```\n\n---\n\n## Key Rules 🔥\n\n* `()` → required for 0 or multiple params\n* Single param → `()` optional\n* `{}` → required for multiple statements\n* `return` → needed only with `{}`\n* Type inference handled by compiler\n\n---\n\n## One-line Answer 💡\n\n👉 Lambda syntax is:\n**(parameters) -> expression OR (parameters) -> { statements }**\n\n---\n\nWant next?\n👉 **All tricky syntax edge cases (very important for interviews 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37049,7 +37065,11 @@
     "name": "005 What is a functional interface?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Functional Interface (Java 8)\n\n👉 **Definition (crisp)**\nA functional interface is an interface that contains **exactly one abstract method**.\n\n---\n\n## Basic Example\n\n```java id=\"1g5v8c\"\n@FunctionalInterface\ninterface MyFunc {\n    void apply();\n}\n```\n\n---\n\n## Implementation using Lambda\n\n```java id=\"h9r9np\"\nMyFunc f = () -> System.out.println(\"Hello\");\n\nf.apply();\n```\n\n---\n\n## Real Built-in Functional Interfaces\n\n```java id=\"a2gl29\"\nPredicate<Integer> p = x -> x > 10;\n\nFunction<Integer, String> f = x -> \"Val: \" + x;\n\nConsumer<String> c = System.out::println;\n\nSupplier<Double> s = Math::random;\n```\n\n---\n\n## With Parameters + Return\n\n```java id=\"r7rbsm\"\n@FunctionalInterface\ninterface Add {\n    int sum(int a, int b);\n}\n\nAdd add = (a, b) -> a + b;\n```\n\n---\n\n## Rules 🔥\n\n* Only **1 abstract method**\n* Can have:\n\n  ```java id=\"u0uxdz\"\n  default void log() {}\n  static void util() {}\n  ```\n* Can have `Object` class methods (`toString`, etc.)\n* Optional annotation: `@FunctionalInterface`\n\n---\n\n## Invalid Example ❌\n\n```java id=\"f8gb2m\"\ninterface Test {\n    void a();\n    void b(); // ❌ more than 1 abstract method\n}\n```\n\n---\n\n## Why Important?\n\n👉 Required for:\n\n* Lambda Expressions\n* Method References\n* Stream API\n\n---\n\n## One-line Answer 💡\n\n👉 A functional interface is an interface with **exactly one abstract method**, used as the target type for lambda expressions.\n\n---\n\nIf you want next:\n👉 **Tricky functional interface questions (very commonly asked 🔥)**\n👉 **Custom functional interface design patterns**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37069,7 +37089,11 @@
     "name": "006 What is the @FunctionalInterface annotation?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `@FunctionalInterface` Annotation (Java 8)\n\n👉 **Definition (crisp)**\n`@FunctionalInterface` ensures that an interface has **exactly one abstract method**.\n\n---\n\n## Basic Example\n\n```java id=\"z0c9c4\"\n@FunctionalInterface\ninterface MyFunc {\n    void apply();\n}\n```\n\n---\n\n## Compile-Time Safety ✅\n\n```java id=\"p5u1qk\"\n@FunctionalInterface\ninterface Test {\n    void a();\n    void b(); // ❌ Compile-time error\n}\n```\n\n👉 Compiler error because more than 1 abstract method\n\n---\n\n## Valid with Default & Static Methods\n\n```java id=\"6a6o4n\"\n@FunctionalInterface\ninterface Demo {\n    void run();\n\n    default void log() {\n        System.out.println(\"log\");\n    }\n\n    static void util() {\n        System.out.println(\"util\");\n    }\n}\n```\n\n---\n\n## Without Annotation (Still Works)\n\n```java id=\"3d6y9k\"\ninterface MyFunc {\n    void apply();\n}\n```\n\n👉 Still functional, but **no compile-time check**\n\n---\n\n## Lambda Usage\n\n```java id=\"p0yr9h\"\nMyFunc f = () -> System.out.println(\"Hello\");\n\nf.apply();\n```\n\n---\n\n## Key Points 🔥\n\n* Optional annotation\n* Provides **compile-time validation**\n* Improves **code readability & intent**\n* Prevents accidental method addition\n\n---\n\n## One-line Answer 💡\n\n👉 `@FunctionalInterface` is an annotation that **ensures an interface contains exactly one abstract method and is intended for lambda usage**.\n\n---\n\nIf you want next:\n👉 **Difference: Functional Interface vs Normal Interface (interview trap 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37089,7 +37113,11 @@
     "name": "007 Can a functional interface have default methods?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Yes ✅ — **functional interface can have default methods**.\n\n---\n\n## Example\n\n```java id=\"k8c3s1\"\n@FunctionalInterface\ninterface MyFunc {\n\n    void run(); // only abstract method ✅\n\n    default void log() {\n        System.out.println(\"Logging...\");\n    }\n}\n```\n\n---\n\n## Usage\n\n```java id=\"p4d8q2\"\nMyFunc f = () -> System.out.println(\"Running\");\n\nf.run();\nf.log(); // default method call\n```\n\n---\n\n## Key Rule 🔥\n\n```java id=\"z1v0c9\"\n// VALID\n@FunctionalInterface\ninterface A {\n    void a();           // 1 abstract method ✅\n    default void b() {} // allowed ✅\n}\n```\n\n---\n\n```java id=\"x7t2m4\"\n// INVALID\n@FunctionalInterface\ninterface B {\n    void a();\n    void b(); // ❌ 2 abstract methods\n}\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Yes, a functional interface can have **any number of default (and static) methods**, but only **one abstract method**.\n\n---\n\nNext?\n👉 **Can it extend another interface? (very tricky interview question 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37109,7 +37137,11 @@
     "name": "008 Can a functional interface have static methods?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Yes ✅ — a **functional interface can have static methods**.\n\n---\n\n## Example\n\n```java id=\"m1x7a2\"\n@FunctionalInterface\ninterface MyFunc {\n\n    void run(); // only abstract method ✅\n\n    static void util() {\n        System.out.println(\"Utility method\");\n    }\n}\n```\n\n---\n\n## Usage\n\n```java id=\"q9b3k8\"\nMyFunc f = () -> System.out.println(\"Running\");\n\nf.run();\n\n// static method call\nMyFunc.util();\n```\n\n---\n\n## Key Rule 🔥\n\n```java id=\"d4r6p1\"\n// VALID\n@FunctionalInterface\ninterface A {\n    void a();            // 1 abstract method ✅\n    static void b() {}   // allowed ✅\n}\n```\n\n---\n\n## Invalid Case ❌\n\n```java id=\"h2t5w9\"\n@FunctionalInterface\ninterface B {\n    void a();\n    void b(); // ❌ 2 abstract methods\n}\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Yes, a functional interface can have **any number of static methods**, but only **one abstract method**.\n\n---\n\nNext?\n👉 **Can functional interface extend another interface? (very important trap 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37129,7 +37161,11 @@
     "name": "009 Can a functional interface extend another interface?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Yes ✅ — a **functional interface can extend another interface**, but condition apply 🔥\n\n---\n\n## ✅ Case 1: Still Functional (VALID)\n\n👉 Total abstract methods = **1**\n\n```java id=\"n7k2p1\"\ninterface A {\n    void a();\n}\n\n@FunctionalInterface\ninterface B extends A {\n    // no new abstract method\n}\n```\n\n✔️ Still functional (only 1 abstract method)\n\n---\n\n## ✅ Case 2: Override Same Method (VALID)\n\n```java id=\"r3x8v6\"\ninterface A {\n    void a();\n}\n\n@FunctionalInterface\ninterface B extends A {\n    void a(); // same method (override)\n}\n```\n\n✔️ Still counts as **one abstract method**\n\n---\n\n## ❌ Case 3: Multiple Abstract Methods (INVALID)\n\n```java id=\"t9m4q2\"\ninterface A {\n    void a();\n}\n\n@FunctionalInterface\ninterface B extends A {\n    void b(); // ❌ now total = 2 abstract methods\n}\n```\n\n❌ Not a functional interface\n\n---\n\n## ✅ Case 4: Default Methods (VALID)\n\n```java id=\"k5p1z7\"\ninterface A {\n    void a();\n}\n\n@FunctionalInterface\ninterface B extends A {\n    default void log() {\n        System.out.println(\"log\");\n    }\n}\n```\n\n✔️ Still valid\n\n---\n\n## Rule Summary 🔥\n\n```java id=\"f2h8u0\"\n// VALID if total abstract methods = 1\n// INVALID if total abstract methods > 1\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Yes, a functional interface can extend another interface **as long as the total number of abstract methods remains exactly one**.\n\n---\n\nNext?\n👉 **How many abstract methods allowed? (simple but tricky follow-up 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37149,7 +37185,11 @@
     "name": "010 How many abstract methods can a functional interface have?",
     "parentId": "c7a827c4-39a5-4df6-b574-727a36449e0f",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "## Answer (crisp)\n\n👉 A functional interface can have **exactly ONE abstract method**.\n\n---\n\n## Example ✅\n\n```java id=\"p8v3k1\"\n@FunctionalInterface\ninterface MyFunc {\n    void run(); // only 1 abstract method ✅\n}\n```\n\n---\n\n## Invalid ❌\n\n```java id=\"t4x9m2\"\n@FunctionalInterface\ninterface Test {\n    void a();\n    void b(); // ❌ more than 1 abstract method\n}\n```\n\n---\n\n## Allowed Along with 1 Abstract Method ✅\n\n```java id=\"z6q1w7\"\n@FunctionalInterface\ninterface Demo {\n    void run(); // only abstract method\n\n    default void log() {}   // allowed\n    static void util() {}   // allowed\n}\n```\n\n---\n\n## Special Case (Important 🔥)\n\n```java id=\"y2n5c8\"\n@FunctionalInterface\ninterface A {\n    boolean equals(Object obj); // from Object class\n}\n```\n\n👉 Methods from `Object` **do NOT count** as abstract methods\n\n---\n\n## One-line Answer 💡\n\n👉 A functional interface must have **exactly one abstract method**, no more, no less.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37185,7 +37225,11 @@
     "name": "011 How does Lambda improve code readability?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + practical + code-heavy 👇\n\n---\n\n## How Lambda Improves Readability\n\n---\n\n### 1. Removes Boilerplate Code\n\n```java id=\"z7m1c2\"\n// BEFORE\nRunnable r = new Runnable() {\n    @Override\n    public void run() {\n        System.out.println(\"Running\");\n    }\n};\n\n// AFTER\nRunnable r = () -> System.out.println(\"Running\");\n```\n\n👉 Less noise, more focus on logic\n\n---\n\n### 2. Eliminates Anonymous Classes\n\n```java id=\"x3p8q9\"\n// BEFORE\nComparator<String> comp = new Comparator<String>() {\n    public int compare(String a, String b) {\n        return a.length() - b.length();\n    }\n};\n\n// AFTER\nComparator<String> comp = (a, b) -> a.length() - b.length();\n```\n\n---\n\n### 3. Makes Code More Declarative\n\n```java id=\"b6k2f4\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\n// BEFORE\nList<Integer> result = new ArrayList<>();\nfor (Integer n : list) {\n    if (n % 2 == 0) {\n        result.add(n * n);\n    }\n}\n\n// AFTER\nList<Integer> result = list.stream()\n        .filter(n -> n % 2 == 0)\n        .map(n -> n * n)\n        .collect(Collectors.toList());\n```\n\n👉 Reads like **what to do**, not how to do\n\n---\n\n### 4. Inline Behavior (No Extra Methods)\n\n```java id=\"n4v7s1\"\nlist.forEach(n -> System.out.println(n));\n```\n\n---\n\n### 5. Better for Event Handling\n\n```java id=\"k9d2h5\"\n// BEFORE\nbutton.setOnClickListener(new View.OnClickListener() {\n    public void onClick(View v) {\n        System.out.println(\"Clicked\");\n    }\n});\n\n// AFTER\nbutton.setOnClickListener(v -> System.out.println(\"Clicked\"));\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Lambda improves readability by **removing boilerplate code, eliminating anonymous classes, and making code more concise and expressive (declarative style)**.\n\n---\n\nIf you want next:\n👉 **Lambda vs Anonymous class (very important interview question 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37205,7 +37249,11 @@
     "name": "012 What is effectively final variable in Lambda?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Effectively Final Variable (Lambda)\n\n👉 **Definition (crisp)**\nA variable is **effectively final** if its value is **assigned once and never changed**, even if `final` keyword is not explicitly used.\n\n---\n\n## Example ✅ (Effectively Final)\n\n```java id=\"q1w2e3\"\nint x = 10; // not declared final\n\nRunnable r = () -> {\n    System.out.println(x); // allowed ✅\n};\n```\n\n👉 `x` is **effectively final**\n\n---\n\n## Example ❌ (Not Effectively Final)\n\n```java id=\"a4s5d6\"\nint x = 10;\n\nx = 20; // value changed ❌\n\nRunnable r = () -> {\n    System.out.println(x); // compile-time error\n};\n```\n\n---\n\n## With Explicit final\n\n```java id=\"z7x8c9\"\nfinal int x = 10;\n\nRunnable r = () -> System.out.println(x);\n```\n\n👉 Same behavior as effectively final\n\n---\n\n## Why Required? (Important 🔥)\n\n👉 Lambda captures variables by **value, not by reference**\n\n```java id=\"p0o9i8\"\n// internally behaves like\nfinal int copy = x;\n```\n\n👉 Ensures:\n\n* Thread safety\n* No unexpected mutation\n* Simpler JVM implementation\n\n---\n\n## Tricky Case 🔥\n\n```java id=\"m3n4b5\"\nint[] arr = {10};\n\nRunnable r = () -> {\n    arr[0] = 20; // ✅ allowed\n};\n```\n\n👉 Reference is final, but object state can change\n\n---\n\n## One-line Answer 💡\n\n👉 An effectively final variable is a variable whose value is **not changed after initialization**, allowing it to be safely used inside lambda expressions.\n\n---\n\nNext?\n👉 **Why Lambda requires effectively final (deep JVM internals 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37225,7 +37273,11 @@
     "name": "013 Why must captured variables be effectively final?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-focused 👇\n\n---\n\n## Why must captured variables be effectively final?\n\n---\n\n### 1. How Lambda Captures Variables (Key 🔥)\n\n👉 Lambda **captures value, not variable**\n\n```java id=\"a1b2c3\"\nint x = 10;\n\nRunnable r = () -> System.out.println(x);\n```\n\n👉 Internally behaves like:\n\n```java id=\"d4e5f6\"\nfinal int copy = x;\n\nRunnable r = () -> System.out.println(copy);\n```\n\n---\n\n### 2. Problem if NOT final ❌\n\n```java id=\"g7h8i9\"\nint x = 10;\n\nRunnable r = () -> System.out.println(x);\n\nx = 20; // ❌ changing after capture\n```\n\n👉 Which value should lambda use? 10 or 20?\n👉 Leads to **inconsistency**\n\n---\n\n### 3. Thread Safety 🚀\n\n```java id=\"j1k2l3\"\nint x = 10;\n\nnew Thread(() -> System.out.println(x)).start();\n```\n\n👉 If `x` could change → race condition\n👉 Effectively final ensures **safe, predictable behavior**\n\n---\n\n### 4. JVM Implementation Simplicity\n\n👉 Lambda uses:\n\n* `invokedynamic`\n* `LambdaMetaFactory`\n\n👉 Final variables = simpler bytecode + optimization\n\n---\n\n### 5. Stack vs Heap Issue (Important 🔥)\n\n```java id=\"m4n5o6\"\nvoid test() {\n    int x = 10;\n\n    return () -> System.out.println(x);\n}\n```\n\n👉 `x` is on **stack (method scope)**\n👉 Lambda may run later → stack gone ❌\n\n👉 Solution:\n\n* Capture **immutable copy** (effectively final)\n\n---\n\n## One-line Answer 💡\n\n👉 Captured variables must be effectively final to ensure **consistent values, thread safety, and correct behavior since lambdas capture values (not variables) from the stack**.\n\n---\n\nIf you want next:\n👉 **How Lambda works internally (invokedynamic deep dive 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37245,7 +37297,11 @@
     "name": "014 Can Lambda expressions throw exceptions?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Yes ✅ — **Lambda expressions can throw exceptions**, but there are rules 👇\n\n---\n\n## 1. Unchecked Exceptions (Runtime) ✅\n\n👉 No restriction\n\n```java id=\"u1a2b3\"\nList<String> list = Arrays.asList(\"A\", \"B\", \"C\");\n\nlist.forEach(s -> {\n    if (s.equals(\"B\")) {\n        throw new RuntimeException(\"Error\");\n    }\n});\n```\n\n---\n\n## 2. Checked Exceptions ⚠️ (Important)\n\n👉 Depends on **functional interface method signature**\n\n---\n\n### ❌ Not Allowed (Directly)\n\n```java id=\"c4d5e6\"\nlist.forEach(s -> {\n    throw new IOException(); // ❌ compile-time error\n});\n```\n\n👉 `Consumer.accept()` does NOT declare `throws`\n\n---\n\n### ✅ Solution 1: Try-Catch inside Lambda\n\n```java id=\"f7g8h9\"\nlist.forEach(s -> {\n    try {\n        if (s.equals(\"A\")) {\n            throw new IOException();\n        }\n    } catch (IOException e) {\n        e.printStackTrace();\n    }\n});\n```\n\n---\n\n### ✅ Solution 2: Wrap Exception (Sneaky Throw Style)\n\n```java id=\"i1j2k3\"\nlist.forEach(s -> {\n    try {\n        risky();\n    } catch (IOException e) {\n        throw new RuntimeException(e);\n    }\n});\n\nstatic void risky() throws IOException {}\n```\n\n---\n\n### ✅ Solution 3: Custom Functional Interface\n\n```java id=\"l4m5n6\"\n@FunctionalInterface\ninterface MyFunc {\n    void run() throws Exception;\n}\n\nMyFunc f = () -> {\n    throw new Exception(\"Checked\");\n};\n```\n\n---\n\n## 3. Real Interview Trick 🔥\n\n```java id=\"o7p8q9\"\nFunction<String, Integer> f = s -> {\n    try {\n        return Integer.parseInt(s);\n    } catch (Exception e) {\n        return 0;\n    }\n};\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Lambda expressions can throw exceptions, but **checked exceptions are only allowed if the functional interface method declares them**; otherwise they must be handled inside the lambda.\n\n---\n\nIf you want next:\n👉 **Exception handling wrapper utilities (very useful in real projects 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37265,7 +37321,11 @@
     "name": "015 How are Lambda expressions compiled internally?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + deep + code-heavy (interview gold 🔥)\n\n---\n\n## How Lambda is Compiled Internally\n\n👉 **Not compiled like anonymous classes**\n👉 Uses **`invokedynamic` + `LambdaMetaFactory` (JVM)**\n\n---\n\n## Example\n\n```java id=\"a1s2d3\"\nRunnable r = () -> System.out.println(\"Hello\");\n```\n\n---\n\n## 1. Compile-Time (javac)\n\n👉 Compiler does **NOT** generate a class file like anonymous class\n\nInstead it generates:\n\n```java id=\"f4g5h6\"\n// pseudo bytecode idea\ninvokedynamic run()Ljava/lang/Runnable;\n```\n\n---\n\n## 2. Runtime (JVM Magic 🔥)\n\n👉 JVM uses:\n\n* `invokedynamic`\n* `java.lang.invoke.LambdaMetafactory`\n\n```java id=\"j7k8l9\"\n// simplified idea\nCallSite site = LambdaMetafactory.metafactory(...);\n```\n\n👉 It dynamically creates implementation of functional interface\n\n---\n\n## 3. Behind the Scene (Conceptual)\n\n```java id=\"m1n2b3\"\n// Lambda\n(a, b) -> a + b\n\n// JVM creates something like\nclass SyntheticClass implements Add {\n    public int sum(int a, int b) {\n        return a + b;\n    }\n}\n```\n\n⚠️ But:\n\n* No actual `.class` file generated\n* Created **dynamically at runtime**\n\n---\n\n## 4. Key Differences vs Anonymous Class\n\n```java id=\"x4c5v6\"\n// Anonymous Class\nnew Runnable() {\n    public void run() {}\n}\n```\n\n👉 Creates **separate class file**\n\n---\n\n```java id=\"z7x8c9\"\n// Lambda\n() -> {}\n```\n\n👉 Uses **invokedynamic (no extra class file)**\n\n---\n\n## 5. Performance Benefit 🚀\n\n* Less memory usage\n* Faster class loading\n* JVM optimization friendly\n* Can reuse instances\n\n---\n\n## 6. Capturing Variables\n\n```java id=\"p0o9i8\"\nint x = 10;\n\nRunnable r = () -> System.out.println(x);\n```\n\n👉 Captured as **final value copy**\n\n---\n\n## One-line Answer 💡\n\n👉 Lambda expressions are compiled using **invokedynamic instruction and LambdaMetaFactory**, allowing the JVM to dynamically create functional interface implementations at runtime without generating separate class files.\n\n---\n\nIf you want next:\n👉 **invokedynamic deep dive with bytecode (very advanced 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37285,7 +37345,11 @@
     "name": "016 What is the difference between anonymous class and Lambda?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## Anonymous Class vs Lambda (Java 8)\n\n---\n\n### 1. Syntax\n\n```java id=\"a1x1\"\n// Anonymous Class\nRunnable r1 = new Runnable() {\n    @Override\n    public void run() {\n        System.out.println(\"Run\");\n    }\n};\n```\n\n```java id=\"b2x2\"\n// Lambda\nRunnable r2 = () -> System.out.println(\"Run\");\n```\n\n---\n\n### 2. Code Size\n\n```java id=\"c3x3\"\n// Anonymous → verbose ❌\n// Lambda → concise ✅\n```\n\n---\n\n### 3. Compilation\n\n```java id=\"d4x4\"\n// Anonymous → creates separate .class file\n\n// Lambda → uses invokedynamic (no extra class file)\n```\n\n---\n\n### 4. this Keyword 🔥\n\n```java id=\"e5x5\"\nclass Test {\n\n    void demo() {\n\n        Runnable r1 = new Runnable() {\n            public void run() {\n                System.out.println(this); // refers to anonymous class\n            }\n        };\n\n        Runnable r2 = () -> {\n            System.out.println(this); // refers to outer class\n        };\n    }\n}\n```\n\n---\n\n### 5. Functional Interface Requirement\n\n```java id=\"f6x6\"\n// Anonymous → works with ANY interface/class\n\n// Lambda → works ONLY with functional interface\n```\n\n---\n\n### 6. Variable Scope\n\n```java id=\"g7x7\"\nint x = 10;\n\n// Lambda → x must be effectively final\nRunnable r = () -> System.out.println(x);\n```\n\n```java id=\"h8x8\"\nint y = 10;\n\n// Anonymous class → can shadow variables\nRunnable r2 = new Runnable() {\n    public void run() {\n        int y = 20; // allowed\n    }\n};\n```\n\n---\n\n### 7. Performance\n\n```java id=\"i9x9\"\n// Anonymous → heavier (class loading)\n// Lambda → lighter (JVM optimized)\n```\n\n---\n\n### 8. Use Case\n\n```java id=\"j1y1\"\n// Anonymous → complex logic, multiple methods\n\n// Lambda → short, single-method logic\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Anonymous classes are **verbose class-based implementations**, while Lambdas are **concise function-based implementations using invokedynamic and only for functional interfaces**.\n\n---\n\nIf you want next:\n👉 **Tricky MCQs on Lambda vs Anonymous (very common in interviews 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37305,7 +37369,11 @@
     "name": "017 Can Lambda access instance variables?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Yes ✅ — **Lambda can access instance variables** directly.\n\n---\n\n## Example\n\n```java id=\"a9k2p3\"\nclass Test {\n\n    int x = 10; // instance variable\n\n    void demo() {\n\n        Runnable r = () -> {\n            System.out.println(x); // ✅ access instance variable\n        };\n\n        r.run();\n    }\n}\n```\n\n---\n\n## Modify Instance Variable ✅\n\n```java id=\"b7m4q1\"\nclass Test {\n\n    int x = 10;\n\n    void demo() {\n\n        Runnable r = () -> {\n            x = 20; // ✅ allowed\n        };\n\n        r.run();\n        System.out.println(x); // 20\n    }\n}\n```\n\n---\n\n## Why Allowed? 🔥\n\n👉 Instance variables are stored in **heap**, not stack\n👉 No “effectively final” restriction needed\n\n---\n\n## Compare with Local Variable ❌\n\n```java id=\"c5t8v2\"\nvoid demo() {\n    int y = 10;\n\n    Runnable r = () -> {\n        // y = 20; ❌ not allowed\n        System.out.println(y);\n    };\n}\n```\n\n👉 Local variables must be **effectively final**\n\n---\n\n## Key Points\n\n* Instance variables → ✅ read/write allowed\n* Static variables → ✅ allowed\n* Local variables → ❌ must be effectively final\n\n---\n\n## One-line Answer 💡\n\n👉 Yes, lambda expressions can access and even modify instance variables because they are stored on the heap and are not required to be effectively final.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37325,7 +37393,11 @@
     "name": "018 Can Lambda access static variables?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Yes ✅ — **Lambda can access static variables**, and they can be **read & modified**.\n\n---\n\n## Example\n\n```java id=\"s1t2a3\"\nclass Test {\n\n    static int count = 10; // static variable\n\n    public static void main(String[] args) {\n\n        Runnable r = () -> {\n            System.out.println(count); // ✅ access\n        };\n\n        r.run();\n    }\n}\n```\n\n---\n\n## Modify Static Variable ✅\n\n```java id=\"s4t5b6\"\nclass Test {\n\n    static int count = 10;\n\n    public static void main(String[] args) {\n\n        Runnable r = () -> {\n            count++; // ✅ modification allowed\n        };\n\n        r.run();\n\n        System.out.println(count); // 11\n    }\n}\n```\n\n---\n\n## Why Allowed? 🔥\n\n* Static variables are stored in **heap (class area)**\n* Not tied to method stack\n* No **effectively final** restriction\n\n---\n\n## Compare with Local Variable ❌\n\n```java id=\"s7t8c9\"\nint x = 10;\n\nRunnable r = () -> {\n    // x = 20; ❌ not allowed\n};\n```\n\n---\n\n## Key Points\n\n* Static variables → ✅ read/write\n* Instance variables → ✅ read/write\n* Local variables → ❌ must be effectively final\n\n---\n\n## One-line Answer 💡\n\n👉 Yes, lambda expressions can access and modify static variables because they are stored in the heap and are not required to be effectively final.\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37345,7 +37417,11 @@
     "name": "019 What is method reference?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Method Reference (Java 8)\n\n👉 **Definition (crisp)**\nMethod reference is a **shorthand for lambda expression** to call an existing method.\n\n---\n\n## Basic Syntax\n\n```java id=\"m1n2o3\"\nClassName::methodName\n```\n\n---\n\n## Example 1 (Static Method)\n\n```java id=\"a1b2c3\"\nlist.forEach(System.out::println);\n\n// same as\nlist.forEach(x -> System.out.println(x));\n```\n\n---\n\n## Example 2 (Instance Method of Object)\n\n```java id=\"d4e5f6\"\nString str = \"hello\";\n\nSupplier<String> s = str::toUpperCase;\n\nSystem.out.println(s.get());\n```\n\n---\n\n## Example 3 (Instance Method of Class)\n\n```java id=\"g7h8i9\"\nList<String> list = Arrays.asList(\"a\", \"bb\", \"ccc\");\n\nlist.sort(String::compareTo);\n```\n\n---\n\n## Example 4 (Constructor Reference)\n\n```java id=\"j1k2l3\"\nSupplier<List<String>> s = ArrayList::new;\n\nList<String> list = s.get();\n```\n\n---\n\n## Types 🔥\n\n```java id=\"x1y2z3\"\n// 1. Static method\nClass::staticMethod\n\n// 2. Instance method (object)\nobj::instanceMethod\n\n// 3. Instance method (class)\nClass::instanceMethod\n\n// 4. Constructor\nClass::new\n```\n\n---\n\n## Key Points\n\n* Cleaner than lambda\n* Improves readability\n* Used with functional interfaces\n* No new logic, just method reuse\n\n---\n\n## One-line Answer 💡\n\n👉 Method reference is a **compact way to refer to an existing method using `::` instead of writing a lambda expression**.\n\n---\n\nNext?\n👉 **Lambda vs Method Reference (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37365,7 +37441,11 @@
     "name": "020 What are the types of method references?",
     "parentId": "7dfe884a-250c-4828-ae48-36ffb4d590d2",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Types of Method References (Java 8)\n\n👉 There are **4 types**:\n\n---\n\n## 1. Static Method Reference\n\n```java id=\"t1a2b3\"\nclass Util {\n    static int square(int x) {\n        return x * x;\n    }\n}\n\nFunction<Integer, Integer> f = Util::square;\n```\n\n---\n\n## 2. Instance Method Reference (of a particular object)\n\n```java id=\"t4c5d6\"\nString str = \"hello\";\n\nSupplier<String> s = str::toUpperCase;\n\nSystem.out.println(s.get());\n```\n\n---\n\n## 3. Instance Method Reference (of an arbitrary object of a class)\n\n```java id=\"t7e8f9\"\nList<String> list = Arrays.asList(\"a\", \"bb\", \"ccc\");\n\nlist.sort(String::compareTo);\n```\n\n---\n\n## 4. Constructor Reference\n\n```java id=\"t0g1h2\"\nSupplier<List<String>> s = ArrayList::new;\n\nList<String> list = s.get();\n```\n\n---\n\n## Summary Table 🔥\n\n```java id=\"t3i4j5\"\n// 1. Class::staticMethod\n// 2. obj::instanceMethod\n// 3. Class::instanceMethod\n// 4. Class::new\n```\n\n---\n\n## One-line Answer 💡\n\n👉 The four types of method references are:\n**static method, instance method (object), instance method (class), and constructor reference**.\n\n---\n\nIf you want next:\n👉 **Tricky interview cases where method reference fails 🔥**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37401,7 +37481,11 @@
     "name": "021 What is the syntax of method reference?",
     "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy 👇\n\n---\n\n## Method Reference Syntax (Java 8)\n\n👉 General form:\n\n```java id=\"s1a2x3\"\nClassName::methodName\n```\n\n---\n\n## 1. Static Method\n\n```java id=\"s4b5y6\"\nClassName::staticMethod\n```\n\n```java id=\"s7c8z9\"\nFunction<Integer, Integer> f = Math::abs;\n```\n\n---\n\n## 2. Instance Method (Specific Object)\n\n```java id=\"s0d1e2\"\nobject::instanceMethod\n```\n\n```java id=\"s3f4g5\"\nString str = \"hello\";\nSupplier<String> s = str::toUpperCase;\n```\n\n---\n\n## 3. Instance Method (Class Type)\n\n```java id=\"s6h7i8\"\nClassName::instanceMethod\n```\n\n```java id=\"s9j0k1\"\nList<String> list = Arrays.asList(\"a\", \"bb\");\nlist.sort(String::compareTo);\n```\n\n---\n\n## 4. Constructor Reference\n\n```java id=\"s2l3m4\"\nClassName::new\n```\n\n```java id=\"s5n6o7\"\nSupplier<List<String>> s = ArrayList::new;\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Method reference syntax uses `::` operator:\n**ClassName::methodName, object::methodName, or ClassName::new**.\n\n---\n\nNext?\n👉 **When NOT to use method reference (very tricky interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37421,7 +37505,11 @@
     "name": "022 What are the four types of method references?",
     "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Four Types of Method References\n\n---\n\n## 1. Static Method Reference\n\n```java id=\"mra1\"\nclass Util {\n    static int square(int x) {\n        return x * x;\n    }\n}\n\nFunction<Integer, Integer> f = Util::square;\n```\n\n---\n\n## 2. Instance Method Reference (of a particular object)\n\n```java id=\"mra2\"\nString str = \"hello\";\n\nSupplier<String> s = str::toUpperCase;\n\nSystem.out.println(s.get());\n```\n\n---\n\n## 3. Instance Method Reference (of an arbitrary object of a class)\n\n```java id=\"mra3\"\nList<String> list = Arrays.asList(\"a\", \"bb\", \"ccc\");\n\nlist.sort(String::compareTo);\n```\n\n---\n\n## 4. Constructor Reference\n\n```java id=\"mra4\"\nSupplier<List<String>> s = ArrayList::new;\n\nList<String> list = s.get();\n```\n\n---\n\n## Quick Summary 🔥\n\n```java id=\"mra5\"\n// 1. Class::staticMethod\n// 2. obj::instanceMethod\n// 3. Class::instanceMethod\n// 4. Class::new\n```\n\n---\n\n## One-line Answer 💡\n\n👉 The four types of method references are:\n**static method, instance method (object), instance method (class), and constructor reference**.\n\n---\n\nWant next?\n👉 **Method reference vs Lambda (with tricky edge cases 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37441,7 +37529,11 @@
     "name": "023 What is constructor reference?",
     "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Constructor Reference (Java 8)\n\n👉 **Definition (crisp)**\nConstructor reference is a way to **refer to a constructor using `ClassName::new` instead of lambda**.\n\n---\n\n## Basic Syntax\n\n```java id=\"cr1\"\nClassName::new\n```\n\n---\n\n## Example 1 (No-Arg Constructor)\n\n```java id=\"cr2\"\nclass Student {\n    Student() {\n        System.out.println(\"Created\");\n    }\n}\n\nSupplier<Student> s = Student::new;\n\nStudent st = s.get();\n```\n\n---\n\n## Equivalent Lambda\n\n```java id=\"cr3\"\nSupplier<Student> s = () -> new Student();\n```\n\n---\n\n## Example 2 (Parameterized Constructor)\n\n```java id=\"cr4\"\nclass Student {\n    int id;\n\n    Student(int id) {\n        this.id = id;\n    }\n}\n\nFunction<Integer, Student> f = Student::new;\n\nStudent st = f.apply(101);\n```\n\n---\n\n## Example 3 (Multiple Arguments)\n\n```java id=\"cr5\"\nclass Student {\n    int id;\n    String name;\n\n    Student(int id, String name) {\n        this.id = id;\n        this.name = name;\n    }\n}\n\nBiFunction<Integer, String, Student> f = Student::new;\n\nStudent st = f.apply(1, \"Prem\");\n```\n\n---\n\n## Key Points 🔥\n\n* Uses `::new`\n* Works with functional interfaces\n* Cleaner than lambda\n* Constructor signature must match interface method\n\n---\n\n## One-line Answer 💡\n\n👉 Constructor reference is a **shorthand to create objects using `ClassName::new` instead of a lambda expression**.\n\n---\n\nNext?\n👉 **Real interview tricky cases of constructor reference 🔥**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37461,7 +37553,11 @@
     "name": "024 Difference between Lambda and method reference?",
     "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## Lambda vs Method Reference (Java 8)\n\n---\n\n## 1. Basic Idea\n\n```java id=\"lm1\"\n// Lambda → defines logic\nx -> x * x\n\n// Method Reference → uses existing method\nMath::abs\n```\n\n---\n\n## 2. Syntax\n\n```java id=\"lm2\"\n// Lambda\nlist.forEach(x -> System.out.println(x));\n\n// Method Reference\nlist.forEach(System.out::println);\n```\n\n---\n\n## 3. Code Size / Readability\n\n```java id=\"lm3\"\n// Lambda → more flexible but slightly verbose\n(a, b) -> a.length() - b.length()\n\n// Method Reference → shorter & cleaner\nString::compareTo\n```\n\n---\n\n## 4. Logic vs Reuse 🔥\n\n```java id=\"lm4\"\n// Lambda → custom logic\nn -> n % 2 == 0\n\n// Method Reference → existing method reuse\nInteger::parseInt\n```\n\n---\n\n## 5. Flexibility\n\n```java id=\"lm5\"\n// Lambda → can write complex logic\nx -> {\n    int y = x * 2;\n    return y + 1;\n};\n\n// Method Reference ❌ cannot do this\n```\n\n---\n\n## 6. When to Use\n\n```java id=\"lm6\"\n// Use Lambda → when logic is new/custom\nlist.stream().filter(x -> x > 10);\n\n// Use Method Reference → when method already exists\nlist.forEach(System.out::println);\n```\n\n---\n\n## 7. Types Support\n\n```java id=\"lm7\"\n// Lambda → any functional interface\n\n// Method Reference → only if matching method exists\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"lm8\"\n// Lambda = (params) -> logic\n// Method Ref = Class::method (reuse existing logic)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Lambda defines **inline behavior**, while method reference is a **shortcut to reuse an existing method using `::`**.\n\n---\n\nIf you want next:\n👉 **When method reference fails (very tricky interview cases 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -37481,7 +37577,11 @@
     "name": "025 When should you use method reference instead of Lambda?",
     "parentId": "199e56fe-1b43-4a38-a75b-3792074f4bcd",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + practical + code-heavy 👇\n\n---\n\n## When to Use Method Reference instead of Lambda\n\n---\n\n## 1. When Lambda Just Calls Existing Method ✅\n\n```java id=\"mr1\"\n// Lambda\nlist.forEach(x -> System.out.println(x));\n\n// Method Reference ✅\nlist.forEach(System.out::println);\n```\n\n---\n\n## 2. When Logic is Already Defined (Reuse)\n\n```java id=\"mr2\"\n// Lambda\nFunction<String, Integer> f = s -> Integer.parseInt(s);\n\n// Method Reference ✅\nFunction<String, Integer> f = Integer::parseInt;\n```\n\n---\n\n## 3. For Cleaner & Readable Code\n\n```java id=\"mr3\"\n// Lambda\nlist.sort((a, b) -> a.compareTo(b));\n\n// Method Reference ✅\nlist.sort(String::compareTo);\n```\n\n---\n\n## 4. Constructor Calls\n\n```java id=\"mr4\"\n// Lambda\nSupplier<List<String>> s = () -> new ArrayList<>();\n\n// Method Reference ✅\nSupplier<List<String>> s = ArrayList::new;\n```\n\n---\n\n## 5. Simple Pass-through Operations\n\n```java id=\"mr5\"\n// Lambda\nlist.stream().map(x -> x.toUpperCase());\n\n// Method Reference ✅\nlist.stream().map(String::toUpperCase);\n```\n\n---\n\n## When NOT to Use ❌\n\n```java id=\"mr6\"\n// Complex logic → use Lambda\nx -> {\n    int y = x * 2;\n    return y + 1;\n}\n```\n\n---\n\n## Rule of Thumb 🔥\n\n```java id=\"mr7\"\n// If Lambda = \"just calling a method\"\n// → replace with method reference\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Use method reference when a lambda **only calls an existing method**, making code more concise and readable.\n\n---\n\nIf you want next:\n👉 **Tricky edge cases where method reference does NOT work 🔥**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
