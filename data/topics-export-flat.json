@@ -38897,7 +38897,11 @@
     "name": "076 What is Optional in Java 8?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Optional` (Java 8)\n\n👉 **Definition (crisp)**\n`Optional<T>` is a container object used to **represent a value that may or may not be present**, avoiding `NullPointerException`.\n\n---\n\n## Why Needed? 🔥\n\n```java id=\"op1\"\n// Before (NPE risk ❌)\nString name = null;\nSystem.out.println(name.length());\n```\n\n---\n\n## Using Optional ✅\n\n```java id=\"op2\"\nOptional<String> opt = Optional.ofNullable(null);\n\nSystem.out.println(opt.orElse(\"Default\"));\n```\n\n---\n\n## Creation Methods\n\n```java id=\"op3\"\nOptional<String> o1 = Optional.of(\"Java\");        // non-null\nOptional<String> o2 = Optional.ofNullable(null);  // null allowed\nOptional<String> o3 = Optional.empty();           // empty\n```\n\n---\n\n## Common Methods\n\n```java id=\"op4\"\nopt.isPresent();\nopt.get();              // ⚠️ risky\nopt.orElse(\"Default\");\nopt.orElseGet(() -> \"Lazy\");\nopt.orElseThrow();\nopt.ifPresent(System.out::println);\n```\n\n---\n\n## Example (Safe Usage)\n\n```java id=\"op5\"\nOptional<String> opt = Optional.ofNullable(\"Java\");\n\nopt.ifPresent(s -> System.out.println(s));\n```\n\n---\n\n## With map() 🔥\n\n```java id=\"op6\"\nOptional<String> opt = Optional.of(\"java\");\n\nString result = opt\n    .map(String::toUpperCase)\n    .orElse(\"Default\");\n\nSystem.out.println(result);\n```\n\n---\n\n## Avoid get() ❌\n\n```java id=\"op7\"\nopt.get(); // may throw NoSuchElementException\n```\n\n---\n\n## Key Points\n\n* Avoids `NullPointerException`\n* Encourages safe handling\n* Supports functional style\n* Immutable container\n\n---\n\n## One-line Answer 💡\n\n👉 `Optional` is a container object used to **represent the presence or absence of a value safely, avoiding null checks**.\n\n---\n\nNext?\n👉 **orElse vs orElseGet (very tricky interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38917,7 +38921,11 @@
     "name": "077 Why was Optional introduced?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Why was `Optional` introduced?\n\n---\n\n## 1. Avoid NullPointerException (Main Reason 🔥)\n\n```java id=\"o1\"\n// BEFORE ❌\nString name = null;\nSystem.out.println(name.length()); // NPE\n```\n\n```java id=\"o2\"\n// AFTER ✅\nOptional<String> opt = Optional.ofNullable(name);\n\nSystem.out.println(opt.orElse(\"Default\"));\n```\n\n---\n\n## 2. Reduce Null Checks\n\n```java id=\"o3\"\n// BEFORE ❌\nif (user != null && user.getName() != null) {\n    System.out.println(user.getName());\n}\n```\n\n```java id=\"o4\"\n// AFTER ✅\nOptional.ofNullable(user)\n    .map(u -> u.getName())\n    .ifPresent(System.out::println);\n```\n\n---\n\n## 3. Express Absence of Value Clearly\n\n```java id=\"o5\"\n// ambiguous ❌\nString getName();\n\n// clear intent ✅\nOptional<String> getName();\n```\n\n---\n\n## 4. Functional Style Programming\n\n```java id=\"o6\"\nOptional<String> opt = Optional.of(\"java\");\n\nopt.map(String::toUpperCase)\n   .filter(s -> s.length() > 3)\n   .ifPresent(System.out::println);\n```\n\n---\n\n## 5. Force Better API Design\n\n```java id=\"o7\"\n// caller must handle absence\nopt.orElse(\"Default\");\nopt.orElseThrow();\n```\n\n---\n\n## Key Problems Solved 🔥\n\n* NullPointerException\n* Too many null checks\n* Poor API clarity\n* Unsafe code\n\n---\n\n## One-line Answer 💡\n\n👉 `Optional` was introduced to **avoid NullPointerException, reduce null checks, and clearly represent the presence or absence of a value in a safe and functional way**.\n\n---\n\nNext?\n👉 **orElse vs orElseGet (very important trap 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38937,7 +38945,11 @@
     "name": "078 How does Optional help avoid NullPointerException?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## How `Optional` avoids NullPointerException?\n\n👉 **Core Idea**\nWrap value in a container → **never directly access null**\n\n---\n\n## 1. Before (NPE Risk ❌)\n\n```java id=\"on1\"\nString name = null;\n\nSystem.out.println(name.length()); // ❌ NullPointerException\n```\n\n---\n\n## 2. Using Optional ✅\n\n```java id=\"on2\"\nOptional<String> opt = Optional.ofNullable(name);\n\nSystem.out.println(opt.orElse(\"Default\"));\n```\n\n👉 Safe fallback, no crash\n\n---\n\n## 3. Safe Access Instead of Direct Access\n\n```java id=\"on3\"\nopt.ifPresent(s -> System.out.println(s.length()));\n```\n\n👉 Executes only if value exists\n\n---\n\n## 4. Chaining (Null-safe navigation 🔥)\n\n```java id=\"on4\"\nOptional.ofNullable(user)\n    .map(u -> u.getName())\n    .map(String::toUpperCase)\n    .ifPresent(System.out::println);\n```\n\n👉 No nested null checks needed\n\n---\n\n## 5. Default Value Handling\n\n```java id=\"on5\"\nString val = opt.orElse(\"Default\");\n```\n\n---\n\n## 6. Lazy Default (Better)\n\n```java id=\"on6\"\nString val = opt.orElseGet(() -> \"Generated Default\");\n```\n\n---\n\n## 7. Throw Custom Exception\n\n```java id=\"on7\"\nString val = opt.orElseThrow(() -> new RuntimeException(\"Not found\"));\n```\n\n---\n\n## Key Idea 🔥\n\n```java id=\"on8\"\n// ❌ Direct access → risk\nobj.method()\n\n// ✅ Optional → controlled access\nopt.map(...).orElse(...)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `Optional` avoids NullPointerException by **wrapping values and forcing safe access using methods like `orElse`, `ifPresent`, and `map` instead of direct null dereferencing**.\n\n---\n\nNext?\n👉 **orElse vs orElseGet (very tricky interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38957,7 +38969,11 @@
     "name": "079 What is Optional.of()?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Optional.of()` (Java 8)\n\n👉 **Definition (crisp)**\n`Optional.of()` is used to **create an Optional with a NON-null value**.\n\n---\n\n## Method\n\n```java id=\"of1\"\nstatic <T> Optional<T> of(T value);\n```\n\n---\n\n## Basic Example\n\n```java id=\"of2\"\nOptional<String> opt = Optional.of(\"Java\");\n\nSystem.out.println(opt.get()); // Java\n```\n\n---\n\n## ⚠️ Null Case (Important 🔥)\n\n```java id=\"of3\"\nOptional<String> opt = Optional.of(null); // ❌ throws exception\n```\n\n👉 Exception:\n\n```java id=\"of4\"\njava.lang.NullPointerException\n```\n\n---\n\n## Correct Way for Null\n\n```java id=\"of5\"\nOptional<String> opt = Optional.ofNullable(null); // ✅ safe\n```\n\n---\n\n## Key Points\n\n* Only for **non-null values**\n* Throws **NullPointerException if null**\n* Use `ofNullable()` when value may be null\n\n---\n\n## Quick Comparison 🔥\n\n```java id=\"of6\"\n// of() → null NOT allowed ❌\n// ofNullable() → null allowed ✅\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `Optional.of()` is used to **create an Optional containing a non-null value and throws NullPointerException if the value is null**.\n\n---\n\nNext?\n👉 **ofNullable() vs of() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38977,7 +38993,11 @@
     "name": "080 What is Optional.ofNullable()?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Optional.ofNullable()` (Java 8)\n\n👉 **Definition (crisp)**\n`Optional.ofNullable()` is used to **create an Optional that may contain null or non-null value**.\n\n---\n\n## Method\n\n```java id=\"onb1\"\nstatic <T> Optional<T> ofNullable(T value);\n```\n\n---\n\n## Basic Example (Non-null)\n\n```java id=\"onb2\"\nOptional<String> opt = Optional.ofNullable(\"Java\");\n\nSystem.out.println(opt.get()); // Java\n```\n\n---\n\n## Null Case ✅\n\n```java id=\"onb3\"\nOptional<String> opt = Optional.ofNullable(null);\n\nSystem.out.println(opt.isPresent()); // false\n```\n\n---\n\n## Safe Usage\n\n```java id=\"onb4\"\nString val = Optional.ofNullable(null)\n    .orElse(\"Default\");\n\nSystem.out.println(val); // Default\n```\n\n---\n\n## With map() 🔥\n\n```java id=\"onb5\"\nOptional<String> opt = Optional.ofNullable(\"java\");\n\nString result = opt\n    .map(String::toUpperCase)\n    .orElse(\"Default\");\n\nSystem.out.println(result); // JAVA\n```\n\n---\n\n## Difference vs of()\n\n```java id=\"onb6\"\n// of() → null ❌ (throws exception)\nOptional.of(null);\n\n// ofNullable() → null ✅ (empty Optional)\nOptional.ofNullable(null);\n```\n\n---\n\n## Key Points\n\n* Accepts **null and non-null**\n* Returns **empty Optional if null**\n* Safe alternative to `of()`\n\n---\n\n## One-line Answer 💡\n\n👉 `Optional.ofNullable()` is used to **create an Optional that safely handles null values by returning an empty Optional instead of throwing an exception**.\n\n---\n\nNext?\n👉 **orElse vs orElseGet (very important trap 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -38997,7 +39017,11 @@
     "name": "081 What is Optional.empty()?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Optional.empty()` (Java 8)\n\n👉 **Definition (crisp)**\n`Optional.empty()` creates an **empty Optional (no value present)**.\n\n---\n\n## Method\n\n```java id=\"oe1\"\nstatic <T> Optional<T> empty();\n```\n\n---\n\n## Basic Example\n\n```java id=\"oe2\"\nOptional<String> opt = Optional.empty();\n\nSystem.out.println(opt.isPresent()); // false\n```\n\n---\n\n## Safe Handling\n\n```java id=\"oe3\"\nString val = opt.orElse(\"Default\");\n\nSystem.out.println(val); // Default\n```\n\n---\n\n## With ifPresent()\n\n```java id=\"oe4\"\nopt.ifPresent(s -> System.out.println(s)); // nothing happens\n```\n\n---\n\n## Equivalent Case 🔥\n\n```java id=\"oe5\"\nOptional<String> opt = Optional.ofNullable(null);\n\n// same as\nOptional<String> opt2 = Optional.empty();\n```\n\n---\n\n## Avoid get() ❌\n\n```java id=\"oe6\"\nopt.get(); // ❌ NoSuchElementException\n```\n\n---\n\n## Key Points\n\n* Represents **no value**\n* Safer than `null`\n* Use with `orElse`, `orElseGet`, etc.\n* Immutable\n\n---\n\n## One-line Answer 💡\n\n👉 `Optional.empty()` is used to **create an empty Optional instance representing absence of a value**.\n\n---\n\nNext?\n👉 **orElse vs orElseGet (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39017,7 +39041,11 @@
     "name": "082 What is Optional.orElse()?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Optional.orElse()` (Java 8)\n\n👉 **Definition (crisp)**\n`orElse()` returns the value if present, otherwise **returns a default value**.\n\n---\n\n## Method\n\n```java id=\"oe1\"\nT orElse(T other);\n```\n\n---\n\n## Basic Example\n\n```java id=\"oe2\"\nOptional<String> opt = Optional.ofNullable(\"Java\");\n\nString val = opt.orElse(\"Default\");\n\nSystem.out.println(val); // Java\n```\n\n---\n\n## When Value is Null\n\n```java id=\"oe3\"\nOptional<String> opt = Optional.ofNullable(null);\n\nString val = opt.orElse(\"Default\");\n\nSystem.out.println(val); // Default\n```\n\n---\n\n## ⚠️ Important (Eager Evaluation 🔥)\n\n```java id=\"oe4\"\nString val = opt.orElse(getDefault());\n\nstatic String getDefault() {\n    System.out.println(\"Executing...\");\n    return \"Default\";\n}\n```\n\n👉 `getDefault()` is **always executed**, even if value exists ❗\n\n---\n\n## Compare with orElseGet\n\n```java id=\"oe5\"\n// orElse → always executes\nopt.orElse(getDefault());\n\n// orElseGet → executes only if needed\nopt.orElseGet(() -> getDefault());\n```\n\n---\n\n## Key Points\n\n* Returns value or default\n* Default value evaluated **eagerly**\n* Use `orElseGet()` for better performance\n\n---\n\n## One-line Answer 💡\n\n👉 `orElse()` returns the value if present, otherwise returns a **default value (always evaluated eagerly)**.\n\n---\n\nNext?\n👉 **orElse vs orElseGet (very important trap 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39037,7 +39065,11 @@
     "name": "083 What is Optional.orElseGet()?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Optional.orElseGet()` (Java 8)\n\n👉 **Definition (crisp)**\n`orElseGet()` returns the value if present, otherwise **executes a Supplier to generate the default value (lazy)**.\n\n---\n\n## Method\n\n```java id=\"oeg1\"\nT orElseGet(Supplier<? extends T> supplier);\n```\n\n---\n\n## Basic Example\n\n```java id=\"oeg2\"\nOptional<String> opt = Optional.ofNullable(\"Java\");\n\nString val = opt.orElseGet(() -> \"Default\");\n\nSystem.out.println(val); // Java\n```\n\n---\n\n## When Value is Null\n\n```java id=\"oeg3\"\nOptional<String> opt = Optional.ofNullable(null);\n\nString val = opt.orElseGet(() -> \"Generated Default\");\n\nSystem.out.println(val); // Generated Default\n```\n\n---\n\n## Lazy Execution 🔥\n\n```java id=\"oeg4\"\nString val = opt.orElseGet(() -> {\n    System.out.println(\"Executing...\");\n    return \"Default\";\n});\n```\n\n👉 Supplier runs **only if value is absent**\n\n---\n\n## Compare with orElse\n\n```java id=\"oeg5\"\n// orElse → always executes ❌\nopt.orElse(getDefault());\n\n// orElseGet → executes only if needed ✅\nopt.orElseGet(() -> getDefault());\n```\n\n---\n\n## Key Points\n\n* Uses `Supplier<T>`\n* Lazy evaluation\n* Better performance for heavy operations\n* Preferred over `orElse()` in real projects\n\n---\n\n## One-line Answer 💡\n\n👉 `orElseGet()` returns the value if present, otherwise **lazily generates a default value using a Supplier**.\n\n---\n\nIf you want next:\n👉 **orElseThrow() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39057,7 +39089,11 @@
     "name": "084 Difference between orElse and orElseGet?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## `orElse()` vs `orElseGet()` (Java 8)\n\n---\n\n## 1. Basic Difference\n\n```java id=\"oe1\"\n// orElse → takes value\nopt.orElse(\"Default\");\n\n// orElseGet → takes Supplier\nopt.orElseGet(() -> \"Default\");\n```\n\n---\n\n## 2. Execution (Important 🔥)\n\n```java id=\"oe2\"\n// orElse → ALWAYS executes\nopt.orElse(getDefault());\n\n// orElseGet → executes ONLY if value is absent\nopt.orElseGet(() -> getDefault());\n```\n\n---\n\n## 3. Proof Example 🔥\n\n```java id=\"oe3\"\nstatic String getDefault() {\n    System.out.println(\"Executing...\");\n    return \"Default\";\n}\n\nOptional<String> opt = Optional.of(\"Java\");\n\n// orElse\nopt.orElse(getDefault()); \n// prints: Executing ❗\n\n// orElseGet\nopt.orElseGet(() -> getDefault()); \n// prints nothing ✅\n```\n\n---\n\n## 4. Performance\n\n```java id=\"oe4\"\n// orElse → may waste computation ❌\n// orElseGet → efficient (lazy) ✅\n```\n\n---\n\n## 5. Use Case\n\n```java id=\"oe5\"\n// simple value\nopt.orElse(\"Default\");\n\n// heavy computation / DB call\nopt.orElseGet(() -> fetchFromDB());\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"oe6\"\n// orElse    → eager execution\n// orElseGet → lazy execution\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `orElse()` always evaluates the default value, while `orElseGet()` **evaluates it lazily only when the Optional is empty**, making it more efficient.\n\n---\n\nNext?\n👉 **orElseThrow() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39073,11 +39109,43 @@
     "sections": []
   },
   {
+    "uniqueId": "72c23f66-723b-405e-b99f-33ab220fe86f",
+    "name": "orElseThrow()",
+    "parentId": "81e9bc4e-5108-4d79-bb45-66809d4bbc46",
+    "description": "",
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Optional.orElseThrow()` (Java 8)\n\n👉 **Definition (crisp)**\n`orElseThrow()` returns the value if present, otherwise **throws an exception**.\n\n---\n\n## Method Variants\n\n```java id=\"oet1\"\n// Java 8\nT orElseThrow(Supplier<? extends X> exceptionSupplier);\n\n// Java 10+\nT orElseThrow(); // throws NoSuchElementException\n```\n\n---\n\n## Basic Example\n\n```java id=\"oet2\"\nOptional<String> opt = Optional.of(\"Java\");\n\nString val = opt.orElseThrow(() -> new RuntimeException(\"Not found\"));\n\nSystem.out.println(val); // Java\n```\n\n---\n\n## When Value is Missing ❌\n\n```java id=\"oet3\"\nOptional<String> opt = Optional.ofNullable(null);\n\nString val = opt.orElseThrow(() -> new RuntimeException(\"Value missing\"));\n```\n\n👉 Throws:\n\n```java id=\"oet4\"\nRuntimeException: Value missing\n```\n\n---\n\n## Custom Exception 🔥\n\n```java id=\"oet5\"\nString val = opt.orElseThrow(() ->\n        new IllegalArgumentException(\"Invalid input\"));\n```\n\n---\n\n## Java 10+ Shortcut\n\n```java id=\"oet6\"\nString val = opt.orElseThrow(); // NoSuchElementException\n```\n\n---\n\n## Use Case\n\n```java id=\"oet7\"\nUser user = findUser(id)\n    .orElseThrow(() -> new RuntimeException(\"User not found\"));\n```\n\n---\n\n## Key Points\n\n* Throws exception if empty\n* Uses `Supplier`\n* Lazy execution\n* Better than `get()`\n\n---\n\n## One-line Answer 💡\n\n👉 `orElseThrow()` returns the value if present, otherwise **throws a specified exception (or NoSuchElementException by default)**.\n\n---\n\nIf you want next:\n👉 **ifPresent() (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "d3b370d2-9c86-4c3e-b2d0-2f4f0206a3b2",
+        "name": "100+ Industry-Level Java 8 Interview Questions"
+      },
+      {
+        "uniqueId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
+        "name": "09 Optional Class"
+      },
+      {
+        "uniqueId": "81e9bc4e-5108-4d79-bb45-66809d4bbc46",
+        "name": "084 Difference between orElse and orElseGet?"
+      }
+    ],
+    "sections": []
+  },
+  {
     "uniqueId": "ecf1d039-e2bb-47c1-b905-a1ad13a88f63",
     "name": "085 What is Optional.ifPresent()?",
     "parentId": "6de92fcc-227d-4046-ad66-db050b63a0e1",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Optional.ifPresent()` (Java 8)\n\n👉 **Definition (crisp)**\n`ifPresent()` executes an action **only if a value is present** in the Optional.\n\n---\n\n## Method\n\n```java id=\"ip1\"\nvoid ifPresent(Consumer<? super T> action);\n```\n\n---\n\n## Basic Example\n\n```java id=\"ip2\"\nOptional<String> opt = Optional.of(\"Java\");\n\nopt.ifPresent(s -> System.out.println(s)); // Java\n```\n\n---\n\n## When Value is Absent\n\n```java id=\"ip3\"\nOptional<String> opt = Optional.empty();\n\nopt.ifPresent(s -> System.out.println(s)); // nothing happens\n```\n\n---\n\n## Using Method Reference\n\n```java id=\"ip4\"\nopt.ifPresent(System.out::println);\n```\n\n---\n\n## Real Use Case 🔥\n\n```java id=\"ip5\"\nOptional<User> user = findUser();\n\nuser.ifPresent(u -> System.out.println(u.getName()));\n```\n\n---\n\n## vs get() ❌\n\n```java id=\"ip6\"\n// ❌ risky\nopt.get();\n\n// ✅ safe\nopt.ifPresent(System.out::println);\n```\n\n---\n\n## Key Points\n\n* Executes only if value exists\n* No null checks needed\n* Uses `Consumer<T>`\n* Safe alternative to `get()`\n\n---\n\n## One-line Answer 💡\n\n👉 `ifPresent()` executes a given action **only when a value is present in the Optional, avoiding null checks**.\n\n---\n\nNext?\n👉 **Default methods in interface (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39113,7 +39181,11 @@
     "name": "086 What are default methods?",
     "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Default Methods (Java 8)\n\n👉 **Definition (crisp)**\nDefault methods are methods inside interfaces with a **body (implementation)** using the `default` keyword.\n\n---\n\n## Basic Example\n\n```java id=\"dm1\"\ninterface A {\n\n    default void show() {\n        System.out.println(\"Default method\");\n    }\n}\n```\n\n---\n\n## Usage\n\n```java id=\"dm2\"\nclass Test implements A {}\n\npublic class Main {\n    public static void main(String[] args) {\n        Test t = new Test();\n        t.show(); // Default method\n    }\n}\n```\n\n---\n\n## Why Introduced? 🔥\n\n👉 To **add new methods in interfaces without breaking existing implementations**\n\n---\n\n## Example (Backward Compatibility)\n\n```java id=\"dm3\"\ninterface A {\n    void run();\n\n    default void log() {\n        System.out.println(\"Logging...\");\n    }\n}\n```\n\n👉 Old classes don’t need to implement `log()`\n\n---\n\n## Override Default Method\n\n```java id=\"dm4\"\nclass Test implements A {\n\n    public void run() {}\n\n    @Override\n    public void log() {\n        System.out.println(\"Custom log\");\n    }\n}\n```\n\n---\n\n## Multiple Interface Conflict 🔥\n\n```java id=\"dm5\"\ninterface A {\n    default void show() { System.out.println(\"A\"); }\n}\n\ninterface B {\n    default void show() { System.out.println(\"B\"); }\n}\n\nclass Test implements A, B {\n    public void show() {\n        A.super.show(); // resolve conflict\n    }\n}\n```\n\n---\n\n## Key Points\n\n* Defined using `default` keyword\n* Have implementation\n* Can be overridden\n* Helps in backward compatibility\n\n---\n\n## One-line Answer 💡\n\n👉 Default methods are **methods in interfaces with a body, allowing interfaces to evolve without breaking existing implementations**.\n\n---\n\nNext?\n👉 **Static methods in interface (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39133,7 +39205,11 @@
     "name": "087 Why were default methods introduced?",
     "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Why were Default Methods introduced? (Java 8)\n\n---\n\n## 1. Backward Compatibility (Main Reason 🔥)\n\n👉 Interfaces couldn’t be changed earlier without breaking implementations\n\n```java id=\"dmr1\"\n// OLD\ninterface A {\n    void run();\n}\n```\n\n👉 If we add new method:\n\n```java id=\"dmr2\"\ninterface A {\n    void run();\n    void log(); // ❌ breaks all classes\n}\n```\n\n---\n\n## Solution with Default Method ✅\n\n```java id=\"dmr3\"\ninterface A {\n    void run();\n\n    default void log() {\n        System.out.println(\"Logging...\");\n    }\n}\n```\n\n👉 No need to update existing classes\n\n---\n\n## 2. Support Functional Programming (Streams API)\n\n```java id=\"dmr4\"\ninterface Collection {\n    default Stream stream() {\n        // implementation\n    }\n}\n```\n\n👉 Allowed adding `stream()` to all collections\n\n---\n\n## 3. Code Reusability\n\n```java id=\"dmr5\"\ninterface Logger {\n    default void log(String msg) {\n        System.out.println(msg);\n    }\n}\n```\n\n👉 Shared implementation across classes\n\n---\n\n## 4. Interface Evolution\n\n👉 APIs can grow without breaking old code\n\n---\n\n## 5. Reduce Utility Classes\n\n```java id=\"dmr6\"\n// Instead of helper classes → logic inside interface\n```\n\n---\n\n## Key Problems Solved 🔥\n\n* Breaking changes in interfaces\n* API evolution issues\n* Code duplication\n\n---\n\n## One-line Answer 💡\n\n👉 Default methods were introduced to **allow adding new methods to interfaces without breaking existing implementations, enabling backward compatibility and API evolution**.\n\n---\n\nNext?\n👉 **Diamond problem in Java 8 (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39153,7 +39229,11 @@
     "name": "088 What is the diamond problem in Java 8?",
     "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Diamond Problem (Java 8)\n\n👉 **Definition (crisp)**\nDiamond problem occurs when a class implements **multiple interfaces having same default method**, causing ambiguity.\n\n---\n\n## Problem Example ❌\n\n```java id=\"dp1\"\ninterface A {\n    default void show() {\n        System.out.println(\"A\");\n    }\n}\n\ninterface B {\n    default void show() {\n        System.out.println(\"B\");\n    }\n}\n\nclass Test implements A, B {\n    // ❌ compile-time error\n}\n```\n\n👉 Error:\n\n```java id=\"dp2\"\nclass Test inherits unrelated defaults for show() from A and B\n```\n\n---\n\n## Solution 1: Override Method ✅\n\n```java id=\"dp3\"\nclass Test implements A, B {\n\n    @Override\n    public void show() {\n        System.out.println(\"Resolved\");\n    }\n}\n```\n\n---\n\n## Solution 2: Call Specific Interface 🔥\n\n```java id=\"dp4\"\nclass Test implements A, B {\n\n    @Override\n    public void show() {\n        A.super.show(); // or B.super.show()\n    }\n}\n```\n\n---\n\n## Key Rule 🔥\n\n```java id=\"dp5\"\n// Class must override if multiple default methods conflict\n```\n\n---\n\n## Why This Happens?\n\n👉 Java does NOT support multiple inheritance of classes\n👉 But default methods create **method-level multiple inheritance**\n\n---\n\n## One-line Answer 💡\n\n👉 Diamond problem occurs when **multiple interfaces provide the same default method, and the implementing class must override it to resolve ambiguity**.\n\n---\n\nNext?\n👉 **Static methods in interface (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39173,7 +39253,11 @@
     "name": "089 How does Java resolve default method conflicts?",
     "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## How Java Resolves Default Method Conflicts?\n\n👉 When multiple interfaces have same default method, Java uses **3 rules** 🔥\n\n---\n\n## Rule 1: Class Wins Over Interface ✅\n\n```java id=\"r1\"\ninterface A {\n    default void show() {\n        System.out.println(\"A\");\n    }\n}\n\nclass Test {\n    public void show() {\n        System.out.println(\"Class\");\n    }\n}\n\nclass Demo extends Test implements A {}\n\nnew Demo().show(); // Class\n```\n\n---\n\n## Rule 2: Most Specific Interface Wins ✅\n\n```java id=\"r2\"\ninterface A {\n    default void show() {\n        System.out.println(\"A\");\n    }\n}\n\ninterface B extends A {}\n\nclass Test implements B {}\n\nnew Test().show(); // A (via B)\n```\n\n---\n\n## Rule 3: Explicit Override Required (Conflict Case) 🔥\n\n```java id=\"r3\"\ninterface A {\n    default void show() { System.out.println(\"A\"); }\n}\n\ninterface B {\n    default void show() { System.out.println(\"B\"); }\n}\n\nclass Test implements A, B {\n\n    @Override\n    public void show() {\n        A.super.show(); // or B.super.show()\n    }\n}\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"r4\"\n// 1. Class method > interface default\n// 2. Child interface > parent interface\n// 3. Conflict → must override\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Java resolves default method conflicts using rules:\n**class methods override interfaces, more specific interface wins, and conflicts must be explicitly resolved by overriding**.\n\n---\n\nNext?\n👉 **Static methods in interface (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39193,7 +39277,11 @@
     "name": "090 What are static methods in interfaces?",
     "parentId": "ba018040-0214-422f-8f48-5948aa9e0264",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Static Methods in Interfaces (Java 8)\n\n👉 **Definition (crisp)**\nStatic methods in interfaces are methods with implementation that belong to the **interface itself**, not to objects.\n\n---\n\n## Basic Example\n\n```java id=\"sm1\"\ninterface A {\n\n    static void show() {\n        System.out.println(\"Static method\");\n    }\n}\n```\n\n---\n\n## Usage\n\n```java id=\"sm2\"\npublic class Main {\n    public static void main(String[] args) {\n        A.show(); // ✅ called using interface name\n    }\n}\n```\n\n---\n\n## ❌ Not Accessible via Object\n\n```java id=\"sm3\"\nclass Test implements A {}\n\nTest t = new Test();\n\n// t.show(); ❌ compile-time error\n```\n\n---\n\n## With Default Method\n\n```java id=\"sm4\"\ninterface A {\n\n    static void util() {\n        System.out.println(\"Utility\");\n    }\n\n    default void log() {\n        System.out.println(\"Log\");\n    }\n}\n```\n\n---\n\n## Why Introduced? 🔥\n\n* Utility/helper methods inside interface\n* Better encapsulation\n* Avoid separate utility classes\n\n---\n\n## Key Points\n\n* Must be called using **interface name**\n* Cannot be overridden\n* Can have implementation\n* Independent of objects\n\n---\n\n## One-line Answer 💡\n\n👉 Static methods in interfaces are **methods with implementation that belong to the interface and are called using the interface name, not objects**.\n\n---\n\nIf you want next:\n👉 **Date & Time API (very important Java 8 topic 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39229,7 +39317,11 @@
     "name": "091 Why was the new Date API introduced?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Why was the new Date API introduced? (Java 8)\n\n---\n\n## 1. Old API was NOT Thread-Safe ❌\n\n```java id=\"d1\"\nSimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd\");\n\n// shared across threads → unsafe ❌\n```\n\n👉 Causes concurrency issues\n\n---\n\n## 2. Mutable Objects ❌\n\n```java id=\"d2\"\nDate date = new Date();\ndate.setTime(0); // mutable\n```\n\n👉 Leads to bugs\n\n---\n\n## 3. Poor Design & Confusing API ❌\n\n```java id=\"d3\"\nDate date = new Date(2020, 1, 1); // confusing (year offset, month 0-based)\n```\n\n---\n\n## 4. Timezone Handling Issues ❌\n\n```java id=\"d4\"\n// complex & error-prone\nCalendar cal = Calendar.getInstance();\n```\n\n---\n\n## 5. Lack of Clear Separation ❌\n\n👉 Date + Time + Timezone all mixed\n\n---\n\n## ✅ New Date API Solution (java.time)\n\n---\n\n## Immutable & Thread-Safe ✅\n\n```java id=\"d5\"\nLocalDate date = LocalDate.now();\n```\n\n---\n\n## Clear Classes\n\n```java id=\"d6\"\nLocalDate date = LocalDate.now();\nLocalTime time = LocalTime.now();\nLocalDateTime dt = LocalDateTime.now();\nZonedDateTime zdt = ZonedDateTime.now();\n```\n\n---\n\n## Easy Operations\n\n```java id=\"d7\"\nLocalDate date = LocalDate.now();\n\nLocalDate newDate = date.plusDays(5);\n```\n\n---\n\n## Better Formatting\n\n```java id=\"d8\"\nDateTimeFormatter fmt = DateTimeFormatter.ofPattern(\"yyyy-MM-dd\");\n\nString formatted = LocalDate.now().format(fmt);\n```\n\n---\n\n## Key Problems Solved 🔥\n\n* Thread safety\n* Immutability\n* Clear API design\n* Better timezone handling\n* No confusing constructors\n\n---\n\n## One-line Answer 💡\n\n👉 The new Date API was introduced to **provide a thread-safe, immutable, and more intuitive way to handle date and time, fixing flaws of the old Date/Calendar API**.\n\n---\n\nNext?\n👉 **LocalDate vs LocalDateTime vs ZonedDateTime (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39249,7 +39341,11 @@
     "name": "092 What is LocalDate?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `LocalDate` (Java 8)\n\n👉 **Definition (crisp)**\n`LocalDate` represents a **date only (year, month, day)** without time and timezone.\n\n---\n\n## Basic Example\n\n```java id=\"ld1\"\nLocalDate date = LocalDate.now();\n\nSystem.out.println(date); // 2026-03-20\n```\n\n---\n\n## Create Custom Date\n\n```java id=\"ld2\"\nLocalDate date = LocalDate.of(2024, 3, 15);\n\nSystem.out.println(date);\n```\n\n---\n\n## Get Values\n\n```java id=\"ld3\"\nLocalDate date = LocalDate.now();\n\nint year = date.getYear();\nint month = date.getMonthValue();\nint day = date.getDayOfMonth();\n```\n\n---\n\n## Modify Date (Immutable 🔥)\n\n```java id=\"ld4\"\nLocalDate date = LocalDate.now();\n\nLocalDate newDate = date.plusDays(5);\nLocalDate prevDate = date.minusMonths(1);\n```\n\n---\n\n## Comparison\n\n```java id=\"ld5\"\nLocalDate d1 = LocalDate.of(2024, 1, 1);\nLocalDate d2 = LocalDate.of(2025, 1, 1);\n\nSystem.out.println(d1.isBefore(d2)); // true\n```\n\n---\n\n## Formatting\n\n```java id=\"ld6\"\nDateTimeFormatter fmt = DateTimeFormatter.ofPattern(\"dd-MM-yyyy\");\n\nString formatted = LocalDate.now().format(fmt);\n```\n\n---\n\n## Key Points\n\n* Date only (no time, no timezone)\n* Immutable & thread-safe\n* Easy operations (plus, minus, compare)\n* Part of `java.time`\n\n---\n\n## One-line Answer 💡\n\n👉 `LocalDate` represents a **date without time and timezone, and is immutable and thread-safe**.\n\n---\n\nNext?\n👉 **LocalDate vs LocalDateTime vs ZonedDateTime 🔥**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39269,7 +39365,11 @@
     "name": "093 What is LocalTime?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `LocalTime` (Java 8)\n\n👉 **Definition (crisp)**\n`LocalTime` represents **time only (hours, minutes, seconds, nanoseconds)** without date and timezone.\n\n---\n\n## Basic Example\n\n```java id=\"lt1\"\nLocalTime time = LocalTime.now();\n\nSystem.out.println(time); // 13:45:30.123\n```\n\n---\n\n## Create Custom Time\n\n```java id=\"lt2\"\nLocalTime time = LocalTime.of(10, 30, 15);\n\nSystem.out.println(time); // 10:30:15\n```\n\n---\n\n## Get Values\n\n```java id=\"lt3\"\nLocalTime time = LocalTime.now();\n\nint hour = time.getHour();\nint min = time.getMinute();\nint sec = time.getSecond();\n```\n\n---\n\n## Modify Time (Immutable 🔥)\n\n```java id=\"lt4\"\nLocalTime time = LocalTime.now();\n\nLocalTime newTime = time.plusHours(2);\nLocalTime prevTime = time.minusMinutes(30);\n```\n\n---\n\n## Comparison\n\n```java id=\"lt5\"\nLocalTime t1 = LocalTime.of(10, 0);\nLocalTime t2 = LocalTime.of(12, 0);\n\nSystem.out.println(t1.isBefore(t2)); // true\n```\n\n---\n\n## Formatting\n\n```java id=\"lt6\"\nDateTimeFormatter fmt = DateTimeFormatter.ofPattern(\"HH:mm:ss\");\n\nString formatted = LocalTime.now().format(fmt);\n```\n\n---\n\n## Key Points\n\n* Time only (no date, no timezone)\n* Immutable & thread-safe\n* Supports arithmetic (plus/minus)\n* Part of `java.time`\n\n---\n\n## One-line Answer 💡\n\n👉 `LocalTime` represents **time without date and timezone, and is immutable and thread-safe**.\n\n---\n\nNext?\n👉 **LocalDateTime vs ZonedDateTime (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39289,7 +39389,11 @@
     "name": "094 What is LocalDateTime?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `LocalDateTime` (Java 8)\n\n👉 **Definition (crisp)**\n`LocalDateTime` represents **date + time together** (year, month, day, hour, minute, second) **without timezone**.\n\n---\n\n## Basic Example\n\n```java id=\"ldt1\"\nLocalDateTime dt = LocalDateTime.now();\n\nSystem.out.println(dt); // 2026-03-20T13:50:30\n```\n\n---\n\n## Create Custom DateTime\n\n```java id=\"ldt2\"\nLocalDateTime dt = LocalDateTime.of(2024, 3, 15, 10, 30);\n\nSystem.out.println(dt);\n```\n\n---\n\n## Get Values\n\n```java id=\"ldt3\"\nLocalDateTime dt = LocalDateTime.now();\n\nint year = dt.getYear();\nint hour = dt.getHour();\nint min = dt.getMinute();\n```\n\n---\n\n## Modify (Immutable 🔥)\n\n```java id=\"ldt4\"\nLocalDateTime dt = LocalDateTime.now();\n\nLocalDateTime newDt = dt.plusDays(2).plusHours(3);\n```\n\n---\n\n## Comparison\n\n```java id=\"ldt5\"\nLocalDateTime d1 = LocalDateTime.of(2024,1,1,10,0);\nLocalDateTime d2 = LocalDateTime.of(2025,1,1,10,0);\n\nSystem.out.println(d1.isBefore(d2)); // true\n```\n\n---\n\n## Formatting\n\n```java id=\"ldt6\"\nDateTimeFormatter fmt = DateTimeFormatter.ofPattern(\"dd-MM-yyyy HH:mm\");\n\nString formatted = LocalDateTime.now().format(fmt);\n```\n\n---\n\n## Key Points\n\n* Combines **date + time**\n* No timezone info\n* Immutable & thread-safe\n* Part of `java.time`\n\n---\n\n## One-line Answer 💡\n\n👉 `LocalDateTime` represents **both date and time without timezone, and is immutable and thread-safe**.\n\n---\n\nNext?\n👉 **ZonedDateTime (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39309,7 +39413,11 @@
     "name": "095 What is ZonedDateTime?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `ZonedDateTime` (Java 8)\n\n👉 **Definition (crisp)**\n`ZonedDateTime` represents **date + time + timezone (zone ID)**.\n\n---\n\n## Basic Example\n\n```java id=\"zdt1\"\nZonedDateTime zdt = ZonedDateTime.now();\n\nSystem.out.println(zdt);\n// 2026-03-20T13:55:30+05:30[Asia/Kolkata]\n```\n\n---\n\n## Create with Zone\n\n```java id=\"zdt2\"\nZonedDateTime zdt = ZonedDateTime.now(ZoneId.of(\"Asia/Kolkata\"));\n\nSystem.out.println(zdt);\n```\n\n---\n\n## Convert Between Timezones 🔥\n\n```java id=\"zdt3\"\nZonedDateTime india = ZonedDateTime.now(ZoneId.of(\"Asia/Kolkata\"));\n\nZonedDateTime usa = india.withZoneSameInstant(ZoneId.of(\"America/New_York\"));\n\nSystem.out.println(usa);\n```\n\n---\n\n## Create Custom DateTime\n\n```java id=\"zdt4\"\nZonedDateTime zdt = ZonedDateTime.of(\n    2024, 3, 15, 10, 30, 0, 0,\n    ZoneId.of(\"Asia/Kolkata\")\n);\n```\n\n---\n\n## Convert from LocalDateTime\n\n```java id=\"zdt5\"\nLocalDateTime ldt = LocalDateTime.now();\n\nZonedDateTime zdt = ldt.atZone(ZoneId.of(\"Asia/Kolkata\"));\n```\n\n---\n\n## Key Points\n\n* Includes **timezone**\n* Immutable & thread-safe\n* Useful for global applications\n* Handles DST (Daylight Saving Time)\n\n---\n\n## One-line Answer 💡\n\n👉 `ZonedDateTime` represents **date and time along with timezone information, making it suitable for global applications**.\n\n---\n\nNext?\n👉 **Instant, Duration, Period (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39329,7 +39437,11 @@
     "name": "096 What is Instant?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Instant` (Java 8)\n\n👉 **Definition (crisp)**\n`Instant` represents a **point in time (timestamp) in UTC (epoch time)**.\n\n---\n\n## Basic Example\n\n```java id=\"ins1\"\nInstant now = Instant.now();\n\nSystem.out.println(now);\n// 2026-03-20T08:30:00Z\n```\n\n---\n\n## Epoch Time\n\n```java id=\"ins2\"\nInstant instant = Instant.ofEpochSecond(0);\n\nSystem.out.println(instant); // 1970-01-01T00:00:00Z\n```\n\n---\n\n## Add / Subtract Time\n\n```java id=\"ins3\"\nInstant now = Instant.now();\n\nInstant future = now.plusSeconds(60);\nInstant past = now.minusSeconds(60);\n```\n\n---\n\n## Convert to LocalDateTime\n\n```java id=\"ins4\"\nInstant instant = Instant.now();\n\nLocalDateTime ldt = LocalDateTime.ofInstant(\n    instant,\n    ZoneId.of(\"Asia/Kolkata\")\n);\n```\n\n---\n\n## Compare Instants\n\n```java id=\"ins5\"\nInstant t1 = Instant.now();\nInstant t2 = t1.plusSeconds(10);\n\nSystem.out.println(t1.isBefore(t2)); // true\n```\n\n---\n\n## Key Points\n\n* Represents **UTC timestamp**\n* Based on **epoch (1970-01-01)**\n* Immutable & thread-safe\n* Used for **machine time / logging / APIs**\n\n---\n\n## One-line Answer 💡\n\n👉 `Instant` represents a **point in time in UTC, typically used for timestamps and machine-level time**.\n\n---\n\nNext?\n👉 **Duration vs Period (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39349,7 +39461,11 @@
     "name": "097 What is Duration?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Duration` (Java 8)\n\n👉 **Definition (crisp)**\n`Duration` represents a **time-based amount of time** (seconds, nanoseconds).\n\n---\n\n## Basic Example\n\n```java id=\"dur1\"\nInstant start = Instant.now();\n\nInstant end = start.plusSeconds(60);\n\nDuration d = Duration.between(start, end);\n\nSystem.out.println(d.getSeconds()); // 60\n```\n\n---\n\n## Using LocalTime\n\n```java id=\"dur2\"\nLocalTime t1 = LocalTime.of(10, 0);\nLocalTime t2 = LocalTime.of(12, 30);\n\nDuration d = Duration.between(t1, t2);\n\nSystem.out.println(d.toMinutes()); // 150\n```\n\n---\n\n## Create Duration\n\n```java id=\"dur3\"\nDuration d1 = Duration.ofSeconds(30);\nDuration d2 = Duration.ofMinutes(5);\nDuration d3 = Duration.ofHours(2);\n```\n\n---\n\n## Add / Subtract\n\n```java id=\"dur4\"\nDuration d = Duration.ofMinutes(10);\n\nDuration newD = d.plusMinutes(5);\n```\n\n---\n\n## Key Points\n\n* Works with **time (seconds, nanos)**\n* Used with `Instant`, `LocalTime`\n* Immutable & thread-safe\n* NOT for date (use `Period`)\n\n---\n\n## Duration vs Period 🔥\n\n```java id=\"dur5\"\n// Duration → time (seconds)\n// Period   → date (days, months, years)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `Duration` represents a **time-based amount (seconds/nanoseconds) between two time points**.\n\n---\n\nNext?\n👉 **Period (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39369,7 +39485,11 @@
     "name": "098 What is Period?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## `Period` (Java 8)\n\n👉 **Definition (crisp)**\n`Period` represents a **date-based amount of time** (years, months, days).\n\n---\n\n## Basic Example\n\n```java id=\"per1\"\nLocalDate d1 = LocalDate.of(2020, 1, 1);\nLocalDate d2 = LocalDate.of(2023, 3, 20);\n\nPeriod p = Period.between(d1, d2);\n\nSystem.out.println(p); // P3Y2M19D\n```\n\n---\n\n## Get Values\n\n```java id=\"per2\"\nSystem.out.println(p.getYears());  // 3\nSystem.out.println(p.getMonths()); // 2\nSystem.out.println(p.getDays());   // 19\n```\n\n---\n\n## Create Period\n\n```java id=\"per3\"\nPeriod p1 = Period.ofYears(2);\nPeriod p2 = Period.ofMonths(5);\nPeriod p3 = Period.ofDays(10);\n```\n\n---\n\n## Add / Subtract\n\n```java id=\"per4\"\nLocalDate date = LocalDate.now();\n\nLocalDate newDate = date.plus(Period.ofDays(10));\n```\n\n---\n\n## Key Points\n\n* Works with **dates (year, month, day)**\n* Used with `LocalDate`\n* Immutable & thread-safe\n* Not for time (use `Duration`)\n\n---\n\n## Period vs Duration 🔥\n\n```java id=\"per5\"\n// Period   → date-based (Y, M, D)\n// Duration → time-based (seconds)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `Period` represents a **date-based amount of time in years, months, and days between two dates**.\n\n---\n\nNext?\n👉 **Parallel Streams (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39389,7 +39509,11 @@
     "name": "099 Difference between Period and Duration?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + side-by-side + code-heavy 👇\n\n---\n\n## Period vs Duration (Java 8)\n\n---\n\n## 1. Basic Difference\n\n```java id=\"pd1\"\n// Period → date-based\nPeriod p = Period.ofDays(10);\n\n// Duration → time-based\nDuration d = Duration.ofSeconds(60);\n```\n\n---\n\n## 2. Units\n\n```java id=\"pd2\"\n// Period → Years, Months, Days\n// Duration → Seconds, Nanoseconds\n```\n\n---\n\n## 3. Works With\n\n```java id=\"pd3\"\n// Period → LocalDate\nLocalDate d1 = LocalDate.now();\nLocalDate d2 = d1.plusDays(5);\nPeriod.between(d1, d2);\n\n// Duration → LocalTime / Instant\nLocalTime t1 = LocalTime.now();\nLocalTime t2 = t1.plusHours(2);\nDuration.between(t1, t2);\n```\n\n---\n\n## 4. Example\n\n```java id=\"pd4\"\n// Period\nPeriod p = Period.between(\n    LocalDate.of(2020,1,1),\n    LocalDate.of(2023,1,1)\n);\n\n// Duration\nDuration d = Duration.between(\n    LocalTime.of(10,0),\n    LocalTime.of(12,0)\n);\n```\n\n---\n\n## 5. Use Case\n\n```java id=\"pd5\"\n// Period → age, date difference\n// Duration → execution time, timeout\n```\n\n---\n\n## Summary 🔥\n\n```java id=\"pd6\"\n// Period   → date-based (Y, M, D)\n// Duration → time-based (seconds, nanos)\n```\n\n---\n\n## One-line Answer 💡\n\n👉 `Period` is used for **date-based differences (years, months, days)**, while `Duration` is used for **time-based differences (seconds, nanoseconds)**.\n\n---\n\nNext?\n👉 **Parallel Streams (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39409,7 +39533,11 @@
     "name": "100 How is Java 8 Date API thread safe?",
     "parentId": "e0fe3b91-7801-4b71-8f15-3a8f229b4efe",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## How Java 8 Date API is Thread-Safe?\n\n👉 **Core Reason:**\nAll classes in `java.time` are **immutable** 🔥\n\n---\n\n## 1. Immutable Objects (Main Point)\n\n```java id=\"ts1\"\nLocalDate date = LocalDate.now();\n\nLocalDate newDate = date.plusDays(5);\n\nSystem.out.println(date);     // unchanged\nSystem.out.println(newDate);  // new object\n```\n\n👉 Original object NEVER changes\n\n---\n\n## 2. No Shared Mutable State\n\n```java id=\"ts2\"\n// Each operation returns new instance\nLocalTime time = LocalTime.now();\n\nLocalTime t2 = time.plusHours(1);\n```\n\n👉 No data modification → no race condition\n\n---\n\n## 3. No Synchronization Needed 🚀\n\n```java id=\"ts3\"\n// Safe in multi-threading\nRunnable r = () -> {\n    LocalDate date = LocalDate.now();\n    System.out.println(date);\n};\n```\n\n👉 No need for `synchronized`\n\n---\n\n## 4. Contrast with Old API ❌\n\n```java id=\"ts4\"\nSimpleDateFormat sdf = new SimpleDateFormat(\"yyyy-MM-dd\");\n\n// shared → NOT thread-safe ❌\n```\n\n👉 Mutable + shared state → issues\n\n---\n\n## 5. Thread-safe Formatters\n\n```java id=\"ts5\"\nDateTimeFormatter fmt =\n    DateTimeFormatter.ofPattern(\"yyyy-MM-dd\");\n\nString s = LocalDate.now().format(fmt);\n```\n\n👉 `DateTimeFormatter` is also immutable ✅\n\n---\n\n## Key Points\n\n* Immutable classes\n* No shared mutable state\n* No synchronization needed\n* Safe for concurrent use\n\n---\n\n## One-line Answer 💡\n\n👉 Java 8 Date API is thread-safe because **all its classes are immutable and do not share mutable state, eliminating concurrency issues**.\n\n---\n\nNext?\n👉 **Parallel Streams (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39445,7 +39573,11 @@
     "name": "101 What is a parallel stream?",
     "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## Parallel Stream (Java 8)\n\n👉 **Definition (crisp)**\nParallel stream is a stream that **processes elements in parallel using multiple threads (ForkJoinPool)**.\n\n---\n\n## Create Parallel Stream\n\n```java id=\"ps1\"\n// 1. From collection\nlist.parallelStream();\n\n// 2. Convert sequential → parallel\nlist.stream().parallel();\n```\n\n---\n\n## Basic Example\n\n```java id=\"ps2\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.parallelStream()\n    .forEach(System.out::println);\n```\n\n---\n\n## Internal Working 🔥\n\n```java id=\"ps3\"\n// Splits data → multiple threads → process → combine result\n```\n\n👉 Uses:\n\n```java id=\"ps4\"\nForkJoinPool.commonPool()\n```\n\n---\n\n## Example with reduce()\n\n```java id=\"ps5\"\nint sum = list.parallelStream()\n    .reduce(0, Integer::sum);\n\nSystem.out.println(sum);\n```\n\n---\n\n## Order Issue ⚠️\n\n```java id=\"ps6\"\nlist.parallelStream()\n    .forEach(System.out::print); // unordered\n```\n\n👉 Maintain order:\n\n```java id=\"ps7\"\nlist.parallelStream()\n    .forEachOrdered(System.out::print);\n```\n\n---\n\n## When to Use 🔥\n\n```java id=\"ps8\"\n// large data\n// CPU-intensive tasks\n// stateless operations\n```\n\n---\n\n## Key Points\n\n* Multi-threaded processing\n* Faster for large datasets\n* Uses ForkJoinPool\n* Order not guaranteed\n\n---\n\n## One-line Answer 💡\n\n👉 A parallel stream processes data **concurrently using multiple threads to improve performance**.\n\n---\n\nNext?\n👉 **When NOT to use parallel streams (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39465,7 +39597,11 @@
     "name": "102 How do you create a parallel stream?",
     "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + code-heavy + interview-ready 👇\n\n---\n\n## How to Create a Parallel Stream (Java 8)\n\n---\n\n## 1. Using `parallelStream()` ✅\n\n```java id=\"ps1\"\nList<Integer> list = Arrays.asList(1,2,3,4,5);\n\nlist.parallelStream()\n    .forEach(System.out::println);\n```\n\n---\n\n## 2. Convert Sequential → Parallel\n\n```java id=\"ps2\"\nlist.stream()\n    .parallel()\n    .forEach(System.out::println);\n```\n\n---\n\n## 3. From Stream API\n\n```java id=\"ps3\"\nStream<Integer> stream = Stream.of(1,2,3,4);\n\nstream.parallel()\n      .forEach(System.out::println);\n```\n\n---\n\n## 4. Primitive Streams\n\n```java id=\"ps4\"\nIntStream.range(1, 5)\n         .parallel()\n         .forEach(System.out::println);\n```\n\n---\n\n## 5. Check if Parallel 🔥\n\n```java id=\"ps5\"\nStream<Integer> s = list.parallelStream();\n\nSystem.out.println(s.isParallel()); // true\n```\n\n---\n\n## Key Points\n\n* `parallelStream()` → direct parallel\n* `.parallel()` → convert existing stream\n* Uses **ForkJoinPool** internally\n* Order not guaranteed\n\n---\n\n## One-line Answer 💡\n\n👉 You can create a parallel stream using **`parallelStream()` or by calling `.parallel()` on an existing stream**.\n\n---\n\nNext?\n👉 **When to use / NOT use parallel streams (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39485,7 +39621,11 @@
     "name": "103 When should parallel streams be used?",
     "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + practical + code-heavy 👇\n\n---\n\n## When to Use Parallel Streams ✅\n\n---\n\n### 1. Large Dataset\n\n```java id=\"psu1\"\nlist.parallelStream()\n    .map(x -> x * x)\n    .forEach(System.out::println);\n```\n\n👉 More data → better parallel benefit\n\n---\n\n### 2. CPU-Intensive Tasks\n\n```java id=\"psu2\"\nlist.parallelStream()\n    .map(x -> heavyComputation(x))\n    .forEach(System.out::println);\n```\n\n---\n\n### 3. Stateless & Independent Operations\n\n```java id=\"psu3\"\nlist.parallelStream()\n    .filter(x -> x > 10)\n    .map(x -> x * 2)\n    .forEach(System.out::println);\n```\n\n👉 No shared state\n\n---\n\n### 4. No Ordering Requirement\n\n```java id=\"psu4\"\nlist.parallelStream()\n    .forEach(System.out::println); // unordered OK\n```\n\n---\n\n## When NOT to Use Parallel Streams ❌\n\n---\n\n### 1. Small Dataset\n\n```java id=\"psn1\"\n// overhead > benefit ❌\nlist.parallelStream().forEach(System.out::println);\n```\n\n---\n\n### 2. I/O Operations (DB, API, File)\n\n```java id=\"psn2\"\nlist.parallelStream()\n    .forEach(x -> callAPI(x)); // ❌ blocking\n```\n\n---\n\n### 3. Shared Mutable State ❌\n\n```java id=\"psn3\"\nList<Integer> result = new ArrayList<>();\n\nlist.parallelStream()\n    .forEach(x -> result.add(x)); // ❌ race condition\n```\n\n---\n\n### 4. Order Matters\n\n```java id=\"psn4\"\nlist.parallelStream()\n    .forEach(System.out::print); // unordered ❌\n```\n\n👉 Use:\n\n```java id=\"psn5\"\nlist.parallelStream()\n    .forEachOrdered(System.out::print);\n```\n\n---\n\n### 5. Non-Associative Operations ❌\n\n```java id=\"psn6\"\nlist.parallelStream()\n    .reduce(0, (a, b) -> a - b); // ❌ wrong result\n```\n\n---\n\n## Rule of Thumb 🔥\n\n```java id=\"psu5\"\n// Use → large + CPU-heavy + stateless\n// Avoid → small + I/O + shared state + order needed\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Use parallel streams for **large, CPU-intensive, stateless operations**, and avoid them for **small data, I/O tasks, shared mutable state, or when order matters**.\n\n---\n\nIf you want next:\n👉 **ForkJoinPool deep dive (very important interview 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39505,7 +39645,11 @@
     "name": "104 What are the drawbacks of parallel streams?",
     "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + practical + code-heavy 👇\n\n---\n\n## Drawbacks of Parallel Streams (Java 8)\n\n---\n\n## 1. Overhead for Small Data ❌\n\n```java id=\"pd1\"\n// slower than sequential\nlist.parallelStream()\n    .forEach(System.out::println);\n```\n\n👉 Thread management cost > benefit\n\n---\n\n## 2. Unpredictable Performance ⚠️\n\n```java id=\"pd2\"\nlist.parallelStream()\n    .map(x -> x * 2)\n    .forEach(System.out::println);\n```\n\n👉 Depends on CPU cores, workload, splitting\n\n---\n\n## 3. Order Not Guaranteed ❌\n\n```java id=\"pd3\"\nlist.parallelStream()\n    .forEach(System.out::print); // unordered\n```\n\n👉 Need:\n\n```java id=\"pd4\"\n.forEachOrdered(System.out::print); // slower\n```\n\n---\n\n## 4. Thread Safety Issues 🚨\n\n```java id=\"pd5\"\nList<Integer> result = new ArrayList<>();\n\nlist.parallelStream()\n    .forEach(x -> result.add(x)); // ❌ race condition\n```\n\n---\n\n## 5. Not Suitable for I/O Tasks ❌\n\n```java id=\"pd6\"\nlist.parallelStream()\n    .forEach(x -> callAPI(x)); // blocking\n```\n\n👉 Threads get blocked → no benefit\n\n---\n\n## 6. Harder Debugging 😵\n\n```java id=\"pd7\"\n// multiple threads → unpredictable logs\n```\n\n---\n\n## 7. Non-Associative Operations ❌\n\n```java id=\"pd8\"\nlist.parallelStream()\n    .reduce(0, (a, b) -> a - b); // wrong result\n```\n\n---\n\n## 8. Uses Common ForkJoinPool ⚠️\n\n```java id=\"pd9\"\n// shared across app\nForkJoinPool.commonPool();\n```\n\n👉 Can cause resource contention\n\n---\n\n## Summary 🔥\n\n```java id=\"pd10\"\n// ❌ small data\n// ❌ shared state\n// ❌ I/O operations\n// ❌ order-sensitive\n// ❌ non-associative ops\n```\n\n---\n\n## One-line Answer 💡\n\n👉 Parallel streams can cause **overhead, unpredictable performance, thread-safety issues, and ordering problems**, making them unsuitable for small, I/O-bound, or stateful operations.\n\n---\n\nIf you want next:\n👉 **ForkJoinPool internal working (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
@@ -39525,7 +39669,11 @@
     "name": "105 What is ForkJoinPool in Java 8?",
     "parentId": "196195a4-5d3f-424c-bfce-4e6d55f13255",
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": "Short + deep + code-heavy (interview gold 🔥)\n\n---\n\n## ForkJoinPool (Java 8)\n\n👉 **Definition (crisp)**\n`ForkJoinPool` is a special thread pool used for **parallel task execution using divide-and-conquer (Fork/Join)**.\n\n---\n\n## Where Used?\n\n```java id=\"fj1\"\n// used internally by parallel streams\nlist.parallelStream()\n    .forEach(System.out::println);\n```\n\n👉 Uses:\n\n```java id=\"fj2\"\nForkJoinPool.commonPool()\n```\n\n---\n\n## Core Idea 🔥\n\n```java id=\"fj3\"\n// Fork → split task\n// Join → combine result\n```\n\n---\n\n## Example (Recursive Task)\n\n```java id=\"fj4\"\nclass SumTask extends RecursiveTask<Integer> {\n\n    int[] arr;\n    int start, end;\n\n    SumTask(int[] arr, int start, int end) {\n        this.arr = arr;\n        this.start = start;\n        this.end = end;\n    }\n\n    protected Integer compute() {\n\n        if (end - start <= 2) {\n            int sum = 0;\n            for (int i = start; i < end; i++)\n                sum += arr[i];\n            return sum;\n        }\n\n        int mid = (start + end) / 2;\n\n        SumTask left = new SumTask(arr, start, mid);\n        SumTask right = new SumTask(arr, mid, end);\n\n        left.fork();              // async\n        int rightResult = right.compute(); // sync\n        int leftResult = left.join();      // wait\n\n        return leftResult + rightResult;\n    }\n}\n```\n\n---\n\n## Execution\n\n```java id=\"fj5\"\nForkJoinPool pool = new ForkJoinPool();\n\nint result = pool.invoke(new SumTask(arr, 0, arr.length));\n```\n\n---\n\n## Internal Working 🔥\n\n---\n\n### 1. Task Splitting (Fork)\n\n```java id=\"fj6\"\n// large task → split into smaller subtasks\n```\n\n---\n\n### 2. Work-Stealing Algorithm 🚀\n\n```java id=\"fj7\"\n// each thread has its own deque\n// idle thread steals task from others\n```\n\n👉 Improves CPU utilization\n\n---\n\n### 3. Parallel Execution\n\n```java id=\"fj8\"\n// tasks run on multiple threads\n```\n\n---\n\n### 4. Join Phase\n\n```java id=\"fj9\"\n// combine results of subtasks\n```\n\n---\n\n## Key Components\n\n```java id=\"fj10\"\n// RecursiveTask<T> → returns result\n// RecursiveAction → no result\n```\n\n---\n\n## Common Pool\n\n```java id=\"fj11\"\nForkJoinPool.commonPool();\n```\n\n👉 Shared by:\n\n* Parallel streams\n* CompletableFuture\n\n---\n\n## Key Points\n\n* Divide & conquer\n* Work-stealing\n* High performance\n* Uses multiple CPU cores\n\n---\n\n## One-line Answer 💡\n\n👉 ForkJoinPool is a **parallel execution framework that splits tasks into smaller subtasks and uses work-stealing to efficiently utilize CPU cores**.\n\n---\n\nIf you want next:\n👉 **CompletableFuture deep internal working (very important 🔥)**\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [
