@@ -33280,10 +33280,14 @@
   },
   {
     "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-    "name": "100 Industry-Level Java coding Questions",
+    "name": "100 Industry-Level DSA for Java Coding Interviews",
     "parentId": null,
     "description": "",
-    "smartContent": null,
+    "smartContent": {
+      "content": ".",
+      "textOutputType": "html",
+      "textInputType": "TextArea"
+    },
     "tags": [],
     "published": false,
     "ancestors": [],
@@ -33304,7 +33308,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33324,7 +33328,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33344,7 +33348,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33364,7 +33368,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33384,7 +33388,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33404,7 +33408,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33424,7 +33428,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33444,7 +33448,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33464,7 +33468,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33484,7 +33488,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33504,7 +33508,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33524,7 +33528,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33544,7 +33548,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33564,7 +33568,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33584,7 +33588,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33604,7 +33608,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33624,7 +33628,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33644,7 +33648,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33664,7 +33668,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33684,7 +33688,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33704,7 +33708,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33724,7 +33728,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33744,7 +33748,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33764,7 +33768,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33784,7 +33788,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33804,7 +33808,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33824,7 +33828,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33844,7 +33848,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33864,7 +33868,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33884,7 +33888,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33904,7 +33908,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33924,7 +33928,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33944,7 +33948,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33964,7 +33968,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -33984,7 +33988,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34004,7 +34008,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34024,7 +34028,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34044,7 +34048,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34064,7 +34068,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34084,7 +34088,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34104,7 +34108,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34124,7 +34128,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34144,7 +34148,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34164,7 +34168,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34184,7 +34188,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34204,7 +34208,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34224,7 +34228,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34244,7 +34248,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34264,7 +34268,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34284,7 +34288,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34304,7 +34308,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34324,7 +34328,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34344,7 +34348,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34364,7 +34368,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34384,7 +34388,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34404,7 +34408,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34424,7 +34428,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34444,7 +34448,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34464,7 +34468,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34484,7 +34488,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34504,7 +34508,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34524,7 +34528,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34544,7 +34548,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34564,7 +34568,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34584,7 +34588,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34604,7 +34608,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34624,7 +34628,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34644,7 +34648,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34664,7 +34668,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34684,7 +34688,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34704,7 +34708,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34724,7 +34728,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34744,7 +34748,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34764,7 +34768,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": [
@@ -34801,7 +34805,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34821,7 +34825,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34841,7 +34845,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34861,7 +34865,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34881,7 +34885,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34901,7 +34905,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34921,7 +34925,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34941,7 +34945,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34961,7 +34965,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -34981,7 +34985,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35001,7 +35005,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35021,7 +35025,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35041,7 +35045,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35061,7 +35065,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35081,7 +35085,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35101,7 +35105,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35121,7 +35125,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35141,7 +35145,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35161,7 +35165,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35181,7 +35185,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35201,7 +35205,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35221,7 +35225,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35241,7 +35245,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35261,7 +35265,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35281,7 +35285,7 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
@@ -35301,7 +35305,27 @@
     "ancestors": [
       {
         "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
-        "name": "100 Industry-Level Java coding Questions"
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
+      }
+    ],
+    "sections": []
+  },
+  {
+    "uniqueId": "47be939e-2cb8-4cee-bd35-7da01829127c",
+    "name": "00A Introduction",
+    "parentId": "5beaf656-30ad-4db5-a588-adaf62aef892",
+    "description": "",
+    "smartContent": {
+      "content": "Welcome to this course on **Data Structures & Algorithms for Coding Interviews (Java)** 🚀\n\nIf you’re here, chances are you want to improve your problem-solving skills, crack coding interviews, or become a stronger developer — and you’re in the right place.\n\nIn this course, we are going to follow a **code-first approach**. That means instead of spending hours on theory, we’ll focus on solving real interview-level problems and understanding the patterns behind them.\n\nWe’ll start from the basics like arrays and strings, and gradually move towards advanced topics such as linked lists, trees, graphs, and even real-world system design problems like LRU Cache, Rate Limiter, and URL Shortener.\n\nEach lecture is short, focused, and practical. You’ll see:\n\n* Problem explanation\n* Approach and intuition\n* Clean Java implementation\n* Optimization and edge cases\n\nYou don’t need prior DSA knowledge. Basic programming understanding is enough, and we’ll build everything step by step.\n\nMy advice: don’t just watch — **code along with me**. Pause the video, try solving the problem yourself, and then compare your solution.\n\nBy the end of this course, you’ll not only be able to solve problems but also think like an experienced problem solver.\n\nLet’s get started and take your coding skills to the next level 💪\n",
+      "textOutputType": "markdown",
+      "textInputType": "TextArea"
+    },
+    "tags": [],
+    "published": false,
+    "ancestors": [
+      {
+        "uniqueId": "5beaf656-30ad-4db5-a588-adaf62aef892",
+        "name": "100 Industry-Level DSA for Java Coding Interviews"
       }
     ],
     "sections": []
